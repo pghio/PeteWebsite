@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<BaseLayout title="Home">
+  <Hero />
+
+  <!-- Highlights -->
+  <section class="max-w-5xl mx-auto px-6 pb-24">
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+      <div class="p-6 rounded-xl bg-(--color-surface-alt) border border-(--color-border)">
+        <p class="text-3xl font-bold text-(--color-primary) mb-2">4+</p>
+        <p class="text-sm text-(--color-text-muted)">Years leading AI/ML product at Capital One</p>
+      </div>
+      <div class="p-6 rounded-xl bg-(--color-surface-alt) border border-(--color-border)">
+        <p class="text-3xl font-bold text-(--color-primary) mb-2">1</p>
+        <p class="text-sm text-(--color-text-muted)">Successful startup exit (GiveTide, acquired 2022)</p>
+      </div>
+      <div class="p-6 rounded-xl bg-(--color-surface-alt) border border-(--color-border)">
+        <p class="text-3xl font-bold text-(--color-primary) mb-2">27</p>
+        <p class="text-sm text-(--color-text-muted)">AI tools orchestrated in Honeydew's agent pipeline</p>
+      </div>
+    </div>
+
+    <!-- Featured Projects -->
+    <h2 class="text-2xl font-bold mb-8">Featured Projects</h2>
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <ProjectCard
+        title="Honeydew"
+        description="A multimodal AI family assistant with voice, text, and photo input. 27-tool agent orchestration processing requests in under 2 seconds."
+        tags={["React", "TypeScript", "Node.js", "OpenAI", "WebSockets"]}
+        link="https://gethoneydew.app"
+        status="Active"
+      />
+      <ProjectCard
+        title="GiveTide"
+        description="Fintech platform built from zero to acquisition. 5 years of development culminating in a successful exit in 2022."
+        tags={["Fintech", "Startup", "Acquired"]}
+        status="Acquired 2022"
+      />
+    </div>
+    <a href="/projects" class="text-sm font-medium text-(--color-primary) hover:underline">
+      View all projects &rarr;
+    </a>
+  </section>
+</BaseLayout>

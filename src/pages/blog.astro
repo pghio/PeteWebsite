@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const articles = [
+  {
+    title: "How We Get Cited by ChatGPT, Claude & Perplexity Without Ads",
+    url: "https://gethoneydew.app/blog/how-we-get-cited-by-chatgpt-claude-perplexity-without-ads",
+    description: "A deep dive into LLM discoverability and how we built a citation strategy for Honeydew.",
+    date: "2026",
+  },
+  {
+    title: "Building a Multimodal AI Family Assistant",
+    url: "https://gethoneydew.app/blog/building-multimodal-ai-family-assistant-voice-text-photo",
+    description: "The architecture behind Honeydew's voice, text, and photo input pipeline.",
+    date: "2026",
+  },
+  {
+    title: "What I Learned Building an AI Agent That Manages a Family's Life",
+    url: "https://gethoneydew.app/blog/what-i-learned-building-ai-agent-family-life",
+    description: "Lessons from building a 27-tool agentic system that real families depend on daily.",
+    date: "2026",
+  },
+];
+---
+
+<BaseLayout title="Blog" description="Writing about AI product development, agentic systems, and shipping ML in production.">
+  <section class="max-w-3xl mx-auto px-6 py-16 md:py-24">
+    <h1 class="text-4xl font-bold mb-4">Blog & Writing</h1>
+    <p class="text-(--color-text-muted) mb-12">
+      I write about AI product development, agentic systems, and the messy reality of shipping ML in production.
+    </p>
+
+    <div class="space-y-8">
+      {articles.map(article => (
+        <a
+          href={article.url}
+          target="_blank"
+          rel="noopener"
+          class="block p-6 border border-(--color-border) rounded-xl hover:border-(--color-primary)/50 transition-colors group"
+        >
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h2 class="text-lg font-semibold group-hover:text-(--color-primary) transition-colors mb-2">
+                {article.title}
+              </h2>
+              <p class="text-(--color-text-muted) text-sm leading-relaxed">{article.description}</p>
+            </div>
+            <span class="text-xs text-(--color-text-muted) whitespace-nowrap mt-1">{article.date}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-12 p-6 rounded-xl bg-(--color-surface-alt) border border-(--color-border)">
+      <p class="text-(--color-text-muted) text-sm">
+        More articles are published on the
+        <a href="https://gethoneydew.app/blog" target="_blank" rel="noopener" class="text-(--color-primary) hover:underline">
+          Honeydew blog
+        </a>. Personal essays and additional writing coming here soon.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

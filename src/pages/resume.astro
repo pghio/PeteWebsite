@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ExperienceItem from '../components/ExperienceItem.astro';
+---
+
+<BaseLayout title="Resume" description="Pete Ghiorse's professional experience and education.">
+  <section class="max-w-3xl mx-auto px-6 py-16 md:py-24">
+    <div class="flex items-center justify-between mb-12">
+      <h1 class="text-4xl font-bold">Resume</h1>
+      <!-- TODO: Add downloadable PDF link -->
+      <!-- <a href="/pete-ghiorse-resume.pdf" class="text-sm font-medium text-(--color-primary) hover:underline">
+        Download PDF &darr;
+      </a> -->
+    </div>
+
+    <!-- Experience -->
+    <h2 class="text-2xl font-bold mb-8">Experience</h2>
+    <div class="mb-16">
+      <ExperienceItem
+        company="Capital One"
+        role="Senior Product Manager, AI/ML"
+        period="2022 — Present"
+        description="Leading product strategy for ML-powered spend controls and fraud detection systems operating at enterprise scale."
+        highlights={[
+          "ML-powered fraud and spend management at scale",
+          "AI/ML product strategy and roadmap ownership",
+          "Cross-functional leadership across engineering, data science, and design",
+        ]}
+      />
+      <ExperienceItem
+        company="Honeydew"
+        role="Founder"
+        period="2024 — Present"
+        description="Building an AI-powered family coordination app with multimodal input (voice, text, photo) and a 27-tool agent orchestration pipeline."
+        highlights={[
+          "27-tool agent orchestration processing requests in <2 seconds",
+          "Voice input via Whisper AI with >95% accuracy",
+          "Real-time WebSocket sync (<50ms) across family members",
+          "Knowledge graph with 80% cache hit rate",
+        ]}
+      />
+      <ExperienceItem
+        company="GiveTide"
+        role="Co-Founder"
+        period="2017 — 2022"
+        description="Co-founded and scaled a fintech platform from zero to a successful acquisition over 5 years."
+        highlights={[
+          "Built product from concept to acquisition",
+          "Full-stack development and product leadership",
+          "Successful exit via acquisition in 2022",
+        ]}
+      />
+    </div>
+
+    <!-- Education -->
+    <h2 class="text-2xl font-bold mb-8">Education</h2>
+    <div class="mb-16">
+      <ExperienceItem
+        company="University of Richmond"
+        role="B.S. Finance & Economics"
+        period="Graduated Magna Cum Laude"
+        description="Robins School of Business"
+      />
+    </div>
+
+    <!-- Skills -->
+    <h2 class="text-2xl font-bold mb-6">Skills</h2>
+    <div class="grid sm:grid-cols-2 gap-6">
+      <div>
+        <h3 class="font-semibold mb-3">Product & Strategy</h3>
+        <div class="flex flex-wrap gap-2">
+          {["AI/ML Product Management", "Agentic Systems", "0-to-1 Product Development", "Product Strategy", "User Research"].map(skill => (
+            <span class="text-xs px-3 py-1 rounded-full bg-(--color-surface-alt) border border-(--color-border) text-(--color-text-muted)">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-3">Technical</h3>
+        <div class="flex flex-wrap gap-2">
+          {["React", "TypeScript", "Node.js", "Python", "OpenAI APIs", "Whisper", "WebSockets", "Vite", "Vercel"].map(skill => (
+            <span class="text-xs px-3 py-1 rounded-full bg-(--color-surface-alt) border border-(--color-border) text-(--color-text-muted)">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,20 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-(--color-border) bg-(--color-surface-alt)">
+  <div class="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-(--color-text-muted)">
+    <p>&copy; {currentYear} Pete Ghiorse. All rights reserved.</p>
+    <div class="flex items-center gap-6">
+      <a href="https://linkedin.com/in/peteghiorse" target="_blank" rel="noopener" class="hover:text-(--color-text) transition-colors">
+        LinkedIn
+      </a>
+      <a href="https://github.com/pghio" target="_blank" rel="noopener" class="hover:text-(--color-text) transition-colors">
+        GitHub
+      </a>
+      <a href="https://gethoneydew.app" target="_blank" rel="noopener" class="hover:text-(--color-text) transition-colors">
+        Honeydew
+      </a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,35 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  link?: string;
+  status?: string;
+}
+
+const { title, description, tags, link, status } = Astro.props;
+---
+
+<div class="border border-(--color-border) rounded-xl p-6 hover:border-(--color-primary)/50 transition-colors">
+  <div class="flex items-start justify-between mb-3">
+    <h3 class="text-lg font-semibold">{title}</h3>
+    {status && (
+      <span class="text-xs font-medium px-2 py-1 rounded-full bg-(--color-primary)/10 text-(--color-primary)">
+        {status}
+      </span>
+    )}
+  </div>
+  <p class="text-(--color-text-muted) mb-4 leading-relaxed">{description}</p>
+  <div class="flex flex-wrap gap-2 mb-4">
+    {tags.map(tag => (
+      <span class="text-xs px-2 py-1 rounded-md bg-(--color-surface-alt) text-(--color-text-muted) border border-(--color-border)">
+        {tag}
+      </span>
+    ))}
+  </div>
+  {link && (
+    <a href={link} target="_blank" rel="noopener" class="text-sm font-medium text-(--color-primary) hover:underline">
+      View Project &rarr;
+    </a>
+  )}
+</div>

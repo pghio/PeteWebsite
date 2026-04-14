@@ -1,0 +1,26 @@
+---
+interface Props {
+  company: string;
+  role: string;
+  period: string;
+  description: string;
+  highlights?: string[];
+}
+
+const { company, role, period, description, highlights = [] } = Astro.props;
+---
+
+<div class="relative pl-8 pb-10 border-l-2 border-(--color-border) last:pb-0">
+  <div class="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-(--color-primary) border-4 border-(--color-surface)"></div>
+  <div class="mb-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+    <h3 class="font-semibold text-lg">{role}</h3>
+    <span class="text-sm text-(--color-text-muted)">{period}</span>
+  </div>
+  <p class="text-(--color-primary) font-medium text-sm mb-2">{company}</p>
+  <p class="text-(--color-text-muted) leading-relaxed mb-3">{description}</p>
+  {highlights.length > 0 && (
+    <ul class="list-disc list-inside text-sm text-(--color-text-muted) space-y-1">
+      {highlights.map(h => <li>{h}</li>)}
+    </ul>
+  )}
+</div>
