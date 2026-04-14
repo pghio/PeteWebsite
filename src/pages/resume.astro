@@ -6,80 +6,37 @@ import ExperienceItem from '../components/ExperienceItem.astro';
 <BaseLayout title="Resume" description="Pete Ghiorse's professional experience and education.">
   <section class="max-w-3xl mx-auto px-6 py-16 md:py-24">
     <p class="text-(--color-primary) font-semibold text-sm tracking-widest uppercase mb-4 animate-fade-up">Resume</p>
-    <h1 class="text-4xl md:text-5xl font-extrabold mb-12 animate-fade-up animate-delay-1">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-12 animate-fade-up stagger-1">
       Experience & <span class="gradient-text">education</span>
     </h1>
 
-    <!-- Experience -->
-    <h2 class="text-lg font-bold text-(--color-text-muted) uppercase tracking-wider mb-8 animate-fade-up animate-delay-2">Experience</h2>
-    <div class="mb-16 animate-fade-up animate-delay-3">
-      <ExperienceItem
-        company="Capital One"
-        role="Senior Product Manager, AI/ML"
-        period="2022 - Present"
-        description="Leading product strategy for ML-powered spend controls and fraud detection systems operating at enterprise scale."
-        highlights={[
-          "ML-powered fraud and spend management at scale",
-          "AI/ML product strategy and roadmap ownership",
-          "Cross-functional leadership across engineering, data science, and design",
-        ]}
-      />
-      <ExperienceItem
-        company="Honeydew"
-        role="Founder"
-        period="2024 - Present"
-        description="Building an AI-powered family coordination app with multimodal input (voice, text, photo) and a 27-tool agent orchestration pipeline."
-        highlights={[
-          "27-tool agent orchestration processing requests in <2 seconds",
-          "Voice input via Whisper AI with >95% accuracy",
-          "Real-time WebSocket sync (<50ms) across family members",
-          "Knowledge graph with 80% cache hit rate",
-        ]}
-      />
-      <ExperienceItem
-        company="GiveTide"
-        role="Co-Founder"
-        period="2017 - 2022"
-        description="Co-founded and scaled a fintech platform from zero to a successful acquisition over 5 years."
-        highlights={[
-          "Built product from concept to acquisition",
-          "Full-stack development and product leadership",
-          "Successful exit via acquisition in 2022",
-        ]}
-      />
+    <h2 class="text-lg font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-8 animate-fade-up stagger-2">Experience</h2>
+    <div class="mb-16 animate-fade-up stagger-3">
+      <ExperienceItem company="Capital One" role="Senior Product Manager, AI/ML" period="2022 - Present" description="Leading product strategy for ML-powered spend controls and fraud detection systems operating at enterprise scale." highlights={["ML-powered fraud and spend management at scale", "AI/ML product strategy and roadmap ownership", "Cross-functional leadership across engineering, data science, and design"]} />
+      <ExperienceItem company="Honeydew" role="Founder" period="2024 - Present" description="Building an AI-powered family coordination app with multimodal input and a 27-tool agent orchestration pipeline." highlights={["27-tool agent orchestration processing requests in <2 seconds", "Voice input via Whisper AI with >95% accuracy", "Real-time WebSocket sync (<50ms) across family members", "Knowledge graph with 80% cache hit rate"]} />
+      <ExperienceItem company="GiveTide" role="Co-Founder" period="2017 - 2022" description="Co-founded and scaled a fintech platform from zero to a successful acquisition over 5 years." highlights={["Built product from concept to acquisition", "Full-stack development and product leadership", "Successful exit via acquisition in 2022"]} />
     </div>
 
-    <!-- Education -->
-    <h2 class="text-lg font-bold text-(--color-text-muted) uppercase tracking-wider mb-8">Education</h2>
+    <h2 class="text-lg font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-8">Education</h2>
     <div class="mb-16">
-      <ExperienceItem
-        company="University of Richmond — Robins School of Business"
-        role="B.S. Finance & Economics"
-        period="Magna Cum Laude"
-        description=""
-      />
+      <ExperienceItem company="University of Richmond — Robins School of Business" role="B.S. Finance & Economics" period="Magna Cum Laude" description="" />
     </div>
 
-    <!-- Skills -->
-    <h2 class="text-lg font-bold text-(--color-text-muted) uppercase tracking-wider mb-8">Skills</h2>
+    <h2 class="text-lg font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-8">Skills</h2>
     <div class="grid sm:grid-cols-2 gap-8">
       <div>
         <h3 class="font-bold mb-4 text-sm">Product & Strategy</h3>
         <div class="flex flex-wrap gap-2">
-          {["AI/ML Product Management", "Agentic Systems", "0-to-1 Development", "Product Strategy", "User Research"].map(skill => (
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-(--color-surface-alt) border border-(--color-border) text-(--color-text-muted) font-medium">
-              {skill}
-            </span>
+          {["AI/ML Product Management", "Agentic Systems", "0-to-1 Development", "Product Strategy", "User Research"].map(s => (
+            <span class="text-xs px-3 py-1.5 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 font-medium">{s}</span>
           ))}
         </div>
       </div>
       <div>
         <h3 class="font-bold mb-4 text-sm">Technical</h3>
         <div class="flex flex-wrap gap-2">
-          {["React", "TypeScript", "Node.js", "Python", "OpenAI APIs", "Whisper", "WebSockets", "Vite", "Vercel"].map(skill => (
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-(--color-surface-alt) border border-(--color-border) text-(--color-text-muted) font-medium">
-              {skill}
-            </span>
+          {["React", "TypeScript", "Node.js", "Python", "OpenAI APIs", "Whisper", "WebSockets", "Vite", "Vercel"].map(s => (
+            <span class="text-xs px-3 py-1.5 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 font-medium">{s}</span>
           ))}
         </div>
       </div>

@@ -10,7 +10,11 @@ interface Props {
   category?: string;
 }
 
-const { title, description, publishDate, category } = Astro.props;
+const { frontmatter } = Astro.props;
+const title = frontmatter?.title;
+const description = frontmatter?.description;
+const publishDate = frontmatter?.publishDate;
+const category = frontmatter?.category;
 ---
 
 <!doctype html>
