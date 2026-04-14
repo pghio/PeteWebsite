@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" font-family="Inter, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="420" fill="#fafafa" rx="12"/>
+
+  <!-- Title -->
+  <text x="40" y="40" font-size="18" font-weight="700" fill="#1a1a2e">Competitor Citation Frequency Across LLM Queries</text>
+  <text x="40" y="62" font-size="12" fill="#6b7280">Combined results: 10 Perplexity queries + 10 web search grounding queries (n=20)</text>
+
+  <!-- Chart -->
+  <!-- Horizontal bar chart -->
+  <text x="130" y="107" font-size="12" font-weight="600" fill="#374151" text-anchor="end">Cozi</text>
+  <rect x="140" y="92" width="420" height="24" fill="#6366f1" rx="4"/>
+  <text x="570" y="109" font-size="12" font-weight="700" fill="#374151">60%</text>
+  <text x="605" y="109" font-size="10" fill="#6b7280">(12/20)</text>
+
+  <text x="130" y="147" font-size="12" font-weight="600" fill="#374151" text-anchor="end">Sense</text>
+  <rect x="140" y="132" width="420" height="24" fill="#8b5cf6" rx="4"/>
+  <text x="570" y="149" font-size="12" font-weight="700" fill="#374151">60%</text>
+  <text x="605" y="149" font-size="10" fill="#6b7280">(12/20)</text>
+
+  <text x="130" y="187" font-size="12" font-weight="600" fill="#374151" text-anchor="end">Nori</text>
+  <rect x="140" y="172" width="350" height="24" fill="#a78bfa" rx="4"/>
+  <text x="500" y="189" font-size="12" font-weight="700" fill="#374151">50%</text>
+  <text x="535" y="189" font-size="10" fill="#6b7280">(10/20)</text>
+
+  <text x="130" y="227" font-size="12" font-weight="600" fill="#374151" text-anchor="end">familymind</text>
+  <rect x="140" y="212" width="280" height="24" fill="#c4b5fd" rx="4"/>
+  <text x="430" y="229" font-size="12" font-weight="700" fill="#374151">40%</text>
+  <text x="465" y="229" font-size="10" fill="#6b7280">(8/20)</text>
+
+  <text x="130" y="267" font-size="12" font-weight="600" fill="#374151" text-anchor="end">Gether</text>
+  <rect x="140" y="252" width="210" height="24" fill="#ddd6fe" rx="4"/>
+  <text x="360" y="269" font-size="12" font-weight="700" fill="#374151">30%</text>
+  <text x="395" y="269" font-size="10" fill="#6b7280">(6/20)</text>
+
+  <text x="130" y="307" font-size="12" font-weight="600" fill="#374151" text-anchor="end">Ohai</text>
+  <rect x="140" y="292" width="140" height="24" fill="#ede9fe" rx="4"/>
+  <text x="290" y="309" font-size="12" font-weight="700" fill="#374151">20%</text>
+  <text x="325" y="309" font-size="10" fill="#6b7280">(4/20)</text>
+
+  <text x="130" y="347" font-size="12" font-weight="600" fill="#f97316" text-anchor="end">Honeydew</text>
+  <rect x="140" y="332" width="70" height="24" fill="#f97316" rx="4"/>
+  <text x="220" y="349" font-size="12" font-weight="700" fill="#f97316">10%</text>
+  <text x="255" y="349" font-size="10" fill="#6b7280">(2/20)</text>
+
+  <!-- Insight box -->
+  <rect x="40" y="375" width="720" height="35" fill="#fff7ed" rx="6" stroke="#f97316" stroke-width="1"/>
+  <text x="60" y="397" font-size="11" fill="#9a3412" font-weight="600">INSIGHT:</text>
+  <text x="128" y="397" font-size="11" fill="#9a3412">Honeydew is cited 6x less than market leader Cozi. Gap represents both a challenge and a measurable growth target.</text>
+</svg>

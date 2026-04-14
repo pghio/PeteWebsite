@@ -7,42 +7,50 @@ import ProjectCard from '../components/ProjectCard.astro';
 <BaseLayout title="Home">
   <Hero />
 
-  <!-- Highlights -->
   <section class="max-w-5xl mx-auto px-6 pb-24">
-    <div class="grid md:grid-cols-3 gap-6 mb-16">
-      <div class="p-6 rounded-xl bg-(--color-surface-alt) border border-(--color-border)">
-        <p class="text-3xl font-bold text-(--color-primary) mb-2">4+</p>
-        <p class="text-sm text-(--color-text-muted)">Years leading AI/ML product at Capital One</p>
+    <div class="grid md:grid-cols-3 gap-5 mb-20">
+      <div class="card-hover p-6 rounded-2xl bg-slate-50 dark:bg-[#141b2d] border border-slate-200 dark:border-slate-800 animate-fade-up stagger-3">
+        <p class="text-4xl font-extrabold gradient-text mb-2">4+</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Years leading AI/ML product at Capital One</p>
       </div>
-      <div class="p-6 rounded-xl bg-(--color-surface-alt) border border-(--color-border)">
-        <p class="text-3xl font-bold text-(--color-primary) mb-2">1</p>
-        <p class="text-sm text-(--color-text-muted)">Successful startup exit (GiveTide, acquired 2022)</p>
+      <div class="card-hover p-6 rounded-2xl bg-slate-50 dark:bg-[#141b2d] border border-slate-200 dark:border-slate-800 animate-fade-up stagger-4">
+        <p class="text-4xl font-extrabold gradient-text mb-2">1</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Successful startup exit (GiveTide, acquired 2022)</p>
       </div>
-      <div class="p-6 rounded-xl bg-(--color-surface-alt) border border-(--color-border)">
-        <p class="text-3xl font-bold text-(--color-primary) mb-2">27</p>
-        <p class="text-sm text-(--color-text-muted)">AI tools orchestrated in Honeydew's agent pipeline</p>
+      <div class="card-hover p-6 rounded-2xl bg-slate-50 dark:bg-[#141b2d] border border-slate-200 dark:border-slate-800 animate-fade-up stagger-5">
+        <p class="text-4xl font-extrabold gradient-text mb-2">27</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">AI tools orchestrated in Honeydew's agent pipeline</p>
       </div>
     </div>
 
-    <!-- Featured Projects -->
-    <h2 class="text-2xl font-bold mb-8">Featured Projects</h2>
-    <div class="grid md:grid-cols-2 gap-6 mb-8">
-      <ProjectCard
-        title="Honeydew"
-        description="A multimodal AI family assistant with voice, text, and photo input. 27-tool agent orchestration processing requests in under 2 seconds."
-        tags={["React", "TypeScript", "Node.js", "OpenAI", "WebSockets"]}
-        link="https://gethoneydew.app"
-        status="Active"
-      />
-      <ProjectCard
-        title="GiveTide"
-        description="Fintech platform built from zero to acquisition. 5 years of development culminating in a successful exit in 2022."
-        tags={["Fintech", "Startup", "Acquired"]}
-        status="Acquired 2022"
-      />
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl font-bold">Featured Projects</h2>
+      <a href="/projects" class="text-sm font-semibold text-(--color-primary) hover:underline inline-flex items-center gap-1">View all <span>&rarr;</span></a>
     </div>
-    <a href="/projects" class="text-sm font-medium text-(--color-primary) hover:underline">
-      View all projects &rarr;
-    </a>
+    <div class="grid md:grid-cols-2 gap-5 mb-20">
+      <ProjectCard title="Honeydew" description="A multimodal AI family assistant with voice, text, and photo input. 27-tool agent orchestration processing requests in under 2 seconds." tags={["React", "TypeScript", "Node.js", "OpenAI", "WebSockets"]} link="https://gethoneydew.app" status="Active" />
+      <ProjectCard title="GiveTide" description="Fintech platform built from zero to acquisition. 5 years of development culminating in a successful exit in 2022." tags={["Fintech", "Startup", "Acquired"]} status="Acquired 2022" />
+    </div>
+
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="text-2xl font-bold">Recent Writing</h2>
+      <a href="/blog" class="text-sm font-semibold text-(--color-primary) hover:underline inline-flex items-center gap-1">View all <span>&rarr;</span></a>
+    </div>
+    <div class="space-y-4">
+      <a href="https://gethoneydew.app/blog/how-we-get-cited-by-chatgpt-claude-perplexity-without-ads" target="_blank" rel="noopener" class="card-hover flex items-center justify-between p-5 border border-slate-200 dark:border-slate-800 rounded-2xl group bg-white dark:bg-[#141b2d]">
+        <div>
+          <h3 class="font-semibold group-hover:text-(--color-primary) transition-colors">How We Get Cited by ChatGPT, Claude & Perplexity Without Ads</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">LLM discoverability and citation strategy</p>
+        </div>
+        <span class="text-slate-400 text-sm shrink-0 ml-4 transition-transform group-hover:translate-x-0.5 group-hover:text-(--color-primary)">&rarr;</span>
+      </a>
+      <a href="https://gethoneydew.app/blog/building-multimodal-ai-family-assistant-voice-text-photo" target="_blank" rel="noopener" class="card-hover flex items-center justify-between p-5 border border-slate-200 dark:border-slate-800 rounded-2xl group bg-white dark:bg-[#141b2d]">
+        <div>
+          <h3 class="font-semibold group-hover:text-(--color-primary) transition-colors">Building a Multimodal AI Family Assistant</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Architecture behind voice, text, and photo input</p>
+        </div>
+        <span class="text-slate-400 text-sm shrink-0 ml-4 transition-transform group-hover:translate-x-0.5 group-hover:text-(--color-primary)">&rarr;</span>
+      </a>
+    </div>
   </section>
 </BaseLayout>

@@ -2,19 +2,13 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-t border-(--color-border) bg-(--color-surface-alt)">
-  <div class="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-(--color-text-muted)">
-    <p>&copy; {currentYear} Pete Ghiorse. All rights reserved.</p>
+<footer class="border-t border-slate-200/50 dark:border-slate-800/50">
+  <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500 dark:text-slate-400">
+    <p>&copy; {currentYear} Pete Ghiorse</p>
     <div class="flex items-center gap-6">
-      <a href="https://linkedin.com/in/peteghiorse" target="_blank" rel="noopener" class="hover:text-(--color-text) transition-colors">
-        LinkedIn
-      </a>
-      <a href="https://github.com/pghio" target="_blank" rel="noopener" class="hover:text-(--color-text) transition-colors">
-        GitHub
-      </a>
-      <a href="https://gethoneydew.app" target="_blank" rel="noopener" class="hover:text-(--color-text) transition-colors">
-        Honeydew
-      </a>
+      <a href="https://linkedin.com/in/peteghiorse" target="_blank" rel="noopener" class="hover:text-(--color-primary) transition-colors">LinkedIn</a>
+      <a href="https://github.com/pghio" target="_blank" rel="noopener" class="hover:text-(--color-primary) transition-colors">GitHub</a>
+      <a href="https://gethoneydew.app" target="_blank" rel="noopener" class="hover:text-(--color-primary) transition-colors">Honeydew</a>
     </div>
   </div>
 </footer>

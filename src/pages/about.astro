@@ -4,48 +4,57 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="About" description="About Pete Ghiorse — AI product leader, founder, and builder.">
   <section class="max-w-3xl mx-auto px-6 py-16 md:py-24">
-    <h1 class="text-4xl font-bold mb-8">About Me</h1>
+    <p class="text-(--color-primary) font-semibold text-sm tracking-widest uppercase mb-4 animate-fade-up">About</p>
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-10 animate-fade-up stagger-1">
+      Building AI that <span class="gradient-text">actually helps</span>
+    </h1>
 
-    <div class="space-y-6 text-(--color-text-muted) leading-relaxed">
-      <p>
-        I'm Pete Ghiorse — a product leader and founder who builds AI products that solve real problems for real people.
+    <div class="space-y-6 text-slate-500 dark:text-slate-400 leading-relaxed animate-fade-up stagger-2">
+      <p class="text-lg">
+        I'm Pete Ghiorse &mdash; a product leader and founder who builds AI products that solve real problems for real people.
       </p>
 
       <p>
-        Currently, I split my time between two roles: <strong class="text-(--color-text)">Senior PM for AI/ML at Capital One</strong>,
+        Currently, I split my time between two roles: <strong class="text-slate-900 dark:text-white font-semibold">Senior PM for AI/ML at Capital One</strong>,
         where I lead ML-powered fraud and spend management at scale, and building
-        <strong class="text-(--color-text)">Honeydew</strong>, an AI-powered family coordination app that uses voice, text,
+        <strong class="text-slate-900 dark:text-white font-semibold">Honeydew</strong>, an AI-powered family coordination app that uses voice, text,
         and photo input to keep families organized.
       </p>
 
       <p>
-        Before that, I co-founded <strong class="text-(--color-text)">GiveTide</strong>, a fintech platform I grew from zero
+        Before that, I co-founded <strong class="text-slate-900 dark:text-white font-semibold">GiveTide</strong>, a fintech platform I grew from zero
         to a successful acquisition in 2022 over five years.
       </p>
 
-      <h2 class="text-2xl font-bold text-(--color-text) pt-4">What I Care About</h2>
+      <div class="border-l-2 border-(--color-primary) pl-6 py-2 my-8">
+        <p class="text-slate-900 dark:text-white font-medium italic text-lg">
+          "The best AI products disappear into the workflow. You shouldn't have to think about the technology &mdash; it should just make your life easier."
+        </p>
+      </div>
 
-      <ul class="list-disc list-inside space-y-2">
-        <li>Building AI systems that are genuinely useful, not just technically impressive</li>
-        <li>The messy reality of shipping ML in production</li>
-        <li>Agentic architectures and multi-tool orchestration</li>
-        <li>Making families' lives less chaotic through technology</li>
-      </ul>
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white pt-4">What I Care About</h2>
 
-      <h2 class="text-2xl font-bold text-(--color-text) pt-4">Background</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {[
+          { title: "Useful AI", desc: "Building systems that are genuinely useful, not just technically impressive" },
+          { title: "Production ML", desc: "The messy reality of shipping ML that real people depend on" },
+          { title: "Agentic Systems", desc: "Multi-tool orchestration and autonomous reasoning" },
+          { title: "Family Tech", desc: "Making families' lives less chaotic through technology" },
+        ].map(item => (
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-[#141b2d] border border-slate-200 dark:border-slate-800">
+            <p class="font-semibold text-slate-900 dark:text-white mb-1">{item.title}</p>
+            <p class="text-sm">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white pt-4">Background</h2>
 
       <p>
-        I studied <strong class="text-(--color-text)">Finance & Economics</strong> at the
-        <strong class="text-(--color-text)">University of Richmond</strong>, graduating Magna Cum Laude.
-        My career has spanned fintech, AI/ML, and consumer products — always at the intersection of
+        I studied <strong class="text-slate-900 dark:text-white font-semibold">Finance & Economics</strong> at the
+        <strong class="text-slate-900 dark:text-white font-semibold">University of Richmond</strong>, graduating Magna Cum Laude.
+        My career has spanned fintech, AI/ML, and consumer products &mdash; always at the intersection of
         technology and real-world impact.
-      </p>
-
-      <h2 class="text-2xl font-bold text-(--color-text) pt-4">Outside Work</h2>
-
-      <p>
-        <!-- TODO: Add personal interests, hobbies, etc. -->
-        More coming soon.
       </p>
     </div>
   </section>

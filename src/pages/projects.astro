@@ -5,40 +5,19 @@ import ProjectCard from '../components/ProjectCard.astro';
 
 <BaseLayout title="Projects" description="Projects and products built by Pete Ghiorse.">
   <section class="max-w-5xl mx-auto px-6 py-16 md:py-24">
-    <h1 class="text-4xl font-bold mb-4">Projects</h1>
-    <p class="text-(--color-text-muted) mb-12 max-w-2xl">
-      A selection of products and projects I've built, from AI-powered consumer apps to fintech platforms.
+    <p class="text-(--color-primary) font-semibold text-sm tracking-widest uppercase mb-4 animate-fade-up">Projects</p>
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-4 animate-fade-up stagger-1">
+      Things I've <span class="gradient-text">built</span>
+    </h1>
+    <p class="text-slate-500 dark:text-slate-400 mb-12 max-w-2xl text-lg animate-fade-up stagger-2">
+      From AI-powered consumer apps to fintech platforms &mdash; products I've taken from zero to launch.
     </p>
 
-    <div class="grid md:grid-cols-2 gap-6">
-      <ProjectCard
-        title="Honeydew"
-        description="A multimodal AI family assistant. 27-tool agent orchestration pipeline processing requests in under 2 seconds. Voice (Whisper AI, >95% accuracy), text, and photo/OCR input. Knowledge graph that learns family patterns with 80% cache hit rate. Real-time WebSocket sync (<50ms) across family members."
-        tags={["React", "TypeScript", "Node.js", "OpenAI", "Whisper", "WebSockets", "Vite", "Vercel"]}
-        link="https://gethoneydew.app"
-        status="Active"
-      />
-
-      <ProjectCard
-        title="GiveTide"
-        description="Co-founded a fintech platform from the ground up. Built and scaled over 5 years, culminating in a successful acquisition in 2022."
-        tags={["Fintech", "Startup", "Co-Founder", "Full Stack"]}
-        status="Acquired 2022"
-      />
-
-      <ProjectCard
-        title="AI/ML Spend Controls"
-        description="ML-powered fraud detection and spend management at Capital One. Leading product strategy for AI systems operating at enterprise scale."
-        tags={["AI/ML", "Fraud Detection", "Enterprise", "Product Management"]}
-        status="Current Role"
-      />
-
-      <!-- TODO: Add more projects as needed -->
-      <ProjectCard
-        title="More Coming Soon"
-        description="Additional projects and experiments will be added here. Check back for updates on AI experiments, open-source contributions, and side projects."
-        tags={["Coming Soon"]}
-      />
+    <div class="grid md:grid-cols-2 gap-5">
+      <ProjectCard title="Honeydew" description="A multimodal AI family assistant. 27-tool agent orchestration pipeline processing requests in under 2 seconds. Voice (Whisper AI, >95% accuracy), text, and photo/OCR input." tags={["React", "TypeScript", "Node.js", "OpenAI", "Whisper", "WebSockets", "Vite", "Vercel"]} link="https://gethoneydew.app" status="Active" />
+      <ProjectCard title="GiveTide" description="Co-founded a fintech platform from the ground up. Built and scaled over 5 years, culminating in a successful acquisition in 2022." tags={["Fintech", "Startup", "Co-Founder", "Full Stack"]} status="Acquired 2022" />
+      <ProjectCard title="AI/ML Spend Controls" description="ML-powered fraud detection and spend management at Capital One. Leading product strategy for AI systems operating at enterprise scale." tags={["AI/ML", "Fraud Detection", "Enterprise", "Product Management"]} status="Current Role" />
+      <ProjectCard title="More Coming Soon" description="Additional projects and experiments will be added here. Check back for AI experiments, open-source contributions, and side projects." tags={["Coming Soon"]} />
     </div>
   </section>
 </BaseLayout>

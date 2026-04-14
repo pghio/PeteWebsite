@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="Inter, system-ui, -apple-system, sans-serif">
+  <defs>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="520" fill="#fafafa" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-size="18" font-weight="700" fill="#1a1a2e" text-anchor="middle">LLM Discoverability Stack Architecture</text>
+  <text x="400" y="60" font-size="12" fill="#6b7280" text-anchor="middle">Honeydew's infrastructure for LLM citation and referral tracking</text>
+
+  <!-- Layer 1: Content Layer -->
+  <rect x="60" y="85" width="680" height="90" fill="white" stroke="#3b82f6" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <rect x="60" y="85" width="680" height="28" fill="#3b82f6" rx="10"/>
+  <rect x="60" y="100" width="680" height="13" fill="#3b82f6"/>
+  <text x="400" y="104" font-size="12" font-weight="700" fill="white" text-anchor="middle">CONTENT LAYER: Machine-Readable Context</text>
+
+  <rect x="80" y="125" width="150" height="35" fill="#eff6ff" rx="6" stroke="#bfdbfe"/>
+  <text x="155" y="147" font-size="11" font-weight="600" fill="#1d4ed8" text-anchor="middle">.llms.txt (3-5 KB)</text>
+
+  <rect x="245" y="125" width="170" height="35" fill="#eff6ff" rx="6" stroke="#bfdbfe"/>
+  <text x="330" y="147" font-size="11" font-weight="600" fill="#1d4ed8" text-anchor="middle">.llms-full.txt (50-80 KB)</text>
+
+  <rect x="430" y="125" width="150" height="35" fill="#eff6ff" rx="6" stroke="#bfdbfe"/>
+  <text x="505" y="147" font-size="11" font-weight="600" fill="#1d4ed8" text-anchor="middle">llm-citations.json</text>
+
+  <rect x="595" y="125" width="130" height="35" fill="#eff6ff" rx="6" stroke="#bfdbfe"/>
+  <text x="660" y="147" font-size="11" font-weight="600" fill="#1d4ed8" text-anchor="middle">faq-corpus.json</text>
+
+  <!-- Arrow down -->
+  <line x1="400" y1="180" x2="400" y2="210" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <polygon points="395,208 405,208 400,218" fill="#9ca3af"/>
+  <text x="420" y="200" font-size="10" fill="#6b7280">auto-generated on deploy</text>
+
+  <!-- Layer 2: Generation Layer -->
+  <rect x="60" y="220" width="680" height="75" fill="white" stroke="#8b5cf6" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <rect x="60" y="220" width="680" height="28" fill="#8b5cf6" rx="10"/>
+  <rect x="60" y="235" width="680" height="13" fill="#8b5cf6"/>
+  <text x="400" y="239" font-size="12" font-weight="700" fill="white" text-anchor="middle">GENERATION LAYER: Automated Pipeline</text>
+
+  <rect x="80" y="260" width="200" height="25" fill="#f5f3ff" rx="4" stroke="#ddd6fe"/>
+  <text x="180" y="277" font-size="10" font-weight="600" fill="#6d28d9" text-anchor="middle">generate-llm-assets.js</text>
+
+  <rect x="300" y="260" width="200" height="25" fill="#f5f3ff" rx="4" stroke="#ddd6fe"/>
+  <text x="400" y="277" font-size="10" font-weight="600" fill="#6d28d9" text-anchor="middle">product-config.json (source of truth)</text>
+
+  <rect x="520" y="260" width="200" height="25" fill="#f5f3ff" rx="4" stroke="#ddd6fe"/>
+  <text x="620" y="277" font-size="10" font-weight="600" fill="#6d28d9" text-anchor="middle">Stale data warnings (>90 days)</text>
+
+  <!-- Arrow down -->
+  <polygon points="395,300 405,300 400,310" fill="#9ca3af"/>
+
+  <!-- Layer 3: SEO Layer -->
+  <rect x="60" y="315" width="680" height="75" fill="white" stroke="#059669" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <rect x="60" y="315" width="680" height="28" fill="#059669" rx="10"/>
+  <rect x="60" y="330" width="680" height="13" fill="#059669"/>
+  <text x="400" y="334" font-size="12" font-weight="700" fill="white" text-anchor="middle">SEO LAYER: Search Grounding Optimization</text>
+
+  <rect x="80" y="355" width="140" height="25" fill="#ecfdf5" rx="4" stroke="#a7f3d0"/>
+  <text x="150" y="372" font-size="10" font-weight="600" fill="#047857" text-anchor="middle">130+ blog articles</text>
+
+  <rect x="235" y="355" width="140" height="25" fill="#ecfdf5" rx="4" stroke="#a7f3d0"/>
+  <text x="305" y="372" font-size="10" font-weight="600" fill="#047857" text-anchor="middle">FAQ schema (JSON-LD)</text>
+
+  <rect x="390" y="355" width="140" height="25" fill="#ecfdf5" rx="4" stroke="#a7f3d0"/>
+  <text x="460" y="372" font-size="10" font-weight="600" fill="#047857" text-anchor="middle">Comparison tables</text>
+
+  <rect x="545" y="355" width="180" height="25" fill="#ecfdf5" rx="4" stroke="#a7f3d0"/>
+  <text x="635" y="372" font-size="10" font-weight="600" fill="#047857" text-anchor="middle">LLM note blocks in content</text>
+
+  <!-- Arrow down -->
+  <polygon points="395,395 405,395 400,405" fill="#9ca3af"/>
+
+  <!-- Layer 4: Measurement Layer -->
+  <rect x="60" y="410" width="680" height="90" fill="white" stroke="#f59e0b" stroke-width="2" rx="10" filter="url(#shadow)"/>
+  <rect x="60" y="410" width="680" height="28" fill="#f59e0b" rx="10"/>
+  <rect x="60" y="425" width="680" height="13" fill="#f59e0b"/>
+  <text x="400" y="429" font-size="12" font-weight="700" fill="white" text-anchor="middle">MEASUREMENT LAYER: Attribution &amp; Analytics</text>
+
+  <rect x="80" y="450" width="180" height="35" fill="#fffbeb" rx="6" stroke="#fde68a"/>
+  <text x="170" y="465" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">GA4 LLM referral tracking</text>
+  <text x="170" y="478" font-size="9" fill="#92400e" text-anchor="middle">14 platforms detected</text>
+
+  <rect x="275" y="450" width="160" height="35" fill="#fffbeb" rx="6" stroke="#fde68a"/>
+  <text x="355" y="465" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">llm_referral events</text>
+  <text x="355" y="478" font-size="9" fill="#92400e" text-anchor="middle">29 events / 90 days</text>
+
+  <rect x="450" y="450" width="140" height="35" fill="#fffbeb" rx="6" stroke="#fde68a"/>
+  <text x="520" y="465" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Funnel attribution</text>
+  <text x="520" y="478" font-size="9" fill="#92400e" text-anchor="middle">LLM → blog → App Store</text>
+
+  <rect x="605" y="450" width="120" height="35" fill="#fffbeb" rx="6" stroke="#fde68a"/>
+  <text x="665" y="465" font-size="10" font-weight="600" fill="#92400e" text-anchor="middle">Monthly audits</text>
+  <text x="665" y="478" font-size="9" fill="#92400e" text-anchor="middle">10-query citation test</text>
+</svg>

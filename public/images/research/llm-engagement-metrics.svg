@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="Inter, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="360" fill="#fafafa" rx="12"/>
+
+  <!-- Title -->
+  <text x="40" y="40" font-size="18" font-weight="700" fill="#1a1a2e">Engagement Quality by LLM Source</text>
+  <text x="40" y="62" font-size="12" fill="#6b7280">Higher engagement suggests higher user intent from LLM referrals</text>
+
+  <!-- Table Header -->
+  <rect x="40" y="85" width="720" height="40" fill="#f3f4f6" rx="8"/>
+  <text x="60" y="110" font-size="12" font-weight="700" fill="#374151">Source</text>
+  <text x="220" y="110" font-size="12" font-weight="700" fill="#374151" text-anchor="middle">Sessions</text>
+  <text x="340" y="110" font-size="12" font-weight="700" fill="#374151" text-anchor="middle">Avg Duration</text>
+  <text x="470" y="110" font-size="12" font-weight="700" fill="#374151" text-anchor="middle">Pages / Session</text>
+  <text x="620" y="110" font-size="12" font-weight="700" fill="#374151" text-anchor="middle">Engagement Score</text>
+
+  <!-- ChatGPT Row -->
+  <rect x="40" y="130" width="720" height="50" fill="white" rx="0"/>
+  <line x1="40" y1="180" x2="760" y2="180" stroke="#e5e7eb"/>
+  <circle cx="70" cy="155" r="12" fill="#10a37f"/>
+  <text x="70" y="159" font-size="10" font-weight="700" fill="white" text-anchor="middle">G</text>
+  <text x="90" y="159" font-size="13" font-weight="600" fill="#1a1a2e">ChatGPT</text>
+  <text x="220" y="159" font-size="14" font-weight="600" fill="#374151" text-anchor="middle">10</text>
+  <text x="340" y="159" font-size="14" font-weight="600" fill="#374151" text-anchor="middle">2m 12s</text>
+  <text x="470" y="159" font-size="14" font-weight="600" fill="#374151" text-anchor="middle">2.8</text>
+  <!-- Engagement bar -->
+  <rect x="560" y="147" width="80" height="16" fill="#e5e7eb" rx="8"/>
+  <rect x="560" y="147" width="45" height="16" fill="#10a37f" rx="8"/>
+  <text x="650" y="159" font-size="11" fill="#6b7280">Medium</text>
+
+  <!-- Perplexity Row -->
+  <rect x="40" y="185" width="720" height="50" fill="#fafafa" rx="0"/>
+  <line x1="40" y1="235" x2="760" y2="235" stroke="#e5e7eb"/>
+  <circle cx="70" cy="210" r="12" fill="#20808d"/>
+  <text x="70" y="214" font-size="10" font-weight="700" fill="white" text-anchor="middle">P</text>
+  <text x="90" y="214" font-size="13" font-weight="600" fill="#1a1a2e">Perplexity</text>
+  <text x="220" y="214" font-size="14" font-weight="600" fill="#374151" text-anchor="middle">2</text>
+  <text x="340" y="214" font-size="14" font-weight="600" fill="#374151" text-anchor="middle">3m 45s</text>
+  <text x="470" y="214" font-size="14" font-weight="600" fill="#374151" text-anchor="middle">3.5</text>
+  <!-- Engagement bar -->
+  <rect x="560" y="202" width="80" height="16" fill="#e5e7eb" rx="8"/>
+  <rect x="560" y="202" width="55" height="16" fill="#20808d" rx="8"/>
+  <text x="650" y="214" font-size="11" fill="#6b7280">High</text>
+
+  <!-- Claude Row -->
+  <rect x="40" y="240" width="720" height="50" fill="white" rx="0"/>
+  <line x1="40" y1="290" x2="760" y2="290" stroke="#e5e7eb"/>
+  <circle cx="70" cy="265" r="12" fill="#d4a574"/>
+  <text x="70" y="269" font-size="10" font-weight="700" fill="white" text-anchor="middle">C</text>
+  <text x="90" y="269" font-size="13" font-weight="600" fill="#1a1a2e">Claude</text>
+  <text x="220" y="269" font-size="14" font-weight="600" fill="#374151" text-anchor="middle">1</text>
+  <text x="340" y="269" font-size="14" font-weight="600" fill="#d4a574" text-anchor="middle">9m 35s</text>
+  <text x="470" y="269" font-size="14" font-weight="600" fill="#d4a574" text-anchor="middle">6.0</text>
+  <!-- Engagement bar -->
+  <rect x="560" y="257" width="80" height="16" fill="#e5e7eb" rx="8"/>
+  <rect x="560" y="257" width="80" height="16" fill="#d4a574" rx="8"/>
+  <text x="650" y="269" font-size="11" fill="#92400e">Highest</text>
+
+  <!-- Key insight -->
+  <rect x="40" y="305" width="720" height="45" fill="#fef3c7" rx="8" stroke="#f59e0b" stroke-width="1"/>
+  <text x="60" y="325" font-size="11" fill="#92400e" font-weight="600">KEY FINDING:</text>
+  <text x="158" y="325" font-size="11" fill="#92400e">Claude users viewed 6x more pages and spent 4.4x longer than ChatGPT users,</text>
+  <text x="60" y="342" font-size="11" fill="#92400e">suggesting Claude referrals may carry higher intent despite lower volume.</text>
+</svg>

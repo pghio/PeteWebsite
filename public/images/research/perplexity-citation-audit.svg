@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 580" font-family="Inter, system-ui, -apple-system, sans-serif">
+  <rect width="800" height="580" fill="#fafafa" rx="12"/>
+
+  <!-- Title -->
+  <text x="40" y="40" font-size="18" font-weight="700" fill="#1a1a2e">Perplexity Citation Audit: 10-Query Test</text>
+  <text x="40" y="62" font-size="12" fill="#6b7280">Tested April 14, 2026 | Each query run independently and results recorded</text>
+
+  <!-- Query results -->
+  <rect x="40" y="80" width="720" height="30" fill="#f3f4f6" rx="4"/>
+  <text x="55" y="100" font-size="10" font-weight="700" fill="#374151">QUERY</text>
+  <text x="560" y="100" font-size="10" font-weight="700" fill="#374151" text-anchor="middle">HONEYDEW CITED?</text>
+  <text x="700" y="100" font-size="10" font-weight="700" fill="#374151" text-anchor="middle">TOP COMPETITOR</text>
+
+  <!-- Row 1 -->
+  <text x="55" y="132" font-size="11" fill="#374151">"best AI family organization app 2026"</text>
+  <rect x="530" y="120" width="60" height="20" fill="#fee2e2" rx="10"/>
+  <text x="560" y="134" font-size="10" font-weight="600" fill="#dc2626" text-anchor="middle">NO</text>
+  <text x="700" y="132" font-size="10" fill="#6b7280" text-anchor="middle">Sense, Nori</text>
+
+  <!-- Row 2 -->
+  <rect x="40" y="145" width="720" height="28" fill="#f9fafb"/>
+  <text x="55" y="164" font-size="11" fill="#374151">"best family calendar app with AI voice"</text>
+  <rect x="530" y="152" width="60" height="20" fill="#fee2e2" rx="10"/>
+  <text x="560" y="166" font-size="10" font-weight="600" fill="#dc2626" text-anchor="middle">NO</text>
+  <text x="700" y="164" font-size="10" fill="#6b7280" text-anchor="middle">Nori, Alexa</text>
+
+  <!-- Row 3 -->
+  <text x="55" y="196" font-size="11" fill="#374151">"honeydew family app review" (branded)</text>
+  <rect x="530" y="184" width="60" height="20" fill="#d1fae5" rx="10"/>
+  <text x="560" y="198" font-size="10" font-weight="600" fill="#059669" text-anchor="middle">YES</text>
+  <text x="700" y="196" font-size="10" fill="#059669" text-anchor="middle">Honeydew</text>
+
+  <!-- Row 4 -->
+  <rect x="40" y="209" width="720" height="28" fill="#f9fafb"/>
+  <text x="55" y="228" font-size="11" fill="#374151">"best app for family coordination AI assistant"</text>
+  <rect x="530" y="216" width="60" height="20" fill="#fee2e2" rx="10"/>
+  <text x="560" y="230" font-size="10" font-weight="600" fill="#dc2626" text-anchor="middle">NO</text>
+  <text x="700" y="228" font-size="10" fill="#6b7280" text-anchor="middle">Ohai, Sense</text>
+
+  <!-- Row 5 -->
+  <text x="55" y="260" font-size="11" fill="#374151">"alternatives to cozi family organizer 2026"</text>
+  <rect x="530" y="248" width="60" height="20" fill="#fee2e2" rx="10"/>
+  <text x="560" y="262" font-size="10" font-weight="600" fill="#dc2626" text-anchor="middle">NO</text>
+  <text x="700" y="260" font-size="10" fill="#6b7280" text-anchor="middle">Sense, Maple</text>
+
+  <!-- Row 6 -->
+  <rect x="40" y="273" width="720" height="28" fill="#f9fafb"/>
+  <text x="55" y="292" font-size="11" fill="#374151">"best family list app voice input AI"</text>
+  <rect x="530" y="280" width="60" height="20" fill="#fee2e2" rx="10"/>
+  <text x="560" y="294" font-size="10" font-weight="600" fill="#dc2626" text-anchor="middle">NO</text>
+  <text x="700" y="292" font-size="10" fill="#6b7280" text-anchor="middle">Nori, Superlist</text>
+
+  <!-- Row 7 -->
+  <text x="55" y="324" font-size="11" fill="#374151">"AI powered family planning app"</text>
+  <rect x="530" y="312" width="60" height="20" fill="#fee2e2" rx="10"/>
+  <text x="560" y="326" font-size="10" font-weight="600" fill="#dc2626" text-anchor="middle">NO</text>
+  <text x="700" y="324" font-size="10" fill="#6b7280" text-anchor="middle">Ohai, Gether</text>
+
+  <!-- Row 8 -->
+  <rect x="40" y="337" width="720" height="28" fill="#f9fafb"/>
+  <text x="55" y="356" font-size="11" fill="#374151">"best app for default parent mental load"</text>
+  <rect x="530" y="344" width="60" height="20" fill="#fee2e2" rx="10"/>
+  <text x="560" y="358" font-size="10" font-weight="600" fill="#dc2626" text-anchor="middle">NO</text>
+  <text x="700" y="356" font-size="10" fill="#6b7280" text-anchor="middle">Cozi, Motherload</text>
+
+  <!-- Row 9 -->
+  <text x="55" y="388" font-size="11" fill="#374151">"skylight calendar alternative app AI"</text>
+  <rect x="530" y="376" width="60" height="20" fill="#fee2e2" rx="10"/>
+  <text x="560" y="390" font-size="10" font-weight="600" fill="#dc2626" text-anchor="middle">NO</text>
+  <text x="700" y="388" font-size="10" fill="#6b7280" text-anchor="middle">Hearth, Mango</text>
+
+  <!-- Row 10 -->
+  <rect x="40" y="401" width="720" height="28" fill="#f9fafb"/>
+  <text x="55" y="420" font-size="11" fill="#374151">"best shared family to do list app AI 2026"</text>
+  <rect x="530" y="408" width="60" height="20" fill="#fee2e2" rx="10"/>
+  <text x="560" y="422" font-size="10" font-weight="600" fill="#dc2626" text-anchor="middle">NO</text>
+  <text x="700" y="420" font-size="10" fill="#6b7280" text-anchor="middle">NUET, Any.do</text>
+
+  <!-- Summary -->
+  <rect x="40" y="450" width="350" height="110" fill="white" stroke="#e5e7eb" rx="10"/>
+  <text x="60" y="478" font-size="13" font-weight="700" fill="#1a1a2e">Perplexity Citation Rate</text>
+  <text x="60" y="500" font-size="28" font-weight="800" fill="#dc2626">1 / 10</text>
+  <text x="158" y="500" font-size="13" fill="#6b7280">queries (10%)</text>
+  <text x="60" y="522" font-size="11" fill="#6b7280">Only branded query returned Honeydew.</text>
+  <text x="60" y="540" font-size="11" fill="#6b7280">Source: Apple App Store (not gethoneydew.app)</text>
+
+  <rect x="410" y="450" width="350" height="110" fill="white" stroke="#e5e7eb" rx="10"/>
+  <text x="430" y="478" font-size="13" font-weight="700" fill="#1a1a2e">Top Competitors Cited</text>
+  <text x="430" y="502" font-size="11" fill="#374151"><tspan font-weight="600">Cozi:</tspan> 6/10 queries (60%)</text>
+  <text x="430" y="520" font-size="11" fill="#374151"><tspan font-weight="600">Sense:</tspan> 6/10 queries (60%)</text>
+  <text x="430" y="538" font-size="11" fill="#374151"><tspan font-weight="600">Nori:</tspan> 4/10 queries (40%)</text>
+</svg>
