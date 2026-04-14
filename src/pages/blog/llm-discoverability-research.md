@@ -8,6 +8,24 @@ category: "Research"
 
 ![Do LLMs Actually Cite Your Startup?](/images/research/hero-llm-discoverability.svg)
 
+## TL;DR — What You Should Do Based on This Data
+
+If you're a startup founder and you read nothing else:
+
+1. **You're probably invisible to LLMs.** We achieved a 10% citation rate vs. 60% for incumbents. Unless you have years of domain authority, assume LLMs aren't recommending you.
+
+2. **Your analytics are lying to you about LLM traffic.** Standard GA4 attribution captured only ~45% of our actual LLM-driven visits. Deploy custom `llm_referral` event tracking (we explain how in Section 5) or you're flying blind on this channel.
+
+3. **Write comprehensive comparison articles, not product pages.** ~62% of our LLM referral traffic landed on "best of" and "vs" articles. LLMs cite evaluative content, not marketing copy.
+
+4. **Don't bother with `.llms.txt` files yet — unless you also have the content.** We built machine-readable context files, structured citation catalogs, and auto-generation pipelines. We found zero evidence any LLM consumed them directly. The content and domain authority did the work.
+
+5. **Claude users may be worth more than ChatGPT users.** We observed a 4.4x session duration differential and 2.1x page depth differential favoring Claude referrals over ChatGPT. Sample is small, but if it holds, optimizing for Claude's retrieval patterns could be higher-ROI than chasing ChatGPT volume.
+
+6. **Treat this as a 12-month compounding bet, not a quick win.** The 6x citation gap against incumbents is structural (domain authority, press coverage, training data). No infrastructure hack closes it fast. Build the product, build the content, measure monthly.
+
+---
+
 ## Abstract
 
 Large language models (LLMs) increasingly function as product recommendation engines. When users query ChatGPT, Claude, or Perplexity for software recommendations, the response operates as a curated endorsement with no transparent ranking mechanism. Despite growing practitioner interest in "LLM SEO," there is little published empirical data on whether dedicated discoverability infrastructure produces measurable outcomes for early-stage products.
