@@ -4,6 +4,7 @@ title: "Do LLMs Actually Cite Your Startup? An Empirical Analysis of LLM Discove
 description: "We deployed a 4-layer LLM discoverability stack and measured 90 days of outcomes. 10% citation rate vs 60% for incumbents, a 2.2x analytics attribution gap, and 4.4x engagement differential across LLM sources. Full methodology and replication guide."
 publishDate: "2026-04-14"
 category: "Research"
+ogImage: "/images/research/hero-llm-discoverability.png"
 ---
 
 ![Do LLMs Actually Cite Your Startup?](/images/research/hero-llm-discoverability.svg)
