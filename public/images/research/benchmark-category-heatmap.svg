@@ -1,13 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="system-ui, -apple-system, sans-serif">
-  <!-- Background -->
   <rect width="900" height="500" fill="transparent"/>
 
   <!-- Title -->
-  <text x="450" y="30" text-anchor="middle" fill="#334155" font-size="16" font-weight="700">Category-Level Accuracy Across All 8 Models</text>
-  <text x="450" y="50" text-anchor="middle" fill="#64748b" font-size="12">Green = near-ceiling · Yellow = mixed · Red = widely failing</text>
+  <text x="450" y="28" text-anchor="middle" fill="#431407" font-size="18" font-weight="800">What each model got right, by task type</text>
+  <text x="450" y="50" text-anchor="middle" fill="#78716C" font-size="12">Greener = easier for that model. Amber = mixed. Red = widely failing.</text>
 
   <!-- Model column headers (rotated) -->
-  <g font-size="11" fill="#475569">
+  <g font-size="11" fill="#431407" font-weight="600">
     <text x="235" y="95" text-anchor="start" transform="rotate(-35 235 95)">GPT-4o-mini</text>
     <text x="305" y="95" text-anchor="start" transform="rotate(-35 305 95)">Gemini Flash</text>
     <text x="375" y="95" text-anchor="start" transform="rotate(-35 375 95)">DeepSeek V3</text>
@@ -18,112 +17,111 @@
     <text x="725" y="95" text-anchor="start" transform="rotate(-35 725 95)">Claude Opus</text>
   </g>
 
-  <!-- Tier markers above model names -->
+  <!-- Tier markers -->
   <g>
-    <rect x="200" y="60" width="240" height="4" fill="#eab308" opacity="0.5"/>
-    <text x="320" y="72" text-anchor="middle" fill="#ca8a04" font-size="9" font-weight="600">BUDGET</text>
-    <rect x="450" y="60" width="130" height="4" fill="#22c55e" opacity="0.5"/>
-    <text x="515" y="72" text-anchor="middle" fill="#16a34a" font-size="9" font-weight="600">MID</text>
-    <rect x="590" y="60" width="140" height="4" fill="#ef4444" opacity="0.5"/>
-    <text x="660" y="72" text-anchor="middle" fill="#dc2626" font-size="9" font-weight="600">FRONTIER</text>
+    <rect x="200" y="60" width="240" height="4" fill="#F59E0B" opacity="0.5"/>
+    <text x="320" y="72" text-anchor="middle" fill="#B45309" font-size="9" font-weight="700" letter-spacing="1">BUDGET ($0.15 – $1/M)</text>
+    <rect x="450" y="60" width="130" height="4" fill="#65A30D" opacity="0.5"/>
+    <text x="515" y="72" text-anchor="middle" fill="#3F6212" font-size="9" font-weight="700" letter-spacing="1">MID ($2 – $3/M)</text>
+    <rect x="590" y="60" width="140" height="4" fill="#B91C1C" opacity="0.5"/>
+    <text x="660" y="72" text-anchor="middle" fill="#7F1D1D" font-size="9" font-weight="700" letter-spacing="1">FRONTIER ($10 – $15/M)</text>
   </g>
 
-  <!-- Category rows -->
-  <!-- Row data: [label, values...] -->
+  <!-- Custom color cells: green = 85+, amber = 50-84, red = <50 -->
   <!-- Clear Intent -->
   <g transform="translate(0, 120)">
-    <text x="190" y="20" text-anchor="end" fill="#334155" font-size="12" font-weight="600">Clear Intent</text>
-    <rect x="200" y="0" width="70" height="40" fill="#86efac" rx="3"/><text x="235" y="24" text-anchor="middle" fill="#14532d" font-size="12" font-weight="600">75%</text>
-    <rect x="270" y="0" width="70" height="40" fill="#4ade80" rx="3"/><text x="305" y="24" text-anchor="middle" fill="#14532d" font-size="12" font-weight="600">88%</text>
-    <rect x="340" y="0" width="70" height="40" fill="#4ade80" rx="3"/><text x="375" y="24" text-anchor="middle" fill="#14532d" font-size="12" font-weight="600">88%</text>
-    <rect x="410" y="0" width="70" height="40" fill="#4ade80" rx="3"/><text x="445" y="24" text-anchor="middle" fill="#14532d" font-size="12" font-weight="600">88%</text>
-    <rect x="480" y="0" width="70" height="40" fill="#4ade80" rx="3"/><text x="515" y="24" text-anchor="middle" fill="#14532d" font-size="12" font-weight="600">88%</text>
-    <rect x="550" y="0" width="70" height="40" fill="#4ade80" rx="3"/><text x="585" y="24" text-anchor="middle" fill="#14532d" font-size="12" font-weight="600">88%</text>
-    <rect x="620" y="0" width="70" height="40" fill="#4ade80" rx="3"/><text x="655" y="24" text-anchor="middle" fill="#14532d" font-size="12" font-weight="600">88%</text>
-    <rect x="690" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="725" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
+    <text x="190" y="20" text-anchor="end" fill="#431407" font-size="12" font-weight="600">Clear commands</text>
+    <rect x="200" y="0" width="70" height="40" fill="#BEF264" rx="3"/><text x="235" y="24" text-anchor="middle" fill="#365314" font-size="12" font-weight="700">75%</text>
+    <rect x="270" y="0" width="70" height="40" fill="#A3E635" rx="3"/><text x="305" y="24" text-anchor="middle" fill="#365314" font-size="12" font-weight="700">88%</text>
+    <rect x="340" y="0" width="70" height="40" fill="#A3E635" rx="3"/><text x="375" y="24" text-anchor="middle" fill="#365314" font-size="12" font-weight="700">88%</text>
+    <rect x="410" y="0" width="70" height="40" fill="#A3E635" rx="3"/><text x="445" y="24" text-anchor="middle" fill="#365314" font-size="12" font-weight="700">88%</text>
+    <rect x="480" y="0" width="70" height="40" fill="#A3E635" rx="3"/><text x="515" y="24" text-anchor="middle" fill="#365314" font-size="12" font-weight="700">88%</text>
+    <rect x="550" y="0" width="70" height="40" fill="#A3E635" rx="3"/><text x="585" y="24" text-anchor="middle" fill="#365314" font-size="12" font-weight="700">88%</text>
+    <rect x="620" y="0" width="70" height="40" fill="#A3E635" rx="3"/><text x="655" y="24" text-anchor="middle" fill="#365314" font-size="12" font-weight="700">88%</text>
+    <rect x="690" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="725" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
   </g>
 
   <!-- Ambiguity -->
   <g transform="translate(0, 165)">
-    <text x="190" y="20" text-anchor="end" fill="#334155" font-size="12" font-weight="600">Ambiguity</text>
-    <rect x="200" y="0" width="70" height="40" fill="#fde68a" rx="3"/><text x="235" y="24" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">67%</text>
-    <rect x="270" y="0" width="70" height="40" fill="#fbbf24" rx="3"/><text x="305" y="24" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">50%</text>
-    <rect x="340" y="0" width="70" height="40" fill="#fbbf24" rx="3"/><text x="375" y="24" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">50%</text>
-    <rect x="410" y="0" width="70" height="40" fill="#fbbf24" rx="3"/><text x="445" y="24" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">50%</text>
-    <rect x="480" y="0" width="70" height="40" fill="#fde68a" rx="3"/><text x="515" y="24" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">67%</text>
-    <rect x="550" y="0" width="70" height="40" fill="#fde68a" rx="3"/><text x="585" y="24" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">67%</text>
-    <rect x="620" y="0" width="70" height="40" fill="#fca5a5" rx="3"/><text x="655" y="24" text-anchor="middle" fill="#7f1d1d" font-size="12" font-weight="700">0%</text>
-    <rect x="690" y="0" width="70" height="40" fill="#fbbf24" rx="3"/><text x="725" y="24" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">50%</text>
+    <text x="190" y="20" text-anchor="end" fill="#431407" font-size="12" font-weight="600">Ambiguous requests</text>
+    <rect x="200" y="0" width="70" height="40" fill="#FCD34D" rx="3"/><text x="235" y="24" text-anchor="middle" fill="#78350F" font-size="12" font-weight="700">67%</text>
+    <rect x="270" y="0" width="70" height="40" fill="#FBBF24" rx="3"/><text x="305" y="24" text-anchor="middle" fill="#78350F" font-size="12" font-weight="700">50%</text>
+    <rect x="340" y="0" width="70" height="40" fill="#FBBF24" rx="3"/><text x="375" y="24" text-anchor="middle" fill="#78350F" font-size="12" font-weight="700">50%</text>
+    <rect x="410" y="0" width="70" height="40" fill="#FBBF24" rx="3"/><text x="445" y="24" text-anchor="middle" fill="#78350F" font-size="12" font-weight="700">50%</text>
+    <rect x="480" y="0" width="70" height="40" fill="#FCD34D" rx="3"/><text x="515" y="24" text-anchor="middle" fill="#78350F" font-size="12" font-weight="700">67%</text>
+    <rect x="550" y="0" width="70" height="40" fill="#FCD34D" rx="3"/><text x="585" y="24" text-anchor="middle" fill="#78350F" font-size="12" font-weight="700">67%</text>
+    <rect x="620" y="0" width="70" height="40" fill="#EF4444" rx="3"/><text x="655" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">0%</text>
+    <rect x="690" y="0" width="70" height="40" fill="#FBBF24" rx="3"/><text x="725" y="24" text-anchor="middle" fill="#78350F" font-size="12" font-weight="700">50%</text>
   </g>
 
   <!-- Non-Action -->
   <g transform="translate(0, 210)">
-    <text x="190" y="20" text-anchor="end" fill="#334155" font-size="12" font-weight="600">Non-Action</text>
-    <rect x="200" y="0" width="70" height="40" fill="#ef4444" rx="3"/><text x="235" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">0%</text>
-    <rect x="270" y="0" width="70" height="40" fill="#fbbf24" rx="3"/><text x="305" y="24" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">42%</text>
-    <rect x="340" y="0" width="70" height="40" fill="#ef4444" rx="3"/><text x="375" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">0%</text>
-    <rect x="410" y="0" width="70" height="40" fill="#ef4444" rx="3"/><text x="445" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">0%</text>
-    <rect x="480" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="515" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
-    <rect x="550" y="0" width="70" height="40" fill="#fca5a5" rx="3"/><text x="585" y="24" text-anchor="middle" fill="#7f1d1d" font-size="12" font-weight="700">17%</text>
-    <rect x="620" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="655" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
-    <rect x="690" y="0" width="70" height="40" fill="#fbbf24" rx="3"/><text x="725" y="24" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">33%</text>
+    <text x="190" y="20" text-anchor="end" fill="#431407" font-size="12" font-weight="600">Just chatting</text>
+    <rect x="200" y="0" width="70" height="40" fill="#EF4444" rx="3"/><text x="235" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">0%</text>
+    <rect x="270" y="0" width="70" height="40" fill="#FBBF24" rx="3"/><text x="305" y="24" text-anchor="middle" fill="#78350F" font-size="12" font-weight="700">42%</text>
+    <rect x="340" y="0" width="70" height="40" fill="#EF4444" rx="3"/><text x="375" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">0%</text>
+    <rect x="410" y="0" width="70" height="40" fill="#EF4444" rx="3"/><text x="445" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">0%</text>
+    <rect x="480" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="515" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
+    <rect x="550" y="0" width="70" height="40" fill="#F87171" rx="3"/><text x="585" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">17%</text>
+    <rect x="620" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="655" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
+    <rect x="690" y="0" width="70" height="40" fill="#FBBF24" rx="3"/><text x="725" y="24" text-anchor="middle" fill="#78350F" font-size="12" font-weight="700">33%</text>
   </g>
 
   <!-- Structured Output -->
   <g transform="translate(0, 255)">
-    <text x="190" y="20" text-anchor="end" fill="#334155" font-size="12" font-weight="600">Structured Output</text>
-    <rect x="200" y="0" width="70" height="40" fill="#86efac" rx="3"/><text x="235" y="24" text-anchor="middle" fill="#14532d" font-size="12" font-weight="600">75%</text>
-    <rect x="270" y="0" width="70" height="40" fill="#4ade80" rx="3"/><text x="305" y="24" text-anchor="middle" fill="#14532d" font-size="12" font-weight="600">92%</text>
-    <rect x="340" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="375" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
-    <rect x="410" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="445" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
-    <rect x="480" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="515" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
-    <rect x="550" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="585" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
-    <rect x="620" y="0" width="70" height="40" fill="#86efac" rx="3"/><text x="655" y="24" text-anchor="middle" fill="#14532d" font-size="12" font-weight="600">83%</text>
-    <rect x="690" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="725" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
+    <text x="190" y="20" text-anchor="end" fill="#431407" font-size="12" font-weight="600">Structured payloads</text>
+    <rect x="200" y="0" width="70" height="40" fill="#BEF264" rx="3"/><text x="235" y="24" text-anchor="middle" fill="#365314" font-size="12" font-weight="700">75%</text>
+    <rect x="270" y="0" width="70" height="40" fill="#A3E635" rx="3"/><text x="305" y="24" text-anchor="middle" fill="#365314" font-size="12" font-weight="700">92%</text>
+    <rect x="340" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="375" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
+    <rect x="410" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="445" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
+    <rect x="480" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="515" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
+    <rect x="550" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="585" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
+    <rect x="620" y="0" width="70" height="40" fill="#BEF264" rx="3"/><text x="655" y="24" text-anchor="middle" fill="#365314" font-size="12" font-weight="700">83%</text>
+    <rect x="690" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="725" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
   </g>
 
   <!-- Compound -->
   <g transform="translate(0, 300)">
-    <text x="190" y="20" text-anchor="end" fill="#334155" font-size="12" font-weight="600">Compound Actions</text>
-    <rect x="200" y="0" width="70" height="40" fill="#86efac" rx="3"/><text x="235" y="24" text-anchor="middle" fill="#14532d" font-size="12" font-weight="600">83%</text>
-    <rect x="270" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="305" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
-    <rect x="340" y="0" width="70" height="40" fill="#fde68a" rx="3"/><text x="375" y="24" text-anchor="middle" fill="#78350f" font-size="12" font-weight="600">67%</text>
-    <rect x="410" y="0" width="70" height="40" fill="#86efac" rx="3"/><text x="445" y="24" text-anchor="middle" fill="#14532d" font-size="12" font-weight="600">83%</text>
-    <rect x="480" y="0" width="70" height="40" fill="#86efac" rx="3"/><text x="515" y="24" text-anchor="middle" fill="#14532d" font-size="12" font-weight="600">83%</text>
-    <rect x="550" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="585" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
-    <rect x="620" y="0" width="70" height="40" fill="#86efac" rx="3"/><text x="655" y="24" text-anchor="middle" fill="#14532d" font-size="12" font-weight="600">83%</text>
-    <rect x="690" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="725" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
+    <text x="190" y="20" text-anchor="end" fill="#431407" font-size="12" font-weight="600">Multi-step requests</text>
+    <rect x="200" y="0" width="70" height="40" fill="#BEF264" rx="3"/><text x="235" y="24" text-anchor="middle" fill="#365314" font-size="12" font-weight="700">83%</text>
+    <rect x="270" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="305" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
+    <rect x="340" y="0" width="70" height="40" fill="#FCD34D" rx="3"/><text x="375" y="24" text-anchor="middle" fill="#78350F" font-size="12" font-weight="700">67%</text>
+    <rect x="410" y="0" width="70" height="40" fill="#BEF264" rx="3"/><text x="445" y="24" text-anchor="middle" fill="#365314" font-size="12" font-weight="700">83%</text>
+    <rect x="480" y="0" width="70" height="40" fill="#BEF264" rx="3"/><text x="515" y="24" text-anchor="middle" fill="#365314" font-size="12" font-weight="700">83%</text>
+    <rect x="550" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="585" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
+    <rect x="620" y="0" width="70" height="40" fill="#BEF264" rx="3"/><text x="655" y="24" text-anchor="middle" fill="#365314" font-size="12" font-weight="700">83%</text>
+    <rect x="690" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="725" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
   </g>
 
   <!-- Robustness -->
   <g transform="translate(0, 345)">
-    <text x="190" y="20" text-anchor="end" fill="#334155" font-size="12" font-weight="600">Robustness</text>
-    <rect x="200" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="235" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
-    <rect x="270" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="305" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
-    <rect x="340" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="375" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
-    <rect x="410" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="445" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
-    <rect x="480" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="515" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
-    <rect x="550" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="585" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
-    <rect x="620" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="655" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
-    <rect x="690" y="0" width="70" height="40" fill="#22c55e" rx="3"/><text x="725" y="24" text-anchor="middle" fill="#052e16" font-size="12" font-weight="700">100%</text>
+    <text x="190" y="20" text-anchor="end" fill="#431407" font-size="12" font-weight="600">Typos & noise</text>
+    <rect x="200" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="235" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
+    <rect x="270" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="305" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
+    <rect x="340" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="375" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
+    <rect x="410" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="445" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
+    <rect x="480" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="515" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
+    <rect x="550" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="585" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
+    <rect x="620" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="655" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
+    <rect x="690" y="0" width="70" height="40" fill="#84CC16" rx="3"/><text x="725" y="24" text-anchor="middle" fill="#1A2E05" font-size="12" font-weight="800">100%</text>
   </g>
 
-  <!-- Key takeaway callouts -->
+  <!-- Callouts -->
   <g>
-    <rect x="770" y="255" width="115" height="40" rx="4" fill="#22c55e" fill-opacity="0.08" stroke="#22c55e" stroke-width="1"/>
-    <text x="827" y="272" text-anchor="middle" fill="#14532d" font-size="9" font-weight="700">CEILING EFFECT</text>
-    <text x="827" y="285" text-anchor="middle" fill="#14532d" font-size="8">4 of 6 categories</text>
+    <rect x="770" y="255" width="115" height="40" rx="6" fill="#84CC16" fill-opacity="0.12" stroke="#84CC16" stroke-width="1"/>
+    <text x="827" y="272" text-anchor="middle" fill="#3F6212" font-size="9" font-weight="700">CEILING</text>
+    <text x="827" y="286" text-anchor="middle" fill="#3F6212" font-size="9">4 of 6 tasks</text>
 
-    <rect x="770" y="345" width="115" height="40" rx="4" fill="#22c55e" fill-opacity="0.08" stroke="#22c55e" stroke-width="1"/>
-    <text x="827" y="362" text-anchor="middle" fill="#14532d" font-size="9" font-weight="700">SOLVED</text>
-    <text x="827" y="375" text-anchor="middle" fill="#14532d" font-size="8">every model 100%</text>
+    <rect x="770" y="345" width="115" height="40" rx="6" fill="#84CC16" fill-opacity="0.12" stroke="#84CC16" stroke-width="1"/>
+    <text x="827" y="362" text-anchor="middle" fill="#3F6212" font-size="9" font-weight="700">SOLVED</text>
+    <text x="827" y="376" text-anchor="middle" fill="#3F6212" font-size="9">every model</text>
 
-    <rect x="770" y="210" width="115" height="40" rx="4" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="1"/>
-    <text x="827" y="227" text-anchor="middle" fill="#7f1d1d" font-size="9" font-weight="700">100pp SPREAD</text>
-    <text x="827" y="240" text-anchor="middle" fill="#7f1d1d" font-size="8">hard for most</text>
+    <rect x="770" y="210" width="115" height="40" rx="6" fill="#EF4444" fill-opacity="0.12" stroke="#EF4444" stroke-width="1"/>
+    <text x="827" y="227" text-anchor="middle" fill="#7F1D1D" font-size="9" font-weight="700">100pp SPREAD</text>
+    <text x="827" y="241" text-anchor="middle" fill="#7F1D1D" font-size="9">price doesn't help</text>
   </g>
 
   <!-- Caption -->
-  <text x="450" y="465" text-anchor="middle" fill="#64748b" font-size="11">Four of six categories show ceiling effects across all 8 models — price tier barely matters for those.</text>
-  <text x="450" y="482" text-anchor="middle" fill="#64748b" font-size="11">Only ambiguity and non-action discriminate, and no model dominates on both.</text>
+  <text x="450" y="465" text-anchor="middle" fill="#78716C" font-size="11">On 4 of 6 task types, every model from $0.15/M to $15/M performed within spitting distance.</text>
+  <text x="450" y="482" text-anchor="middle" fill="#78716C" font-size="11">The real differences show up on ambiguity and conversational input — and price doesn't solve them.</text>
 </svg>

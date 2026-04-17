@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <filter id="shadowT">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#451a03" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="500" fill="transparent"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" fill="#431407" font-size="20" font-weight="800">If you're building an AI agent right now</text>
+  <text x="450" y="58" text-anchor="middle" fill="#78716C" font-size="13">Five things worth thinking about, based on what we saw</text>
+
+  <!-- Five takeaway cards in a grid -->
+
+  <!-- Card 1 -->
+  <g transform="translate(40, 90)">
+    <rect x="0" y="0" width="400" height="120" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" filter="url(#shadowT)"/>
+    <circle cx="30" cy="30" r="16" fill="#F59E0B"/>
+    <text x="30" y="35" text-anchor="middle" fill="#fff" font-size="16" font-weight="800">1</text>
+    <text x="58" y="35" fill="#431407" font-size="14" font-weight="700">Test your own prompt. Seriously.</text>
+    <text x="18" y="66" fill="#78716C" font-size="12">Our prompt was built for GPT. GPT "won."</text>
+    <text x="18" y="84" fill="#78716C" font-size="12">Your prompt is probably built for something.</text>
+    <text x="18" y="102" fill="#78716C" font-size="12">Until you test, you're just guessing.</text>
+  </g>
+
+  <!-- Card 2 -->
+  <g transform="translate(460, 90)">
+    <rect x="0" y="0" width="400" height="120" rx="12" fill="#ECFCCB" stroke="#65A30D" stroke-width="1.5" filter="url(#shadowT)"/>
+    <circle cx="30" cy="30" r="16" fill="#65A30D"/>
+    <text x="30" y="35" text-anchor="middle" fill="#fff" font-size="16" font-weight="800">2</text>
+    <text x="58" y="35" fill="#431407" font-size="14" font-weight="700">Don't overpay for easy tasks.</text>
+    <text x="18" y="66" fill="#78716C" font-size="12">On 4 of 6 task types, every model we tested</text>
+    <text x="18" y="84" fill="#78716C" font-size="12">performed within 17 points of each other —</text>
+    <text x="18" y="102" fill="#78716C" font-size="12">from the $0.15/M tier to the $15/M tier.</text>
+  </g>
+
+  <!-- Card 3 -->
+  <g transform="translate(40, 225)">
+    <rect x="0" y="0" width="400" height="120" rx="12" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5" filter="url(#shadowT)"/>
+    <circle cx="30" cy="30" r="16" fill="#DC2626"/>
+    <text x="30" y="35" text-anchor="middle" fill="#fff" font-size="16" font-weight="800">3</text>
+    <text x="58" y="35" fill="#431407" font-size="14" font-weight="700">The hard stuff isn't for sale.</text>
+    <text x="18" y="66" fill="#78716C" font-size="12">No model exceeded 67% on ambiguity.</text>
+    <text x="18" y="84" fill="#78716C" font-size="12">Frontier pricing doesn't fix it.</text>
+    <text x="18" y="102" fill="#78716C" font-size="12">Better prompt engineering might.</text>
+  </g>
+
+  <!-- Card 4 -->
+  <g transform="translate(460, 225)">
+    <rect x="0" y="0" width="400" height="120" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" filter="url(#shadowT)"/>
+    <circle cx="30" cy="30" r="16" fill="#F59E0B"/>
+    <text x="30" y="35" text-anchor="middle" fill="#fff" font-size="16" font-weight="800">4</text>
+    <text x="58" y="35" fill="#431407" font-size="14" font-weight="700">Claude wraps your JSON. Deal with it.</text>
+    <text x="18" y="66" fill="#78716C" font-size="12">Haiku, Sonnet, Opus all return JSON inside</text>
+    <text x="18" y="84" fill="#78716C" font-size="12">markdown code fences 40-60% of the time —</text>
+    <text x="18" y="102" fill="#78716C" font-size="12">even in json_object mode. Strip before parse.</text>
+  </g>
+
+  <!-- Card 5 -->
+  <g transform="translate(250, 360)">
+    <rect x="0" y="0" width="400" height="120" rx="12" fill="#E0F2FE" stroke="#0EA5E9" stroke-width="1.5" filter="url(#shadowT)"/>
+    <circle cx="30" cy="30" r="16" fill="#0EA5E9"/>
+    <text x="30" y="35" text-anchor="middle" fill="#fff" font-size="16" font-weight="800">5</text>
+    <text x="58" y="35" fill="#431407" font-size="14" font-weight="700">Latency matters more than you think.</text>
+    <text x="18" y="66" fill="#78716C" font-size="12">Some models are 12× slower than others.</text>
+    <text x="18" y="84" fill="#78716C" font-size="12">Your users feel that more than a few points</text>
+    <text x="18" y="102" fill="#78716C" font-size="12">of accuracy.</text>
+  </g>
+</svg>

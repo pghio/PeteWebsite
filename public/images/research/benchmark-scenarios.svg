@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <filter id="cardshadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#451a03" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="560" fill="transparent"/>
+
+  <!-- Title -->
+  <text x="450" y="36" text-anchor="middle" fill="#431407" font-size="20" font-weight="800">What we asked Dew to do</text>
+  <text x="450" y="58" text-anchor="middle" fill="#78716C" font-size="13">35 scenarios across six categories — here are five that show the range</text>
+
+  <!-- Card 1: Clear Intent -->
+  <g transform="translate(40, 90)">
+    <rect x="0" y="0" width="400" height="130" rx="12" fill="#FEF3C7" stroke="#FBBF24" stroke-width="1.5" filter="url(#cardshadow)"/>
+    <rect x="0" y="0" width="4" height="130" rx="2" fill="#F59E0B"/>
+    <text x="18" y="25" fill="#78716C" font-size="10" font-weight="700" letter-spacing="1.5">CLEAR COMMAND</text>
+    <text x="18" y="55" fill="#431407" font-size="16" font-weight="600">"Add milk to the grocery list"</text>
+    <line x1="18" y1="72" x2="382" y2="72" stroke="#FBBF24" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+    <text x="18" y="94" fill="#78716C" font-size="12">Expected: call <tspan font-family="ui-monospace, monospace" fill="#431407" font-weight="600">lists.add_items</tspan></text>
+    <text x="18" y="114" fill="#78716C" font-size="12">Every model nailed this. The floor, not the ceiling.</text>
+  </g>
+
+  <!-- Card 2: Ambiguity -->
+  <g transform="translate(460, 90)">
+    <rect x="0" y="0" width="400" height="130" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" filter="url(#cardshadow)"/>
+    <rect x="0" y="0" width="4" height="130" rx="2" fill="#D97706"/>
+    <text x="18" y="25" fill="#78716C" font-size="10" font-weight="700" letter-spacing="1.5">AMBIGUOUS</text>
+    <text x="18" y="55" fill="#431407" font-size="16" font-weight="600">"Add bananas and milk"</text>
+    <line x1="18" y1="72" x2="382" y2="72" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+    <text x="18" y="94" fill="#78716C" font-size="12">Which list? Grocery, costco, packing, chores...</text>
+    <text x="18" y="114" fill="#78716C" font-size="12">Six of eight just guessed "grocery" and executed.</text>
+  </g>
+
+  <!-- Card 3: Non-Action -->
+  <g transform="translate(40, 235)">
+    <rect x="0" y="0" width="400" height="130" rx="12" fill="#FEF3C7" stroke="#B45309" stroke-width="1.5" filter="url(#cardshadow)"/>
+    <rect x="0" y="0" width="4" height="130" rx="2" fill="#92400E"/>
+    <text x="18" y="25" fill="#78716C" font-size="10" font-weight="700" letter-spacing="1.5">JUST CHATTING</text>
+    <text x="18" y="55" fill="#431407" font-size="16" font-weight="600">"I'm planning a trip next weekend"</text>
+    <line x1="18" y1="72" x2="382" y2="72" stroke="#B45309" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+    <text x="18" y="94" fill="#78716C" font-size="12">Conversation. No action needed.</text>
+    <text x="18" y="114" fill="#78716C" font-size="12">GPT-4o-mini did it anyway. Created a "Trip" event.</text>
+  </g>
+
+  <!-- Card 4: Compound -->
+  <g transform="translate(460, 235)">
+    <rect x="0" y="0" width="400" height="130" rx="12" fill="#ECFCCB" stroke="#84CC16" stroke-width="1.5" filter="url(#cardshadow)"/>
+    <rect x="0" y="0" width="4" height="130" rx="2" fill="#65A30D"/>
+    <text x="18" y="25" fill="#78716C" font-size="10" font-weight="700" letter-spacing="1.5">COMPOUND</text>
+    <text x="18" y="55" fill="#431407" font-size="15" font-weight="600">"Add eggs to grocery and schedule dentist Friday"</text>
+    <line x1="18" y1="72" x2="382" y2="72" stroke="#84CC16" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+    <text x="18" y="94" fill="#78716C" font-size="12">Two tools, one sentence.</text>
+    <text x="18" y="114" fill="#78716C" font-size="12">Most models handled this. Some only did one step.</text>
+  </g>
+
+  <!-- Card 5: Robustness -->
+  <g transform="translate(40, 380)">
+    <rect x="0" y="0" width="400" height="130" rx="12" fill="#ECFCCB" stroke="#84CC16" stroke-width="1.5" filter="url(#cardshadow)"/>
+    <rect x="0" y="0" width="4" height="130" rx="2" fill="#65A30D"/>
+    <text x="18" y="25" fill="#78716C" font-size="10" font-weight="700" letter-spacing="1.5">TYPOS & NOISE</text>
+    <text x="18" y="55" fill="#431407" font-size="16" font-weight="600" font-family="ui-monospace, monospace">"add teh milk to teh listt"</text>
+    <line x1="18" y1="72" x2="382" y2="72" stroke="#84CC16" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+    <text x="18" y="94" fill="#78716C" font-size="12">Misspellings, typos, weird phrasing.</text>
+    <text x="18" y="114" fill="#78716C" font-size="12">Every model scored 100%. Totally solved.</text>
+  </g>
+
+  <!-- Card 6: The hard one -->
+  <g transform="translate(460, 380)">
+    <rect x="0" y="0" width="400" height="130" rx="12" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5" filter="url(#cardshadow)"/>
+    <rect x="0" y="0" width="4" height="130" rx="2" fill="#B91C1C"/>
+    <text x="18" y="25" fill="#78716C" font-size="10" font-weight="700" letter-spacing="1.5">THE HARD ONE</text>
+    <text x="18" y="55" fill="#431407" font-size="16" font-weight="600">"Delete it"</text>
+    <line x1="18" y1="72" x2="382" y2="72" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+    <text x="18" y="94" fill="#78716C" font-size="12">Delete what? No context. Nothing specified.</text>
+    <text x="18" y="114" fill="#78716C" font-size="12">Every model clarified — but with wildly different grace.</text>
+  </g>
+
+  <!-- Footer note -->
+  <text x="450" y="540" text-anchor="middle" fill="#78716C" font-size="11" font-style="italic">All scenarios use Honeydew's real production prompt. Context includes mock family lists, events, and timezones.</text>
+</svg>

@@ -5,6 +5,19 @@ description: "We deployed a 4-layer LLM discoverability stack and measured 90 da
 publishDate: "2026-04-14"
 category: "Research"
 ogImage: "/images/research/hero-llm-discoverability.png"
+faq:
+  - q: "Do LLMs cite startups in their recommendations?"
+    a: "Rarely. In our 90-day study, our early-stage product (Honeydew) achieved a 10% citation rate in Perplexity AI queries compared to 60% for category incumbents like Cozi — a 6x gap driven primarily by domain authority and third-party coverage, not content quality."
+  - q: "How much traffic do LLMs actually send to websites?"
+    a: "In our study, LLM-attributed traffic accounted for approximately 0.5% of total sessions via standard GA4 attribution, rising to 1.1% when measured with custom referral event tracking — a 2.2x attribution gap suggesting most analytics significantly undercount LLM-driven traffic."
+  - q: "Does a .llms.txt file help with LLM discoverability?"
+    a: "We found zero evidence that .llms.txt files, structured citation catalogs, or machine-readable context files were directly consumed by any LLM. Domain authority, third-party coverage, and comprehensive evaluative content appear to be the dominant factors in LLM citation."
+  - q: "What content gets cited most by LLMs?"
+    a: "Approximately 62% of our LLM referral traffic landed on comparison and 'best of' articles. LLMs preferentially cite comprehensive evaluative content over product pages, feature announcements, or marketing copy."
+  - q: "Which LLM platform sends the most referral traffic?"
+    a: "ChatGPT drove 77% of LLM referral volume in our study, followed by Perplexity (15%) and Claude (8%), roughly tracking platform market share. However, Claude-referred sessions showed 4.4x longer session duration and 2.1x more pages per session than ChatGPT referrals."
+  - q: "How do you track LLM referral traffic in Google Analytics?"
+    a: "Deploy custom GA4 events that detect known LLM hostnames (ChatGPT, Claude, Perplexity, Gemini, Copilot, etc.) in document.referrer. Standard GA4 attribution captures only about 45% of actual LLM-driven traffic because users often copy/paste URLs rather than clicking referral links."
 ---
 
 ![Do LLMs Actually Cite Your Startup?](/images/research/hero-llm-discoverability.svg)
@@ -279,6 +292,30 @@ This study provides early empirical evidence on LLM discoverability for early-st
 The more actionable finding may be methodological: custom LLM referral tracking reveals approximately **2.2x more LLM-attributed traffic** than standard analytics — meaning most startups are seeing only ~45% of their actual LLM-driven visits. The channel is likely more significant than anyone realizes, because the measurement tools haven't caught up.
 
 For the practitioner: build the measurement layer first, invest in comprehensive evaluative content, and treat LLM discoverability as a long-term compounding investment rather than a tactical optimization.
+
+---
+
+---
+
+## Frequently Asked Questions
+
+**Do LLMs cite startups in their recommendations?**
+Rarely. In our 90-day study, our early-stage product achieved a 10% citation rate vs. 60% for category incumbents — a 6x gap driven primarily by domain authority and third-party coverage, not content quality.
+
+**How much traffic do LLMs actually send to websites?**
+LLM-attributed traffic accounted for ~0.5% of total sessions via standard GA4, rising to ~1.1% with custom referral tracking — a 2.2x attribution gap suggesting most analytics significantly undercount LLM-driven traffic.
+
+**Does a .llms.txt file help with LLM discoverability?**
+We found zero evidence that .llms.txt files or machine-readable context files were directly consumed by any LLM. Domain authority and comprehensive evaluative content appear to be the dominant factors.
+
+**What content gets cited most by LLMs?**
+~62% of our LLM referral traffic landed on comparison and "best of" articles. LLMs preferentially cite comprehensive evaluative content over product pages or marketing copy.
+
+**Which LLM sends the most referral traffic?**
+ChatGPT drove 77% of volume, followed by Perplexity (15%) and Claude (8%). However, Claude referrals showed 4.4x longer session duration and 2.1x more pages per session.
+
+**How do you track LLM referral traffic?**
+Deploy custom GA4 events detecting known LLM hostnames in `document.referrer`. Standard GA4 captures only ~45% of actual LLM-driven traffic because users often copy/paste URLs rather than clicking referral links.
 
 ---
 
