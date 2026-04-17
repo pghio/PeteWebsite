@@ -22,7 +22,7 @@ faq:
 
 ## Why We Did This
 
-Honeydew has an AI agent named **Dew**. He runs families' lives — adds eggs to the grocery list, schedules dentist appointments, notices when your kid's soccer game conflicts with dinner. He has 77 tools at his disposal and a 42KB system prompt telling him how to behave.
+Honeydew has an AI agent named **Dew**. He runs families' lives — adds eggs to the grocery list, schedules dentist appointments, notices when your kid's soccer game conflicts with dinner. He has a broad catalog of tools at his disposal and a substantial system prompt telling him how to behave.
 
 We've been using GPT-4.1 in production. It works well. But every month, a new model drops, a new benchmark gets posted, a new team claims they cut costs 10x by switching to [insert model here]. So we wanted to know: **on our actual prompt, with our actual scenarios, does the model matter?**
 

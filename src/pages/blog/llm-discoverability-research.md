@@ -32,7 +32,7 @@ If you're a startup founder and you read nothing else:
 
 3. **Write comprehensive comparison articles, not product pages.** ~62% of our LLM referral traffic landed on "best of" and "vs" articles. LLMs cite evaluative content, not marketing copy.
 
-4. **Don't bother with `.llms.txt` files yet — unless you also have the content.** We built machine-readable context files, structured citation catalogs, and auto-generation pipelines. We found zero evidence any LLM consumed them directly. The content and domain authority did the work.
+4. **Don't bother with `.llms.txt` files yet — unless you also have the content.** Machine-readable context files are cheap to produce, but in our data the content itself and domain authority did the work. We found no evidence any LLM consumed those files directly.
 
 5. **Claude users may be worth more than ChatGPT users.** We observed a 4.4x session duration differential and 2.1x page depth differential favoring Claude referrals over ChatGPT. Sample is small, but if it holds, optimizing for Claude's retrieval patterns could be higher-ROI than chasing ChatGPT volume.
 
@@ -90,27 +90,23 @@ Between January and April 2026, we deployed four infrastructure layers:
 
 ![LLM Discoverability Stack Architecture](/images/research/llm-discoverability-stack.svg)
 
-**Layer 1 — Machine-Readable Context Files.** Structured text and JSON files served at the domain root, designed for LLM consumption:
-- `.llms.txt` (3-5 KB): Product summary, features, pricing, competitive positioning, canonical URLs
-- `.llms-full.txt` (50-80 KB): Comprehensive context including use cases, FAQ, and technical specifications
-- `llm-citations.json`: Structured citation catalog with article metadata and attribution guidance
-- `faq-corpus.json`: Machine-parseable FAQ data matching common search queries
+**Layer 1 — Machine-Readable Context Files.** Structured plain-text and JSON files served at the domain root, designed for LLM consumption. At a high level: a concise product-context file, a fuller context document with FAQ and capability descriptions, and a structured catalog mapping topics to citable sources. Specific file layouts and sizes are omitted.
 
-**Layer 2 — Automated Generation.** All assets auto-generated from a single source of truth (`product-config.json`) via a Node.js script on every deploy. Staleness warning at >90 days since last data update.
+**Layer 2 — Automated Generation.** All LLM-facing assets are auto-generated from a single source of truth on every deploy, so references never go stale relative to the live product or content.
 
 **Layer 3 — Search Grounding Optimization.** Content optimized for LLMs that use web search to ground responses:
-- 130+ blog articles with FAQ schema (JSON-LD)
+- A large corpus of blog articles with FAQ schema (JSON-LD)
 - Structured comparison tables
 - Canonical URL guidance in article headers
 
 **Layer 4 — Attribution and Measurement.** Custom GA4 event tracking:
-- `llm_referral` events triggered on detecting any of 14 known LLM platform hostnames in `document.referrer`
-- Session-level attribution stored in `sessionStorage` to avoid double-counting within sessions
+- A custom `llm_referral` event fired when the referrer matches known LLM platform hostnames
+- Session-level attribution to avoid double-counting within sessions
 - Funnel tracking from LLM referral through blog engagement to App Store click
 
 ### 2.2 Data Sources
 
-**Source 1: GA4 Referral Traffic (quantitative).** Google Analytics 4, Property ID 487238294. 90-day window: January 14 - April 13, 2026. LLM sessions identified by `sessionSource` dimension matching known LLM hostnames, supplemented by custom `llm_referral` events. Engagement metrics (session duration, pages/session) extracted per source.
+**Source 1: GA4 Referral Traffic (quantitative).** Google Analytics 4. 90-day window: January 14 - April 13, 2026. LLM sessions identified by `sessionSource` dimension matching known LLM hostnames, supplemented by custom `llm_referral` events. Engagement metrics (session duration, pages/session) extracted per source.
 
 **Source 2: Citation Audit (structured observational).** 10 queries tested against Perplexity AI on April 14, 2026. Query selection criteria:
 - 2 category queries ("best AI family organization app 2026," "best app for family coordination AI assistant")
@@ -273,7 +269,7 @@ Given the limitations of this study, we frame our observations as testable hypot
 
 All tools and methodology used in this study are available for replication:
 
-**Attribution tracking:** Deploy GA4 custom events that detect known LLM hostnames in `document.referrer`. Our implementation tracks 14 platforms: ChatGPT (chat.openai.com, chatgpt.com), Claude (claude.ai), Perplexity (perplexity.ai), Gemini (gemini.google.com), Copilot (copilot.microsoft.com), and others.
+**Attribution tracking:** Deploy GA4 custom events that detect known LLM hostnames in `document.referrer` across the major AI platforms (ChatGPT, Claude, Perplexity, Gemini, Copilot, and a long tail of smaller AI search products).
 
 **Citation audit:** Run 10 representative queries against Perplexity (or any LLM with browsing). Record: (1) whether your product appeared, (2) which competitors appeared, (3) what source URLs were cited. Run monthly for longitudinal tracking.
 
