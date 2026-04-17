@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="900" height="480" fill="transparent"/>
+
+  <!-- Title -->
+  <text x="450" y="28" text-anchor="middle" fill="#334155" font-size="16" font-weight="700">How Do Models Respond to Conversational (Non-Action) Input?</text>
+  <text x="450" y="48" text-anchor="middle" fill="#64748b" font-size="12">42 trials per model across 6 non-action scenarios</text>
+
+  <!-- Legend -->
+  <g transform="translate(220, 70)">
+    <rect x="0" y="0" width="12" height="12" fill="#22c55e"/>
+    <text x="18" y="10" fill="#475569" font-size="11">Returned null action (correct)</text>
+    <rect x="210" y="0" width="12" height="12" fill="#3b82f6"/>
+    <text x="228" y="10" fill="#475569" font-size="11">Used "conversation.reply" (also correct)</text>
+    <rect x="475" y="0" width="12" height="12" fill="#ef4444"/>
+    <text x="493" y="10" fill="#475569" font-size="11">Hallucinated a real tool call</text>
+  </g>
+
+  <!-- Y axis -->
+  <line x1="180" y1="110" x2="180" y2="400" stroke="#cbd5e1" stroke-width="1"/>
+  <g font-size="10" fill="#64748b" text-anchor="end">
+    <text x="172" y="114">100%</text><line x1="176" y1="110" x2="180" y2="110" stroke="#cbd5e1"/>
+    <text x="172" y="186">75%</text><line x1="176" y1="182" x2="180" y2="182" stroke="#cbd5e1"/>
+    <text x="172" y="258">50%</text><line x1="176" y1="254" x2="180" y2="254" stroke="#cbd5e1"/>
+    <text x="172" y="330">25%</text><line x1="176" y1="326" x2="180" y2="326" stroke="#cbd5e1"/>
+    <text x="172" y="402">0%</text>
+  </g>
+  <line x1="180" y1="398" x2="830" y2="398" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Bars: each 80px wide, centered on model label -->
+  <!-- Each stack: green (null) + blue (reply) + red (hallucinated) summing to ~100% of 42 trials -->
+  <!-- Values: gpt-4o-mini: 23 null, 0 reply, 19 halluc (42 total)
+               gemini-flash: 25/14/2 (41)
+               deepseek-v3: 42/0/0
+               claude-haiku: 36/6/0
+               gpt-4.1: 0/42/0
+               claude-sonnet: 32/10/0
+               gpt-5.4: 0/42/0
+               claude-opus: 27/15/0
+  -->
+  <!-- Bar height = 288px for 100% -->
+
+  <!-- GPT-4o-mini: 23 null (55%), 0 reply, 19 halluc (45%) -->
+  <g transform="translate(210, 0)">
+    <!-- halluc at top: 45% = 130px -->
+    <rect x="0" y="110" width="60" height="130" fill="#ef4444"/>
+    <!-- null: 55% = 158px -->
+    <rect x="0" y="240" width="60" height="158" fill="#22c55e"/>
+    <text x="30" y="420" text-anchor="middle" fill="#475569" font-size="10">GPT-4o-mini</text>
+    <text x="30" y="434" text-anchor="middle" fill="#94a3b8" font-size="9">budget</text>
+    <!-- Callout -->
+    <text x="30" y="175" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">45%</text>
+    <text x="30" y="322" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">55%</text>
+  </g>
+
+  <!-- Gemini Flash: 25 null (61%), 14 reply (34%), 2 halluc (5%) — based on 41 trials -->
+  <g transform="translate(290, 0)">
+    <rect x="0" y="384" width="60" height="14" fill="#ef4444"/>
+    <rect x="0" y="286" width="60" height="98" fill="#3b82f6"/>
+    <rect x="0" y="110" width="60" height="176" fill="#22c55e"/>
+    <text x="30" y="420" text-anchor="middle" fill="#475569" font-size="10">Gemini Flash</text>
+    <text x="30" y="434" text-anchor="middle" fill="#94a3b8" font-size="9">budget</text>
+    <text x="30" y="200" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">61%</text>
+    <text x="30" y="338" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">34%</text>
+    <text x="30" y="395" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">5%</text>
+  </g>
+
+  <!-- DeepSeek V3: 42 null (100%) -->
+  <g transform="translate(370, 0)">
+    <rect x="0" y="110" width="60" height="288" fill="#22c55e"/>
+    <text x="30" y="420" text-anchor="middle" fill="#475569" font-size="10">DeepSeek V3</text>
+    <text x="30" y="434" text-anchor="middle" fill="#94a3b8" font-size="9">budget</text>
+    <text x="30" y="258" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">100%</text>
+  </g>
+
+  <!-- Claude Haiku: 36 null (86%), 6 reply (14%) -->
+  <g transform="translate(450, 0)">
+    <rect x="0" y="357" width="60" height="41" fill="#3b82f6"/>
+    <rect x="0" y="110" width="60" height="247" fill="#22c55e"/>
+    <text x="30" y="420" text-anchor="middle" fill="#475569" font-size="10">Claude Haiku</text>
+    <text x="30" y="434" text-anchor="middle" fill="#94a3b8" font-size="9">budget</text>
+    <text x="30" y="234" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">86%</text>
+    <text x="30" y="381" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">14%</text>
+  </g>
+
+  <!-- GPT-4.1: 0 null, 42 reply (100%) -->
+  <g transform="translate(530, 0)">
+    <rect x="0" y="110" width="60" height="288" fill="#3b82f6"/>
+    <text x="30" y="420" text-anchor="middle" fill="#475569" font-size="10">GPT-4.1</text>
+    <text x="30" y="434" text-anchor="middle" fill="#16a34a" font-size="9" font-weight="600">mid</text>
+    <text x="30" y="258" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">100%</text>
+  </g>
+
+  <!-- Claude Sonnet: 32 null (76%), 10 reply (24%) -->
+  <g transform="translate(610, 0)">
+    <rect x="0" y="329" width="60" height="69" fill="#3b82f6"/>
+    <rect x="0" y="110" width="60" height="219" fill="#22c55e"/>
+    <text x="30" y="420" text-anchor="middle" fill="#475569" font-size="10">Claude Sonnet</text>
+    <text x="30" y="434" text-anchor="middle" fill="#16a34a" font-size="9" font-weight="600">mid</text>
+    <text x="30" y="220" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">76%</text>
+    <text x="30" y="366" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">24%</text>
+  </g>
+
+  <!-- GPT-5.4: 0 null, 42 reply (100%) -->
+  <g transform="translate(690, 0)">
+    <rect x="0" y="110" width="60" height="288" fill="#3b82f6"/>
+    <text x="30" y="420" text-anchor="middle" fill="#475569" font-size="10">GPT-5.4</text>
+    <text x="30" y="434" text-anchor="middle" fill="#dc2626" font-size="9" font-weight="600">frontier</text>
+    <text x="30" y="258" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">100%</text>
+  </g>
+
+  <!-- Claude Opus: 27 null (64%), 15 reply (36%) -->
+  <g transform="translate(770, 0)">
+    <rect x="0" y="294" width="60" height="104" fill="#3b82f6"/>
+    <rect x="0" y="110" width="60" height="184" fill="#22c55e"/>
+    <text x="30" y="420" text-anchor="middle" fill="#475569" font-size="10">Claude Opus</text>
+    <text x="30" y="434" text-anchor="middle" fill="#dc2626" font-size="9" font-weight="600">frontier</text>
+    <text x="30" y="208" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">64%</text>
+    <text x="30" y="348" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">36%</text>
+  </g>
+
+  <!-- Annotation for GPT-4o-mini hallucination -->
+  <g>
+    <line x1="240" y1="175" x2="80" y2="150" stroke="#dc2626" stroke-width="1" stroke-dasharray="3,2"/>
+    <rect x="5" y="125" width="120" height="40" rx="4" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+    <text x="65" y="142" text-anchor="middle" fill="#7f1d1d" font-size="10" font-weight="700">19 of 42 trials</text>
+    <text x="65" y="156" text-anchor="middle" fill="#7f1d1d" font-size="9">hallucinated tools</text>
+  </g>
+
+  <!-- Caption -->
+  <text x="450" y="465" text-anchor="middle" fill="#64748b" font-size="11">Example: when told "I'm planning a trip next weekend" (conversation), GPT-4o-mini created a calendar event called "Trip."</text>
+</svg>

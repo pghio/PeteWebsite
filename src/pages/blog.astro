@@ -3,11 +3,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const articles = [
   {
-    title: "LLM Discoverability for Startups: Real Data From Building an LLM SEO Stack",
+    title: "What 2,800 API Calls Taught Us About Benchmarking LLM Agents (And What They Didn't)",
+    url: "/blog/llm-benchmark-stop-defaulting-to-the-frontier",
+    description: "We ran a 2,800-call benchmark of 8 LLMs on a production AI agent and discovered something more useful than model rankings: which findings in an LLM benchmark are actually reliable, and which ones are prompt-dependent artifacts dressed up as conclusions. Plus a qualitative taxonomy of how different models fail.",
+    category: "Research",
+    isNew: true,
+  },
+  {
+    title: "Do LLMs Actually Cite Your Startup? An Empirical Analysis of LLM Discoverability Infrastructure",
     url: "/blog/llm-discoverability-research",
     description: "We built an LLM discoverability stack and measured what happened. 13 verified LLM sessions, 3 platforms citing us, and hard data on what works. Full methodology and results.",
     category: "Research",
-    isNew: true,
   },
   {
     title: "How We Get Cited by ChatGPT, Claude & Perplexity Without Ads",

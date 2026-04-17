@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="tier1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <linearGradient id="tier2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+    <linearGradient id="tier3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="80" y="90" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="34" font-weight="800">What 2,800 API Calls Taught Us</text>
+  <text x="80" y="128" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="20" font-weight="500">About benchmarking LLM agents — and what they didn't</text>
+
+  <line x1="80" y1="148" x2="280" y2="148" stroke="url(#accent)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Three-tier framework -->
+  <text x="80" y="200" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="16" font-weight="700">Classification of findings by trustworthiness:</text>
+
+  <!-- Tier 1: Reliable -->
+  <rect x="80" y="220" width="340" height="180" rx="10" fill="#22c55e" fill-opacity="0.08" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="100" y="248" fill="#22c55e" font-family="system-ui, sans-serif" font-size="14" font-weight="700">RELIABLE</text>
+  <text x="100" y="268" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Prompt-independent facts</text>
+  <text x="100" y="294" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">• 12x latency spread (460 – 5,420ms)</text>
+  <text x="100" y="314" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">• 100x cost spread ($0.57 – $68.85)</text>
+  <text x="100" y="334" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">• Claude wraps JSON in markdown</text>
+  <text x="100" y="354" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">• Robustness = 100% across all 8 models</text>
+  <text x="100" y="378" fill="#22c55e" font-family="system-ui, sans-serif" font-size="10" font-weight="600">✓ Would cite this</text>
+
+  <!-- Tier 2: Probably Robust -->
+  <rect x="430" y="220" width="340" height="180" rx="10" fill="#eab308" fill-opacity="0.08" stroke="#eab308" stroke-width="1.5"/>
+  <text x="450" y="248" fill="#eab308" font-family="system-ui, sans-serif" font-size="14" font-weight="700">PROBABLY ROBUST</text>
+  <text x="450" y="268" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Task-structure patterns</text>
+  <text x="450" y="294" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">• 4 of 6 categories: ceiling effects</text>
+  <text x="450" y="314" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">• Ambiguity hard for all models (0–67%)</text>
+  <text x="450" y="334" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">• Hallucination rates vary 0–45%</text>
+  <text x="450" y="354" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">• State-awareness differs across models</text>
+  <text x="450" y="378" fill="#eab308" font-family="system-ui, sans-serif" font-size="10" font-weight="600">~ Cite with caveats</text>
+
+  <!-- Tier 3: Not Supported -->
+  <rect x="780" y="220" width="340" height="180" rx="10" fill="#ef4444" fill-opacity="0.08" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="800" y="248" fill="#ef4444" font-family="system-ui, sans-serif" font-size="14" font-weight="700">NOT SUPPORTED</text>
+  <text x="800" y="268" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Prompt-coupled rankings</text>
+  <text x="800" y="294" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">• Absolute accuracy rankings</text>
+  <text x="800" y="314" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">• "Best model" claims</text>
+  <text x="800" y="334" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">• Frontier tier "waste" arguments</text>
+  <text x="800" y="354" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">• Routing simulations</text>
+  <text x="800" y="378" fill="#ef4444" font-family="system-ui, sans-serif" font-size="10" font-weight="600">✗ Would not cite</text>
+
+  <!-- Central insight -->
+  <rect x="80" y="430" width="1040" height="110" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="600" y="465" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle">THE CORE METHODOLOGICAL INSIGHT</text>
+  <text x="600" y="495" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="17" font-weight="600" text-anchor="middle">Most LLM benchmarks confound model capability with prompt-model coupling.</text>
+  <text x="600" y="520" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="14" text-anchor="middle">Any prompt has stylistic affinities. A "neutral" prompt is a fiction. Name the confound — don't hide it.</text>
+
+  <!-- Footer -->
+  <text x="80" y="585" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">8 models · 35 scenarios · 10 trials · 2,800 API calls · $145.83 · Full harness open-sourced</text>
+  <text x="1120" y="585" fill="#64748b" font-family="system-ui, sans-serif" font-size="11" text-anchor="end">peterghiorse.com</text>
+</svg>
