@@ -67,7 +67,7 @@ By software complexity, this is **harder than GiveTide was**. There's an LLM-dri
   <figcaption><em>Two demos, each mapped to a stage of the pipeline above. First: natural-language list add. Second: clarification under ambiguity — the hard 20% of agent work.</em></figcaption>
 </figure>
 
-To date, my actual spend is under $5,000. <!-- [verify: confirm rough buckets and timeline. defaults below are estimates.] --> Roughly:
+To date, my actual spend is under $5,000. Roughly:
 
 - **AI coding tools** (Cursor + Claude Code subscriptions): the largest line item by a small margin
 - **Model API costs** (OpenAI, Anthropic): comparable to the coding tools
@@ -157,3 +157,18 @@ I am not going to make the same mistake I made in 2017. I am not building for th
 ---
 
 ## FAQ
+
+**Q: Are you including the value of your own time in that $5K?**
+No, and that's the biggest asterisk on the number. I've put in a lot of nights and weekends. If you valued my time at a senior PM rate, the all-in cost climbs by an order of magnitude. The $5K is *out-of-pocket cash* to materialize a working product — same metric I'd use for GiveTide's $500K, which also wasn't counting founder time. The comparison is apples to apples; it's just not the only number worth knowing.
+
+**Q: Did you reuse code or IP from GiveTide?**
+None. GiveTide was a charitable-giving fintech with payments rails and compliance tooling. Honeydew is a family AI agent. Zero overlap at the code or product layer. The reusable part was operational: knowing how to talk to users, how to triage bugs, how to ship without polishing forever. That part doesn't show up in the cost column but it absolutely shows up in the speed column.
+
+**Q: What's the actual tech stack?**
+React + TypeScript on the frontend, Node on the backend, a managed Postgres, Vercel for hosting, OpenAI and Anthropic for inference, Whisper for voice. The agent layer is custom — 27 tools wired into a single LLM-driven orchestration loop with per-family memory. Nothing exotic, which is part of the point. The cost compression doesn't come from clever architecture; it comes from not having to build the unsexy 80% by hand.
+
+**Q: Has Honeydew made money yet?**
+That's not what this post is about, and it's the right question to ask. Cheap to *build* and *sustainable as a business* are different problems. Honeydew has paying users and the unit economics work at small scale. Whether it grows into something that pays my mortgage is a different essay — and the honest answer is "I don't know yet, ask me in a year."
+
+**Q: If everyone can do this now, doesn't it just commoditize software businesses?**
+Partly, yes. The supply curve of "decent software products" is going to shift right, and the average price of admission for users will drop. The winners won't be the ones who shipped cheapest — they'll be the ones with the clearest taste, the best distribution, and the most patience. That's roughly what wins in every other commoditized creative market (writing, music, podcasts). Software is becoming one of those.
