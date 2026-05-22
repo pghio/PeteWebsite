@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Georgia, 'Times New Roman', serif">
+  <!-- Paper background -->
+  <rect width="1200" height="630" fill="#F4EDE2"/>
+
+  <!-- Subtle paper texture via repeated faint dots -->
+  <g fill="#1A1A1A" fill-opacity="0.025">
+    <circle cx="80" cy="120" r="1"/>
+    <circle cx="220" cy="80" r="1"/>
+    <circle cx="380" cy="160" r="1"/>
+    <circle cx="540" cy="60" r="1"/>
+    <circle cx="700" cy="140" r="1"/>
+    <circle cx="900" cy="100" r="1"/>
+    <circle cx="1080" cy="170" r="1"/>
+    <circle cx="160" cy="450" r="1"/>
+    <circle cx="320" cy="500" r="1"/>
+    <circle cx="480" cy="520" r="1"/>
+    <circle cx="640" cy="470" r="1"/>
+    <circle cx="820" cy="540" r="1"/>
+    <circle cx="1000" cy="490" r="1"/>
+  </g>
+
+  <!-- Top dateline rule -->
+  <line x1="100" y1="100" x2="1100" y2="100" stroke="#1A1A1A" stroke-width="0.75"/>
+
+  <!-- Tiny dateline -->
+  <text x="100" y="88" fill="#6B5D52" font-size="13" font-style="italic" letter-spacing="2">ESSAY · TECHNOLOGY · MAY 2026</text>
+  <text x="1100" y="88" text-anchor="end" fill="#6B5D52" font-size="13" font-style="italic">Pete Ghiorse</text>
+
+  <!-- Hairline ornament centered -->
+  <g transform="translate(600, 200)">
+    <line x1="-60" y1="0" x2="-12" y2="0" stroke="#A8301B" stroke-width="1"/>
+    <circle cx="0" cy="0" r="3" fill="#A8301B"/>
+    <line x1="12" y1="0" x2="60" y2="0" stroke="#A8301B" stroke-width="1"/>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="290" text-anchor="middle" fill="#1A1A1A" font-size="64" font-weight="700">The Return of</text>
+  <text x="600" y="365" text-anchor="middle" fill="#1A1A1A" font-size="64" font-weight="700" font-style="italic">Mom-and-Pop Software</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="430" text-anchor="middle" fill="#3A2D24" font-size="22" font-style="italic">Why artificial intelligence is quietly reversing</text>
+  <text x="600" y="460" text-anchor="middle" fill="#3A2D24" font-size="22" font-style="italic">twenty-five years of software consolidation.</text>
+
+  <!-- Bottom rule with kicker -->
+  <line x1="100" y1="540" x2="1100" y2="540" stroke="#1A1A1A" stroke-width="0.75"/>
+  <text x="600" y="568" text-anchor="middle" fill="#6B5D52" font-size="13" font-style="italic" letter-spacing="3">A CASE FOR THE BOUTIQUE BUILDER</text>
+</svg>

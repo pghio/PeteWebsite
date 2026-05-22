@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="900" height="480" fill="#F4EDE2"/>
+
+  <!-- Title -->
+  <text x="80" y="60" fill="#1A1A1A" font-size="22" font-weight="700">And yet — what AI hasn't done</text>
+  <text x="80" y="86" fill="#6B5D52" font-size="14" font-style="italic">Three counter-statistics worth holding alongside the bullish ones.</text>
+  <line x1="80" y1="100" x2="820" y2="100" stroke="#1A1A1A" stroke-width="0.5"/>
+
+  <!-- Three column stats -->
+  <g transform="translate(80, 150)">
+    <!-- Stat 1 -->
+    <g transform="translate(0, 0)">
+      <text x="120" y="40" text-anchor="middle" fill="#1A1A1A" font-size="86" font-weight="700">95</text>
+      <text x="195" y="20" text-anchor="start" fill="#1A1A1A" font-size="32" font-weight="700">%</text>
+      <line x1="40" y1="80" x2="200" y2="80" stroke="#A8301B" stroke-width="1"/>
+      <text x="120" y="110" text-anchor="middle" fill="#3A2D24" font-size="14" font-style="italic">of enterprise AI pilots</text>
+      <text x="120" y="130" text-anchor="middle" fill="#3A2D24" font-size="14" font-style="italic">have produced no</text>
+      <text x="120" y="150" text-anchor="middle" fill="#3A2D24" font-size="14" font-style="italic">measurable ROI</text>
+      <text x="120" y="190" text-anchor="middle" fill="#6B5D52" font-size="11" font-style="italic">MIT NANDA, 2025</text>
+    </g>
+
+    <!-- Stat 2 -->
+    <g transform="translate(260, 0)">
+      <text x="120" y="40" text-anchor="middle" fill="#1A1A1A" font-size="86" font-weight="700">41</text>
+      <text x="195" y="20" text-anchor="start" fill="#1A1A1A" font-size="32" font-weight="700">%</text>
+      <line x1="40" y1="80" x2="200" y2="80" stroke="#A8301B" stroke-width="1"/>
+      <text x="120" y="110" text-anchor="middle" fill="#3A2D24" font-size="14" font-style="italic">higher churn rate on</text>
+      <text x="120" y="130" text-anchor="middle" fill="#3A2D24" font-size="14" font-style="italic">AI-generated code, vs.</text>
+      <text x="120" y="150" text-anchor="middle" fill="#3A2D24" font-size="14" font-style="italic">human-written code</text>
+      <text x="120" y="190" text-anchor="middle" fill="#6B5D52" font-size="11" font-style="italic">GitClear, 2024</text>
+    </g>
+
+    <!-- Stat 3 -->
+    <g transform="translate(520, 0)">
+      <text x="120" y="40" text-anchor="middle" fill="#1A1A1A" font-size="86" font-weight="700">8</text>
+      <text x="170" y="20" text-anchor="start" fill="#1A1A1A" font-size="32" font-weight="700">%</text>
+      <line x1="40" y1="80" x2="200" y2="80" stroke="#A8301B" stroke-width="1"/>
+      <text x="120" y="110" text-anchor="middle" fill="#3A2D24" font-size="14" font-style="italic">of fresh real-world bugs</text>
+      <text x="120" y="130" text-anchor="middle" fill="#3A2D24" font-size="14" font-style="italic">fixed by leading models</text>
+      <text x="120" y="150" text-anchor="middle" fill="#3A2D24" font-size="14" font-style="italic">on the K Prize benchmark</text>
+      <text x="120" y="190" text-anchor="middle" fill="#6B5D52" font-size="11" font-style="italic">Konwinski Prize, 2025</text>
+    </g>
+  </g>
+
+  <!-- Bottom gloss -->
+  <line x1="80" y1="400" x2="820" y2="400" stroke="#1A1A1A" stroke-width="0.5"/>
+  <text x="80" y="430" fill="#1A1A1A" font-size="13" font-style="italic">The cost of starting has fallen. The cost of being good at the work hasn't.</text>
+</svg>

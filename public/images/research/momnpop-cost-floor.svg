@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="900" height="540" fill="#F4EDE2"/>
+
+  <!-- Title block -->
+  <text x="80" y="60" fill="#1A1A1A" font-size="22" font-weight="700">The cost of shipping a workable SaaS</text>
+  <text x="80" y="86" fill="#6B5D52" font-size="14" font-style="italic">From a six-month engagement to a long weekend, in roughly fifteen years.</text>
+  <line x1="80" y1="100" x2="820" y2="100" stroke="#1A1A1A" stroke-width="0.5"/>
+
+  <!-- Chart area: x = 2010..2026; y = $0..$600K log-ish -->
+  <!-- Y axis -->
+  <g font-size="11" fill="#6B5D52" font-style="italic">
+    <text x="70" y="160" text-anchor="end">$500k</text>
+    <text x="70" y="240" text-anchor="end">$250k</text>
+    <text x="70" y="320" text-anchor="end">$100k</text>
+    <text x="70" y="400" text-anchor="end">$25k</text>
+    <text x="70" y="450" text-anchor="end">$5k</text>
+  </g>
+  <!-- Faint gridlines -->
+  <g stroke="#D9D0C4" stroke-width="0.5">
+    <line x1="80" y1="155" x2="820" y2="155"/>
+    <line x1="80" y1="235" x2="820" y2="235"/>
+    <line x1="80" y1="315" x2="820" y2="315"/>
+    <line x1="80" y1="395" x2="820" y2="395"/>
+    <line x1="80" y1="445" x2="820" y2="445"/>
+  </g>
+  <!-- X axis -->
+  <line x1="80" y1="460" x2="820" y2="460" stroke="#1A1A1A" stroke-width="0.75"/>
+  <g font-size="11" fill="#6B5D52" font-style="italic">
+    <text x="120" y="480" text-anchor="middle">2010</text>
+    <text x="290" y="480" text-anchor="middle">2015</text>
+    <text x="460" y="480" text-anchor="middle">2020</text>
+    <text x="630" y="480" text-anchor="middle">2024</text>
+    <text x="780" y="480" text-anchor="middle">2026</text>
+  </g>
+
+  <!-- Trend line: 2010 ~ $500k → 2015 ~ $400k → 2020 ~ $200k → 2024 ~ $80k → 2026 ~ $20k -->
+  <path d="M 120 160 Q 200 175, 290 195 Q 380 220, 460 270 Q 545 320, 630 365 Q 710 410, 780 425"
+        fill="none" stroke="#A8301B" stroke-width="2"/>
+
+  <!-- Data dots -->
+  <g fill="#A8301B">
+    <circle cx="120" cy="160" r="5"/>
+    <circle cx="290" cy="195" r="5"/>
+    <circle cx="460" cy="270" r="5"/>
+    <circle cx="630" cy="365" r="5"/>
+    <circle cx="780" cy="425" r="5"/>
+  </g>
+
+  <!-- Annotations -->
+  <g font-size="13" fill="#1A1A1A">
+    <text x="155" y="148" font-style="italic">Team of 5, six months</text>
+    <text x="155" y="166" font-size="11" fill="#6B5D52" font-style="italic">≈ $500k MVP build</text>
+
+    <text x="660" y="357" font-style="italic" text-anchor="end">Cursor + Claude Code</text>
+    <text x="660" y="376" font-size="11" fill="#6B5D52" font-style="italic" text-anchor="end">solo dev, weeks</text>
+
+    <text x="780" y="408" font-style="italic" text-anchor="end">Lovable / Bolt / v0</text>
+    <text x="780" y="427" font-size="11" fill="#6B5D52" font-style="italic" text-anchor="end">solo, days · ≈ $20k</text>
+  </g>
+
+  <!-- Caption -->
+  <text x="80" y="515" fill="#6B5D52" font-size="11" font-style="italic">Estimates synthesized from McKinsey (2024–25) and industry reporting on AI-assisted SaaS development costs.</text>
+</svg>
