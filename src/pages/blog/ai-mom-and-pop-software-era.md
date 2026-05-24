@@ -57,15 +57,17 @@ That sentence is the one that's no longer true. Everything else in this post is 
 
 By software complexity, this is **harder than GiveTide was**. There's an LLM-driven agent in the loop. There's voice. There's tool orchestration. There's a multi-tenant family graph with a non-trivial permissioning model. There are realtime sync requirements I never had at GiveTide.
 
-![Honeydew's Dew agent pipeline — input parses through an LLM interpretation layer, hits a tool catalog, executes against the family graph, and writes back into per-family memory](/images/posts/honeydew-architecture-2026.svg)
+<div style="position: relative; left: 50%; right: 50%; margin-left: -47vw; margin-right: -47vw; width: 94vw; max-width: 1600px; margin-top: 2.5rem; margin-bottom: 1rem;">
+  <img src="/images/posts/honeydew-architecture-2026.svg" alt="Honeydew's Dew agent pipeline — input parses through an LLM interpretation layer, hits a tool catalog, executes against the family graph, and writes back into per-family memory" style="width: 100%; height: auto; border-radius: 12px; display: block;" />
+</div>
 
-<figure>
-  <video controls playsinline preload="metadata" poster="/videos/posts/momnpop/compiled-with-architecture-poster.jpg">
+<div style="position: relative; left: 50%; right: 50%; margin-left: -47vw; margin-right: -47vw; width: 94vw; max-width: 1600px; margin-top: 2.5rem; margin-bottom: 1rem;">
+  <video controls playsinline preload="metadata" poster="/videos/posts/momnpop/compiled-with-architecture-poster.jpg" style="width: 100%; height: auto; border-radius: 12px; display: block;">
     <source src="/videos/posts/momnpop/compiled-with-architecture.mp4" type="video/mp4">
     Your browser does not support embedded video. <a href="/videos/posts/momnpop/compiled-with-architecture.mp4">Download the demo</a>.
   </video>
-  <figcaption><em>Two demos, each mapped to a stage of the pipeline above. First: natural-language list add. Second: clarification under ambiguity — the hard 20% of agent work.</em></figcaption>
-</figure>
+  <p style="text-align: center; font-style: italic; color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.75rem;">Two demos, each mapped to a stage of the pipeline above. First: a list mutation. Second: recurring + conflict detection — the hard 20% of agent work.</p>
+</div>
 
 To date, my actual spend is under $5,000. Roughly:
 
