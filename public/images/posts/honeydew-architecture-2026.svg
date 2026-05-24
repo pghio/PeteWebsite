@@ -22,33 +22,33 @@
   </g>
 
   <line x1="80" y1="58" x2="1520" y2="58" stroke="rgba(255,255,255,0.3)" stroke-width="0.75"/>
-  <text x="80" y="46" fill="rgba(255,255,255,0.75)" font-size="12" letter-spacing="2" font-weight="600">HONEYDEW &#183; ARCHITECTURE &#183; MAY 2026</text>
-  <text x="1520" y="46" text-anchor="end" fill="rgba(255,255,255,0.75)" font-size="12" font-weight="500" font-style="italic">Pete Ghiorse</text>
+  <text x="80" y="44" fill="rgba(255,255,255,0.8)" font-size="14" letter-spacing="2" font-weight="700">HONEYDEW &#183; ARCHITECTURE &#183; MAY 2026</text>
+  <text x="1520" y="44" text-anchor="end" fill="rgba(255,255,255,0.8)" font-size="14" font-weight="500" font-style="italic">Pete Ghiorse</text>
 
-  <text x="800" y="100" text-anchor="middle" fill="#FFFFFF" font-size="42" font-weight="700" letter-spacing="-0.5">The Stack Underneath</text>
-  <text x="800" y="135" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="17" font-weight="400">One solo dev, an LLM agent, and a family graph that survives tired parents at 9 PM.</text>
+  <text x="800" y="100" text-anchor="middle" fill="#FFFFFF" font-size="44" font-weight="700" letter-spacing="-0.5">The Stack Underneath</text>
+  <text x="800" y="138" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="19" font-weight="400">One solo dev, an LLM agent, and a family graph that survives tired parents at 9 PM.</text>
 
   <g transform="translate(80, 175)">
-    <text x="0" y="0" fill="rgba(255,255,255,0.7)" font-size="11" letter-spacing="2" font-weight="700">INPUTS</text>
+    <text x="0" y="0" fill="rgba(255,255,255,0.75)" font-size="13" letter-spacing="2" font-weight="700">INPUTS</text>
     <g transform="translate(0, 15)">
-      <rect width="320" height="60" rx="10" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
-      <text x="16" y="26" fill="#FFFFFF" font-size="14" font-weight="700">VOICE</text>
-      <text x="16" y="46" fill="rgba(255,255,255,0.8)" font-size="12">Whisper transcription</text>
+      <rect width="320" height="60" rx="10" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+      <text x="16" y="26" fill="#FFFFFF" font-size="16" font-weight="700">VOICE</text>
+      <text x="16" y="48" fill="rgba(255,255,255,0.85)" font-size="14">Whisper transcription</text>
     </g>
     <g transform="translate(360, 15)">
-      <rect width="320" height="60" rx="10" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
-      <text x="16" y="26" fill="#FFFFFF" font-size="14" font-weight="700">TEXT</text>
-      <text x="16" y="46" fill="rgba(255,255,255,0.8)" font-size="12">Typed chat &#183; mobile + web</text>
+      <rect width="320" height="60" rx="10" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+      <text x="16" y="26" fill="#FFFFFF" font-size="16" font-weight="700">TEXT</text>
+      <text x="16" y="48" fill="rgba(255,255,255,0.85)" font-size="14">Typed chat &#183; mobile + web</text>
     </g>
     <g transform="translate(720, 15)">
-      <rect width="320" height="60" rx="10" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
-      <text x="16" y="26" fill="#FFFFFF" font-size="14" font-weight="700">PHOTO</text>
-      <text x="16" y="46" fill="rgba(255,255,255,0.8)" font-size="12">Vision OCR &#183; handwritten lists</text>
+      <rect width="320" height="60" rx="10" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+      <text x="16" y="26" fill="#FFFFFF" font-size="16" font-weight="700">PHOTO</text>
+      <text x="16" y="48" fill="rgba(255,255,255,0.85)" font-size="14">Vision OCR &#183; handwritten lists</text>
     </g>
     <g transform="translate(1080, 15)">
-      <rect width="360" height="60" rx="10" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
-      <text x="16" y="26" fill="#FFFFFF" font-size="14" font-weight="700">CALENDAR EVENT</text>
-      <text x="16" y="46" fill="rgba(255,255,255,0.8)" font-size="12">Google / Apple / Outlook sync</text>
+      <rect width="360" height="60" rx="10" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+      <text x="16" y="26" fill="#FFFFFF" font-size="16" font-weight="700">CALENDAR EVENT</text>
+      <text x="16" y="48" fill="rgba(255,255,255,0.85)" font-size="14">Google / Apple / Outlook sync</text>
     </g>
   </g>
 
@@ -58,15 +58,15 @@
   </g>
 
   <g transform="translate(80, 320)">
-    <rect width="440" height="220" rx="12" fill="rgba(255,255,255,0.96)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
-    <text x="20" y="32" fill="#5AAE8A" font-size="11" letter-spacing="2" font-weight="700">STAGE 01</text>
-    <text x="20" y="72" fill="#1F3D2A" font-size="28" font-weight="700">INTERPRET</text>
-    <line x1="20" y1="86" x2="180" y2="86" stroke="#5AAE8A" stroke-width="2"/>
-    <text x="20" y="112" fill="#3D5546" font-size="13">&#8226; LLM router (GPT &#183; Claude)</text>
-    <text x="20" y="134" fill="#3D5546" font-size="13">&#8226; System prompt + family context</text>
-    <text x="20" y="156" fill="#3D5546" font-size="13">&#8226; Memory recall &#183; prior turns</text>
-    <text x="20" y="178" fill="#3D5546" font-size="13">&#8226; Anaphora resolution</text>
-    <text x="20" y="204" fill="#3A7A56" font-size="12" font-weight="700" font-style="italic">"Add it to that list" &#x2192; resolved</text>
+    <rect width="440" height="220" rx="12" fill="rgba(255,255,255,0.97)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <text x="22" y="34" fill="#5AAE8A" font-size="13" letter-spacing="2" font-weight="700">STAGE 01</text>
+    <text x="22" y="76" fill="#1F3D2A" font-size="30" font-weight="700">INTERPRET</text>
+    <line x1="22" y1="92" x2="180" y2="92" stroke="#5AAE8A" stroke-width="2"/>
+    <text x="22" y="118" fill="#3D5546" font-size="15">&#8226; LLM router (GPT &#183; Claude)</text>
+    <text x="22" y="142" fill="#3D5546" font-size="15">&#8226; System prompt + family context</text>
+    <text x="22" y="166" fill="#3D5546" font-size="15">&#8226; Memory recall &#183; prior turns</text>
+    <text x="22" y="190" fill="#3D5546" font-size="15">&#8226; Anaphora resolution</text>
+    <text x="22" y="210" fill="#3A7A56" font-size="14" font-weight="700" font-style="italic">"Add it to that list" &#x2192; resolved</text>
   </g>
 
   <g stroke="rgba(255,255,255,0.85)" stroke-width="2.5" fill="none">
@@ -75,15 +75,15 @@
   </g>
 
   <g transform="translate(580, 320)">
-    <rect width="440" height="220" rx="12" fill="rgba(255,255,255,0.96)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
-    <text x="20" y="32" fill="#5AAE8A" font-size="11" letter-spacing="2" font-weight="700">STAGE 02</text>
-    <text x="20" y="72" fill="#1F3D2A" font-size="28" font-weight="700">PLAN</text>
-    <line x1="20" y1="86" x2="120" y2="86" stroke="#5AAE8A" stroke-width="2"/>
-    <text x="20" y="112" fill="#3D5546" font-size="13">&#8226; Tool catalog (27 first-party tools)</text>
-    <text x="20" y="134" fill="#3D5546" font-size="13">&#8226; Multi-action batching</text>
-    <text x="20" y="156" fill="#3D5546" font-size="13">&#8226; Conflict + dependency check</text>
-    <text x="20" y="178" fill="#3D5546" font-size="13">&#8226; Idempotency keys</text>
-    <text x="20" y="204" fill="#3A7A56" font-size="12" font-weight="700" font-style="italic">Clarifies under doubt &#183; never blind-mutates</text>
+    <rect width="440" height="220" rx="12" fill="rgba(255,255,255,0.97)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <text x="22" y="34" fill="#5AAE8A" font-size="13" letter-spacing="2" font-weight="700">STAGE 02</text>
+    <text x="22" y="76" fill="#1F3D2A" font-size="30" font-weight="700">PLAN</text>
+    <line x1="22" y1="92" x2="120" y2="92" stroke="#5AAE8A" stroke-width="2"/>
+    <text x="22" y="118" fill="#3D5546" font-size="15">&#8226; Tool catalog (27 first-party tools)</text>
+    <text x="22" y="142" fill="#3D5546" font-size="15">&#8226; Multi-action batching</text>
+    <text x="22" y="166" fill="#3D5546" font-size="15">&#8226; Conflict + dependency check</text>
+    <text x="22" y="190" fill="#3D5546" font-size="15">&#8226; Idempotency keys</text>
+    <text x="22" y="210" fill="#3A7A56" font-size="14" font-weight="700" font-style="italic">Clarifies under doubt &#183; never blind-mutates</text>
   </g>
 
   <g stroke="rgba(255,255,255,0.85)" stroke-width="2.5" fill="none">
@@ -92,59 +92,59 @@
   </g>
 
   <g transform="translate(1080, 320)">
-    <rect width="440" height="220" rx="12" fill="rgba(255,255,255,0.96)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
-    <text x="20" y="32" fill="#5AAE8A" font-size="11" letter-spacing="2" font-weight="700">STAGE 03</text>
-    <text x="20" y="72" fill="#1F3D2A" font-size="28" font-weight="700">EXECUTE</text>
-    <line x1="20" y1="86" x2="160" y2="86" stroke="#5AAE8A" stroke-width="2"/>
-    <text x="20" y="112" fill="#3D5546" font-size="13">&#8226; Postgres writes (transactional)</text>
-    <text x="20" y="134" fill="#3D5546" font-size="13">&#8226; Redis cache &#183; idempotency store</text>
-    <text x="20" y="156" fill="#3D5546" font-size="13">&#8226; Calendar / Reminder APIs</text>
-    <text x="20" y="178" fill="#3D5546" font-size="13">&#8226; WebSocket fanout to all devices</text>
-    <text x="20" y="204" fill="#3A7A56" font-size="12" font-weight="700" font-style="italic">~700 ms p50 from prompt to confirmation</text>
+    <rect width="440" height="220" rx="12" fill="rgba(255,255,255,0.97)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <text x="22" y="34" fill="#5AAE8A" font-size="13" letter-spacing="2" font-weight="700">STAGE 03</text>
+    <text x="22" y="76" fill="#1F3D2A" font-size="30" font-weight="700">EXECUTE</text>
+    <line x1="22" y1="92" x2="160" y2="92" stroke="#5AAE8A" stroke-width="2"/>
+    <text x="22" y="118" fill="#3D5546" font-size="15">&#8226; Postgres writes (transactional)</text>
+    <text x="22" y="142" fill="#3D5546" font-size="15">&#8226; Redis cache &#183; idempotency store</text>
+    <text x="22" y="166" fill="#3D5546" font-size="15">&#8226; Calendar / Reminder APIs</text>
+    <text x="22" y="190" fill="#3D5546" font-size="15">&#8226; WebSocket fanout to all devices</text>
+    <text x="22" y="210" fill="#3A7A56" font-size="14" font-weight="700" font-style="italic">~700 ms p50 from prompt to confirmation</text>
   </g>
 
   <g stroke="rgba(255,255,255,0.85)" stroke-width="2" fill="none">
     <path d="M 1180 540 L 1180 600 L 480 600 L 480 625"/>
     <polygon points="473,612 480,627 487,612" fill="rgba(255,255,255,0.85)"/>
   </g>
-  <text x="660" y="595" fill="rgba(255,255,255,0.85)" font-size="11" font-style="italic">writes state &#183; appends memory</text>
+  <text x="660" y="595" fill="rgba(255,255,255,0.9)" font-size="13" font-style="italic">writes state &#183; appends memory</text>
   <g stroke="rgba(255,255,255,0.85)" stroke-width="2" fill="none">
     <path d="M 1250 540 L 1250 600 L 1120 600 L 1120 625"/>
     <polygon points="1113,612 1120,627 1127,612" fill="rgba(255,255,255,0.85)"/>
   </g>
 
-  <g stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="none" stroke-dasharray="6,4">
+  <g stroke="rgba(255,255,255,0.65)" stroke-width="1.5" fill="none" stroke-dasharray="6,4">
     <path d="M 380 625 L 380 580 L 260 580 L 260 540"/>
-    <polygon points="253,553 260,540 267,553" fill="rgba(255,255,255,0.6)"/>
+    <polygon points="253,553 260,540 267,553" fill="rgba(255,255,255,0.65)"/>
   </g>
-  <text x="100" y="575" fill="rgba(255,255,255,0.7)" font-size="11" font-style="italic">context + priors feed next turn</text>
+  <text x="100" y="572" fill="rgba(255,255,255,0.75)" font-size="13" font-style="italic">context + priors feed next turn</text>
 
   <g transform="translate(200, 625)">
-    <rect width="560" height="180" rx="12" fill="rgba(255,255,255,0.96)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
-    <text x="20" y="32" fill="#5AAE8A" font-size="11" letter-spacing="2" font-weight="700">STATE</text>
-    <text x="20" y="72" fill="#1F3D2A" font-size="26" font-weight="700">FAMILY GRAPH</text>
-    <line x1="20" y1="86" x2="170" y2="86" stroke="#5AAE8A" stroke-width="2"/>
-    <text x="20" y="112" fill="#3D5546" font-size="13">&#8226; Multi-tenant Postgres &#183; per-family rows</text>
-    <text x="20" y="134" fill="#3D5546" font-size="13">&#8226; Roles, kids, schedules, lists, events</text>
-    <text x="20" y="156" fill="#3A7A56" font-size="12" font-weight="700" font-style="italic">Permissioned across the whole household</text>
+    <rect width="560" height="180" rx="12" fill="rgba(255,255,255,0.97)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <text x="22" y="34" fill="#5AAE8A" font-size="13" letter-spacing="2" font-weight="700">STATE</text>
+    <text x="22" y="76" fill="#1F3D2A" font-size="28" font-weight="700">FAMILY GRAPH</text>
+    <line x1="22" y1="92" x2="180" y2="92" stroke="#5AAE8A" stroke-width="2"/>
+    <text x="22" y="120" fill="#3D5546" font-size="15">&#8226; Multi-tenant Postgres &#183; per-family rows</text>
+    <text x="22" y="144" fill="#3D5546" font-size="15">&#8226; Roles, kids, schedules, lists, events</text>
+    <text x="22" y="166" fill="#3A7A56" font-size="14" font-weight="700" font-style="italic">Permissioned across the whole household</text>
   </g>
 
   <g transform="translate(840, 625)">
-    <rect width="560" height="180" rx="12" fill="rgba(255,255,255,0.96)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
-    <text x="20" y="32" fill="#5AAE8A" font-size="11" letter-spacing="2" font-weight="700">LOOP</text>
-    <text x="20" y="72" fill="#1F3D2A" font-size="26" font-weight="700">MEMORY + LEARNING</text>
-    <line x1="20" y1="86" x2="240" y2="86" stroke="#5AAE8A" stroke-width="2"/>
-    <text x="20" y="112" fill="#3D5546" font-size="13">&#8226; Per-family vector store &#183; prior turns</text>
-    <text x="20" y="134" fill="#3D5546" font-size="13">&#8226; Behavioral patterns &#183; recurring asks</text>
-    <text x="20" y="156" fill="#3A7A56" font-size="12" font-weight="700" font-style="italic">"Dew remembers" &#x2014; without a personal LLM</text>
+    <rect width="560" height="180" rx="12" fill="rgba(255,255,255,0.97)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <text x="22" y="34" fill="#5AAE8A" font-size="13" letter-spacing="2" font-weight="700">LOOP</text>
+    <text x="22" y="76" fill="#1F3D2A" font-size="28" font-weight="700">MEMORY + LEARNING</text>
+    <line x1="22" y1="92" x2="250" y2="92" stroke="#5AAE8A" stroke-width="2"/>
+    <text x="22" y="120" fill="#3D5546" font-size="15">&#8226; Per-family vector store &#183; prior turns</text>
+    <text x="22" y="144" fill="#3D5546" font-size="15">&#8226; Behavioral patterns &#183; recurring asks</text>
+    <text x="22" y="166" fill="#3A7A56" font-size="14" font-weight="700" font-style="italic">"Dew remembers" &#x2014; without a personal LLM</text>
   </g>
 
-  <text x="1545" y="425" fill="rgba(255,255,255,0.85)" font-size="13" font-weight="600" text-anchor="end">response</text>
-  <text x="1545" y="445" fill="rgba(255,255,255,0.75)" font-size="11" text-anchor="end">+ effects on devices</text>
+  <text x="1545" y="425" fill="rgba(255,255,255,0.9)" font-size="14" font-weight="700" text-anchor="end">response</text>
+  <text x="1545" y="445" fill="rgba(255,255,255,0.8)" font-size="13" text-anchor="end">+ effects on devices</text>
   <g stroke="rgba(255,255,255,0.85)" stroke-width="2.5" fill="none">
     <line x1="1520" y1="435" x2="1555" y2="435"/>
   </g>
 
   <line x1="80" y1="845" x2="1520" y2="845" stroke="rgba(255,255,255,0.3)" stroke-width="0.75"/>
-  <text x="800" y="878" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="13" letter-spacing="3" font-weight="600">27 TOOLS &#183; ONE LOOP &#183; ONE SOLO DEV &#183; GETHONEYDEW.APP</text>
+  <text x="800" y="876" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="14" letter-spacing="3" font-weight="700">27 TOOLS &#183; ONE LOOP &#183; ONE SOLO DEV &#183; GETHONEYDEW.APP</text>
 </svg>
