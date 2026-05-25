@@ -25,39 +25,37 @@
 
 I spent over $500,000 building my last startup.
 
-I've spent under $5,000 building the next one.
+I've spent around $2,500 building the next one.
 
 Same founder, five years apart. Here's what happened.
 
 Between 2017 and 2022 I co-founded GiveTide, a charitable giving platform. Small team, five years of work, a little over half a million dollars to ship. We sold to an acquirer.
 
-Last year I started Honeydew (gethoneydew.app). It's an AI agent that runs families' lives. Calendar, lists, reminders, conflict detection. The mental load problem. I built it solo. By software complexity it's harder than GiveTide ever was. So far it's cost me under $5K out of pocket.
+Last year I started Honeydew (gethoneydew.app). It's an AI agent that runs families' lives. Calendar, lists, reminders, conflict detection. The mental load problem. I built it solo. By software complexity it's harder than GiveTide ever was. So far it's cost me about $2,500 out of pocket. Roughly 80% of that went to the AI coding tools alone.
 
 The video above is what makes that math possible. ChatGPT can describe a packing list. Only an agent with real tools can actually create one on your real family calendar.
 
-Here's what's different now.
+The biggest shift is AI coding tools used seriously. A twelve-field settings screen with validation used to be a one or two day task for a junior engineer. With Cursor and Claude Code it's thirty minutes. Doesn't apply to gnarly bugs. Does apply to the long tail of CRUD that fills out most of a real product.
 
-The biggest shift is AI coding tools, used seriously. A twelve-field settings screen with validation used to be a one or two day task for a junior engineer. With Cursor and Claude Code it's thirty minutes. Doesn't apply to gnarly bugs. Does apply to the long tail of CRUD work that fills out most of a real product.
+The infrastructure floor collapsed too. What used to be $5K a month self-hosted now runs on Vercel plus managed Postgres for about $50. Inference is the only meaningful line item, and that's cheap at solo volume.
 
-The infrastructure floor collapsed. What used to be $5K/month self-hosted now runs on Vercel plus managed Postgres for about $50. Inference is the only line item that's still meaningful, and that's cheap at solo volume.
+Model APIs let me skip entire systems. GiveTide spent weeks on NL transaction categorization. Honeydew gets it for a fraction of a cent per call. Same for transcription, OCR, embedding search.
 
-Model APIs let me skip entire systems. GiveTide spent weeks on NL categorization. Honeydew gets it for a fraction of a cent per call. Same for transcription, OCR, embedding search. What used to take real engineering is now an API call.
+Being wrong got cheaper. In 2017 I polished every screen before anyone saw it because iteration was expensive. Now I ship rough, learn from real families, then delete or polish. Wrong cheaply, faster. That's the actual unlock.
 
-Being wrong got cheaper. In 2017 I polished every screen before anyone saw it because iteration was expensive. Now I ship rough things, learn from the families using them, then delete or polish. Wrong cheaply, faster. That's the actual unlock.
+And not having a team is wildly underrated. No meetings, no hiring, no alignment overhead. A real share of my speed is just not coordinating with anyone.
 
-Not having a team is wildly underrated. No meetings, no hiring, no alignment overhead. A real share of my speed at Honeydew is just not coordinating with anyone.
-
-Now the honest part. The cost collapse is on one line item — materializing a working system. Everything else is the same.
+Now the honest part. The cost collapse is on one line item, materializing a working system. Everything else is the same.
 
 Product judgment didn't get cheaper. AI doesn't tell you which feature matters. The hours I spend watching users use Honeydew look identical to GiveTide.
 
-Distribution didn't get cheaper either. Same tools that let me build for $5K let everyone build for $5K. The market is louder, not quieter.
+Distribution didn't get cheaper either. Same tools let everyone build for $2,500. The market is louder, not quieter.
 
-Support didn't get cheaper. Replying to "Dew is being weird" reports at 7 AM is the same problem it was in 2017 — arguably harder now because the failure modes are stochastic.
+Support didn't get cheaper. Replying to "Dew is being weird" reports at 7 AM is the same problem it was in 2017.
 
-Not claiming anyone can do this. I had a decade of operating experience and an exit before Honeydew. 2017-me wouldn't have shipped this with 2026 tools. I didn't yet know what to build.
+Not claiming anyone can do this. I had a decade of operating experience and an exit before Honeydew.
 
-I'm not building this one for the exit. Just for the work.
+Not building this one for the exit. Just for the work.
 
 Full breakdown, charts, FAQ, sources → https://peterghiorse.com/blog/ai-mom-and-pop-software-era
 
@@ -83,8 +81,8 @@ Status as of last main deploy:
 
 - [x] Blog deep-dive live at https://peterghiorse.com/blog/ai-mom-and-pop-software-era
 - [x] Compiled video live at https://peterghiorse.com/videos/posts/momnpop/compiled-with-architecture.mp4
-- [x] Cover poster (1920×1080, correct aspect)
-- [x] All hero/stack/architecture SVGs serving in production
+- [x] Cover poster (1920×1080, $500K vs $2,500)
+- [x] Hero, stack, timeline, architecture SVGs all serving in production
 
 Pete to verify:
 - [ ] Phone preview on iPhone — first 3 lines above the "see more" fold
@@ -108,11 +106,3 @@ Check at 1h, 6h, 24h, 72h. Stop after 72h.
 | Click-throughs to blog | 1%+ of impressions |
 
 If impressions cross 50k by hour 24, write a short follow-up on day 3 about what surprised you in the comments. Otherwise log learnings and move on.
-
----
-
-## Amplification (day 2+)
-
-- **X (day 2):** lead with the 3-line hook + the compiled video. Truncate body to fit.
-- **HN / Indie Hackers:** rewrite per platform. Don't paste the same text.
-- **Email newsletter:** the blog post is the email; LinkedIn is the teaser.

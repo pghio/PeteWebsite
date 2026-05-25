@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', sans-serif">
+  <defs>
+    <linearGradient id="tlBgGrad" x1="0%" y1="0%" x2="100%" y2="100%" gradientTransform="rotate(20)">
+      <stop offset="0%" stop-color="#5AAE8A"/>
+      <stop offset="50%" stop-color="#48946F"/>
+      <stop offset="100%" stop-color="#3A7A56"/>
+    </linearGradient>
+    <symbol id="hdHeart" viewBox="0 0 512 512">
+      <path d="M256 380 C 200 340, 152 300, 136 250 C 120 200, 144 165, 184 160 C 216 155, 240 165, 256 185 C 272 165, 296 155, 328 160 C 368 165, 392 200, 376 250 C 360 300, 312 340, 256 380 Z" fill="currentColor"/>
+    </symbol>
+  </defs>
+  <rect width="1200" height="630" fill="url(#tlBgGrad)"/>
+
+  <g color="rgba(255,255,255,0.06)">
+    <use href="#hdHeart" x="50"   y="40"   width="60"  height="60"/>
+    <use href="#hdHeart" x="1100" y="60"   width="55"  height="55"/>
+    <use href="#hdHeart" x="60"   y="540"  width="65"  height="65"/>
+    <use href="#hdHeart" x="1110" y="540"  width="60"  height="60"/>
+  </g>
+
+  <!-- Top dateline -->
+  <line x1="100" y1="80" x2="1100" y2="80" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+  <text x="100" y="68" fill="rgba(255,255,255,0.75)" font-size="13" letter-spacing="2" font-weight="500">CUMULATIVE SPEND, BOTH STARTUPS</text>
+  <text x="1100" y="68" text-anchor="end" fill="rgba(255,255,255,0.75)" font-size="13" font-weight="500">Pete Ghiorse</text>
+
+  <!-- Title -->
+  <text x="600" y="130" text-anchor="middle" fill="#FFFFFF" font-size="36" font-weight="700" letter-spacing="-0.5">Ten years, drawn to scale</text>
+  <text x="600" y="160" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="16">What it cost me to ship a product, before and after.</text>
+
+  <!-- Chart area: x = 120 to 1080 (960 wide), y = 220 to 480 (260 tall) -->
+  <!-- Y-axis: $0 at y=480, $500K at y=220 (260px = $500K, so $1 = 0.00052px) -->
+
+  <!-- Y-axis labels -->
+  <text x="105" y="226" text-anchor="end" fill="rgba(255,255,255,0.85)" font-size="13" font-weight="600">$500K</text>
+  <line x1="120" y1="220" x2="1080" y2="220" stroke="rgba(255,255,255,0.15)" stroke-width="0.5" stroke-dasharray="3,3"/>
+
+  <text x="105" y="291" text-anchor="end" fill="rgba(255,255,255,0.65)" font-size="12">$375K</text>
+  <line x1="120" y1="285" x2="1080" y2="285" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" stroke-dasharray="3,3"/>
+
+  <text x="105" y="356" text-anchor="end" fill="rgba(255,255,255,0.65)" font-size="12">$250K</text>
+  <line x1="120" y1="350" x2="1080" y2="350" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" stroke-dasharray="3,3"/>
+
+  <text x="105" y="421" text-anchor="end" fill="rgba(255,255,255,0.65)" font-size="12">$125K</text>
+  <line x1="120" y1="415" x2="1080" y2="415" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" stroke-dasharray="3,3"/>
+
+  <text x="105" y="486" text-anchor="end" fill="rgba(255,255,255,0.85)" font-size="13" font-weight="600">$0</text>
+
+  <!-- X-axis (baseline) -->
+  <line x1="120" y1="480" x2="1080" y2="480" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+
+  <!-- X-axis labels: 10 years from 2017 to 2026 → x=120 to 1080, 96px per year -->
+  <text x="120" y="510" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="12">2017</text>
+  <text x="216" y="510" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11">2018</text>
+  <text x="312" y="510" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11">2019</text>
+  <text x="408" y="510" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11">2020</text>
+  <text x="504" y="510" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11">2021</text>
+  <text x="600" y="510" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="12">2022</text>
+  <text x="696" y="510" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11">2023</text>
+  <text x="792" y="510" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11">2024</text>
+  <text x="888" y="510" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="12">2025</text>
+  <text x="984" y="510" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="12">2026</text>
+
+  <!-- GiveTide cumulative spend line (2017-2022) -->
+  <!-- Start at (120, 480) = $0 in 2017, end at (600, 220) = $500K in 2022 -->
+  <!-- Slight S-curve to feel real: $30K end 2017, $110K end 2018, $230K end 2019, $340K end 2020, $430K end 2021, $500K mid-2022 -->
+  <path d="M 120 480 L 216 464 L 312 423 L 408 367 L 504 311 L 600 220"
+        stroke="#1F3D2A" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Plateau after acquisition (2022 to 2025): flat at $500K -->
+  <line x1="600" y1="220" x2="888" y2="220" stroke="#1F3D2A" stroke-width="2" stroke-dasharray="5,4" stroke-linecap="round"/>
+
+  <!-- GiveTide label + endpoint dot -->
+  <circle cx="600" cy="220" r="6" fill="#1F3D2A"/>
+  <text x="600" y="205" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700">$500K+ &#183; sold to acquirer</text>
+  <text x="320" y="395" fill="rgba(255,255,255,0.92)" font-size="14" font-weight="700">GIVETIDE</text>
+  <text x="320" y="412" fill="rgba(255,255,255,0.75)" font-size="11">small team &#183; 5 years of build</text>
+
+  <!-- Honeydew line (2025-2026): from (888, 480) = $0 to (984, 479) ≈ $2,500 — basically flat at zero -->
+  <!-- $2,500 / $500,000 = 0.5% of chart height = 1.3 pixels at this scale. Effectively invisible. -->
+  <path d="M 888 480 L 984 478.7" stroke="#A8E16C" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="984" cy="479" r="6" fill="#A8E16C"/>
+
+  <!-- Honeydew label — needs to point to the basically-invisible line -->
+  <text x="985" y="465" text-anchor="middle" fill="#A8E16C" font-size="13" font-weight="700">~$2,500</text>
+  <text x="888" y="540" fill="rgba(255,255,255,0.92)" font-size="14" font-weight="700">HONEYDEW</text>
+  <text x="888" y="557" fill="rgba(255,255,255,0.75)" font-size="11">solo &#183; months of build</text>
+
+  <!-- Annotation arrow pointing to Honeydew's tiny line -->
+  <g stroke="#A8E16C" stroke-width="1.5" fill="none">
+    <path d="M 940 575 Q 940 510 936 485"/>
+    <polygon points="932,488 936,482 940,488" fill="#A8E16C"/>
+  </g>
+
+  <!-- Bottom kicker -->
+  <line x1="100" y1="585" x2="1100" y2="585" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+  <text x="600" y="612" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="13" letter-spacing="3" font-weight="500">SAME FOUNDER. SAME ENGINEERING INSTINCTS. 200&#215; LESS CASH.</text>
+</svg>

@@ -11,34 +11,21 @@
   </defs>
   <rect width="900" height="600" fill="url(#stackBgGrad)"/>
 
-  <!-- Scattered hearts -->
   <g color="rgba(255,255,255,0.07)">
     <use href="#hdHeart" x="40"   y="40"   width="60"  height="60"/>
     <use href="#hdHeart" x="780"  y="60"   width="55"  height="55"/>
     <use href="#hdHeart" x="60"   y="480"  width="80"  height="80"/>
     <use href="#hdHeart" x="800"  y="490"  width="70"  height="70"/>
-    <use href="#hdHeart" x="430"  y="20"   width="40"  height="40"/>
-    <use href="#hdHeart" x="430"  y="540"  width="45"  height="45"/>
-  </g>
-  <g color="rgba(255,255,255,0.05)">
-    <use href="#hdHeart" x="200"  y="20"   width="35"  height="35"/>
-    <use href="#hdHeart" x="640"  y="540"  width="35"  height="35"/>
-    <use href="#hdHeart" x="20"   y="300"  width="45"  height="45"/>
-    <use href="#hdHeart" x="850"  y="300"  width="40"  height="40"/>
   </g>
 
-  <!-- Title -->
   <text x="80" y="60" fill="#FFFFFF" font-size="24" font-weight="700" letter-spacing="-0.3">Where the money went</text>
-  <text x="80" y="86" fill="rgba(255,255,255,0.8)" font-size="14" font-weight="400">Cost categories at GiveTide (2017) and Honeydew (2026), shown to the same scale.</text>
+  <text x="80" y="86" fill="rgba(255,255,255,0.85)" font-size="14" font-weight="400">GiveTide (2017&#8211;2022) and Honeydew (2025&#8211;2026), to the same scale.</text>
   <line x1="80" y1="100" x2="820" y2="100" stroke="rgba(255,255,255,0.35)" stroke-width="0.5"/>
 
-  <!-- Two columns -->
-  <!-- LEFT: GIVETIDE -->
   <g transform="translate(100, 150)">
     <text x="0" y="0" fill="rgba(255,255,255,0.7)" font-size="13" letter-spacing="2" font-weight="600">GIVETIDE &#183; 2017&#8211;2022</text>
     <text x="0" y="32" fill="#FFFFFF" font-size="32" font-weight="700">$500,000+</text>
 
-    <!-- Stacked bars (dark green for old/expensive) -->
     <g transform="translate(0, 60)">
       <rect x="0" y="0" width="320" height="44" rx="2" fill="#1F3D2A"/>
       <text x="160" y="29" text-anchor="middle" fill="rgba(255,255,255,0.95)" font-size="13" font-weight="600">Engineering &amp; contractors</text>
@@ -60,37 +47,32 @@
     <text x="0" y="270" fill="rgba(255,255,255,0.7)" font-size="11">Five years. A team. Mostly engineering hours.</text>
   </g>
 
-  <!-- RIGHT: HONEYDEW -->
   <g transform="translate(500, 150)">
     <text x="0" y="0" fill="rgba(255,255,255,0.7)" font-size="13" letter-spacing="2" font-weight="600">HONEYDEW &#183; 2025&#8211;2026</text>
-    <text x="0" y="32" fill="#A8E16C" font-size="32" font-weight="700">&lt;$5,000</text>
+    <text x="0" y="32" fill="#A8E16C" font-size="32" font-weight="700">~$2,500</text>
 
-    <!-- Tiny bars at proportional 1% scale, bright lime accent -->
     <g transform="translate(0, 60)">
-      <rect x="0" y="0" width="3.2" height="44" rx="1" fill="#A8E16C"/>
-      <text x="14" y="29" fill="#FFFFFF" font-size="13" font-weight="600">AI coding tools</text>
-      <text x="335" y="29" text-anchor="end" fill="#FFFFFF" font-size="12" font-weight="500">~30%</text>
+      <rect x="0" y="0" width="1.6" height="44" rx="1" fill="#A8E16C"/>
+      <text x="14" y="29" fill="#FFFFFF" font-size="13" font-weight="600">AI coding tools (Cursor, Claude Code)</text>
+      <text x="335" y="29" text-anchor="end" fill="#FFFFFF" font-size="12" font-weight="500">~80%</text>
 
-      <rect x="0" y="48" width="3.2" height="44" rx="1" fill="#A8E16C" fill-opacity="0.85"/>
-      <text x="14" y="77" fill="#FFFFFF" font-size="13" font-weight="600">Model API calls</text>
-      <text x="335" y="77" text-anchor="end" fill="#FFFFFF" font-size="12" font-weight="500">~30%</text>
+      <rect x="0" y="48" width="1.6" height="44" rx="1" fill="#A8E16C" fill-opacity="0.7"/>
+      <text x="14" y="77" fill="#FFFFFF" font-size="13" font-weight="600">Model API calls (OpenAI, Anthropic)</text>
+      <text x="335" y="77" text-anchor="end" fill="#FFFFFF" font-size="12" font-weight="500">~15%</text>
 
-      <rect x="0" y="96" width="3.2" height="44" rx="1" fill="#A8E16C" fill-opacity="0.7"/>
-      <text x="14" y="125" fill="#FFFFFF" font-size="13" font-weight="600">Infra (Vercel, DB)</text>
-      <text x="335" y="125" text-anchor="end" fill="#FFFFFF" font-size="12" font-weight="500">~25%</text>
-
-      <rect x="0" y="144" width="3.2" height="44" rx="1" fill="#A8E16C" fill-opacity="0.55"/>
-      <text x="14" y="173" fill="#FFFFFF" font-size="13" font-weight="600">Domains, services, misc</text>
-      <text x="335" y="173" text-anchor="end" fill="#FFFFFF" font-size="12" font-weight="500">~15%</text>
+      <rect x="0" y="96" width="1.6" height="44" rx="1" fill="#A8E16C" fill-opacity="0.5"/>
+      <text x="14" y="125" fill="#FFFFFF" font-size="13" font-weight="600">Infra, domains, services</text>
+      <text x="335" y="125" text-anchor="end" fill="#FFFFFF" font-size="12" font-weight="500">~5%</text>
     </g>
 
-    <text x="0" y="270" fill="rgba(255,255,255,0.7)" font-size="11">Several months. Solo. Mostly subscriptions.</text>
+    <text x="0" y="220" fill="rgba(255,255,255,0.7)" font-size="11">Months. Solo. Almost all subscriptions.</text>
+    <text x="0" y="244" fill="rgba(255,255,255,0.95)" font-size="14" font-weight="700">80% of total spend was the coding tools.</text>
+    <text x="0" y="262" fill="rgba(255,255,255,0.78)" font-size="12" font-style="italic">That's the line item that changed.</text>
   </g>
 
-  <!-- Scale callout -->
   <g transform="translate(80, 470)">
     <line x1="0" y1="0" x2="740" y2="0" stroke="rgba(255,255,255,0.35)" stroke-width="0.5"/>
-    <text x="0" y="28" fill="rgba(255,255,255,0.85)" font-size="13">Bars are drawn to scale. The Honeydew bars are roughly 1% the width of the GiveTide bars,</text>
-    <text x="0" y="48" fill="rgba(255,255,255,0.85)" font-size="13">because the comparison really is about that lopsided. The category labels are estimates.</text>
+    <text x="0" y="28" fill="rgba(255,255,255,0.85)" font-size="13">Bars to scale. The Honeydew bars are roughly 0.5% the width of GiveTide's because the</text>
+    <text x="0" y="48" fill="rgba(255,255,255,0.85)" font-size="13">comparison really is that lopsided. Honeydew percentages are rough but the rank order holds.</text>
   </g>
 </svg>

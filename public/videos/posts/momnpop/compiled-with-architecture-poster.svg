@@ -8,10 +8,14 @@
     <symbol id="hdHeart" viewBox="0 0 512 512">
       <path d="M256 380 C 200 340, 152 300, 136 250 C 120 200, 144 165, 184 160 C 216 155, 240 165, 256 185 C 272 165, 296 155, 328 160 C 368 165, 392 200, 376 250 C 360 300, 312 340, 256 380 Z" fill="currentColor"/>
     </symbol>
-    <radialGradient id="dewBody" cx="40%" cy="40%" r="60%">
-      <stop offset="0%" stop-color="#D4EDDB"/>
-      <stop offset="60%" stop-color="#9CCEB0"/>
+    <radialGradient id="dewBody" cx="38%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#E2F2E5"/>
+      <stop offset="55%" stop-color="#A8D3B4"/>
       <stop offset="100%" stop-color="#6DB37E"/>
+    </radialGradient>
+    <radialGradient id="dewHighlight" cx="35%" cy="30%" r="20%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.6)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
     </radialGradient>
     <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
       <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
@@ -23,7 +27,6 @@
 
   <rect width="1920" height="1080" fill="url(#coverBgGrad)"/>
 
-  <!-- Scattered hearts -->
   <g color="rgba(255,255,255,0.07)">
     <use href="#hdHeart" x="60"   y="40"   width="120" height="120"/>
     <use href="#hdHeart" x="280"  y="900"  width="180" height="180"/>
@@ -35,52 +38,41 @@
     <use href="#hdHeart" x="1780" y="500"  width="100" height="100"/>
     <use href="#hdHeart" x="50"   y="520"  width="160" height="160"/>
     <use href="#hdHeart" x="1800" y="960"  width="90"  height="90"/>
-    <use href="#hdHeart" x="1700" y="700"  width="110" height="110"/>
   </g>
   <g color="rgba(255,255,255,0.05)">
     <use href="#hdHeart" x="640"  y="40"   width="65"  height="65"/>
-    <use href="#hdHeart" x="940"  y="240"  width="55"  height="55"/>
     <use href="#hdHeart" x="1450" y="290"  width="60"  height="60"/>
     <use href="#hdHeart" x="320"  y="450"  width="45"  height="45"/>
     <use href="#hdHeart" x="1100" y="780"  width="55"  height="55"/>
   </g>
 
-  <!-- Top dateline -->
   <line x1="120" y1="100" x2="1800" y2="100" stroke="rgba(255,255,255,0.3)" stroke-width="0.75"/>
   <text x="120" y="86" fill="rgba(255,255,255,0.85)" font-size="16" letter-spacing="3" font-weight="600">PETER GHIORSE &#183; HONEYDEW &#183; MAY 2026</text>
   <text x="1800" y="86" text-anchor="end" fill="rgba(255,255,255,0.85)" font-size="16" letter-spacing="2" font-weight="500" font-style="italic">an essay on building</text>
 
-  <!-- Dew character (small, top-right area, decorative) -->
   <g transform="translate(1700, 220)">
-    <circle cx="0" cy="0" r="78" fill="rgba(255,255,255,0.12)"/>
-    <circle cx="0" cy="0" r="62" fill="url(#dewBody)"/>
-    <path d="M -5 -56 Q -1 -73 7 -66 Q 11 -61 5 -56 Z" fill="#5AAE8A"/>
-    <circle cx="-30" cy="14" r="8" fill="#F8B4B4" opacity="0.45"/>
-    <circle cx="30"  cy="14" r="8" fill="#F8B4B4" opacity="0.45"/>
-    <circle cx="-17" cy="-2" r="6.5" fill="#2D5A3D"/>
-    <circle cx="-15" cy="-4" r="1.8" fill="#FFFFFF"/>
-    <circle cx="17"  cy="-2" r="6.5" fill="#2D5A3D"/>
-    <circle cx="19"  cy="-4" r="1.8" fill="#FFFFFF"/>
-    <path d="M -14 16 Q 0 30 14 16" stroke="#2D5A3D" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <circle cx="0" cy="0" r="82" fill="rgba(255,255,255,0.14)"/>
+    <circle cx="0" cy="0" r="66" fill="url(#dewBody)"/>
+    <ellipse cx="-22" cy="-26" rx="18" ry="11" fill="url(#dewHighlight)"/>
+    <path d="M -5 -58 Q 0 -75 8 -68 Q 12 -62 4 -58 Z" fill="#5AAE8A"/>
+    <ellipse cx="-18" cy="-2" rx="6" ry="9" fill="#1F3D2A"/>
+    <ellipse cx="18"  cy="-2" rx="6" ry="9" fill="#1F3D2A"/>
+    <path d="M -16 18 Q 0 32 16 18" stroke="#1F3D2A" stroke-width="4.5" stroke-linecap="round" fill="none"/>
   </g>
 
-  <!-- Massive $500K headline -->
   <text x="120" y="430" fill="#FFFFFF" font-size="240" font-weight="800" letter-spacing="-6" filter="url(#softShadow)">$500,000</text>
-  <text x="120" y="500" fill="rgba(255,255,255,0.7)" font-size="22" letter-spacing="3" font-weight="600">SPENT ON MY LAST STARTUP</text>
+  <text x="120" y="500" fill="rgba(255,255,255,0.75)" font-size="22" letter-spacing="3" font-weight="600">SPENT ON MY LAST STARTUP</text>
 
-  <!-- vs. divider -->
   <g transform="translate(120, 580)">
-    <line x1="0" y1="0" x2="80" y2="0" stroke="rgba(255,255,255,0.45)" stroke-width="2"/>
-    <text x="100" y="9" fill="rgba(255,255,255,0.85)" font-size="36" font-style="italic" font-weight="400">vs.</text>
-    <line x1="190" y1="0" x2="270" y2="0" stroke="rgba(255,255,255,0.45)" stroke-width="2"/>
+    <line x1="0" y1="0" x2="80" y2="0" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+    <text x="100" y="9" fill="rgba(255,255,255,0.9)" font-size="36" font-style="italic" font-weight="400">vs.</text>
+    <line x1="190" y1="0" x2="270" y2="0" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
   </g>
 
-  <!-- Massive $5K — accent lime, bigger pop -->
-  <text x="120" y="800" fill="#A8E16C" font-size="240" font-weight="800" letter-spacing="-6" filter="url(#softShadow)">$5,000</text>
-  <text x="120" y="870" fill="rgba(255,255,255,0.7)" font-size="22" letter-spacing="3" font-weight="600">SPENT ON THE NEXT ONE</text>
+  <text x="120" y="800" fill="#A8E16C" font-size="240" font-weight="800" letter-spacing="-6" filter="url(#softShadow)">$2,500</text>
+  <text x="120" y="870" fill="rgba(255,255,255,0.75)" font-size="22" letter-spacing="3" font-weight="600">SPENT ON THE NEXT ONE</text>
 
-  <!-- Bottom kicker / curiosity hook -->
   <line x1="120" y1="970" x2="1800" y2="970" stroke="rgba(255,255,255,0.3)" stroke-width="0.75"/>
   <text x="120" y="1020" fill="#FFFFFF" font-size="32" font-weight="600" letter-spacing="-0.3">Same founder. Five years apart.</text>
-  <text x="1800" y="1020" text-anchor="end" fill="#A8E16C" font-size="22" letter-spacing="3" font-weight="700">&#9654; WATCH WHAT $5K BUILT</text>
+  <text x="1800" y="1020" text-anchor="end" fill="#A8E16C" font-size="22" letter-spacing="3" font-weight="700">&#9654; WATCH WHAT $2.5K BUILT</text>
 </svg>
