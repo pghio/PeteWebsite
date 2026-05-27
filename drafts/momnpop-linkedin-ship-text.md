@@ -4,12 +4,11 @@
 > Video is LIVE at https://peterghiorse.com/videos/posts/momnpop/compiled-with-architecture.mp4
 > Paste the contents between `=== POST ===` markers directly into the LinkedIn composer.
 > LinkedIn strips markdown — text is plain.
-> Char limit: 3,000.
+> Char limit: 3,000. Current count: 2,012 (lean, scrollable).
 >
-> **Voice goal:** smart builder reflecting on craft. Not "founder running a startup."
-> The "as a personal project" + "nights and weekends" framing is critical —
-> signals to current coworkers that this is hobbyist tinkering, not a side hustle
-> about to become a job change.
+> **Voice goal:** smart builder reflecting on craft. Not founder running a startup.
+> "Personal project" + "nights and weekends" framing signals to current coworkers
+> that this is hobbyist tinkering, not a job-change announcement.
 
 ---
 
@@ -34,37 +33,29 @@ I've spent around $2,500 on the thing I've been hacking on lately.
 
 Same engineer, five years apart. Here's what's going on.
 
-Between 2017 and 2022 I helped build GiveTide, a charitable giving platform. Small team, five years of work, a little over half a million dollars to ship it. It sold to an acquirer.
+Between 2017 and 2022 I helped build GiveTide, a charitable giving platform. Small team, five years, just over half a million to ship. It sold to an acquirer.
 
-Last year I started Honeydew (gethoneydew.app) as a personal project. It's an AI agent that runs families' lives. Calendar, lists, reminders, conflict detection. The mental load problem. I've been building it solo on nights and weekends. By software complexity it's harder than GiveTide ever was. So far it's cost me about $2,500 out of pocket. Roughly 80% of that went to the AI coding tools alone.
+Last year I started Honeydew (gethoneydew.app) as a personal project. It's an AI agent that runs families' lives — calendar, lists, reminders, conflict detection. The mental load problem. I've been building it solo on nights and weekends. So far it's cost me about $2,500 out of pocket. Roughly 80% of that went to the AI coding tools.
 
-The video above is what makes that math possible. ChatGPT can describe a packing list. Only an agent with real tools can actually create one on your real family calendar.
+The video above is what makes the math work. ChatGPT can describe a packing list. Only an agent with real tools can actually create one on your real family calendar.
 
-The biggest shift is AI coding tools used seriously. A twelve-field settings screen with validation used to be a one or two day task for a junior engineer. With Cursor and Claude Code it's thirty minutes. Doesn't apply to gnarly bugs. Does apply to the long tail of CRUD that fills out most of a real product.
+What changed comes down to a few things.
 
-The infrastructure floor collapsed too. What used to be $5K a month self-hosted now runs on Vercel plus managed Postgres for about $50. Inference is the only meaningful line item, and that's cheap at solo volume.
+AI coding tools used seriously. A twelve-field settings screen with validation went from a one-day junior-engineer task at GiveTide to thirty minutes in Cursor. Doesn't apply to gnarly bugs. Does apply to the long tail of CRUD that fills out most of a real product.
 
-Model APIs let me skip entire systems. GiveTide spent weeks on NL transaction categorization. Honeydew gets it for a fraction of a cent per call. Same for transcription, OCR, embedding search.
+The infrastructure floor collapsed. $5K a month self-hosted is now $50 a month managed. And model APIs let me skip building entire systems by hand — categorization, transcription, OCR, embedding search are all an API call.
 
-Being wrong got cheaper. In 2017 I polished every screen before anyone saw it because iteration was expensive. Now I ship rough, learn from the families using it, then delete or polish.
+Working solo is also wildly underrated. No meetings, no alignment overhead, no design committee. A real share of my speed is just not coordinating with anyone.
 
-Working solo on something is wildly underrated. No meetings, no alignment overhead, no design committee. A real share of my speed is just not coordinating with anyone.
+What didn't change is the rest of the job. Product judgment, distribution, support. AI doesn't tell me which feature matters, the same tools that let me build for $2,500 let everyone build for $2,500, and "Dew is being weird" reports at 7 AM are exactly the problem they were in 2017.
 
-Now the honest part. The cost collapse is on one line item, materializing a working system. Everything else is the same.
+Not claiming anyone can do this. A decade of operating experience and a real shipped product behind me shaped what I know about what's worth making.
 
-Product judgment didn't get cheaper. AI doesn't tell you which feature matters. The hours I spend watching real users use Honeydew look identical to the ones I spent at GiveTide.
+But the price of admission to making real software dropped, and that part of the job is more enjoyable than it's ever been.
 
-Distribution didn't get cheaper either. Same tools let everyone build for $2,500. The market is louder, not quieter.
+Full breakdown → https://peterghiorse.com/blog/ai-mom-and-pop-software-era
 
-Support didn't get cheaper. Replying to "Dew is being weird" reports at 7 AM is the same problem it was in 2017.
-
-Not claiming anyone can do this. A decade of operating experience and shipping a real product first shaped what I know.
-
-Building software is just more enjoyable than it's ever been.
-
-Full breakdown, charts, FAQ, sources → https://peterghiorse.com/blog/ai-mom-and-pop-software-era
-
-#BuildInPublic #AI #SoftwareEngineering
+#BuildInPublic #AIAgents #SoftwareEngineering
 
 === END POST ===
 
@@ -72,44 +63,92 @@ Full breakdown, charts, FAQ, sources → https://peterghiorse.com/blog/ai-mom-an
 
 ## First comment (paste 60 seconds after posting)
 
+This one ends with a question that invites replies — comment velocity is what tells the algorithm to push the post past your immediate network.
+
 === FIRST COMMENT ===
 
-Quick add — the math collapse is really only on the engineering line item. Distribution, support, product judgment are all still 90% of the work. If you're trying to figure out what to build right now, the question I keep coming back to is: what kind of thing is worth making that wasn't worth making before? Doesn't have to be a business. That's been reshaping how I think about what I work on in my spare time.
+Quick add — the math collapse is really only on the engineering line item. Distribution, support, and product judgment are still 90% of the work.
+
+The question I keep coming back to: what kind of thing is worth making that wasn't worth making before? Doesn't have to be a business. Genuinely curious — what would you start building if it cost you $2K instead of $200K?
 
 === END FIRST COMMENT ===
 
 ---
 
+## Heads-up message for 2-3 friends (send 30 min before posting)
+
+LinkedIn weights first-hour engagement heavily — the algorithm decides whether to push the post past your immediate network based on what happens in the first 90 minutes. Pinging 2-3 founder / engineer / PM friends right before posting nudges that math in your favor. Don't ask them to coordinate; just let them know it's coming.
+
+=== FRIEND HEADS-UP ===
+
+Hey — posting an essay on LinkedIn in ~30 min about what it cost me to build GiveTide back in the day vs. what it's costing to hack on Honeydew now (200× cheaper, mostly because of Cursor + Claude Code). If you happen to see it pop up in your feed and have a thought, dropping a like or comment in the first hour would help a ton — first-hour velocity is what tells the LinkedIn algo whether to push it. No pressure either way. Thanks 🙏
+
+=== END FRIEND HEADS-UP ===
+
+---
+
 ## Pre-ship checklist
 
-Status as of last main deploy:
-
 - [x] Blog deep-dive live at https://peterghiorse.com/blog/ai-mom-and-pop-software-era
-- [x] Compiled video live at https://peterghiorse.com/videos/posts/momnpop/compiled-with-architecture.mp4
-- [x] Cover poster (1920×1080, $500K vs $2,500)
-- [x] Hero, stack, timeline, architecture SVGs all serving in production
-- [x] Builder-coded framing throughout (no "startup," no "exit," explicit "personal project" and "nights and weekends")
+- [x] Compiled video live at https://peterghiorse.com/videos/posts/momnpop/compiled-with-architecture.mp4 (36s)
+- [x] Cover poster (1920×1080, builder-coded copy)
+- [x] All hero / stack / timeline / architecture SVGs serving in production
+- [x] Builder voice throughout — no "startup," no "exit," explicit "personal project" + "nights and weekends"
+- [x] Post body: 2,012 chars (was 2,875 — tighter, more scrollable)
+- [x] First comment ends in a question (invites replies)
+- [x] Friend heads-up template ready
 
-Pete to verify:
+Pete to verify before posting:
 - [ ] Phone preview on iPhone — first 3 lines above the "see more" fold
-- [ ] Sound off — captions carry the story
-- [ ] Custom thumbnail uploaded (not auto-picked frame)
-- [ ] Posting window: Tuesday 7–9 AM ET
+- [ ] Watch the 36s video on muted autoplay — captions carry the story
+- [ ] Custom thumbnail uploaded (not auto-picked frame from LinkedIn)
+- [ ] Posting window: see "Timing" section below
 - [ ] First comment in clipboard for the 60s drop
+- [ ] Send heads-up DM to 2-3 friends ~30 min before posting
 - [ ] On your phone for the first 90 minutes of replies
+
+---
+
+## Timing — pick your window from your own analytics, not the textbook
+
+The textbook answer for founder/builder content is Tuesday 7–9 AM ET. The real answer is whenever your specific audience is on LinkedIn, which varies.
+
+To find your actual best window:
+1. Open LinkedIn → your profile → "Analytics" (top of profile)
+2. Pull up your "Do LLMs Actually Cite Your Startup?" post from 1 month ago (the 3,812-impression one)
+3. Click into it → "Performance" → the hourly impression curve
+4. Note when impressions peaked — that's roughly when your audience was scrolling
+5. Post the new one in that same window, ±30 minutes
+
+Failing analytics: Tuesday or Wednesday 7–9 AM ET is the safe default for technical-founder content. Avoid Mondays (cluttered) and Fridays (low engagement). Mid-week morning is the sweet spot.
+
+---
+
+## Day-of monitoring
+
+Check at 1h, 6h, 24h, 72h. Stop after 72h — diminishing returns.
+
+| Metric | What "good" looks like |
+|---|---|
+| Impressions @ 24h | 10k+ solid; 50k+ a hit; prior post baseline 3,812 |
+| Reaction rate | 2%+ of impressions |
+| Comment rate | 0.5%+ of impressions |
+| Click-throughs to blog | 1%+ of impressions |
+
+If impressions cross 50k by hour 24, write a short follow-up on day 3 about what surprised you in the comments. Otherwise log learnings and move on. Don't repost.
 
 ---
 
 ## Why this framing works for coworker-safe personal brand
 
-The post positions you as a builder reflecting on craft, not a founder running a competing thing. Specific signals:
+The post positions you as a builder reflecting on craft. Specific signals:
 
 - "Personal project" + "nights and weekends" = explicit hobbyist framing
 - "Same engineer" instead of "same founder"
 - "Hacking on lately" instead of "started building"
-- Dropped "I'm not building for the exit. Just for the work." (signals startup intent)
-- First comment ends with "in my spare time"
-- Closing line: "Building software is just more enjoyable than it's ever been" (craft, not commerce)
-- Removed #IndieHackers hashtag; added #SoftwareEngineering
+- No "exit" or "venture" language
+- First-comment qualifier: "in my spare time" / "Doesn't have to be a business"
+- Closing line: craft-coded ("more enjoyable than it's ever been"), not commerce-coded
+- Hashtags: #BuildInPublic + #AIAgents + #SoftwareEngineering — engineering-builder community, not founder-hustle community
 
-You can still link to gethoneydew.app — having a personal project that has a domain is normal for engineers. The framing is that you tinker on it; you're not running a venture.
+You're still linking gethoneydew.app — having a personal project with a domain is normal for engineers. The framing is that you tinker on it, not run it.
