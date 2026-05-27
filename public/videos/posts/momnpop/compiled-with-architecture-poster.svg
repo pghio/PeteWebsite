@@ -61,7 +61,7 @@
   </g>
 
   <text x="120" y="430" fill="#FFFFFF" font-size="240" font-weight="800" letter-spacing="-6" filter="url(#softShadow)">$500,000</text>
-  <text x="120" y="500" fill="rgba(255,255,255,0.75)" font-size="22" letter-spacing="3" font-weight="600">SPENT ON MY LAST STARTUP</text>
+  <text x="120" y="500" fill="rgba(255,255,255,0.75)" font-size="22" letter-spacing="3" font-weight="600">SPENT BUILDING THE LAST ONE</text>
 
   <g transform="translate(120, 580)">
     <line x1="0" y1="0" x2="80" y2="0" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
@@ -70,9 +70,9 @@
   </g>
 
   <text x="120" y="800" fill="#A8E16C" font-size="240" font-weight="800" letter-spacing="-6" filter="url(#softShadow)">$2,500</text>
-  <text x="120" y="870" fill="rgba(255,255,255,0.75)" font-size="22" letter-spacing="3" font-weight="600">SPENT ON THE NEXT ONE</text>
+  <text x="120" y="870" fill="rgba(255,255,255,0.75)" font-size="22" letter-spacing="3" font-weight="600">SPENT BUILDING THE NEW ONE</text>
 
   <line x1="120" y1="970" x2="1800" y2="970" stroke="rgba(255,255,255,0.3)" stroke-width="0.75"/>
-  <text x="120" y="1020" fill="#FFFFFF" font-size="32" font-weight="600" letter-spacing="-0.3">Same founder. Five years apart.</text>
+  <text x="120" y="1020" fill="#FFFFFF" font-size="32" font-weight="600" letter-spacing="-0.3">Same engineer. Five years apart.</text>
   <text x="1800" y="1020" text-anchor="end" fill="#A8E16C" font-size="22" letter-spacing="3" font-weight="700">&#9654; WATCH WHAT $2.5K BUILT</text>
 </svg>

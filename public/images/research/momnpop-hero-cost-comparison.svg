@@ -38,8 +38,8 @@
   <text x="600" y="200" text-anchor="middle" fill="#FFFFFF" font-size="64" font-weight="700" letter-spacing="-1">$500,000 <tspan fill="rgba(255,255,255,0.6)" font-weight="400">vs.</tspan> $2,500</text>
 
   <!-- Subtitle -->
-  <text x="600" y="256" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="22" font-weight="400">What I spent on my last startup,</text>
-  <text x="600" y="288" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="22" font-weight="400">and what I&#8217;ve spent on the next one.</text>
+  <text x="600" y="256" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="22" font-weight="400">What it cost to build the last one,</text>
+  <text x="600" y="288" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="22" font-weight="400">and what it&#8217;s cost to build the new one.</text>
 
   <!-- Comparison bars -->
   <g transform="translate(150, 360)">
@@ -47,13 +47,13 @@
     <text x="0" y="0" fill="rgba(255,255,255,0.7)" font-size="13" letter-spacing="2" font-weight="600">GIVETIDE &#183; 2017&#8211;2022</text>
     <rect x="0" y="14" width="900" height="34" rx="2" fill="#1F3D2A"/>
     <text x="910" y="38" fill="#FFFFFF" font-size="20" font-weight="700">$500K+</text>
-    <text x="0" y="74" fill="rgba(255,255,255,0.7)" font-size="12">Charitable giving platform &#183; five years &#183; team of contractors and engineers &#183; culminated in acquisition</text>
+    <text x="0" y="74" fill="rgba(255,255,255,0.7)" font-size="12">Charitable giving platform &#183; five years &#183; small team &#183; sold to an acquirer</text>
 
     <!-- Honeydew bar (4.5px = 0.5% of GiveTide bar to scale) -->
     <text x="0" y="124" fill="rgba(255,255,255,0.7)" font-size="13" letter-spacing="2" font-weight="600">HONEYDEW &#183; 2025&#8211;2026</text>
     <rect x="0" y="138" width="4.5" height="34" rx="2" fill="#A8E16C"/>
     <text x="14" y="162" fill="#A8E16C" font-size="20" font-weight="700">~$2.5K</text>
-    <text x="0" y="198" fill="rgba(255,255,255,0.7)" font-size="12">Family AI agent &#183; solo &#183; same founder &#183; ~80% of spend went to AI coding tools</text>
+    <text x="0" y="198" fill="rgba(255,255,255,0.7)" font-size="12">Family AI agent &#183; solo &#183; nights and weekends &#183; ~80% of spend went to AI coding tools</text>
   </g>
 
   <!-- Bottom rule and kicker -->

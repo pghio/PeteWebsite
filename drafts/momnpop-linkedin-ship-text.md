@@ -5,6 +5,11 @@
 > Paste the contents between `=== POST ===` markers directly into the LinkedIn composer.
 > LinkedIn strips markdown — text is plain.
 > Char limit: 3,000.
+>
+> **Voice goal:** smart builder reflecting on craft. Not "founder running a startup."
+> The "as a personal project" + "nights and weekends" framing is critical —
+> signals to current coworkers that this is hobbyist tinkering, not a side hustle
+> about to become a job change.
 
 ---
 
@@ -23,15 +28,15 @@
 
 === POST ===
 
-I spent over $500,000 building my last startup.
+I spent over $500,000 on the last product I helped ship.
 
-I've spent around $2,500 building the next one.
+I've spent around $2,500 on the thing I've been hacking on lately.
 
-Same founder, five years apart. Here's what happened.
+Same engineer, five years apart. Here's what's going on.
 
-Between 2017 and 2022 I co-founded GiveTide, a charitable giving platform. Small team, five years of work, a little over half a million dollars to ship. We sold to an acquirer.
+Between 2017 and 2022 I helped build GiveTide, a charitable giving platform. Small team, five years of work, a little over half a million dollars to ship it. It sold to an acquirer.
 
-Last year I started Honeydew (gethoneydew.app). It's an AI agent that runs families' lives. Calendar, lists, reminders, conflict detection. The mental load problem. I built it solo. By software complexity it's harder than GiveTide ever was. So far it's cost me about $2,500 out of pocket. Roughly 80% of that went to the AI coding tools alone.
+Last year I started Honeydew (gethoneydew.app) as a personal project. It's an AI agent that runs families' lives. Calendar, lists, reminders, conflict detection. The mental load problem. I've been building it solo on nights and weekends. By software complexity it's harder than GiveTide ever was. So far it's cost me about $2,500 out of pocket. Roughly 80% of that went to the AI coding tools alone.
 
 The video above is what makes that math possible. ChatGPT can describe a packing list. Only an agent with real tools can actually create one on your real family calendar.
 
@@ -41,25 +46,25 @@ The infrastructure floor collapsed too. What used to be $5K a month self-hosted 
 
 Model APIs let me skip entire systems. GiveTide spent weeks on NL transaction categorization. Honeydew gets it for a fraction of a cent per call. Same for transcription, OCR, embedding search.
 
-Being wrong got cheaper. In 2017 I polished every screen before anyone saw it because iteration was expensive. Now I ship rough, learn from real families, then delete or polish. Wrong cheaply, faster. That's the actual unlock.
+Being wrong got cheaper. In 2017 I polished every screen before anyone saw it because iteration was expensive. Now I ship rough, learn from the families using it, then delete or polish.
 
-And not having a team is wildly underrated. No meetings, no hiring, no alignment overhead. A real share of my speed is just not coordinating with anyone.
+Working solo on something is wildly underrated. No meetings, no alignment overhead, no design committee. A real share of my speed is just not coordinating with anyone.
 
 Now the honest part. The cost collapse is on one line item, materializing a working system. Everything else is the same.
 
-Product judgment didn't get cheaper. AI doesn't tell you which feature matters. The hours I spend watching users use Honeydew look identical to GiveTide.
+Product judgment didn't get cheaper. AI doesn't tell you which feature matters. The hours I spend watching real users use Honeydew look identical to the ones I spent at GiveTide.
 
 Distribution didn't get cheaper either. Same tools let everyone build for $2,500. The market is louder, not quieter.
 
 Support didn't get cheaper. Replying to "Dew is being weird" reports at 7 AM is the same problem it was in 2017.
 
-Not claiming anyone can do this. I had a decade of operating experience and an exit before Honeydew.
+Not claiming anyone can do this. A decade of operating experience and shipping a real product first shaped what I know.
 
-Not building this one for the exit. Just for the work.
+Building software is just more enjoyable than it's ever been.
 
 Full breakdown, charts, FAQ, sources → https://peterghiorse.com/blog/ai-mom-and-pop-software-era
 
-#BuildInPublic #IndieHackers #AI
+#BuildInPublic #AI #SoftwareEngineering
 
 === END POST ===
 
@@ -69,7 +74,7 @@ Full breakdown, charts, FAQ, sources → https://peterghiorse.com/blog/ai-mom-an
 
 === FIRST COMMENT ===
 
-Quick add — the math collapse is really only on the engineering line item. Distribution, support, product judgment are all still 90% of the work. If you're trying to figure out what to build right now, the question I keep coming back to is: what kind of business is worth starting that wasn't worth starting before? Different question than "how cheap can I build it." That's been reshaping what I work on.
+Quick add — the math collapse is really only on the engineering line item. Distribution, support, product judgment are all still 90% of the work. If you're trying to figure out what to build right now, the question I keep coming back to is: what kind of thing is worth making that wasn't worth making before? Doesn't have to be a business. That's been reshaping how I think about what I work on in my spare time.
 
 === END FIRST COMMENT ===
 
@@ -83,6 +88,7 @@ Status as of last main deploy:
 - [x] Compiled video live at https://peterghiorse.com/videos/posts/momnpop/compiled-with-architecture.mp4
 - [x] Cover poster (1920×1080, $500K vs $2,500)
 - [x] Hero, stack, timeline, architecture SVGs all serving in production
+- [x] Builder-coded framing throughout (no "startup," no "exit," explicit "personal project" and "nights and weekends")
 
 Pete to verify:
 - [ ] Phone preview on iPhone — first 3 lines above the "see more" fold
@@ -94,15 +100,16 @@ Pete to verify:
 
 ---
 
-## Day-of monitoring
+## Why this framing works for coworker-safe personal brand
 
-Check at 1h, 6h, 24h, 72h. Stop after 72h.
+The post positions you as a builder reflecting on craft, not a founder running a competing thing. Specific signals:
 
-| Metric | What "good" looks like |
-|---|---|
-| Impressions @ 24h | 10k+ solid; 50k+ a hit; prior post baseline 3,812 |
-| Reaction rate | 2%+ of impressions |
-| Comment rate | 0.5%+ of impressions |
-| Click-throughs to blog | 1%+ of impressions |
+- "Personal project" + "nights and weekends" = explicit hobbyist framing
+- "Same engineer" instead of "same founder"
+- "Hacking on lately" instead of "started building"
+- Dropped "I'm not building for the exit. Just for the work." (signals startup intent)
+- First comment ends with "in my spare time"
+- Closing line: "Building software is just more enjoyable than it's ever been" (craft, not commerce)
+- Removed #IndieHackers hashtag; added #SoftwareEngineering
 
-If impressions cross 50k by hour 24, write a short follow-up on day 3 about what surprised you in the comments. Otherwise log learnings and move on.
+You can still link to gethoneydew.app — having a personal project that has a domain is normal for engineers. The framing is that you tinker on it; you're not running a venture.

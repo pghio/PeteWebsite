@@ -1,33 +1,33 @@
 ---
 layout: ../../layouts/BlogLayout.astro
-title: "$500,000 vs. $2,500: I Built Two Startups Five Years Apart"
-description: "GiveTide cost half a million dollars to build. Honeydew has cost around $2,500. Same founder, five years apart. Here's what actually changed and what didn't."
+title: "$500,000 vs. $2,500: I Built Two Things Five Years Apart"
+description: "The last product I helped ship cost half a million dollars to build. The thing I'm hacking on now has cost around $2,500. Same engineer, five years apart. Here's what actually changed."
 publishDate: "2026-05-03"
 category: "Essay"
 ogImage: "/images/research/momnpop-hero-cost-comparison.svg"
 faq:
   - q: "Is the 200× cost reduction real, or marketing?"
-    a: "It's real, for me, on this comparison. GiveTide was a charitable giving platform built between 2017 and 2022 with a small team and over $500K of all-in spend. Honeydew (gethoneydew.app) is a family AI agent I've been building since 2025 for around $2,500 out of pocket. Honeydew is more technically sophisticated than GiveTide was. The 200× number is what changed at the engineering line item. It doesn't mean every solo builder gets the same result, and it doesn't include the value of my own time."
+    a: "It's real, for me, on this comparison. GiveTide was a charitable giving platform built between 2017 and 2022 with a small team and over $500K of all-in spend. Honeydew (gethoneydew.app) is a family AI agent I've been hacking on as a personal project since 2025, for around $2,500 out of pocket. Honeydew is more technically sophisticated than GiveTide was. The 200× number is what changed at the engineering line item. It doesn't mean every engineer gets the same result, and it doesn't include the value of my own time."
   - q: "What actually changed between 2017 and 2026?"
-    a: "Five things, roughly in the order they mattered. AI coding tools (Cursor and Claude Code) compressed CRUD work by 50 to 100×. The infrastructure floor dropped from about $5K a month to under $50. Model APIs let me skip building entire systems like NL categorization, transcription, embedding search. The cost of being wrong fell, so I iterate cheaply instead of polishing. And not having a team means no coordination tax. Roughly 80% of my $2,500 went to the coding tools alone."
+    a: "Five things, roughly in the order they mattered. AI coding tools (Cursor and Claude Code) compressed CRUD work by 50 to 100×. The infrastructure floor dropped from about $5K a month to under $50. Model APIs let me skip building entire systems like NL categorization, transcription, embedding search. The cost of being wrong fell, so I iterate cheaply instead of polishing. And working solo means no coordination tax. Roughly 80% of my $2,500 went to the coding tools alone."
   - q: "What didn't change?"
     a: "Product judgment. Distribution. Support. Operational discipline. Knowing what to build, getting people to use it, and answering them when it breaks at 7 AM are the same hard problems they were in 2017. The AI didn't compress those, and they're often the binding constraint."
-  - q: "Does this mean anyone can build a software business now?"
-    a: "No. The cost collapse is on one axis: materializing a working software system. The other axes (taste, judgment, distribution, sales, support) didn't compress. I had a decade of operating experience, including five years and a successful exit at GiveTide, before I started Honeydew. 2017-me wouldn't have shipped Honeydew even with 2026 tools, because I didn't know what to build."
+  - q: "Could anyone build a serious software product now?"
+    a: "Not anyone. The cost collapse is on one axis: materializing a working software system. The other axes (taste, judgment, distribution, sales, support) didn't compress. I had a decade of operating experience and a successful product behind me before I started Honeydew. 2017-me wouldn't have shipped Honeydew even with 2026 tools, because I didn't know what to build."
   - q: "Will the $2,500 number stay this low?"
     a: "Probably not exactly. A meaningful share of that floor depends on AI tool pricing that's still VC-subsidized. Cursor and the model providers are all burning capital on inference. If subsidies normalize and effective prices climb 3 to 5×, my number goes to maybe $8 to $12K. The thesis survives. The headline tightens."
 ---
 
-![$500,000 vs. $2,500 — what I spent on my last startup, and what I've spent on the next one](/images/research/momnpop-hero-cost-comparison.svg)
+![$500,000 vs. $2,500 — what it cost to build the last product I shipped, and what it's cost to build the one I'm working on now](/images/research/momnpop-hero-cost-comparison.svg)
 
-Between 2017 and 2022 I co-founded **GiveTide**, a charitable giving platform. We spent over **$500,000** building it. Five years later it sold to an acquirer.
+Between 2017 and 2022 I helped build **GiveTide**, a charitable giving platform. The team spent over **$500,000** shipping it. It sold to an acquirer five years in.
 
-In 2025 I started building **[Honeydew](https://gethoneydew.app)**, an AI agent that runs families' lives. So far I've spent around **$2,500** out of pocket to ship something more technically sophisticated than GiveTide ever was. About 80% of that went to the AI coding tools alone.
+Since last year I've been working on **[Honeydew](https://gethoneydew.app)** in the evenings and weekends. It's an AI agent that runs families' lives. So far I've spent around **$2,500** out of pocket to build something more technically sophisticated than GiveTide ever was. About 80% of that went to the AI coding tools alone.
 
-That's the same founder, same engineering instincts, five years apart. The math broke by about 200×. This post is me trying to explain why, from inside.
+Same engineer, same instincts, five years apart. The math broke by about 200×. This post is me trying to explain why, from inside.
 
 <div style="position: relative; left: 50%; right: 50%; margin-left: -47vw; margin-right: -47vw; width: 94vw; max-width: 1400px; margin-top: 2.5rem; margin-bottom: 1rem;">
-  <img src="/images/research/momnpop-cost-timeline.svg" alt="Cumulative spend, both startups — GiveTide rose to $500K+ over five years; Honeydew sits at roughly $2,500" style="width: 100%; height: auto; border-radius: 12px; display: block;" />
+  <img src="/images/research/momnpop-cost-timeline.svg" alt="Cumulative spend, both projects — GiveTide rose to $500K+ over five years; Honeydew sits at roughly $2,500" style="width: 100%; height: auto; border-radius: 12px; display: block;" />
 </div>
 
 ---
@@ -44,7 +44,7 @@ The half-million went to roughly four buckets. The biggest was engineers — a s
 
 Half a million wasn't extravagant for 2017. It was actually pretty lean for what we built. Most fintech startups in our cohort spent more.
 
-The math worked because we raised. The reason we *had* to raise was that the math couldn't work any other way. The price of admission to "you have a product worth selling" was six figures, minimum, and the only way to get six figures was to give equity to people who had it.
+The math worked because we raised. The reason we *had* to raise was that the math couldn't work any other way. The price of admission to "we have a real product" was six figures, minimum, and the only way to get six figures was equity from people who had it.
 
 That last sentence is the one that's no longer true. Everything else in this post is the consequence.
 
@@ -52,9 +52,9 @@ That last sentence is the one that's no longer true. Everything else in this pos
 
 ## What $2,500 has bought so far
 
-[Honeydew](https://gethoneydew.app) is a family AI agent. The agent's name is Dew. He has a wide tool catalog and a substantial system prompt. He adds eggs to your grocery list, schedules dentist appointments, notices when your kid's soccer game conflicts with dinner, and handles the conversational quirks of being asked things by tired parents at 9 PM.
+[Honeydew](https://gethoneydew.app) is a family AI agent I've been working on as a personal project. The agent has a name (Dew), a wide tool catalog, and a substantial system prompt. He adds eggs to your grocery list, schedules dentist appointments, notices when your kid's soccer game conflicts with dinner, and handles the conversational quirks of being asked things by tired parents at 9 PM.
 
-By software complexity Honeydew is harder than GiveTide was. There's an LLM agent in the loop, voice, tool orchestration across a multi-tenant family graph with a non-trivial permissioning model, and realtime sync requirements I never had at GiveTide. None of that existed at GiveTide. All of it works in Honeydew on roughly half a percent of the budget.
+By software complexity, Honeydew is harder than GiveTide was. There's an LLM agent in the loop, voice, tool orchestration across a multi-tenant family graph with a non-trivial permissioning model, and realtime sync requirements I never had at GiveTide. None of that existed at the older project. All of it works in Honeydew on roughly half a percent of the budget.
 
 <div style="position: relative; left: 50%; right: 50%; margin-left: -47vw; margin-right: -47vw; width: 94vw; max-width: 1600px; margin-top: 2.5rem; margin-bottom: 1rem;">
   <img src="/images/posts/honeydew-architecture-2026.svg" alt="Honeydew's Dew agent pipeline — input parses through an LLM interpretation layer, hits a tool catalog, executes against the family graph, and writes back into per-family memory" style="width: 100%; height: auto; border-radius: 12px; display: block;" />
@@ -70,9 +70,9 @@ By software complexity Honeydew is harder than GiveTide was. There's an LLM agen
 
 To date, my actual spend is around $2,500. The bucket breakdown is heavily lopsided. The AI coding tools (Cursor and Claude Code subscriptions, plus some occasional pay-as-you-go on top) are roughly 80% of total spend. Model API costs to OpenAI and Anthropic for what Dew actually runs on are maybe 15%. Infra (Vercel, the database, observability) is essentially nothing at this volume. Domains and other services are rounding error.
 
-The team is one person. Me. I write product, I write code, I do support.
+The team is one person. Me. Nights and weekends. I write product, I write code, I do support.
 
-I'm not claiming any of this is sustainable forever or that I'll never need to hire. I'm describing what it cost to get from "idea" to "shipped product with paying users." That's the same milestone GiveTide spent six figures to reach.
+I'm not claiming any of this is sustainable forever or that I'll never need help. I'm describing what it cost to get from "idea" to "shipped product with real users." That's the same milestone GiveTide spent six figures to reach.
 
 ---
 
@@ -120,9 +120,9 @@ My GiveTide-to-Honeydew ratio is one practitioner data point, but it lands clean
 
 A few things this post is not arguing.
 
-It's not "anyone can do it." The cost collapse is the engineering line item. The other lines (taste, judgment, distribution, sales, support) didn't compress, and they're often the binding constraint. I had a decade of operating experience and a successful exit before I started Honeydew. 2017-me wouldn't have shipped Honeydew even with 2026 tools because I didn't yet know what to build.
+It's not "anyone can do it." The cost collapse is on the engineering line item. The other lines (taste, judgment, distribution, sales, support) didn't compress, and they're often the binding constraint. I had a decade of operating experience and a successful product behind me before I started Honeydew. 2017-me wouldn't have shipped this even with 2026 tools because I didn't yet know what to build.
 
-It's not "VC is dead." It's that the threshold for needing VC moved. Some businesses still genuinely require capital. Capital-intensive ones, network-effects ones, regulated ones. But a much wider range of products that previously needed VC funding to ship now just don't. That's a different and narrower claim.
+It's not "VC is dead." It's that the threshold for needing VC moved. Some products still genuinely require capital. Capital-intensive ones, network-effects ones, regulated ones. But a much wider range of things that previously needed funding to ship now just don't. That's a different and narrower claim.
 
 It's not stable forever. A meaningful share of my $2,500 depends on AI-tool pricing that's still VC-subsidized. If subsidies normalize and effective inference prices climb 3 to 5×, my number tightens. Maybe $8 to $12K instead of $2,500. The thesis survives. The headline tightens.
 
@@ -130,13 +130,13 @@ It's not stable forever. A meaningful share of my $2,500 depends on AI-tool pric
 
 ## What I think this means
 
-For me personally, I'm building the kind of business I couldn't have built before. [Honeydew](https://gethoneydew.app) doesn't need to be a unicorn to be a great life. It needs to serve a few thousand families well, charge a fair price, and be the thing I work on. That's a viable plan now in a way it would not have been in 2017, when "viable plan" had to be "raise $2M and aim for $50M ARR or die trying."
+For me personally, I'm building the kind of thing I couldn't have built before. [Honeydew](https://gethoneydew.app) doesn't need to be a unicorn or even a company to be a great thing to work on. It can serve a few thousand families well, get better every week, and be the thing I tinker on at night. That's a viable thing to do now in a way it wouldn't have been in 2017, when the only way to put a real product in front of real users was to raise money and aim for a $50M ARR outcome.
 
-For the broader market, I think a lot of operators are about to make the same realization I just have. Some of them will start companies that look like Honeydew. Small, focused, owner-operated, profitable from year one. Not because they're following a trend, but because the math finally works.
+For the broader picture, I think a lot of people who like building things are about to figure this out. Some of them will start projects that look like Honeydew. Small, focused, owner-operated, sometimes profitable, sometimes just for fun. Not because they're chasing a trend, but because the math finally works.
 
-That's the actual story of AI in software, in my opinion. Not the agents, not the unicorns, not the 10× engineer mythology. The price of admission dropped, and the kind of business worth building changed with it.
+That's the actual story of AI in software, in my opinion. Not the agents, not the unicorns, not the 10× engineer mythology. The price of admission to making real software dropped, and the kind of thing worth making changed with it.
 
-I'm not going to make the same mistake I made in 2017. I'm not building this one for the exit. I'm building it for the work.
+Building software is more enjoyable than it's ever been. That's most of what this post is.
 
 ---
 
@@ -153,7 +153,7 @@ I'm not going to make the same mistake I made in 2017. I'm not building this one
 ## FAQ
 
 **Q: Are you including the value of your own time in that $5K?**
-No, and that's the biggest asterisk on the number. I've put in a lot of nights and weekends. If you valued my time at a senior PM rate, the all-in cost climbs by an order of magnitude. The $5K is *out-of-pocket cash* to materialize a working product — same metric I'd use for GiveTide's $500K, which also wasn't counting founder time. The comparison is apples to apples; it's just not the only number worth knowing.
+No, and that's the biggest asterisk on the number. I've put in a lot of nights and weekends. If you valued my time at a senior PM rate, the all-in cost climbs by an order of magnitude. The $2,500 is *out-of-pocket cash* to materialize a working product. Same metric I'd use for GiveTide's $500K, which also wasn't counting people-hours. The comparison is apples to apples; it's just not the only number worth knowing.
 
 **Q: Did you reuse code or IP from GiveTide?**
 None. GiveTide was a charitable-giving fintech with payments rails and compliance tooling. Honeydew is a family AI agent. Zero overlap at the code or product layer. The reusable part was operational: knowing how to talk to users, how to triage bugs, how to ship without polishing forever. That part doesn't show up in the cost column but it absolutely shows up in the speed column.
@@ -162,7 +162,7 @@ None. GiveTide was a charitable-giving fintech with payments rails and complianc
 React + TypeScript on the frontend, Node on the backend, a managed Postgres, Vercel for hosting, OpenAI and Anthropic for inference, Whisper for voice. The agent layer is custom — 27 tools wired into a single LLM-driven orchestration loop with per-family memory. Nothing exotic, which is part of the point. The cost compression doesn't come from clever architecture; it comes from not having to build the unsexy 80% by hand.
 
 **Q: Has Honeydew made money yet?**
-That's not what this post is about, and it's the right question to ask. Cheap to *build* and *sustainable as a business* are different problems. Honeydew has paying users and the unit economics work at small scale. Whether it grows into something that pays my mortgage is a different essay — and the honest answer is "I don't know yet, ask me in a year."
+That's not what this post is about, and it's the right question to ask. Cheap to *build* and *worth keeping alive* are different problems. Honeydew has a few paying users and the unit economics work at small scale. It's a side project for me right now; whether it stays that way is a different question, and the honest answer is "I don't know yet."
 
-**Q: If everyone can do this now, doesn't it just commoditize software businesses?**
-Partly, yes. The supply curve of "decent software products" is going to shift right, and the average price of admission for users will drop. The winners won't be the ones who shipped cheapest — they'll be the ones with the clearest taste, the best distribution, and the most patience. That's roughly what wins in every other commoditized creative market (writing, music, podcasts). Software is becoming one of those.
+**Q: If everyone can build this kind of thing now, doesn't it just commoditize software?**
+Partly, yes. The supply curve of "decent software products" is going to shift right, and the average price of admission for users will drop. The things that survive won't be the ones shipped cheapest. They'll be the ones with the clearest taste, the best distribution, and the most patience. That's roughly what wins in every other commoditized creative market (writing, music, podcasts). Software is becoming one of those.
