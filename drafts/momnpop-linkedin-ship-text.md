@@ -3,12 +3,17 @@
 > Blog post is LIVE at https://peterghiorse.com/blog/ai-mom-and-pop-software-era
 > Video is LIVE at https://peterghiorse.com/videos/posts/momnpop/compiled-with-architecture.mp4
 > Paste the contents between `=== POST ===` markers directly into the LinkedIn composer.
-> LinkedIn strips markdown — text is plain.
-> Char limit: 3,000. Current count: 2,224 (lean, scrollable).
+> LinkedIn strips markdown — text is plain. The `→` arrows paste fine and read as scannable bullets.
+> Char limit: 3,000. Current count: 1,564 (tight + scannable — leads with the hook, two scan-friendly lists in the middle).
+>
+> **Link goes in the FIRST COMMENT, not the body.** LinkedIn suppresses reach on posts with
+> outbound links in the body. The post ends with "...in the comments" and the blog link sits in
+> the first comment (drop it within ~60s of posting). If you'd rather put it in the body, swap the
+> last line for "Full breakdown → https://peterghiorse.com/blog/ai-mom-and-pop-software-era".
 >
 > **Voice goal:** smart builder reflecting on craft. Not founder running a startup.
-> "Personal project" + "nights and weekends" framing signals to current coworkers
-> that this is hobbyist tinkering, not a job-change announcement.
+> "Solo," "nights and weekends," "same engineer" framing signals to current coworkers
+> that this is tinkering, not a job-change announcement.
 
 ---
 
@@ -27,33 +32,30 @@
 
 === POST ===
 
-I spent over $500,000 on the last product I helped ship.
+I spent over $500,000 building the last product I shipped.
 
-I've spent around $2,500 on the thing I've been hacking on lately.
+I've spent about $2,500 on the one I'm building now.
 
-Same engineer, five years apart. Here's what's going on.
+Same engineer. Five years apart. The math broke by 200×.
 
-Between 2017 and 2022 I helped build GiveTide, a charitable giving platform. Small team, five years, just over half a million to ship. It sold to an acquirer.
+From 2017 to 2022 I helped build GiveTide, a charitable giving platform. Small team, five years, half a million dollars to ship. It sold to an acquirer.
 
-Last year I started Honeydew (gethoneydew.app) as a personal project. It's an AI agent that runs families' lives — calendar, lists, reminders, conflict detection. The mental load problem. I've been building it solo on nights and weekends. So far it's cost me about $2,500 out of pocket. Roughly 80% of that went to the AI coding tools.
+Since last year I've been building Honeydew (gethoneydew.app) solo, on nights and weekends. An AI agent that runs families' lives — calendar, lists, reminders, the whole mental-load problem. About $2,500 out of pocket so far. And it's more technically sophisticated than GiveTide ever was.
 
-The video above is what makes the math work. ChatGPT can describe a packing list. Only an agent with real tools can actually create one on your real family calendar.
+The video is why it's not just a chatbot. ChatGPT can describe a packing list. Dew actually builds it, checks your real family calendar for conflicts, and sets the reminders — in seconds.
 
-What changed comes down to a few things.
+What got cheap:
+→ AI coding tools turned a one-day settings screen into 30 minutes
+→ Infrastructure went from $5K/month to $50
+→ Model APIs replaced whole systems (categorization, transcription, OCR) with a single call
+→ Going solo killed the coordination tax
 
-AI coding tools used seriously. A twelve-field settings screen with validation went from a one-day junior-engineer task at GiveTide to thirty minutes in Cursor. Doesn't apply to gnarly bugs. Does apply to the long tail of CRUD that fills out most of a real product.
+What didn't:
+→ Product judgment. Distribution. Support. AI doesn't tell me what to build, and "Dew is being weird" at 7 AM is still mine to fix.
 
-The infrastructure floor collapsed. $5K a month self-hosted is now $50 a month managed. And model APIs let me skip building entire systems by hand — categorization, transcription, OCR, embedding search are all an API call.
+I'm not claiming anyone can do this — a decade of operating experience shaped what I know is worth making. But the price of admission to real software collapsed, and that part of the job is more fun than it's ever been.
 
-Working solo is also wildly underrated. No meetings, no alignment overhead, no design committee. A real share of my speed is just not coordinating with anyone.
-
-What didn't change is the rest of the job. Product judgment, distribution, support. AI doesn't tell me which feature matters, the same tools that let me build for $2,500 let everyone build for $2,500, and "Dew is being weird" reports at 7 AM are exactly the problem they were in 2017.
-
-Not claiming anyone can do this. A decade of operating experience and a real shipped product behind me shaped what I know about what's worth making.
-
-But the price of admission to making real software dropped, and that part of the job is more enjoyable than it's ever been.
-
-Full breakdown → https://peterghiorse.com/blog/ai-mom-and-pop-software-era
+Full breakdown — the cost math, the stack, what I'd tell 2017-me — in the comments.
 
 #BuildInPublic #AIAgents #SoftwareEngineering
 
@@ -67,9 +69,11 @@ This one ends with a question that invites replies — comment velocity is what 
 
 === FIRST COMMENT ===
 
-Quick add — the math collapse is really only on the engineering line item. Distribution, support, and product judgment are still 90% of the work.
+Full write-up here (cost breakdown + architecture + what I'd tell 2017-me): https://peterghiorse.com/blog/ai-mom-and-pop-software-era
 
-The question I keep coming back to: what kind of thing is worth making that wasn't worth making before? Doesn't have to be a business. Genuinely curious — what would you start building if it cost you $2K instead of $200K?
+The honest caveat: that 200× collapse is only on the engineering line. Distribution, support, and product judgment are still 90% of the work — and none of it got cheaper.
+
+Genuinely curious: what would you build if it cost you $2K instead of $200K?
 
 === END FIRST COMMENT ===
 
