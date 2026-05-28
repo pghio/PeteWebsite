@@ -152,14 +152,14 @@ Building software is more enjoyable than it's ever been. That's most of what thi
 
 ## FAQ
 
-**Q: Are you including the value of your own time in that $5K?**
+**Q: Are you including the value of your own time in that $2,500?**
 No, and that's the biggest asterisk on the number. I've put in a lot of nights and weekends. If you valued my time at a senior PM rate, the all-in cost climbs by an order of magnitude. The $2,500 is *out-of-pocket cash* to materialize a working product. Same metric I'd use for GiveTide's $500K, which also wasn't counting people-hours. The comparison is apples to apples; it's just not the only number worth knowing.
 
 **Q: Did you reuse code or IP from GiveTide?**
 None. GiveTide was a charitable-giving fintech with payments rails and compliance tooling. Honeydew is a family AI agent. Zero overlap at the code or product layer. The reusable part was operational: knowing how to talk to users, how to triage bugs, how to ship without polishing forever. That part doesn't show up in the cost column but it absolutely shows up in the speed column.
 
 **Q: What's the actual tech stack?**
-React + TypeScript on the frontend, Node on the backend, a managed Postgres, Vercel for hosting, OpenAI and Anthropic for inference, Whisper for voice. The agent layer is custom — 27 tools wired into a single LLM-driven orchestration loop with per-family memory. Nothing exotic, which is part of the point. The cost compression doesn't come from clever architecture; it comes from not having to build the unsexy 80% by hand.
+React + TypeScript on the frontend, Node on the backend, a managed Postgres, Vercel for hosting, OpenAI and Anthropic for inference, Whisper for voice. The agent layer is custom — 60+ tools wired into a single LLM-driven orchestration loop with per-family memory. Nothing exotic, which is part of the point. The cost compression doesn't come from clever architecture; it comes from not having to build the unsexy 80% by hand.
 
 **Q: Has Honeydew made money yet?**
 That's not what this post is about, and it's the right question to ask. Cheap to *build* and *worth keeping alive* are different problems. Honeydew has a few paying users and the unit economics work at small scale. It's a side project for me right now; whether it stays that way is a different question, and the honest answer is "I don't know yet."

@@ -4,7 +4,7 @@
 > Video is LIVE at https://peterghiorse.com/videos/posts/momnpop/compiled-with-architecture.mp4
 > Paste the contents between `=== POST ===` markers directly into the LinkedIn composer.
 > LinkedIn strips markdown — text is plain.
-> Char limit: 3,000. Current count: 2,012 (lean, scrollable).
+> Char limit: 3,000. Current count: 2,224 (lean, scrollable).
 >
 > **Voice goal:** smart builder reflecting on craft. Not founder running a startup.
 > "Personal project" + "nights and weekends" framing signals to current coworkers
@@ -94,7 +94,7 @@ Hey — posting an essay on LinkedIn in ~30 min about what it cost me to build G
 - [x] Cover poster (1920×1080, builder-coded copy)
 - [x] All hero / stack / timeline / architecture SVGs serving in production
 - [x] Builder voice throughout — no "startup," no "exit," explicit "personal project" + "nights and weekends"
-- [x] Post body: 2,012 chars (was 2,875 — tighter, more scrollable)
+- [x] Post body: 2,224 chars (was 2,875 — tighter, more scrollable)
 - [x] First comment ends in a question (invites replies)
 - [x] Friend heads-up template ready
 

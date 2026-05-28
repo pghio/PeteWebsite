@@ -20,7 +20,7 @@
 
   <!-- Top dateline -->
   <line x1="100" y1="80" x2="1100" y2="80" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
-  <text x="100" y="68" fill="rgba(255,255,255,0.75)" font-size="13" letter-spacing="2" font-weight="500">CUMULATIVE SPEND, BOTH STARTUPS</text>
+  <text x="100" y="68" fill="rgba(255,255,255,0.75)" font-size="13" letter-spacing="2" font-weight="500">CUMULATIVE SPEND, BOTH PRODUCTS</text>
   <text x="1100" y="68" text-anchor="end" fill="rgba(255,255,255,0.75)" font-size="13" font-weight="500">Pete Ghiorse</text>
 
   <!-- Title -->
