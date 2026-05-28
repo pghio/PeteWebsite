@@ -65,7 +65,7 @@ By software complexity, Honeydew is harder than GiveTide was. There's an LLM age
     <source src="/videos/posts/momnpop/compiled-with-architecture.mp4" type="video/mp4">
     Your browser does not support embedded video. <a href="/videos/posts/momnpop/compiled-with-architecture.mp4">Download the demo</a>.
   </video>
-  <p style="text-align: center; font-style: italic; color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.75rem;">Two demos, each mapped to a stage of the pipeline above. First: a list mutation. Second: recurring + conflict detection — the hard 20% of agent work.</p>
+  <p style="text-align: center; font-style: italic; color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.75rem;">Two demos against the pipeline above. First: Dew auto-sections a 7-item packing list into 17 items across 4 categories, then flags 3 calendar conflicts. Second: a recurring event with a dependent reminder chain — the hard 20% of agent work.</p>
 </div>
 
 To date, my actual spend is around $2,500. The bucket breakdown is heavily lopsided. The AI coding tools (Cursor and Claude Code subscriptions, plus some occasional pay-as-you-go on top) are roughly 80% of total spend. Model API costs to OpenAI and Anthropic for what Dew actually runs on are maybe 15%. Infra (Vercel, the database, observability) is essentially nothing at this volume. Domains and other services are rounding error.

@@ -77,7 +77,7 @@
     <text x="24" y="38" fill="#5AAE8A" font-size="15" letter-spacing="2" font-weight="700">STAGE 02</text>
     <text x="24" y="80" fill="#1F3D2A" font-size="32" font-weight="700">PLAN</text>
     <line x1="24" y1="96" x2="130" y2="96" stroke="#5AAE8A" stroke-width="2"/>
-    <text x="24" y="128" fill="#3D5546" font-size="18">&#8226; 27-tool catalog</text>
+    <text x="24" y="128" fill="#3D5546" font-size="18">&#8226; 60+ tool catalog</text>
     <text x="24" y="158" fill="#3D5546" font-size="18">&#8226; Multi-action batching</text>
     <text x="24" y="188" fill="#3D5546" font-size="18">&#8226; Conflict + idempotency check</text>
     <text x="24" y="212" fill="#3A7A56" font-size="16" font-weight="700" font-style="italic">Clarifies under doubt</text>
@@ -96,7 +96,7 @@
     <text x="24" y="128" fill="#3D5546" font-size="18">&#8226; Postgres + Redis writes</text>
     <text x="24" y="158" fill="#3D5546" font-size="18">&#8226; Calendar / Reminder APIs</text>
     <text x="24" y="188" fill="#3D5546" font-size="18">&#8226; WebSocket fanout to devices</text>
-    <text x="24" y="212" fill="#3A7A56" font-size="16" font-weight="700" font-style="italic">~700 ms p50, prompt to confirmation</text>
+    <text x="24" y="212" fill="#3A7A56" font-size="16" font-weight="700" font-style="italic">Auto-retry &#x21BB; on tool failure &#183; ~700 ms p50</text>
   </g>
 
   <g stroke="rgba(255,255,255,0.9)" stroke-width="2.5" fill="none">
@@ -140,5 +140,5 @@
   </g>
 
   <line x1="80" y1="855" x2="1520" y2="855" stroke="rgba(255,255,255,0.3)" stroke-width="0.75"/>
-  <text x="800" y="884" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="16" letter-spacing="3" font-weight="700">27 TOOLS &#183; ONE LOOP &#183; ONE SOLO DEV &#183; GETHONEYDEW.APP</text>
+  <text x="800" y="884" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="16" letter-spacing="3" font-weight="700">60+ TOOLS &#183; ONE LOOP &#183; ONE SOLO DEV &#183; GETHONEYDEW.APP</text>
 </svg>
