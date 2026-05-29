@@ -11,9 +11,9 @@
 > the first comment (drop it within ~60s of posting). If you'd rather put it in the body, swap the
 > last line for "Full breakdown → https://peterghiorse.com/blog/ai-mom-and-pop-software-era".
 >
-> **Voice goal:** smart builder reflecting on craft. Not founder running a startup.
-> "Solo," "nights and weekends," "same engineer" framing signals to current coworkers
-> that this is tinkering, not a job-change announcement.
+> **Voice goal:** founder reflecting on craft. Pete founded Honeydew — the post now says
+> "I founded Honeydew" rather than hiding it. Keeps the hands-on "I build it solo, nights and
+> weekends" detail (true, and it's the point of the cost story) without downplaying the role.
 
 ---
 
@@ -36,11 +36,11 @@ I spent over $500,000 building the last product I shipped.
 
 I've spent about $2,500 on the one I'm building now.
 
-Same engineer. Five years apart. The math broke by 200×.
+Same founder. Five years apart. The math broke by 200×.
 
-From 2017 to 2022 I helped build GiveTide, a charitable giving platform. Small team, five years, half a million dollars to ship. It sold to an acquirer.
+From 2017 to 2022 I cofounded GiveTide, a charitable giving platform, and ran it as CEO. Small team, five years, half a million dollars to ship. We sold to an acquirer.
 
-Since last year I've been building Honeydew (gethoneydew.app) solo, on nights and weekends. An AI agent that runs families' lives — calendar, lists, reminders, the whole mental-load problem. About $2,500 out of pocket so far. And it's more technically sophisticated than GiveTide ever was.
+Last year I founded Honeydew (gethoneydew.app) — an AI agent that runs families' lives. Calendar, lists, reminders, the whole mental-load problem. I build it solo, nights and weekends, and it's already more technically sophisticated than GiveTide ever was. About $2,500 out of pocket so far.
 
 The video is why it's not just a chatbot. ChatGPT can describe a packing list. Dew actually builds it, checks your real family calendar for conflicts, and sets the reminders — in seconds.
 
@@ -97,7 +97,7 @@ Hey — posting an essay on LinkedIn in ~30 min about what it cost me to build G
 - [x] Compiled video live at https://peterghiorse.com/videos/posts/momnpop/compiled-with-architecture.mp4 (36s)
 - [x] Cover poster (1920×1080, builder-coded copy)
 - [x] All hero / stack / timeline / architecture SVGs serving in production
-- [x] Builder voice throughout — no "startup," no "exit," explicit "personal project" + "nights and weekends"
+- [x] Founder voice — "cofounded GiveTide and ran it as CEO," "founded Honeydew," kept the honest "I build it solo, nights and weekends"
 - [x] Post body: 2,224 chars (was 2,875 — tighter, more scrollable)
 - [x] First comment ends in a question (invites replies)
 - [x] Friend heads-up template ready
@@ -143,16 +143,14 @@ If impressions cross 50k by hour 24, write a short follow-up on day 3 about what
 
 ---
 
-## Why this framing works for coworker-safe personal brand
+## Why this framing works
 
-The post positions you as a builder reflecting on craft. Specific signals:
+Founder reflecting on craft — owns the role without the hustle-culture posturing. Specific signals:
 
-- "Personal project" + "nights and weekends" = explicit hobbyist framing
-- "Same engineer" instead of "same founder"
-- "Hacking on lately" instead of "started building"
-- No "exit" or "venture" language
-- First-comment qualifier: "in my spare time" / "Doesn't have to be a business"
-- Closing line: craft-coded ("more enjoyable than it's ever been"), not commerce-coded
-- Hashtags: #BuildInPublic + #AIAgents + #SoftwareEngineering — engineering-builder community, not founder-hustle community
+- "Same founder. Five years apart." — ties both ventures to your real role
+- "Cofounded GiveTide and ran it as CEO" → "founded Honeydew" — the arc is CEO-of-a-funded-startup to solo-founder-builder, which is the whole point of the cost story
+- "I build it solo, nights and weekends" — kept, because it's true and it's what makes $2,500 believable
+- Closing stays craft-forward ("more fun than it's ever been"), not a growth-metrics flex
+- Hashtags: #BuildInPublic + #AIAgents + #SoftwareEngineering — builder community, where this story lands best
 
-You're still linking gethoneydew.app — having a personal project with a domain is normal for engineers. The framing is that you tinker on it, not run it.
+The contrast that carries the post: the same person who raised money and ran a team to ship one product is now shipping a more sophisticated one alone, for 0.5% of the cost.

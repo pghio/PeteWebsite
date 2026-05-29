@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogLayout.astro
 title: "$500,000 vs. $2,500: I Built Two Things Five Years Apart"
-description: "The last product I helped ship cost half a million dollars to build. The thing I'm hacking on now has cost around $2,500. Same engineer, five years apart. Here's what actually changed."
+description: "The last company I cofounded spent half a million dollars to ship its product. The thing I'm building now has cost around $2,500. Same founder, five years apart. Here's what actually changed."
 publishDate: "2026-05-03"
 category: "Essay"
 ogImage: "/images/research/momnpop-hero-cost-comparison.svg"
@@ -9,11 +9,11 @@ ogImage: "/images/research/momnpop-hero-cost-comparison.svg"
 
 ![$500,000 vs. $2,500 — what it cost to build the last product I shipped, and what it's cost to build the one I'm working on now](/images/research/momnpop-hero-cost-comparison.svg)
 
-Between 2017 and 2022 I helped build **GiveTide**, a charitable giving platform. The team spent over **$500,000** shipping it. It sold to an acquirer five years in.
+Between 2017 and 2022 I cofounded **GiveTide**, a charitable giving platform, and ran it as CEO. We spent over **$500,000** shipping it. It sold to an acquirer five years in.
 
 Since last year I've been building **[Honeydew](https://gethoneydew.app)** on nights and weekends. It's an AI agent that runs families' lives. So far it's cost me around **$2,500** out of pocket — to build something more technically sophisticated than GiveTide ever was.
 
-Same engineer. Same instincts. Five years apart. The math broke by about **200×**. Here's why, from the inside.
+Same founder. Same instincts. Five years apart. The math broke by about **200×**. Here's why, from the inside.
 
 <div style="position: relative; left: 50%; right: 50%; margin-left: -47vw; margin-right: -47vw; width: 94vw; max-width: 1400px; margin-top: 2.5rem; margin-bottom: 1rem;">
   <img src="/images/research/momnpop-cost-timeline.svg" alt="Cumulative spend, both projects — GiveTide rose to $500K+ over five years; Honeydew sits at roughly $2,500" style="width: 100%; height: auto; border-radius: 12px; display: block;" />
