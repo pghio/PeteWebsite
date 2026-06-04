@@ -51,12 +51,21 @@ Under the hood there's an LLM agent loop, voice, tool orchestration across a mul
   <img src="/images/posts/honeydew-architecture-2026.svg" alt="Honeydew's Dew agent pipeline — input parses through an LLM interpretation layer, hits a tool catalog, executes against the family graph, and writes back into per-family memory" style="width: 100%; height: auto; border-radius: 12px; display: block;" />
 </div>
 
+<div style="position: relative; left: 50%; right: 50%; margin-left: -47vw; margin-right: -47vw; width: 94vw; max-width: 1400px; margin-top: 2.5rem; margin-bottom: 0.5rem;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+    <img src="/images/posts/honeydew-dew-voice-to-calendar.webp" alt="Dew turns a spoken request into a calendar event and catches the scheduling conflict before it lands, using the Realtime API" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; display: block;" />
+    <img src="/images/posts/honeydew-dew-photo-to-list.webp" alt="Dew reads a photo into a structured list, interpreting it semantically instead of as flat OCR text" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; display: block;" />
+    <img src="/images/posts/honeydew-dew-semantic-cache.webp" alt="A semantic cache recognizes when a request matches one Dew already handled and skips the model, cutting repeat LLM calls" loading="lazy" style="width: 100%; height: auto; border-radius: 12px; display: block;" />
+  </div>
+</div>
+<p style="text-align: center; font-style: italic; color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.75rem; margin-bottom: 1rem;">Three of Dew's moves up close: voice to calendar, photo to list, and a semantic cache that skips repeat work to keep inference cheap.</p>
+
 <div style="position: relative; left: 50%; right: 50%; margin-left: -47vw; margin-right: -47vw; width: 94vw; max-width: 1600px; margin-top: 2.5rem; margin-bottom: 1rem;">
   <video controls playsinline preload="metadata" poster="/videos/posts/momnpop/compiled-with-architecture-poster.jpg" style="width: 100%; height: auto; border-radius: 12px; display: block;">
     <source src="/videos/posts/momnpop/compiled-with-architecture.mp4" type="video/mp4">
     Your browser does not support embedded video. <a href="/videos/posts/momnpop/compiled-with-architecture.mp4">Download the demo</a>.
   </video>
-  <p style="text-align: center; font-style: italic; color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.75rem;">Two demos against the pipeline above. First: from three hints and "add anything else we'd need," Dew builds a 23-item beach-trip packing list across 5 inferred sections. Second: a recurring event with a dependent reminder chain — the hard 20% of agent work.</p>
+  <p style="text-align: center; font-style: italic; color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.75rem;">Two demos against the pipeline above. First: one plain-language message — plan the party, order the cake, build a prep list, share it with a co-parent, remind me to send invites — fans out into two calendar events, a six-item shared list, and a reminder in a single pass. Second: a recurring taco night with a dependent thaw-the-meat reminder, the weekly recurrence expanded into a real event series — the hard 20% of agent work.</p>
 </div>
 
 **Where the $2,500 actually went:** about 80% to AI coding tools (Cursor and Claude Code), maybe 15% to model APIs for what Dew runs on, and a rounding error to hosting and domains. The team is one person, me, on nights and weekends.
