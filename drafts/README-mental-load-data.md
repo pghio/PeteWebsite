@@ -1,8 +1,25 @@
 # Mental Load piece — data unblock (one command)
 
+## STATUS 2026-06-09: ON HOLD — not enough data to publish honestly
+
+The pull ran (saved at `drafts/intent-distribution.json`). Result:
+**10 classified requests across 2 intents in 30 days** (add_event: 6,
+create_list: 4; zero `unclassified` rows, so this is row volume, not a
+classifier gap). A "ranked map of the mental load" needs hundreds of
+requests minimum. Two possible explanations, flagged for investigation
+in the app repo:
+1. Real-user Dew-chat volume is genuinely this small (piece waits months)
+2. A logging or filter regression (ConversationTracker/SessionManager were
+   modified recently; realUserSql has over-excluded before — the
+   176-families-collapsed-to-3 incident)
+
+Re-run the pull after the investigation; publish only when a pull returns
+≥300 classified requests across ≥8 intents.
+
+## The pull (one command, rerun anytime)
+
 The article in `drafts/mental-load-measured.md` is fully written except the
-results. Claude's prod read was blocked by the permission classifier, so the
-pull is one manual curl (read-only, aggregate counts only):
+results:
 
 ```bash
 cd ~/Documents/GitHub/honeydew_June.nosync

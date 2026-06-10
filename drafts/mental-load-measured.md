@@ -20,6 +20,12 @@ faq:
 
 <!-- ============================================================
 PUBLISH GATE — DO NOT MOVE TO src/pages/blog/ UNTIL:
+0. DATA VOLUME GATE (added 2026-06-09): the first real pull returned
+   N=10 classified requests across 2 intents in 30 days — nowhere near
+   publishable. Either Dew-chat volume is genuinely tiny among real
+   users, or conversation logging / realUserSql is eating rows (a
+   regression investigation is flagged in the app repo). HOLD until a
+   pull returns ≥300 classified requests spread across ≥8 intents.
 1. The prod data pull has replaced every [PENDING_DATA] token below
    (one curl — see drafts/README-mental-load-data.md)
 2. scripts/gen-mental-load-assets.mjs has been run on the JSON
