@@ -7,7 +7,7 @@ category: "Essay"
 ogImage: "/images/posts/in-what-furnace-hero.png"
 ---
 
-![Push hard on the work you control, be patient with the outcome you don't, and repeat](/images/posts/in-what-furnace-hero.svg)
+![Your effort runs toward the outcome and partway leaves your hands: push hard on what you control, let go of the rest](/images/posts/in-what-furnace-hero.svg)
 
 The case against AI usually gets written off as fear of the unknown. It isn't. The fear is specific, and we earned it.
 
