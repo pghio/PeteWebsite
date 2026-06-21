@@ -36,6 +36,6 @@ Draw it and you don't get a line that rises as effort falls. You get a hump. Too
 
 Almost none of what counts survives as a number. The result is what gets written down: the company that sold, the grade, the launch. But the result is rarely the thing that changed you. Ask anyone about the work that made them who they are, and they won't tell you how it came out. They'll tell you about the stretch when they weren't sure it would. That stretch is exactly what frictionless is offering to take off your hands, and it was the only part that was ever yours.
 
-So I'm not against AI. I use it every day. I'd change one thing: the pitch. Stop promising people the machine will take the hard part off their hands. Leave them the hard part. It was the part that made them.
+So I'm not against AI. I use it every day. I'd change one thing: the pitch. Stop promising people the machine will take the hard part off their hands. It can't, really. It can only move the hard somewhere that gives nothing back. Leave them the hard part. It was the part that made them.
 
 —Pete
