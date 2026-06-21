@@ -1,34 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Georgia, 'Times New Roman', serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
   <rect width="1200" height="630" fill="#F4EDE2"/>
 
-  <!-- kicker -->
-  <text x="80" y="92" fill="#6B5D52" font-size="22" font-weight="700" letter-spacing="7">IN WHAT FURNACE</text>
-  <line x1="80" y1="114" x2="1120" y2="114" stroke="#1A1A1A" stroke-width="0.75"/>
+  <defs>
+    <marker id="ax" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1A1A1A"/>
+    </marker>
+  </defs>
 
-  <!-- headline -->
-  <text x="80" y="168" fill="#1A1A1A" font-size="38" font-weight="700">The return on your impatience</text>
+  <!-- centered title -->
+  <text x="600" y="66" text-anchor="middle" fill="#1A1A1A" font-size="40" font-weight="700">Same drive. Opposite peace.</text>
+  <text x="600" y="98" text-anchor="middle" fill="#6B5D52" font-size="18">It isn't how hard you push. It's what you aim it at.</text>
 
-  <!-- axis -->
-  <line x1="150" y1="210" x2="150" y2="512" stroke="#6B5D52" stroke-width="0.5"/>
-  <text x="120" y="250" fill="#6B5D52" font-size="26" text-anchor="middle">+</text>
-  <text x="120" y="490" fill="#6B5D52" font-size="26" text-anchor="middle">&#8722;</text>
-  <!-- zero baseline -->
-  <line x1="150" y1="372" x2="1080" y2="372" stroke="#1A1A1A" stroke-width="1"/>
+  <!-- axes -->
+  <line x1="210" y1="510" x2="1015" y2="510" stroke="#1A1A1A" stroke-width="0.9" marker-end="url(#ax)"/>
+  <line x1="210" y1="510" x2="210" y2="148" stroke="#1A1A1A" stroke-width="0.9" marker-end="url(#ax)"/>
 
-  <!-- INPUTS bar (positive) -->
-  <rect x="330" y="214" width="150" height="158" fill="#A8301B"/>
-  <text x="405" y="200" text-anchor="middle" fill="#A8301B" font-size="24" font-weight="700">FOCUS</text>
-  <text x="405" y="410" text-anchor="middle" fill="#1A1A1A" font-size="21" font-weight="700">On your inputs</text>
-  <text x="405" y="434" text-anchor="middle" fill="#6B5D52" font-size="15" font-style="italic">the part you control</text>
+  <!-- axis labels (the quantities being measured) -->
+  <text x="612" y="552" text-anchor="middle" fill="#1A1A1A" font-size="16" font-weight="600" letter-spacing="1">DRIVE&#160;&#160;·&#160;&#160;HOW HARD YOU PUSH</text>
+  <text x="168" y="330" text-anchor="middle" fill="#1A1A1A" font-size="16" font-weight="600" letter-spacing="1" transform="rotate(-90 168 330)">PEACE&#160;&#160;·&#160;&#160;PRESENCE</text>
 
-  <!-- RESULTS bar (negative) -->
-  <rect x="750" y="372" width="150" height="128" fill="#9A8C7B"/>
-  <text x="825" y="346" text-anchor="middle" fill="#1A1A1A" font-size="21" font-weight="700">On your results</text>
-  <text x="825" y="324" text-anchor="middle" fill="#6B5D52" font-size="15" font-style="italic">the part you don't</text>
-  <text x="825" y="524" text-anchor="middle" fill="#6B5D52" font-size="24" font-weight="700">ANXIETY</text>
+  <!-- the two paths: same drive, different target -->
+  <path d="M232,360 C 480,330 720,255 1000,238" fill="none" stroke="#A8301B" stroke-width="3"/>
+  <path d="M232,360 C 480,398 740,468 1000,482" fill="none" stroke="#9A8C7B" stroke-width="3"/>
 
-  <!-- gloss -->
-  <line x1="80" y1="556" x2="1120" y2="556" stroke="#1A1A1A" stroke-width="0.75"/>
-  <text x="80" y="594" fill="#3A2D24" font-size="22" font-style="italic">Push hard on what you control. Let the rest arrive on its own.</text>
-  <text x="1120" y="594" text-anchor="end" fill="#6B5D52" font-size="19">peterghiorse.com</text>
+  <!-- shared origin + endpoints -->
+  <circle cx="232" cy="360" r="4.5" fill="#1A1A1A"/>
+  <circle cx="1000" cy="238" r="5" fill="#A8301B"/>
+  <circle cx="1000" cy="482" r="5" fill="#9A8C7B"/>
+
+  <!-- line labels -->
+  <text x="690" y="220" fill="#A8301B" font-size="19" font-weight="700">aimed at your inputs</text>
+  <text x="690" y="243" fill="#6B5D52" font-size="14">the part you control</text>
+  <text x="690" y="502" fill="#8A7E70" font-size="19" font-weight="700">aimed at your results</text>
+  <text x="690" y="525" fill="#6B5D52" font-size="14">the part you don't</text>
 </svg>
