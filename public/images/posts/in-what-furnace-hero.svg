@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="1200" height="630" fill="#F4EDE2"/>
+
+  <!-- kicker -->
+  <text x="80" y="100" fill="#6B5D52" font-size="24" font-weight="700" letter-spacing="8">IN WHAT FURNACE</text>
+  <line x1="80" y1="124" x2="1120" y2="124" stroke="#1A1A1A" stroke-width="0.75"/>
+
+  <!-- the takeaway, big and plain -->
+  <text x="80" y="320" font-size="76" font-weight="700" fill="#1A1A1A"><tspan fill="#A8301B">Impatient</tspan> with inputs.</text>
+  <text x="80" y="420" font-size="76" font-weight="700" fill="#1A1A1A"><tspan fill="#A8301B">Patient</tspan> with results.</text>
+
+  <!-- gloss -->
+  <line x1="80" y1="512" x2="1120" y2="512" stroke="#1A1A1A" stroke-width="0.75"/>
+  <text x="80" y="552" fill="#3A2D24" font-size="23" font-style="italic">Two kinds of friction, and which one AI should leave you.</text>
+  <text x="1120" y="552" text-anchor="end" fill="#6B5D52" font-size="20">peterghiorse.com</text>
+</svg>
