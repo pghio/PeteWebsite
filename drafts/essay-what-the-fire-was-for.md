@@ -2,7 +2,7 @@
 title: "What the Fire Was For"
 subtitle: "On AI, the two kinds of friction, and the discipline of being impatient with the right things."
 status: DRAFT — depth + style passes applied; title provisional (alts: "The Friction Worth Keeping," "Leave Me the Hard Part")
-voice: GiveTide-answer register — calm, crisp, cerebral. Refrain: "Friction isn't one thing." Signed close.
+voice: calm, crisp, cerebral. Stands on its own argument — no borrowed stories/material from other pieces. Refrain: "Friction isn't one thing." Signed close.
 ---
 
 # What the Fire Was For
@@ -57,17 +57,15 @@ Put effort on one axis and who you become on the other, and you do not get a lin
 
 ---
 
-I know where my own band was, because I nearly didn't survive it.
+This is the part the metrics will always get wrong, because the part that matters never survives as a metric.
 
-For five years I built a company called GiveTide. There was a sealed bottle of bourbon on a shelf in our office, waiting for the day we'd earned it. Two days after our proudest team photo, Apple rejected the app. The interested investor walked. Friends who'd "couldn't wait" to use the thing never showed. I slipped into something I'll now call depression; colors went flat, music lost its magic, and I kept asking the only question that mattered: *is this all going to be for nothing?*
+The result is what gets recorded: the company that sold or didn't, the exam passed, the project shipped. But the result is rarely what changed you. The struggle was. Ask people about the work that made them who they are, and they won't describe the outcome — they'll describe the stretch they weren't sure they'd come through. The outcome is what the world keeps. The friction is what you keep.
 
-I controlled the inputs. The twenty-five-page appeal. The support line I called every single day. The team I had to keep believing in front of even when I didn't. I could not control the result, and eventually I made my peace with that.
-
-We made it. We popped the bourbon. But that was never the part that defined me. The struggle was. The tools now promising to sand that struggle away are promising to sand away the exact thing that made me into someone. The result was never the point. The inputs were.
+Which is why *let the machine handle the hard part* is a stranger offer than it sounds. The hard part was the part that was yours.
 
 ---
 
-So I am not anti-AI. I am the opposite, loudly, and I build with it every night. I only want us to stop selling it with the one sentence guaranteed to make people hate it and themselves.
+So I am not anti-AI. I am the opposite, loudly, and I build with it daily. I only want us to stop selling it with the one sentence guaranteed to make people hate it and themselves.
 
 AI's real gift was never a life without struggle. It is the chance to spend your struggle on what is actually yours — and to hand the rest, at last, to something that doesn't mind carrying it.
 
