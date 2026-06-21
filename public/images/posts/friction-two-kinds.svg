@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="900" height="520" fill="#F4EDE2"/>
+
+  <text x="80" y="64" fill="#1A1A1A" font-size="24" font-weight="700">Two kinds of friction</text>
+  <text x="80" y="92" fill="#6B5D52" font-size="14" font-style="italic">The optimists and the critics are both right — about different halves.</text>
+  <line x1="80" y1="108" x2="820" y2="108" stroke="#1A1A1A" stroke-width="0.5"/>
+
+  <!-- vertical divider -->
+  <line x1="450" y1="150" x2="450" y2="430" stroke="#1A1A1A" stroke-width="0.5" stroke-dasharray="2 4"/>
+
+  <!-- LEFT: toil -->
+  <text x="80" y="158" fill="#A8301B" font-size="12" font-weight="700" letter-spacing="3">TOIL</text>
+  <text x="80" y="192" fill="#1A1A1A" font-size="20" font-weight="700">Worth removing</text>
+  <g fill="#3A2D24" font-size="15" font-style="italic">
+    <text x="80" y="232">The invisible logistics of a household</text>
+    <text x="80" y="266">Boilerplate, busywork, the second draft</text>
+    <text x="80" y="300">Remembering the milk, the form, the dentist</text>
+    <text x="80" y="334">Repetition that teaches you nothing</text>
+  </g>
+
+  <!-- RIGHT: forge -->
+  <text x="480" y="158" fill="#A8301B" font-size="12" font-weight="700" letter-spacing="3">THE FORGE</text>
+  <text x="480" y="192" fill="#1A1A1A" font-size="20" font-weight="700">Worth keeping</text>
+  <g fill="#3A2D24" font-size="15" font-style="italic">
+    <text x="480" y="232">The judgment you only earn by being wrong</text>
+    <text x="480" y="266">The taste nothing but repetition builds</text>
+    <text x="480" y="300">The struggle that hardens into who you are</text>
+    <text x="480" y="334">The difficulty that is the point</text>
+  </g>
+
+  <line x1="80" y1="452" x2="820" y2="452" stroke="#1A1A1A" stroke-width="0.5"/>
+  <text x="80" y="484" fill="#1A1A1A" font-size="14" font-style="italic">Remove the first. Protect the second. The whole argument is learning to tell them apart.</text>
+</svg>

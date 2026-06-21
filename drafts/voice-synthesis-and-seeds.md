@@ -84,6 +84,47 @@ And note what that piece *is about*: GiveTide nearly dying. Which means **Seed 5
 
 ---
 
+## Part 9 — THE CHOSEN PIECE: "Best selves" / the friction essay
+
+Direction Pete chose (supersedes the six seeds): a thought piece on AI and becoming our best selves — defending the real promise while indicting *how it's being communicated*. The strong half is the friction argument. More intellectual register; editorial graphics; a poetic title.
+
+### Working titles (poetic)
+1. **What the Fire Was For** *(recommended)* — the forge metaphor; the fire is the struggle that made you, and the piece asks what we lose if we put it out. Resonant, literary, ties straight to your GiveTide story.
+2. **The Friction Worth Keeping** — clearer, less oblique; says the thesis on the tin.
+3. **Leave Me the Hard Part** — a human plea, plainspoken; least "literary," most you.
+4. **On Sanding the World Smooth** — the critique of frictionlessness, image-forward.
+
+### The thesis (intellectual spine)
+The promise is real; the *sales pitch* is sabotaging it. The error in both the hype and the fear is treating **friction as one undifferentiated thing**. There are two kinds:
+- **Toil-friction** — drudgery, boilerplate, the invisible mental load. Removing it is liberation.
+- **Forge-friction** — the *desirable difficulty* that produces judgment, taste, mastery, the self. Removing it is theft.
+
+The optimists say "remove all friction → utopia." The critics hear "remove all friction → we atrophy." **Both are right about a different half.** The sophisticated move is to distinguish them — and to notice that the industry sells "frictionless" as an unqualified good, which (a) overpromises to users and (b) terrifies everyone who intuits, correctly, that some friction is load-bearing for being a person.
+
+### Three load-bearing concepts (the intellectual ballast — use, don't parade)
+- **Desirable difficulties** (Robert Bjork, cognitive psych): conditions that *slow* performance but *deepen* learning and transfer. Effort isn't a bug in growth; it's the mechanism. → grounds "forge-friction."
+- **Antifragility / hormesis** (Taleb; biology): some systems *gain* from the right dose of stress and decay without it. A frictionless life is an atrophying one. → grounds the curve.
+- **Augmentation vs. automation** (Engelbart, "Augmenting Human Intellect," 1962; complement-vs-substitute in labor economics): the same tool can be narrated as replacing you or as amplifying you. The hype leads with replacement ("it passed the bar, wrote the essay"), which is the self-defeating story. → grounds the communication critique.
+
+### The honest tension that makes it *yours* (not generic)
+Your most-upvoted writing ever says *"struggle doesn't break an entrepreneur — it defines them."* So an essay cheering "AI removes the hard parts" would contradict your own life. The reconciliation **is** the essay: AI should remove the *wrong* friction so we have more of ourselves left for the *right* friction. You're not cheerleading; you're resolving a contradiction you actually live.
+
+### Arc (write it in the GiveTide-answer voice, not the blog voice)
+1. Open from human **awe**, not human obsolescence (borrow the brain answer — 100B neurons, the machine is already extraordinary).
+2. Name the backlash, and concede it's *earned* — not Luddism, a rational response to being told you're about to be redundant.
+3. The reframe: it's not the technology, it's the sentence we wrap it in (augmentation vs replacement).
+4. The distinction: two frictions. **[GRAPHIC: two-kinds-of-friction]**
+5. The proof: frictionless isn't utopia, it's atrophy. **[GRAPHIC: where-growth-lives curve]**
+6. The personal turn: your own forge (GiveTide, the bourbon, the dark night) — the friction that made you, that no tool should have taken.
+7. Close inward, signed: AI's real gift isn't a life without struggle; it's the chance to spend your struggle on what's actually yours.
+
+### Graphics (built, in editorial palette — cream/ink/rust, Georgia serif)
+- `public/images/posts/friction-two-kinds.svg` (+ `.png`) — the taxonomy: Worth removing / Worth keeping.
+- `public/images/posts/friction-growth-curve.svg` (+ `.png`) — the inverted-U: atrophy → the forge → breakdown, with "what 'frictionless' sells you" marked in the atrophy zone.
+- *Possible third:* replacement-vs-augmentation diagram for beat 3, if we want the communication point to have its own visual.
+
+---
+
 ## Part 1 — The voice you already have (and where Galloway extends it)
 
 You don't need to become Galloway. You're already 70% of the way to his engine, from a different door. Here's the honest map.
