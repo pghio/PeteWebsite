@@ -7,7 +7,7 @@ category: "Essay"
 ogImage: "/images/posts/in-what-furnace-hero.png"
 ---
 
-![Your effort runs toward the outcome and partway leaves your hands: push hard on what you control, let go of the rest](/images/posts/in-what-furnace-hero.svg)
+![A loop: do the work (push hard), the results come in their own time, you take the lesson and go again](/images/posts/in-what-furnace-hero.svg)
 
 The case against AI usually gets written off as fear of the unknown. It isn't. The fear is specific, and we earned it.
 

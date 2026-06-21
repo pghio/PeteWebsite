@@ -2,32 +2,28 @@
   <rect width="1200" height="630" fill="#F4EDE2"/>
 
   <defs>
-    <marker id="end" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#9A8C7B"/>
+    <marker id="ink" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1A1A1A"/>
     </marker>
   </defs>
 
   <!-- title -->
-  <text x="600" y="70" text-anchor="middle" fill="#1A1A1A" font-size="40" font-weight="700">Push what's yours. Let go of the rest.</text>
-  <text x="600" y="103" text-anchor="middle" fill="#6B5D52" font-size="18">You control the effort. You don't control how it lands.</text>
+  <text x="600" y="64" text-anchor="middle" fill="#1A1A1A" font-size="40" font-weight="700">Do the work. Then let it go.</text>
+  <text x="600" y="97" text-anchor="middle" fill="#6B5D52" font-size="18">The results aren't yours to expect. They're yours to learn from.</text>
 
-  <!-- zone labels (above) -->
-  <text x="375" y="298" text-anchor="middle" fill="#1A1A1A" font-size="22" font-weight="700">WHAT YOU CONTROL</text>
-  <text x="375" y="322" text-anchor="middle" fill="#6B5D52" font-size="15">the work, the reps, the asking</text>
-  <text x="825" y="298" text-anchor="middle" fill="#1A1A1A" font-size="22" font-weight="700">WHAT YOU DON'T</text>
-  <text x="825" y="322" text-anchor="middle" fill="#6B5D52" font-size="15">the outcome, the timing, the luck</text>
+  <!-- loop -->
+  <path d="M435,400 A165,165 0 0 1 765,400" fill="none" stroke="#1A1A1A" stroke-width="2.5" marker-end="url(#ink)"/>
+  <path d="M765,400 A165,165 0 0 1 435,400" fill="none" stroke="#1A1A1A" stroke-width="2.5" marker-end="url(#ink)"/>
 
-  <!-- the single process arrow: effort -> result -->
-  <line x1="160" y1="362" x2="600" y2="362" stroke="#A8301B" stroke-width="6"/>
-  <line x1="600" y1="362" x2="1038" y2="362" stroke="#9A8C7B" stroke-width="6" marker-end="url(#end)"/>
+  <!-- arc links (the real transitions) -->
+  <text x="600" y="210" text-anchor="middle" fill="#3A2D24" font-size="17">they come in their own time</text>
+  <text x="600" y="602" text-anchor="middle" fill="#3A2D24" font-size="17">you take the lesson, and go again</text>
 
-  <!-- the control boundary -->
-  <line x1="600" y1="250" x2="600" y2="474" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="3 5"/>
-  <text x="600" y="238" text-anchor="middle" fill="#1A1A1A" font-size="15" font-weight="600">it leaves your hands here</text>
-
-  <!-- stance labels (below) -->
-  <text x="375" y="424" text-anchor="middle" fill="#A8301B" font-size="25" font-weight="700">PUSH HARD</text>
-  <text x="375" y="448" text-anchor="middle" fill="#6B5D52" font-size="15">be impatient</text>
-  <text x="825" y="424" text-anchor="middle" fill="#8A7E70" font-size="25" font-weight="700">LET IT GO</text>
-  <text x="825" y="448" text-anchor="middle" fill="#6B5D52" font-size="15">be patient</text>
+  <!-- nodes -->
+  <circle cx="435" cy="400" r="6" fill="#1A1A1A"/>
+  <circle cx="765" cy="400" r="6" fill="#1A1A1A"/>
+  <text x="414" y="395" text-anchor="end" fill="#1A1A1A" font-size="21" font-weight="700">THE WORK</text>
+  <text x="414" y="417" text-anchor="end" fill="#A8301B" font-size="15" font-weight="600">push hard</text>
+  <text x="786" y="395" text-anchor="start" fill="#1A1A1A" font-size="21" font-weight="700">THE RESULTS</text>
+  <text x="786" y="417" text-anchor="start" fill="#6B5D52" font-size="15">let them come</text>
 </svg>
