@@ -2,15 +2,33 @@
   <rect width="1200" height="630" fill="#F4EDE2"/>
 
   <!-- kicker -->
-  <text x="80" y="100" fill="#6B5D52" font-size="24" font-weight="700" letter-spacing="8">IN WHAT FURNACE</text>
-  <line x1="80" y1="124" x2="1120" y2="124" stroke="#1A1A1A" stroke-width="0.75"/>
+  <text x="80" y="92" fill="#6B5D52" font-size="22" font-weight="700" letter-spacing="7">IN WHAT FURNACE</text>
+  <line x1="80" y1="114" x2="1120" y2="114" stroke="#1A1A1A" stroke-width="0.75"/>
 
-  <!-- the takeaway, big and plain -->
-  <text x="80" y="320" font-size="76" font-weight="700" fill="#1A1A1A"><tspan fill="#A8301B">Impatient</tspan> with inputs.</text>
-  <text x="80" y="420" font-size="76" font-weight="700" fill="#1A1A1A"><tspan fill="#A8301B">Patient</tspan> with results.</text>
+  <!-- headline -->
+  <text x="80" y="168" fill="#1A1A1A" font-size="38" font-weight="700">The return on your impatience</text>
+
+  <!-- axis -->
+  <line x1="150" y1="210" x2="150" y2="512" stroke="#6B5D52" stroke-width="0.5"/>
+  <text x="120" y="250" fill="#6B5D52" font-size="26" text-anchor="middle">+</text>
+  <text x="120" y="490" fill="#6B5D52" font-size="26" text-anchor="middle">&#8722;</text>
+  <!-- zero baseline -->
+  <line x1="150" y1="372" x2="1080" y2="372" stroke="#1A1A1A" stroke-width="1"/>
+
+  <!-- INPUTS bar (positive) -->
+  <rect x="330" y="214" width="150" height="158" fill="#A8301B"/>
+  <text x="405" y="200" text-anchor="middle" fill="#A8301B" font-size="24" font-weight="700">FOCUS</text>
+  <text x="405" y="410" text-anchor="middle" fill="#1A1A1A" font-size="21" font-weight="700">On your inputs</text>
+  <text x="405" y="434" text-anchor="middle" fill="#6B5D52" font-size="15" font-style="italic">the part you control</text>
+
+  <!-- RESULTS bar (negative) -->
+  <rect x="750" y="372" width="150" height="128" fill="#9A8C7B"/>
+  <text x="825" y="346" text-anchor="middle" fill="#1A1A1A" font-size="21" font-weight="700">On your results</text>
+  <text x="825" y="324" text-anchor="middle" fill="#6B5D52" font-size="15" font-style="italic">the part you don't</text>
+  <text x="825" y="524" text-anchor="middle" fill="#6B5D52" font-size="24" font-weight="700">ANXIETY</text>
 
   <!-- gloss -->
-  <line x1="80" y1="512" x2="1120" y2="512" stroke="#1A1A1A" stroke-width="0.75"/>
-  <text x="80" y="552" fill="#3A2D24" font-size="23" font-style="italic">Two kinds of friction, and which one AI should leave you.</text>
-  <text x="1120" y="552" text-anchor="end" fill="#6B5D52" font-size="20">peterghiorse.com</text>
+  <line x1="80" y1="556" x2="1120" y2="556" stroke="#1A1A1A" stroke-width="0.75"/>
+  <text x="80" y="594" fill="#3A2D24" font-size="22" font-style="italic">Push hard on what you control. Let the rest arrive on its own.</text>
+  <text x="1120" y="594" text-anchor="end" fill="#6B5D52" font-size="19">peterghiorse.com</text>
 </svg>
