@@ -1,11 +1,11 @@
 ---
-title: "What the Fire Was For"
+title: "In What Furnace"
 subtitle: "On AI, the two kinds of friction, and the discipline of being impatient with the right things."
-status: DRAFT — depth + style passes applied; title provisional (alts: "The Friction Worth Keeping," "Leave Me the Hard Part")
+status: DRAFT — depth + style passes applied; title locked ("In What Furnace," after Blake's "The Tyger")
 voice: calm, crisp, cerebral. Stands on its own argument — no borrowed stories/material from other pieces. Refrain: "Friction isn't one thing." Signed close.
 ---
 
-# What the Fire Was For
+# In What Furnace
 
 Inside your skull are roughly a hundred billion neurons, firing without pause, running a model of the world so fast and so seamless that you mistake it for the world itself. You did not build it. You cannot switch it off. It is, by a wide margin, the most sophisticated object anyone has ever found.
 
