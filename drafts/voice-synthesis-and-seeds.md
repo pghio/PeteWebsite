@@ -109,14 +109,51 @@ The optimists say "remove all friction → utopia." The critics hear "remove all
 ### The honest tension that makes it *yours* (not generic)
 Your most-upvoted writing ever says *"struggle doesn't break an entrepreneur — it defines them."* So an essay cheering "AI removes the hard parts" would contradict your own life. The reconciliation **is** the essay: AI should remove the *wrong* friction so we have more of ourselves left for the *right* friction. You're not cheerleading; you're resolving a contradiction you actually live.
 
-### Arc (write it in the GiveTide-answer voice, not the blog voice)
-1. Open from human **awe**, not human obsolescence (borrow the brain answer — 100B neurons, the machine is already extraordinary).
-2. Name the backlash, and concede it's *earned* — not Luddism, a rational response to being told you're about to be redundant.
-3. The reframe: it's not the technology, it's the sentence we wrap it in (augmentation vs replacement).
-4. The distinction: two frictions. **[GRAPHIC: two-kinds-of-friction]**
-5. The proof: frictionless isn't utopia, it's atrophy. **[GRAPHIC: where-growth-lives curve]**
-6. The personal turn: your own forge (GiveTide, the bourbon, the dark night) — the friction that made you, that no tool should have taken.
-7. Close inward, signed: AI's real gift isn't a life without struggle; it's the chance to spend your struggle on what's actually yours.
+### The second spine: impatient with inputs, patient with results
+Pete's long-standing principle: *be exceptionally focused and impatient with your inputs (the work you control); be exceptionally patient and understanding with your results (the world you don't).* This is the friction taxonomy restated as a discipline — **inputs are forge-friction; results are what you release.** It also exposes the hype's deepest error: the frictionless pitch *inverts* the rule, training people to be impatient with results (overnight success, instant output) and lazy with inputs (one-shot it, let the model do the work). The correct posture is the exact inversion of the inversion. And it's the same rule that already governs Pete's AI craft (the "Lessons" note: "ambiguity is expensive — be specific"; a fresh window is eight hours of sleep; build the tools first — all input discipline).
+
+### Bullet outline (write it in the GiveTide-answer voice, not the blog voice)
+
+**Open — human awe, not human obsolescence**
+- Cold open in the brain-answer register: the machine between your ears runs ~100B neurons nonstop; you are already extraordinary.
+- We keep starting the AI conversation from human *obsolescence*. Start it from human *awe*.
+
+**The backlash is earned**
+- The anti-AI mood isn't (mostly) Luddism. It's a rational response to a pitch that keeps saying: you're about to be unnecessary.
+- People aren't afraid of the tool. They're afraid of the sentence we keep wrapping it in.
+
+**It's a communication failure, not a technology one** *(augmentation vs automation — Engelbart)*
+- Same tool, two sentences: "it passed the bar, it wrote the essay" (replacement — self-defeating) vs "it cleared the toil so you could do the part only you can" (augmentation).
+- The original sin of the messaging: selling *frictionless* as an unqualified good. **[optional GRAPHIC: replacement vs augmentation]**
+
+**Friction isn't one thing** *(desirable difficulties — Bjork)* **[GRAPHIC 1: two kinds of friction]**
+- Toil-friction — drudgery, boilerplate, the invisible mental load. Remove it; that's liberation.
+- Forge-friction — the desirable difficulty that builds judgment, taste, the self. Protect it; removing it is theft.
+- The optimists and the critics are each right about a different half.
+
+**My rule, long before AI: impatient with inputs, patient with results**
+- Be exacting and impatient with your inputs — the work you control. Raise the bar, demand specificity, redo the draft.
+- Be patient and understanding with your results — the part the world controls.
+- Inputs *are* forge-friction. The hype inverts this: impatient with results, lazy with inputs. Backwards.
+
+**This is also exactly how to use AI well** *(the Lessons note)*
+- The same rule is my whole method with the models: "ambiguity is expensive — be specific." A fresh context window is like giving the model eight hours of sleep. Build the tools first.
+- AI used well doesn't lower your input standard — it lets you spend all of it on the inputs that matter, because it ate the toil.
+- AI used badly lets you skip the inputs to grab the result. That's the atrophy.
+
+**The proof: frictionless isn't utopia, it's atrophy** *(hormesis / antifragility — Taleb)* **[GRAPHIC 2: the curve]**
+- We decay without the right dose of stress. "Frictionless" sells you a spot on the far left of the curve and calls it freedom.
+
+**The personal turn — my own forge**
+- GiveTide: the sealed bourbon on the shelf, the App Store rejection, the dark night, *"is this all going to be for nothing?"*
+- I controlled the inputs — the 25-page appeal, the daily calls, rallying the team — and made my peace with the result.
+- The struggle is the thing that defined me. The tools that promise to sand it away are promising to sand away the exact thing that made me myself.
+- The result was never the point. The inputs were.
+
+**Close — signed**
+- AI's real gift isn't a life without struggle. It's the chance to spend your struggle on what's actually yours.
+- Be impatient with your inputs. Be patient with your results. Let the machine take the toil — and leave you the fire.
+- —Pete
 
 ### Graphics (built, in editorial palette — cream/ink/rust, Georgia serif)
 - `public/images/posts/friction-two-kinds.svg` (+ `.png`) — the taxonomy: Worth removing / Worth keeping.
