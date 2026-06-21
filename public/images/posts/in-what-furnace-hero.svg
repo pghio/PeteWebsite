@@ -2,35 +2,34 @@
   <rect width="1200" height="630" fill="#F4EDE2"/>
 
   <defs>
-    <marker id="ax" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <marker id="rust" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#A8301B"/>
+    </marker>
+    <marker id="ink" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#1A1A1A"/>
     </marker>
   </defs>
 
-  <!-- centered title -->
-  <text x="600" y="66" text-anchor="middle" fill="#1A1A1A" font-size="40" font-weight="700">Same drive. Opposite peace.</text>
-  <text x="600" y="98" text-anchor="middle" fill="#6B5D52" font-size="18">It isn't how hard you push. It's what you aim it at.</text>
+  <!-- title -->
+  <text x="600" y="66" text-anchor="middle" fill="#1A1A1A" font-size="40" font-weight="700">Push hard. Let go. Repeat.</text>
+  <text x="600" y="98" text-anchor="middle" fill="#6B5D52" font-size="18">Drive on the part you control. Be patient with the part you don't.</text>
 
-  <!-- axes -->
-  <line x1="210" y1="510" x2="1015" y2="510" stroke="#1A1A1A" stroke-width="0.9" marker-end="url(#ax)"/>
-  <line x1="210" y1="510" x2="210" y2="148" stroke="#1A1A1A" stroke-width="0.9" marker-end="url(#ax)"/>
+  <!-- top arc: the work -> the outcome (push) -->
+  <path d="M435,395 A165,165 0 0 1 765,395" fill="none" stroke="#A8301B" stroke-width="3.5" marker-end="url(#rust)"/>
+  <!-- bottom arc: the outcome -> the work (patience) -->
+  <path d="M765,395 A165,165 0 0 1 435,395" fill="none" stroke="#1A1A1A" stroke-width="3.5" marker-end="url(#ink)"/>
 
-  <!-- axis labels (the quantities being measured) -->
-  <text x="612" y="552" text-anchor="middle" fill="#1A1A1A" font-size="16" font-weight="600" letter-spacing="1">DRIVE&#160;&#160;·&#160;&#160;HOW HARD YOU PUSH</text>
-  <text x="168" y="330" text-anchor="middle" fill="#1A1A1A" font-size="16" font-weight="600" letter-spacing="1" transform="rotate(-90 168 330)">PEACE&#160;&#160;·&#160;&#160;PRESENCE</text>
+  <!-- nodes -->
+  <circle cx="435" cy="395" r="6" fill="#1A1A1A"/>
+  <circle cx="765" cy="395" r="6" fill="#1A1A1A"/>
+  <text x="414" y="390" text-anchor="end" fill="#1A1A1A" font-size="21" font-weight="700">THE WORK</text>
+  <text x="414" y="412" text-anchor="end" fill="#6B5D52" font-size="15">what you control</text>
+  <text x="786" y="390" text-anchor="start" fill="#1A1A1A" font-size="21" font-weight="700">THE OUTCOME</text>
+  <text x="786" y="412" text-anchor="start" fill="#6B5D52" font-size="15">how it turns out</text>
 
-  <!-- the two paths: same drive, different target -->
-  <path d="M232,360 C 480,330 720,255 1000,238" fill="none" stroke="#A8301B" stroke-width="3"/>
-  <path d="M232,360 C 480,398 740,468 1000,482" fill="none" stroke="#9A8C7B" stroke-width="3"/>
-
-  <!-- shared origin + endpoints -->
-  <circle cx="232" cy="360" r="4.5" fill="#1A1A1A"/>
-  <circle cx="1000" cy="238" r="5" fill="#A8301B"/>
-  <circle cx="1000" cy="482" r="5" fill="#9A8C7B"/>
-
-  <!-- line labels -->
-  <text x="690" y="220" fill="#A8301B" font-size="19" font-weight="700">aimed at your inputs</text>
-  <text x="690" y="243" fill="#6B5D52" font-size="14">the part you control</text>
-  <text x="690" y="502" fill="#8A7E70" font-size="19" font-weight="700">aimed at your results</text>
-  <text x="690" y="525" fill="#6B5D52" font-size="14">the part you don't</text>
+  <!-- arc mode labels -->
+  <text x="600" y="200" text-anchor="middle" fill="#A8301B" font-size="24" font-weight="700">PUSH HARD</text>
+  <text x="600" y="223" text-anchor="middle" fill="#6B5D52" font-size="15">this part is yours</text>
+  <text x="600" y="590" text-anchor="middle" fill="#1A1A1A" font-size="24" font-weight="700">BE PATIENT</text>
+  <text x="600" y="613" text-anchor="middle" fill="#6B5D52" font-size="15">this part isn't</text>
 </svg>

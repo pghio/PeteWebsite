@@ -2,7 +2,7 @@
   <rect width="900" height="520" fill="#F4EDE2"/>
 
   <text x="80" y="64" fill="#1A1A1A" font-size="24" font-weight="700">Two kinds of friction</text>
-  <text x="80" y="92" fill="#6B5D52" font-size="14" font-style="italic">The optimists and the critics are both right — about different halves.</text>
+  <text x="80" y="92" fill="#6B5D52" font-size="14">The optimists and the critics are both right, about different halves.</text>
   <line x1="80" y1="108" x2="820" y2="108" stroke="#1A1A1A" stroke-width="0.5"/>
 
   <!-- vertical divider -->

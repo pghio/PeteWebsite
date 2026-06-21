@@ -7,7 +7,7 @@ category: "Essay"
 ogImage: "/images/posts/in-what-furnace-hero.png"
 ---
 
-![Impatient with inputs. Patient with results.](/images/posts/in-what-furnace-hero.svg)
+![Push hard on the work you control, be patient with the outcome you don't, and repeat](/images/posts/in-what-furnace-hero.svg)
 
 The case against AI usually gets written off as fear of the unknown. It isn't. The fear is specific, and we earned it.
 
@@ -29,13 +29,9 @@ The trouble is that the two look the same from outside. Both show up as time, as
 
 I've used one rule for as long as I can remember, since long before any of this: be impatient with your inputs and patient with your results. Inputs are the part you control: the work you actually put in, the question you took the trouble to get right. Results are whatever the world does with that, on a clock you don't set. Aimed at your inputs, impatience is just focus. Aimed at your results, it curdles into anxiety, and nothing arrives a minute sooner for it. Most of the misery I've watched people make for themselves is impatience pointed at the wrong half.
 
-![Where to aim your impatience: focus on the inputs you control, patience for the results you don't](/images/posts/impatience-inputs-results.svg)
-
 Frictionless AI sells the opposite habit. It hands you the result now and tells you the inputs are the machine's job. That is the rule backward. The odd thing is that when I use these tools well, I do the reverse of what the pitch describes. I get more careful with the inputs, not less, because the tool took the busywork and gave me back the work that needs judgment.
 
-Draw it and you don't get a line that rises as effort falls. You get a hump. Too little friction and you go slack. Too much and you break. Whoever you're trying to become turns up somewhere in the middle. "Frictionless" is a sales word for the far left of that curve, and it's sold to you as freedom.
-
-![Where growth lives: the hump of friction against who you become](/images/posts/friction-growth-curve.svg)
+It isn't a line that climbs as effort falls. It's a hump. Too little friction and you go slack. Too much and you break. Whoever you're trying to become turns up somewhere in the middle. "Frictionless" is a sales word for the far left of that hump, and it's sold to you as freedom.
 
 Almost none of what counts survives as a number. The result is what gets written down: the company that sold, the grade, the launch. But the result is rarely the thing that changed you. Ask anyone about the work that made them who they are, and they won't tell you how it came out. They'll tell you about the stretch when they weren't sure it would. That stretch is exactly what frictionless is offering to take off your hands, and it was the only part that was ever yours.
 
