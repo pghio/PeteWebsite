@@ -7,6 +7,17 @@ the intent-taxonomy pull) so the data infrastructure mostly exists.
 
 Ordered by fit-signal-per-effort.
 
+> **Draft status (updated):** Full drafts now written for #1, #2, #3, #5 in
+> `drafts/`. #4 was already drafted (`mental-load-measured.md`) and is gated on
+> data volume. Each draft carries a `DATA STATUS` header marking what's backed by
+> real published data vs. what still needs measurement before it can ship to
+> `src/pages/blog/`.
+> - #1 → `agent-misfire-taxonomy.md` — **publish-ready** (re-cut of real benchmark data)
+> - #2 → `act-ask-refuse-frontier.md` — frame + anchors real; frontier sweep pending
+> - #3 → `calibrating-an-llm-judge.md` — system real; human-agreement audit pending
+> - #4 → `mental-load-measured.md` — gated at N≥300 classified requests
+> - #5 → `does-the-model-change-the-user.md` — protocol only; needs a real model swap
+
 ---
 
 ## 1. A Field Taxonomy of Agent Misfires *(highest leverage)*
