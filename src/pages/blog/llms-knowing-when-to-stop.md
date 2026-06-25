@@ -113,16 +113,19 @@ We ran everything at temperature 0.2, near where a production agent usually sits
 
 All six, every number, sorted by accuracy. The column that matters most isn't the same for everyone — if your agent can delete things, read the safety one first; if your users type like humans, read robustness.
 
-| Model | Accuracy | Over-action | Hedging | Guard-case viol. | Clean→messy | Instability |
-|---|---|---|---|---|---|---|
-| Gemini 2.5 Flash | 84% [80–88] | 1% | 16% | 7% [1–14] | −13pp | 0.19 |
-| Claude Haiku 4.5 | 82% [77–86] | 0% | 20% | 1% [0–3] | −16pp | 0.10 |
-| Claude Sonnet 4 | 82% [77–86] | 1% | 15% | 5% [1–10] | −0pp | 0.13 |
-| GPT-4.1 | 80% [76–85] | 1% | 14% | 2% [0–6] | −5pp | 0.10 |
-| DeepSeek V3 | 75% [69–79] | 3% | 12% | 21% [10–32] | −20pp | 0.24 |
-| GPT-4o-mini | 74% [69–79] | 1% | 21% | 3% [0–6] | −22pp | 0.20 |
+<table>
+<thead><tr><th>Model</th><th>Accuracy</th><th>Over-action</th><th>Hedging</th><th>Guard-case viol.</th><th>Clean→messy</th><th>Instability</th></tr></thead>
+<tbody>
+<tr><td class="m">Gemini 2.5 Flash</td><td>84% [80–88]</td><td>1%</td><td>16%</td><td>7% [1–14]</td><td>−13pp</td><td>0.19</td></tr>
+<tr><td class="m">Claude Haiku 4.5</td><td>82% [77–86]</td><td>0%</td><td style="background:#FBEEE8">20%</td><td style="background:#EAF3F0">1% [0–3]</td><td>−16pp</td><td style="background:#EAF3F0">0.10</td></tr>
+<tr><td class="m">Claude Sonnet 4</td><td>82% [77–86]</td><td>1%</td><td>15%</td><td>5% [1–10]</td><td style="background:#CFE6E0;color:#1f5f5a;font-weight:700">−0pp</td><td>0.13</td></tr>
+<tr><td class="m">GPT-4.1</td><td>80% [76–85]</td><td>1%</td><td>14%</td><td>2% [0–6]</td><td>−5pp</td><td style="background:#EAF3F0">0.10</td></tr>
+<tr><td class="m">DeepSeek V3</td><td>75% [69–79]</td><td style="background:#FBEEE8">3%</td><td style="background:#EAF3F0">12%</td><td style="background:#F2D9CC;color:#8f3f24;font-weight:700">21% [10–32]</td><td style="background:#F2D9CC;color:#8f3f24;font-weight:700">−20pp</td><td style="background:#FBEEE8">0.24</td></tr>
+<tr><td class="m">GPT-4o-mini</td><td>74% [69–79]</td><td>1%</td><td style="background:#FBEEE8">21%</td><td>3% [0–6]</td><td style="background:#F2D9CC;color:#8f3f24;font-weight:700">−22pp</td><td>0.20</td></tr>
+</tbody>
+</table>
 
-Accuracy is share of the 227 scenarios routed into the panel's acceptable set, with a 95% bootstrap interval — the top four overlap, so read them as a tie, and Gemini's lead in particular leans on its own judge (see the limitations). Over-action is acting when no judge would; hedging is asking or confirming on a plain-command scenario; guard-case violations are the irreversible ones, as a share of the 35 guard cases only. Clean→messy is the robustness drop from Finding 4. Instability is routing entropy across three identical tries, in bits — 0 means it answered the same way every time; higher means jumpier.
+*Shading marks the standouts — clay is the riskier end of a column, teal the reassuring end.* Accuracy is share of the 227 scenarios routed into the panel's acceptable set, with a 95% bootstrap interval — the top four overlap, so read them as a tie, and Gemini's lead in particular leans on its own judge (see the limitations). Over-action is acting when no judge would; hedging is asking or confirming on a plain-command scenario; guard-case violations are the irreversible ones, as a share of the 35 guard cases only. Clean→messy is the robustness drop from Finding 4. Instability is routing entropy across three identical tries, in bits — 0 means it answered the same way every time; higher means jumpier.
 
 ## What would make this wrong
 
