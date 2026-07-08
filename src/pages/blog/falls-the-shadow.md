@@ -1,16 +1,17 @@
 ---
-title: "TBD — see title options in chat (working file: the intention essay)"
-subtitle: "On radiologists, English majors, and the one thing you can't delegate."
-status: DRAFT v1 — full draft. Plain register, no em-dashes, one falsifiable bet. Graphics: 3 example-forward panels (radiologist forecast, two-jobs split, the English bet).
+layout: ../../layouts/BlogLayout.astro
+title: "Falls the Shadow"
+description: "In 2016 the godfather of AI said to stop training radiologists. A decade later their pay hit records. The same forecast error is now being made about writing. An essay on the two halves of every job, the vagueness spiral, and a falsifiable bet on the English major."
+publishDate: "2026-07-08"
+category: "Essay"
+ogImage: "/images/posts/meaning-radiologists.png"
 ---
 
-# [TITLE]
+![What happened to the radiologists: Hinton's 2016 forecast beside the 2026 record demand](/images/posts/meaning-radiologists.svg)
 
 In 2016, Geoffrey Hinton, the man they call the godfather of AI, said we should stop training radiologists. It was completely obvious, he said, that within five years deep learning would do the job better than people do. He was the most qualified person alive to make that prediction, and the audience had every reason to believe him.
 
-A decade later, radiology is having the best labor market in its history. Average salaries reached $571,000 in 2025, up nine percent in a single year. Residency programs offered a record number of positions. More than four thousand radiologist jobs sat open this spring, taking over four months on average to fill. And the machines did get better at reading scans. Enormously better. Both things happened at once, and that is the part worth sitting with.
-
-![What happened to the radiologists: Hinton's 2016 forecast beside the 2026 record demand](/images/posts/meaning-radiologists.svg)
+A decade later, radiology is having the best labor market in its history. Average salaries reached $571,000 in 2025, up nine percent in a single year. Residency programs offered a record number of positions. More than four thousand radiologist jobs sat open this spring, taking over four months on average to fill. And the machines did get better at reading scans. Enormously better. Both things happened at once. The rest of this essay is about why.
 
 The Mayo Clinic runs more than 250 AI models inside its radiology department. It also employs 55 percent more radiologists than it did when Hinton spoke. The hospital that adopted the technology hardest hired the most humans. Nobody predicted that sentence in 2016.
 
@@ -38,7 +39,7 @@ The loop runs downhill from there. The less you draft, the less you discover wha
 
 ![The vagueness spiral: the machine drafts, you skip the thinking, your asks get vaguer, the output gets generic](/images/posts/meaning-vagueness-loop.svg)
 
-We have handled a problem with this shape before. For most of history, ordinary life exercised the body for free, until industrial work stopped requiring it. We did not shrug and go soft; we built gyms. Deliberate practice replaced incidental practice. Thinking has arrived at the same moment. The school essay, the memo, the email nobody wanted to write: that was the incidental gym for meaning what you say, and it is closing. From here, the skill belongs to the people who train it on purpose.
+We have solved a problem with this shape before. Ordinary life used to exercise the body for free, until industrial work stopped requiring it. We didn't shrug and go soft; we built gyms. Thinking has arrived at the same moment. The school essay, the memo, the email nobody wanted to write: that was the incidental gym for meaning what you say, and it is closing. The skill now belongs to the people who train it on purpose.
 
 So here is a bet, and I want it on the record while the data still runs against me: the English major is coming back.
 
@@ -56,24 +57,4 @@ Here is the falsifiable version, so you can hold me to it: within a decade, the 
 
 The radiologists kept their jobs because judgment turned out to be the load-bearing half of the work. Our version of judgment is meaning. Every tool so far moves in the same direction: execution gets cheap, and the premium moves to whoever knows what they want. Wanting clearly is a skill. It was always the skill. The machines raised its price and closed its free gym in the same motion. The next advantage belongs to whoever keeps training.
 
-—Pete
-
-<!--
-SOURCES (verify before publish):
-- Hinton 2016 quote + 2025/26 radiology market (salaries $571K +9% YoY; 4,333 open listings, 130-day fill; record 1,208 residency positions +4%; Mayo 250+ AI models, 400+ radiologists, +55% since 2016; Hinton's walk-back):
-  https://fortune.com/2026/05/04/godfather-of-ai-geoffrey-hinton-radiologists-future-of-work-tech-ai-job-anxiety/
-  https://www.understandingai.org/p/ai-isnt-replacing-radiologists
-- ATM/teller: James Bessen's research (tellers rose for decades post-ATM).
-- English majors +9% since 2021 ("Revenge of the English majors," Fortune/AOL, Feb 2026):
-  https://www.aol.com/revenge-english-majors-age-ai-095001560.html
-- Standalone English still −5% CAGR (Tyton Partners, fall 2025): https://tytonpartners.com/higher-education-trends-in-2026/
-- "The End of the English Major," Nathan Heller, The New Yorker, Feb/Mar 2023.
-- CS new-grad unemployment ~6.1% vs art history ~3.0% (NY Fed data, 2025) — CONTESTED, hence "by some cuts of the data":
-  https://interviewchamp.ai/learn/why-cs-new-grad-unemployment-hit-6-percent-2025
-  caveat: https://agglomerations.eig.org/p/a-viral-chart-on-recent-graduate
-- Entry-level SWE postings −~30% YoY (Handshake 2025): https://www.extern.com/post/entry-level-computer-science-jobs-2025
-- Anthropic president Daniela Amodei studied literature; hires for communicators:
-  https://www.inc.com/jessica-stillman/the-rise-of-ai-will-make-liberal-arts-degrees-popular-again-heres-why/91206953
-- Benchmark data: Pete's own post (/blog/llm-benchmark-stop-defaulting-to-the-frontier): $0.15/M to $15/M, no model >67% on ambiguity, "Delete it" clarification-quality finding.
-- "Early lab evidence" (loop section): MIT Media Lab "Your Brain on ChatGPT" (2025) — EEG study, LLM-assisted writers showed reduced neural connectivity and often could not quote their own essays; PRELIMINARY, small N, criticized — hence the hedge "young and small." Also Microsoft Research/CMU 2025 survey: GenAI use associated with reduced self-reported critical-thinking engagement.
--->
+*—Pete*
