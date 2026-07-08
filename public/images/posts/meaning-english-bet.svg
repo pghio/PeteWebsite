@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <rect width="900" height="520" fill="#F4EDE2"/>
+
+  <!-- title -->
+  <text x="450" y="60" text-anchor="middle" fill="#1A1A1A" font-size="30" font-weight="700">The obituary and the turn</text>
+  <text x="450" y="90" text-anchor="middle" fill="#6B5D52" font-size="15">English majors, 2012 to the bet.</text>
+
+  <!-- baseline axis -->
+  <line x1="100" y1="440" x2="830" y2="440" stroke="#1A1A1A" stroke-width="0.7"/>
+
+  <!-- ChatGPT vertical marker (2022) -->
+  <line x1="410" y1="150" x2="410" y2="440" stroke="#9A8C7B" stroke-width="0.7" stroke-dasharray="3 5"/>
+  <text x="422" y="168" fill="#6B5D52" font-size="13">Nov 2022: the interface</text>
+  <text x="422" y="186" fill="#6B5D52" font-size="13">to software becomes English</text>
+
+  <!-- the line: decline 2012-2021 -->
+  <path d="M110,190 C 210,225 310,320 380,358" fill="none" stroke="#1A1A1A" stroke-width="2.5"/>
+  <!-- the turn 2021-2026 -->
+  <path d="M380,358 C 430,352 490,342 530,334" fill="none" stroke="#A8301B" stroke-width="3"/>
+  <!-- the bet (dashed projection) -->
+  <path d="M530,334 C 620,316 720,275 800,230" fill="none" stroke="#A8301B" stroke-width="2.5" stroke-dasharray="6 7"/>
+
+  <!-- markers -->
+  <circle cx="110" cy="190" r="4.5" fill="#1A1A1A"/>
+  <circle cx="380" cy="358" r="4.5" fill="#1A1A1A"/>
+  <circle cx="440" cy="349" r="4.5" fill="#1A1A1A"/>
+  <circle cx="530" cy="334" r="4.5" fill="#A8301B"/>
+  <circle cx="800" cy="230" r="5" fill="none" stroke="#A8301B" stroke-width="2.5"/>
+
+  <!-- annotations -->
+  <text x="140" y="152" fill="#3A2D24" font-size="14">a decade of collapse: enrollment</text>
+  <text x="140" y="170" fill="#3A2D24" font-size="14">roughly halves at many programs</text>
+
+  <text x="440" y="390" text-anchor="middle" fill="#3A2D24" font-size="14">2023: &#8220;The End of the</text>
+  <text x="440" y="408" text-anchor="middle" fill="#3A2D24" font-size="14">English Major&#8221; is published</text>
+
+  <text x="542" y="356" fill="#A8301B" font-size="15" font-weight="700">+9% since 2021</text>
+
+  <text x="812" y="222" text-anchor="end" fill="#A8301B" font-size="16" font-weight="700">the bet</text>
+
+  <!-- x labels -->
+  <g fill="#6B5D52" font-size="13">
+    <text x="110" y="466" text-anchor="middle">2012</text>
+    <text x="380" y="466" text-anchor="middle">2021</text>
+    <text x="530" y="466" text-anchor="middle">2026</text>
+    <text x="800" y="466" text-anchor="middle">2035</text>
+  </g>
+  <text x="830" y="496" text-anchor="end" fill="#9A8C7B" font-size="12">directional, not to scale</text>
+</svg>

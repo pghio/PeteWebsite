@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <rect width="900" height="520" fill="#F4EDE2"/>
+
+  <defs>
+    <marker id="vk" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1A1A1A"/>
+    </marker>
+  </defs>
+
+  <!-- title -->
+  <text x="450" y="56" text-anchor="middle" fill="#1A1A1A" font-size="30" font-weight="700">The vagueness spiral</text>
+  <text x="450" y="85" text-anchor="middle" fill="#6B5D52" font-size="15">Writing was the practice. Skip all of it, and the half you kept decays.</text>
+
+  <!-- loop arcs, clockwise, gaps at nodes -->
+  <g fill="none" stroke="#1A1A1A" stroke-width="2">
+    <path d="M479.2,183.3 A130,130 0 0 1 576.7,280.8" marker-end="url(#vk)"/>
+    <path d="M576.7,339.2 A130,130 0 0 1 479.2,436.7" marker-end="url(#vk)"/>
+    <path d="M420.8,436.7 A130,130 0 0 1 323.3,339.2" marker-end="url(#vk)"/>
+    <path d="M323.3,280.8 A130,130 0 0 1 420.8,183.3" marker-end="url(#vk)"/>
+  </g>
+
+  <!-- center cue -->
+  <text x="450" y="315" text-anchor="middle" fill="#A8301B" font-size="15" font-weight="600">each lap, it tightens</text>
+
+  <!-- nodes -->
+  <text x="450" y="152" text-anchor="middle" fill="#1A1A1A" font-size="18" font-weight="700">The machine drafts</text>
+
+  <text x="602" y="303" fill="#1A1A1A" font-size="17" font-weight="700">You skip the thinking</text>
+  <text x="602" y="324" fill="#6B5D52" font-size="14">that drafting forced</text>
+
+  <text x="450" y="470" text-anchor="middle" fill="#A8301B" font-size="18" font-weight="700">Your asks get vaguer</text>
+
+  <text x="298" y="303" text-anchor="end" fill="#1A1A1A" font-size="17" font-weight="700">The output gets generic,</text>
+  <text x="298" y="324" text-anchor="end" fill="#6B5D52" font-size="14">so you hand over more</text>
+
+  <!-- exit note -->
+  <text x="450" y="508" text-anchor="middle" fill="#3A2D24" font-size="13">The exit is deliberate practice: sometimes, write the draft yourself.</text>
+</svg>

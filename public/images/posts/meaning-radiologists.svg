@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <rect width="1200" height="630" fill="#F4EDE2"/>
+
+  <!-- title -->
+  <text x="600" y="64" text-anchor="middle" fill="#1A1A1A" font-size="38" font-weight="700">What happened to the radiologists</text>
+  <text x="600" y="96" text-anchor="middle" fill="#6B5D52" font-size="17">The machines got better. So did the job market.</text>
+
+  <!-- divider -->
+  <line x1="600" y1="150" x2="600" y2="560" stroke="#1A1A1A" stroke-width="0.6" stroke-dasharray="2 5"/>
+
+  <!-- LEFT: the forecast -->
+  <text x="90" y="172" fill="#6B5D52" font-size="14" font-weight="700" letter-spacing="3">2016</text>
+  <text x="86" y="266" fill="#A8301B" font-size="84" font-family="Georgia, serif">&#8220;</text>
+  <g fill="#1A1A1A" font-size="25" font-weight="600">
+    <text x="90" y="288">People should stop training</text>
+    <text x="90" y="326">radiologists now. It&#8217;s just</text>
+    <text x="90" y="364">completely obvious that within</text>
+    <text x="90" y="402">five years, deep learning is</text>
+    <text x="90" y="440">going to do better.</text>
+  </g>
+  <text x="90" y="498" fill="#A8301B" font-size="17" font-weight="700">Geoffrey Hinton</text>
+  <text x="90" y="521" fill="#6B5D52" font-size="14">godfather of deep learning</text>
+
+  <!-- RIGHT: the fact -->
+  <text x="660" y="172" fill="#6B5D52" font-size="14" font-weight="700" letter-spacing="3">A DECADE LATER</text>
+
+  <g>
+    <text x="660" y="248" fill="#1A1A1A" font-size="52" font-weight="700">$571K</text>
+    <text x="850" y="228" fill="#3A2D24" font-size="15">average radiologist salary, 2025,</text>
+    <text x="850" y="248" fill="#3A2D24" font-size="15">up 9% in a single year</text>
+  </g>
+  <g>
+    <text x="660" y="368" fill="#1A1A1A" font-size="52" font-weight="700">1,208</text>
+    <text x="850" y="348" fill="#3A2D24" font-size="15">residency positions offered in 2025,</text>
+    <text x="850" y="368" fill="#3A2D24" font-size="15">an all-time record</text>
+  </g>
+  <g>
+    <text x="660" y="488" fill="#A8301B" font-size="52" font-weight="700">+55%</text>
+    <text x="850" y="458" fill="#3A2D24" font-size="15">radiologists at the Mayo Clinic</text>
+    <text x="850" y="478" fill="#3A2D24" font-size="15">since the forecast, while running</text>
+    <text x="850" y="498" fill="#3A2D24" font-size="15">250+ AI models in the department</text>
+  </g>
+</svg>
