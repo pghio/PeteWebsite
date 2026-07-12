@@ -5,6 +5,10 @@
 
 ## Core idea
 
+As I am sure many of us can relate, much of my rumination lately has been about the dangers of AI: what it may replace, what it may erode, and what happens if we hand too much of ourselves over to it.
+
+But what if that loop could be replaced by a different one, closer to the ethos of mindfulness itself? Instead of using AI to escape the present, what if we used it to return to the present—to hold the context, obligations, and unfinished threads that keep pulling our attention away from whatever is directly in front of us?
+
 The strongest case for AI may not be that it lets us do more. It may be that it can absorb enough tracking, remembering, planning, and low-level interpretation that we can pay closer attention to the thing directly in front of us.
 
 A useful AI does not merely answer questions. It holds context over time. That can turn it from another screen demanding attention into a form of cognitive scaffolding: something that remembers the thread so the person does not have to keep rehearsing it.
