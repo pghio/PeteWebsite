@@ -1,0 +1,190 @@
+---
+import { GA_MEASUREMENT_ID } from '../config/analytics';
+
+const gaMeasurementId = GA_MEASUREMENT_ID;
+---
+
+{
+  gaMeasurementId && (
+    <script is:inline define:vars={{ gaMeasurementId }}>
+      (() => {
+        const consentKey = 'pg_analytics_consent';
+        const allowedEvents = new Set([
+          'article_view',
+          'article_engaged',
+          'article_complete',
+          'newsletter_cta_view',
+          'newsletter_cta_click',
+          'related_post_click',
+          'outbound_click',
+          'share_click',
+        ]);
+        const allowedParameters = new Set([
+          'active_seconds',
+          'category',
+          'content_path',
+          'content_type',
+          'destination_host',
+          'placement',
+          'related_path',
+          'scroll_depth',
+          'share_method',
+        ]);
+
+        let analyticsLoaded = false;
+        let eventQueue = [];
+
+        const getConsent = () => {
+          try {
+            return localStorage.getItem(consentKey);
+          } catch {
+            return null;
+          }
+        };
+
+        const sanitize = (parameters = {}) => {
+          const safe = {};
+          Object.entries(parameters).forEach(([key, value]) => {
+            if (!allowedParameters.has(key)) return;
+            if (!['string', 'number', 'boolean'].includes(typeof value)) return;
+            safe[key] = typeof value === 'string' ? value.slice(0, 120) : value;
+          });
+          return safe;
+        };
+
+        const send = (name, parameters) => {
+          if (!analyticsLoaded || getConsent() !== 'accepted' || typeof window.gtag !== 'function') return;
+          window.gtag('event', name, parameters);
+        };
+
+        window.pgTrack = (name, parameters = {}) => {
+          if (!allowedEvents.has(name)) return;
+          const consent = getConsent();
+          if (consent === 'declined') return;
+
+          const safeParameters = sanitize(parameters);
+          if (consent === 'accepted' && analyticsLoaded) {
+            send(name, safeParameters);
+            return;
+          }
+
+          // Hold only anonymous, allow-listed events in memory while the visitor
+          // decides. Nothing leaves the browser until they opt in.
+          eventQueue.push([name, safeParameters]);
+        };
+
+        const loadAnalytics = () => {
+          if (analyticsLoaded || getConsent() !== 'accepted') return;
+          analyticsLoaded = true;
+          window[`ga-disable-${gaMeasurementId}`] = false;
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+          window.gtag('consent', 'default', {
+            analytics_storage: 'granted',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+          });
+          window.gtag('js', new Date());
+          window.gtag('config', gaMeasurementId, {
+            allow_google_signals: false,
+            allow_ad_personalization_signals: false,
+            cookie_flags: 'SameSite=Lax;Secure',
+          });
+
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`;
+          document.head.appendChild(script);
+
+          const queued = eventQueue;
+          eventQueue = [];
+          queued.forEach(([name, parameters]) => send(name, parameters));
+        };
+
+        const disableAnalytics = () => {
+          eventQueue = [];
+          window[`ga-disable-${gaMeasurementId}`] = true;
+          if (typeof window.gtag === 'function') {
+            window.gtag('consent', 'update', { analytics_storage: 'denied' });
+          }
+          document.cookie.split(';').forEach((cookie) => {
+            const name = cookie.split('=')[0]?.trim();
+            if (name?.startsWith('_ga')) {
+              document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax; Secure`;
+            }
+          });
+        };
+
+        window.addEventListener('pg:analytics-consent', (event) => {
+          if (event.detail === 'accepted') loadAnalytics();
+          if (event.detail === 'declined') disableAnalytics();
+        });
+
+        document.addEventListener('click', (event) => {
+          const target = event.target instanceof Element ? event.target.closest('a, button') : null;
+          if (!target) return;
+
+          const contentPath = window.location.pathname;
+          const placement = target.dataset.analyticsPlacement || 'unspecified';
+
+          if (target.matches('[data-newsletter-cta]')) {
+            window.pgTrack('newsletter_cta_click', {
+              content_path: contentPath,
+              placement,
+            });
+          }
+
+          if (target.matches('[data-related-post]')) {
+            window.pgTrack('related_post_click', {
+              content_path: contentPath,
+              related_path: target.getAttribute('href') || '',
+              placement,
+            });
+          }
+
+          if (target.matches('[data-share-method]')) {
+            window.pgTrack('share_click', {
+              content_path: contentPath,
+              share_method: target.dataset.shareMethod || 'unknown',
+              placement,
+            });
+          }
+
+          if (target instanceof HTMLAnchorElement && target.protocol.startsWith('http')) {
+            const destination = new URL(target.href, window.location.href);
+            if (destination.origin !== window.location.origin) {
+              window.pgTrack('outbound_click', {
+                content_path: contentPath,
+                destination_host: destination.hostname,
+                placement,
+              });
+            }
+          }
+        });
+
+        const observeNewsletterPrompts = () => {
+          const elements = document.querySelectorAll('[data-newsletter-impression]');
+          if (!('IntersectionObserver' in window)) return;
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting || entry.intersectionRatio < 0.5) return;
+              const placement = entry.target.getAttribute('data-analytics-placement') || 'unspecified';
+              window.pgTrack('newsletter_cta_view', {
+                content_path: window.location.pathname,
+                placement,
+              });
+              observer.unobserve(entry.target);
+            });
+          }, { threshold: 0.5 });
+
+          elements.forEach((element) => observer.observe(element));
+        };
+
+        if (getConsent() === 'accepted') loadAnalytics();
+        observeNewsletterPrompts();
+      })();
+    </script>
+  )
+}

@@ -1,0 +1,66 @@
+<aside
+  id="analytics-consent"
+  hidden
+  aria-label="Analytics privacy choices"
+  class="fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-2xl rounded-2xl border border-(--color-border) bg-(--color-surface) p-5 shadow-2xl"
+>
+  <div class="sm:flex sm:items-center sm:justify-between sm:gap-6">
+    <div>
+      <p class="font-semibold text-(--color-text)">A small, privacy-first analytics choice</p>
+      <p class="mt-1 text-sm leading-relaxed text-(--color-text-muted)">
+        If you opt in, anonymous reading activity helps me understand which essays reach people. I do not send names or email addresses to analytics.
+        <a class="underline underline-offset-2 hover:text-(--color-primary)" href="/privacy">Privacy details</a>.
+      </p>
+    </div>
+    <div class="mt-4 flex shrink-0 gap-2 sm:mt-0">
+      <button
+        type="button"
+        data-analytics-consent="declined"
+        class="rounded-xl border border-(--color-border) px-4 py-2 text-sm font-semibold text-(--color-text) hover:bg-(--color-surface-alt)"
+      >
+        No thanks
+      </button>
+      <button
+        type="button"
+        data-analytics-consent="accepted"
+        class="rounded-xl bg-(--color-primary) px-4 py-2 text-sm font-semibold text-white hover:bg-(--color-primary-dark)"
+      >
+        Allow analytics
+      </button>
+    </div>
+  </div>
+</aside>
+
+<script is:inline>
+  (() => {
+    const consentKey = 'pg_analytics_consent';
+    const banner = document.getElementById('analytics-consent');
+
+    const getConsent = () => {
+      try {
+        return localStorage.getItem(consentKey);
+      } catch {
+        return null;
+      }
+    };
+
+    const setConsent = (choice) => {
+      try {
+        localStorage.setItem(consentKey, choice);
+      } catch {
+        // Analytics remains disabled when storage is unavailable.
+      }
+      if (banner) banner.hidden = true;
+      window.dispatchEvent(new CustomEvent('pg:analytics-consent', { detail: choice }));
+    };
+
+    document.addEventListener('click', (event) => {
+      const target = event.target instanceof Element
+        ? event.target.closest('[data-analytics-consent]')
+        : null;
+      if (target?.dataset.analyticsConsent) setConsent(target.dataset.analyticsConsent);
+    });
+
+    if (!getConsent() && banner) banner.hidden = false;
+  })();
+</script>

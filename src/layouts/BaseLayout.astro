@@ -2,22 +2,38 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+import { GA_MEASUREMENT_ID } from '../config/analytics';
 
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  noindex?: boolean;
 }
 
-const { title, description = "Pete Ghiorse — AI Product Leader, Founder, Builder" } = Astro.props;
+const {
+  title,
+  description = 'Pete Ghiorse is a Group PM, founder of Honeydew, and writer on AI, product judgment, and the work technology leaves to people.',
+  ogImage = '/images/posts/monsters-of-the-mind.png',
+  ogImageAlt = 'Monsters of the Mind, an essay by Pete Ghiorse',
+  noindex = false,
+} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, 'https://peterghiorse.com');
-const ogImage = 'https://peterghiorse.com/images/research/hero-llm-discoverability.png';
+const socialTitle = title === 'Home'
+  ? 'Pete Ghiorse — Group PM, Founder & Writer'
+  : `${title} | Pete Ghiorse`;
+const socialImageURL = new URL(ogImage, 'https://peterghiorse.com');
+const analyticsEnabled = Boolean(GA_MEASUREMENT_ID);
 
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Pete Ghiorse",
   "url": "https://peterghiorse.com",
-  "jobTitle": "Senior Product Manager, AI/ML",
+  "jobTitle": "Group PM",
   "worksFor": {
     "@type": "Organization",
     "name": "Capital One"
@@ -30,6 +46,7 @@ const personSchema = {
   "sameAs": [
     "https://linkedin.com/in/peteghiorse",
     "https://github.com/pghio",
+    "https://peterghiorse.substack.com",
     "https://gethoneydew.app"
   ]
 };
@@ -39,7 +56,7 @@ const websiteSchema = {
   "@type": "WebSite",
   "name": "Pete Ghiorse",
   "url": "https://peterghiorse.com",
-  "description": "AI product leader, founder of Honeydew, and builder of products at the intersection of AI and real-world impact.",
+  "description": "Essays and field reports on what AI actually changes—at work, at home, and inside the products we trust.",
   "author": { "@type": "Person", "name": "Pete Ghiorse" }
 };
 ---
@@ -50,21 +67,30 @@ const websiteSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta property="og:title" content={`${title} | Pete Ghiorse`} />
+    <meta property="og:title" content={socialTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL.href} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Pete Ghiorse" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={socialImageURL.href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`${title} | Pete Ghiorse`} />
+    <meta name="twitter:title" content={socialTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={socialImageURL.href} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
     <meta name="author" content="Pete Ghiorse" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalURL.href} />
+    <link rel="alternate" type="application/rss+xml" title="Pete Ghiorse — Writing" href="/rss.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title} | Pete Ghiorse</title>
+    <title>{socialTitle}</title>
     <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <Analytics />
     <script is:inline>
       // Default to the bone/navy light look; dark is opt-in via the toggle.
       if (localStorage.getItem('theme') === 'dark') {
@@ -78,5 +104,6 @@ const websiteSchema = {
       <slot />
     </main>
     <Footer />
+    {analyticsEnabled && <CookieConsent />}
   </body>
 </html>

@@ -1,0 +1,56 @@
+---
+interface Props {
+  placement?: string;
+  campaign?: string;
+}
+
+const {
+  placement = 'article_end',
+  campaign = 'newsletter_growth',
+} = Astro.props;
+
+const parameters = new URLSearchParams({
+  utm_source: 'peterghiorse.com',
+  utm_medium: 'website',
+  utm_campaign: campaign,
+  utm_content: placement,
+});
+const subscribeUrl = `https://peterghiorse.substack.com/subscribe?${parameters.toString()}`;
+const embedUrl = `https://peterghiorse.substack.com/embed?${parameters.toString()}`;
+---
+
+<section
+  class="newsletter-cta my-14 overflow-hidden rounded-2xl border border-(--color-border) bg-(--color-surface-alt) p-6 text-center md:p-9"
+  data-newsletter-impression
+  data-analytics-placement={placement}
+  aria-labelledby={`newsletter-title-${placement}`}
+>
+  <p class="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-(--color-primary)">Keep reading with me</p>
+  <h2 id={`newsletter-title-${placement}`} class="text-2xl font-bold text-(--color-text)">One thoughtful essay, when I have something worth saying.</h2>
+  <p class="mx-auto mt-3 max-w-xl text-base leading-relaxed text-(--color-text-muted)">
+    Essays and field reports on what AI actually changes—at work, at home, and inside the products we trust.
+  </p>
+
+  <div class="mx-auto mt-6 max-w-lg rounded-xl bg-white/70 p-2 dark:bg-(--color-dark-surface)/40">
+    <iframe
+      src={embedUrl}
+      title="Subscribe to Pete Ghiorse on Substack"
+      loading="lazy"
+      class="h-[150px] w-full border-0 bg-transparent"
+    ></iframe>
+  </div>
+
+  <p class="mt-4 text-sm text-(--color-text-muted)">
+    Prefer to subscribe directly?
+    <a
+      href={subscribeUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-newsletter-cta
+      data-analytics-placement={placement}
+      class="font-semibold text-(--color-primary) underline underline-offset-4"
+    >
+      Open Substack <span aria-hidden="true">&rarr;</span>
+    </a>
+  </p>
+</section>

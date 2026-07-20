@@ -7,17 +7,21 @@ import ProjectCard from '../components/ProjectCard.astro';
   <section class="max-w-5xl mx-auto px-6 py-16 md:py-24">
     <p class="text-(--color-primary) font-semibold text-sm tracking-widest uppercase mb-4 animate-fade-up">Projects</p>
     <h1 class="text-4xl md:text-5xl font-extrabold mb-4 animate-fade-up stagger-1">
-      Things I've <span class="gradient-text">built</span>
+      Systems with real users and <span class="gradient-text">real constraints</span>
     </h1>
     <p class="text-slate-500 dark:text-slate-400 mb-12 max-w-2xl text-lg animate-fade-up stagger-2">
-      From AI-powered consumer apps to fintech platforms &mdash; products I've taken from zero to launch.
+      The work I keep returning to: software that has to earn trust, survive ambiguity, and still be useful on an ordinary Tuesday.
     </p>
 
     <div class="grid md:grid-cols-2 gap-5">
-      <ProjectCard title="Honeydew" description="A multimodal AI family assistant. 27-tool agent orchestration pipeline processing requests in under 2 seconds. Voice (Whisper AI, >95% accuracy), text, and photo/OCR input." tags={["React", "TypeScript", "Node.js", "OpenAI", "Whisper", "WebSockets", "Vite", "Vercel"]} link="https://gethoneydew.app" status="Active" />
-      <ProjectCard title="GiveTide" description="Co-founded a fintech platform from the ground up. Built and scaled over 5 years, culminating in a successful acquisition in 2022." tags={["Fintech", "Startup", "Co-Founder", "Full Stack"]} status="Acquired 2022" />
-      <ProjectCard title="AI/ML Spend Controls" description="ML-powered fraud detection and spend management at Capital One. Leading product strategy for AI systems operating at enterprise scale." tags={["AI/ML", "Fraud Detection", "Enterprise", "Product Management"]} status="Current Role" />
-      <ProjectCard title="More Coming Soon" description="Additional projects and experiments will be added here. Check back for AI experiments, open-source contributions, and side projects." tags={["Coming Soon"]} />
+      <ProjectCard title="Honeydew" description="An AI assistant for the calendars, groceries, appointments, and loose ends of family life. Voice, text, and photo requests route through a catalog of 60+ tools." tags={["React", "TypeScript", "Node.js", "OpenAI", "Whisper", "WebSockets", "Vite", "Vercel"]} link="https://gethoneydew.app" status="Active" />
+      <ProjectCard title="GiveTide" description="The charitable-giving platform I co-founded, built, and ran for five years before its acquisition in 2022." tags={["Fintech", "Startup", "Co-Founder", "Full Stack"]} status="Acquired 2022" />
+      <ProjectCard title="AI/ML Spend Controls" description="ML-powered fraud detection and spend management at Capital One, where I lead product direction as a Group PM." tags={["AI/ML", "Fraud Detection", "Enterprise", "Product Management"]} status="Current Role" />
+      <ProjectCard title="Production AI Research" description="Benchmarks built from Honeydew's real prompt and tool schema: where models over-act, where they freeze, and why the expensive ones still fail on ambiguity." tags={["LLM Evaluation", "Agent Safety", "Published Methods"]} link="https://peterghiorse.com/blog" status="Ongoing" />
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="https://peterghiorse.substack.com/subscribe?utm_source=peterghiorse.com&utm_medium=website&utm_campaign=newsletter_growth&utm_content=projects" target="_blank" rel="noopener" data-newsletter-cta data-newsletter-impression data-analytics-placement="projects" class="text-(--color-primary) font-semibold hover:underline">Get new build notes and research on Substack &rarr;</a>
     </div>
   </section>
 </BaseLayout>

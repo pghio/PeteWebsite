@@ -6,6 +6,9 @@ const navItems = [
   { label: 'Resume', href: '/resume' },
   { label: 'Contact', href: '/contact' },
 ];
+
+const desktopSubscribeUrl = 'https://peterghiorse.substack.com/subscribe?utm_source=peterghiorse.com&utm_medium=website&utm_campaign=newsletter_growth&utm_content=header_desktop';
+const mobileSubscribeUrl = 'https://peterghiorse.substack.com/subscribe?utm_source=peterghiorse.com&utm_medium=website&utm_campaign=newsletter_growth&utm_content=header_mobile';
 ---
 
 <header class="border-b border-slate-200/50 dark:border-slate-800/50 bg-white/80 dark:bg-[#0a0f1a]/80 backdrop-blur-md sticky top-0 z-50">
@@ -25,6 +28,18 @@ const navItems = [
           </li>
         ))}
       </ul>
+
+      <a
+        href={desktopSubscribeUrl}
+        target="_blank"
+        rel="noopener"
+        data-newsletter-cta
+        data-newsletter-impression
+        data-analytics-placement="header_desktop"
+        class="hidden md:inline-flex ml-2 px-4 py-2 rounded-lg bg-(--color-primary) text-white text-sm font-semibold hover:bg-(--color-primary-dark) transition-colors"
+      >
+        Subscribe
+      </a>
 
       <button
         id="theme-toggle"
@@ -56,6 +71,19 @@ const navItems = [
           </a>
         </li>
       ))}
+      <li class="mt-2 pt-3 border-t border-slate-200 dark:border-slate-800">
+        <a
+          href={mobileSubscribeUrl}
+          target="_blank"
+          rel="noopener"
+          data-newsletter-cta
+          data-newsletter-impression
+          data-analytics-placement="header_mobile"
+          class="block px-3 py-2.5 rounded-lg bg-(--color-primary) text-white text-center font-semibold hover:bg-(--color-primary-dark) transition-colors"
+        >
+          Subscribe on Substack
+        </a>
+      </li>
     </ul>
   </div>
 </header>

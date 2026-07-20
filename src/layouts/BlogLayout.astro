@@ -2,12 +2,19 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+import NewsletterCTA from '../components/NewsletterCTA.astro';
+import RelatedReading from '../components/RelatedReading.astro';
+import { GA_MEASUREMENT_ID } from '../config/analytics';
 
-interface Props {
+interface PostFrontmatter {
   title: string;
   description?: string;
   publishDate?: string;
   category?: string;
+  ogImage?: string;
+  draft?: boolean;
 }
 
 const { frontmatter } = Astro.props;
@@ -18,6 +25,50 @@ const category = frontmatter?.category;
 const ogImage = frontmatter?.ogImage;
 const faq = frontmatter?.faq;
 const canonicalURL = new URL(Astro.url.pathname, 'https://peterghiorse.com');
+const defaultOgImage = '/images/posts/monsters-of-the-mind.png';
+const socialImageURL = new URL(ogImage || defaultOgImage, 'https://peterghiorse.com');
+const analyticsEnabled = Boolean(GA_MEASUREMENT_ID);
+
+const normalizePath = (path: string) => path.length > 1 ? path.replace(/\/$/, '') : path;
+const currentPath = normalizePath(Astro.url.pathname);
+const postModules = import.meta.glob('../pages/blog/*.md', { eager: true }) as Record<string, {
+  frontmatter: PostFrontmatter;
+  url?: string;
+}>;
+const relatedPosts = Object.entries(postModules)
+  .map(([filePath, post]) => {
+    const fallbackSlug = filePath.split('/').pop()?.replace(/\.md$/, '') ?? '';
+    return {
+      title: post.frontmatter.title,
+      description: post.frontmatter.description,
+      category: post.frontmatter.category,
+      publishDate: post.frontmatter.publishDate ?? '',
+      draft: post.frontmatter.draft ?? false,
+      href: normalizePath(post.url ?? `/blog/${fallbackSlug}`),
+    };
+  })
+  .filter((post) => !post.draft && post.href !== currentPath)
+  .sort((a, b) => {
+    const categoryDifference = Number(b.category === category) - Number(a.category === category);
+    return categoryDifference || b.publishDate.localeCompare(a.publishDate);
+  })
+  .slice(0, 3);
+
+const formatPublishDate = (value: string) => {
+  const dateOnly = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const date = dateOnly
+    ? new Date(Date.UTC(Number(dateOnly[1]), Number(dateOnly[2]) - 1, Number(dateOnly[3])))
+    : new Date(value);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  });
+};
+
+const linkedInShareURL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalURL.href)}`;
+const blueskyShareURL = `https://bsky.app/intent/compose?text=${encodeURIComponent(`${title} — ${canonicalURL.href}`)}`;
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -29,7 +80,7 @@ const articleSchema = {
     "@type": "Person",
     "name": "Pete Ghiorse",
     "url": "https://peterghiorse.com",
-    "jobTitle": "Senior Product Manager, AI/ML",
+    "jobTitle": "Group PM",
     "sameAs": ["https://linkedin.com/in/peteghiorse", "https://github.com/pghio"]
   },
   "publisher": {
@@ -38,7 +89,8 @@ const articleSchema = {
     "url": "https://peterghiorse.com"
   },
   "mainEntityOfPage": canonicalURL.href,
-  ...(ogImage ? { "image": `https://peterghiorse.com${ogImage}` } : {}),
+  "image": socialImageURL.href,
+  "isAccessibleForFree": true,
   ...(category ? { "articleSection": category } : {})
 };
 
@@ -63,21 +115,27 @@ const breadcrumbSchema = {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="article" />
     <meta property="og:url" content={canonicalURL.href} />
-    {ogImage && <meta property="og:image" content={`https://peterghiorse.com${ogImage}`} />}
-    {ogImage && <meta property="og:image:width" content="1200" />}
-    {ogImage && <meta property="og:image:height" content="630" />}
+    <meta property="og:site_name" content="Pete Ghiorse" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={socialImageURL.href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${title} — article by Pete Ghiorse`} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    {ogImage && <meta name="twitter:image" content={`https://peterghiorse.com${ogImage}`} />}
+    <meta name="twitter:image" content={socialImageURL.href} />
+    <meta name="twitter:image:alt" content={`${title} — article by Pete Ghiorse`} />
     <meta name="author" content="Pete Ghiorse" />
     {publishDate && <meta property="article:published_time" content={publishDate} />}
     {category && <meta property="article:section" content={category} />}
     <link rel="canonical" href={canonicalURL.href} />
+    <link rel="alternate" type="application/rss+xml" title="Pete Ghiorse — Writing" href="/rss.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | Pete Ghiorse</title>
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <Analytics />
     {faq && faq.length > 0 && (
       <script type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
@@ -99,7 +157,7 @@ const breadcrumbSchema = {
   <body class="bg-(--color-surface) text-(--color-text) min-h-screen flex flex-col transition-colors duration-200">
     <Header />
     <main class="flex-1">
-      <article class="max-w-3xl mx-auto px-6 py-16 md:py-24">
+      <article class="max-w-3xl mx-auto px-6 py-16 md:py-24" data-article>
         <div class="mb-10 animate-fade-up">
           <div class="flex items-center gap-3 mb-4">
             {category && (
@@ -108,7 +166,7 @@ const breadcrumbSchema = {
               </span>
             )}
             {publishDate && (
-              <time class="text-sm text-(--color-text-muted)">{new Date(publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}</time>
+              <time datetime={publishDate} class="text-sm text-(--color-text-muted)">{formatPublishDate(publishDate)}</time>
             )}
           </div>
           <h1 class="text-3xl md:text-4xl font-extrabold leading-tight mb-4">{title}</h1>
@@ -125,8 +183,82 @@ const breadcrumbSchema = {
         <div class="prose animate-fade-up animate-delay-1">
           <slot />
         </div>
+
+        <div class="mt-10 flex flex-wrap items-center gap-3 border-t border-(--color-border) pt-7" aria-label="Share this article">
+          <span class="mr-1 text-sm font-semibold text-(--color-text-muted)">Share this article</span>
+          <a
+            href={linkedInShareURL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-share-method="linkedin"
+            data-analytics-placement="article_end"
+            class="rounded-full border border-(--color-border) px-4 py-2 text-sm font-semibold text-(--color-text) hover:border-(--color-primary) hover:text-(--color-primary)"
+          >LinkedIn</a>
+          <a
+            href={blueskyShareURL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-share-method="bluesky"
+            data-analytics-placement="article_end"
+            class="rounded-full border border-(--color-border) px-4 py-2 text-sm font-semibold text-(--color-text) hover:border-(--color-primary) hover:text-(--color-primary)"
+          >Bluesky</a>
+        </div>
+
+        <NewsletterCTA placement="article_end" />
+        <RelatedReading posts={relatedPosts} />
       </article>
     </main>
     <Footer />
+    {analyticsEnabled && <CookieConsent />}
+    <script is:inline define:vars={{ articlePath: currentPath, articleCategory: category || 'Uncategorized' }}>
+      (() => {
+        let activeSeconds = 0;
+        let engagedSent = false;
+        let completeSent = false;
+
+        const scrollDepth = () => {
+          const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+          if (scrollable <= 0) return 100;
+          return Math.min(100, Math.round((window.scrollY / scrollable) * 100));
+        };
+
+        const trackMilestones = () => {
+          const depth = scrollDepth();
+          if (!completeSent && depth >= 90) {
+            completeSent = true;
+            window.pgTrack?.('article_complete', {
+              category: articleCategory,
+              content_path: articlePath,
+              content_type: 'article',
+              scroll_depth: depth,
+            });
+          }
+          if (!engagedSent && activeSeconds >= 60 && depth >= 50) {
+            engagedSent = true;
+            window.pgTrack?.('article_engaged', {
+              active_seconds: activeSeconds,
+              category: articleCategory,
+              content_path: articlePath,
+              content_type: 'article',
+              scroll_depth: depth,
+            });
+          }
+        };
+
+        window.pgTrack?.('article_view', {
+          category: articleCategory,
+          content_path: articlePath,
+          content_type: 'article',
+        });
+
+        window.addEventListener('scroll', trackMilestones, { passive: true });
+        const activeTimer = window.setInterval(() => {
+          if (document.visibilityState === 'visible') activeSeconds += 1;
+          trackMilestones();
+        }, 1000);
+        window.addEventListener('pagehide', () => window.clearInterval(activeTimer), { once: true });
+        trackMilestones();
+      })();
+    </script>
   </body>
 </html>

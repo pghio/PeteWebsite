@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { GA_MEASUREMENT_ID } from '../config/analytics';
+
+const analyticsAvailable = Boolean(GA_MEASUREMENT_ID);
+---
+
+<BaseLayout
+  title="Privacy"
+  description="How peterghiorse.com handles analytics, newsletter subscriptions, cookies, and personal information."
+>
+  <article class="mx-auto max-w-3xl px-6 py-16 md:py-24">
+    <p class="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-(--color-primary)">Privacy</p>
+    <h1 class="text-4xl font-extrabold text-(--color-text)">A small site with a small data footprint.</h1>
+    <p class="mt-4 text-lg leading-relaxed text-(--color-text-muted)">
+      I use data to learn whether the writing reaches people—not to build advertising profiles. This page explains what the site can collect and the choices you control.
+    </p>
+
+    <div class="prose mt-12">
+      <h2>Website analytics</h2>
+      <p>
+        If you choose “Allow analytics,” this site loads Google Analytics 4. It can record page views and anonymous reading signals such as reaching 50% or 90% of an article, spending 60 active seconds with an article, clicking a newsletter prompt, opening a related post, following an external link, or using a share link.
+      </p>
+      <p>
+        Analytics is off until you opt in. Advertising storage, ad personalization, and Google Signals are disabled. I do not send your name, email address, article form input, or other directly identifying information to Google Analytics. Google may still process device, browser, approximate-location, and network information under its own terms. Read <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's privacy policy</a> for details.
+      </p>
+
+      <h2>Newsletter subscriptions</h2>
+      <p>
+        Newsletter signup is provided by <a href="https://peterghiorse.substack.com" target="_blank" rel="noopener noreferrer">Substack</a>. When you enter an email address in its embedded form, that information goes directly to Substack; it does not pass through this site's analytics. Substack controls its signup form, subscriber records, emails, and associated cookies under <a href="https://substack.com/privacy" target="_blank" rel="noopener noreferrer">Substack's privacy policy</a>.
+      </p>
+
+      <h2>Browser storage</h2>
+      <p>
+        The site stores two preferences in your browser: your light/dark theme and your analytics choice. If you allow analytics, Google Analytics may also set cookies beginning with <code>_ga</code>. Choosing “Disable analytics” below stops further analytics events from this site and removes accessible <code>_ga</code> cookies for this domain.
+      </p>
+
+      <h2>Your choice</h2>
+      {analyticsAvailable ? (
+        <div class="not-prose flex flex-wrap gap-3">
+          <button
+            type="button"
+            data-analytics-consent="accepted"
+            class="rounded-xl bg-(--color-primary) px-4 py-2 text-sm font-semibold text-white hover:bg-(--color-primary-dark)"
+          >Enable analytics</button>
+          <button
+            type="button"
+            data-analytics-consent="declined"
+            class="rounded-xl border border-(--color-border) px-4 py-2 text-sm font-semibold text-(--color-text) hover:bg-(--color-surface-alt)"
+          >Disable analytics</button>
+        </div>
+      ) : (
+        <p>Analytics is not configured on this deployment, so no analytics script is loaded.</p>
+      )}
+
+      <h2>Questions</h2>
+      <p>
+        If you have a privacy question, use the <a href="/contact">contact page</a>. This notice was last updated July 20, 2026.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

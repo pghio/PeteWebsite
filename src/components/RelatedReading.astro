@@ -1,0 +1,36 @@
+---
+interface RelatedPost {
+  title: string;
+  description?: string;
+  category?: string;
+  href: string;
+}
+
+interface Props {
+  posts: RelatedPost[];
+}
+
+const { posts } = Astro.props;
+---
+
+{posts.length > 0 && (
+  <section class="my-14 border-t border-(--color-border) pt-10" aria-labelledby="related-reading-title">
+    <p class="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-(--color-primary)">Continue the thread</p>
+    <h2 id="related-reading-title" class="mb-6 text-2xl font-bold text-(--color-text)">Related reading</h2>
+    <div class="grid gap-4 md:grid-cols-3">
+      {posts.map((post) => (
+        <a
+          href={post.href}
+          data-related-post
+          data-analytics-placement="article_end"
+          class="card-hover rounded-2xl border border-(--color-border) bg-white p-5 no-underline dark:bg-(--color-dark-surface)"
+        >
+          {post.category && <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-(--color-primary)">{post.category}</p>}
+          <h3 class="text-base font-bold leading-snug text-(--color-text)">{post.title}</h3>
+          {post.description && <p class="mt-2 line-clamp-3 text-sm leading-relaxed text-(--color-text-muted)">{post.description}</p>}
+          <p class="mt-4 text-sm font-semibold text-(--color-primary)">Read next <span aria-hidden="true">&rarr;</span></p>
+        </a>
+      ))}
+    </div>
+  </section>
+)}
