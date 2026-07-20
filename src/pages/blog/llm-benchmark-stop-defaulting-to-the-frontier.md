@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogLayout.astro
-title: "We Asked 8 LLMs to Run Our Family's Life. Three Tried to Book a Vacation."
-description: "We tested 8 LLMs against Honeydew's production family assistant — GPT-4o-mini, Gemini Flash, DeepSeek V3, Claude Haiku, GPT-4.1, Claude Sonnet, GPT-5.4, Claude Opus. 2,800 API calls, five weird findings, and one practitioner tip that'll save you a debugging session."
+title: "We Asked 8 LLMs to Run Our Family's Life. Two Tried to Book a Vacation."
+description: "We tested 8 LLMs against Honeydew's production family-assistant prompt across 2,800 calls. This April 2026 field test is preserved with corrections from a larger June study on messy-input robustness and duplicate handling."
 publishDate: "2026-04-15"
 category: "Research"
 ogImage: "/images/research/hero-llm-benchmark.png"
@@ -13,12 +13,14 @@ faq:
   - q: "Which LLM is most likely to hallucinate tool calls?"
     a: "GPT-4o-mini, by a wide margin. When we told it 'I'm planning a trip next weekend' — pure conversation, no request — it created a calendar event called 'Trip' in 19 out of 42 trials. That's a 45% hallucination rate. Gemini Flash did it occasionally. Every other model (Claude family, DeepSeek, GPT-4.1, GPT-5.4) correctly recognized it as conversation."
   - q: "Why does Claude keep wrapping JSON in markdown code blocks?"
-    a: "It's a known behavior of all three Anthropic models (Haiku, Sonnet, Opus) even when you specify response_format: json_object. 40-60% of raw responses come back wrapped in triple-backtick code fences. The fix is 10 lines of preprocessing. Don't lose a day debugging it like we almost did."
+    a: "In this April 2026 OpenRouter run, the three Claude model identifiers we tested wrapped 40-60% of their JSON responses in triple-backtick code fences even when we requested json_object output. Provider routing and model behavior can change, so treat those rates as a snapshot and make your parser tolerant of fenced JSON."
   - q: "Is this peer-reviewed research?"
-    a: "Nope. This is a production case study. We tested 8 models on our real system prompt, using our real tool schema, with our real scenarios. Findings are 'interesting patterns from one team's experiment,' not universal truth. The harness is open source if you want to run it on your own agent."
+    a: "No. This is a production case study. We tested 8 models on one system prompt and one scenario set. The findings are patterns from one team's experiment, not universal model rankings. The raw results and harness are available on request; this post does not currently link a verified public repository."
 ---
 
 ![We asked 8 LLMs to run our family's life](/images/research/hero-llm-benchmark.svg)
+
+> **Update — June 24, 2026.** A [larger follow-up restraint study](/blog/llms-knowing-when-to-stop) supersedes two conclusions in this April test. The small typo subset here did not justify saying noisy input was solved; the follow-up found 13–22-point drops for several lower-cost models. The duplicate section also relied too heavily on routing labels: transcript review showed broader duplicate awareness than those labels captured. Those sections are corrected below. The original run remains useful as a prompt-specific field test, not a model leaderboard.
 
 ## Why We Did This
 
@@ -28,9 +30,9 @@ We've been using GPT-4.1 in production. It works well. But every month, a new mo
 
 We pitted 8 LLMs against Dew's job — from the cheapest ($0.15/M tokens) to the most expensive ($15/M). Ran each one through 35 scenarios, ten times each. That's 2,800 API calls. The bill came to $145.83, plus a lot of rate-limit retries.
 
-What we found was more interesting than "model X wins." Let's go.
+The useful results were failure modes, not an overall winner.
 
-> **Disclaimer worth reading.** This is not peer-reviewed science. It's a production case study on our specific prompt, which was built around GPT-family models. That gives GPT an advantage we can't experimentally remove — you'll see that caveat applied throughout. Treat findings as "interesting patterns we saw," not universal model rankings. The benchmark harness is open source; run it on your own prompt if you want your own answers.
+> **Scope.** This is not peer-reviewed science. It is a production case study on a prompt built around GPT-family models, which gives GPT models an advantage we cannot separate from model capability. Treat the findings as patterns from this prompt and scenario set, not universal rankings. The raw results and harness are available on request; there is no verified public repository linked from this post.
 
 ---
 
@@ -60,7 +62,7 @@ Two of them did not.
 
 **Everyone else got it right.** All three Claude models (Haiku, Sonnet, Opus), DeepSeek V3, GPT-4.1, and GPT-5.4 consistently recognized conversation as conversation. Zero hallucinated tool calls on those trials.
 
-This isn't a prompt-coupling artifact. It's a model-behavior difference: GPT-4o-mini has a strong prior toward action, even when action isn't warranted. For a production agent, **that's the kind of failure mode that creates support tickets.** A user mentions a trip, your agent books something, the user is confused and annoyed, and now you have a bug that's hard to reproduce because it only fires on conversational input.
+On this prompt, GPT-4o-mini showed a stronger tendency toward action than the other models. We cannot separate that behavior completely from prompt coupling, provider routing, or the scenario mix. It is still a production-relevant failure mode to test: a user mentions a trip, the agent creates state, and the resulting bug appears only on conversational input.
 
 Worth knowing.
 
@@ -102,52 +104,46 @@ These differences don't show up in any accuracy metric we measured. But if you c
 
 ---
 
-## Finding 3: Two Models Actually Checked the List First
-
-The most surprising finding of the study.
+## Finding 3: The Routing Labels Hid Duplicate Awareness
 
 Scenario 2.01 is subtly ambiguous: **"Add bananas and milk."** We have a grocery list, a costco list, a packing list, and a chores list. Which one? The correct behavior is to ask.
 
-Six of eight models just guessed. They picked the most likely list (grocery) and executed. Responses were all versions of:
+The mock state also already contained bananas and milk. Our first routing-level read treated choosing the grocery list as a blind guess and made two models look uniquely context-aware. Transcript review showed that conclusion was too strong: models across the set noticed the duplicate even when the route label implied execution or the user-facing wording was muddy.
+
+Responses included:
 
 > "I've added bananas and milk to your Grocery List."
-
-Two models did something different. They **checked the existing state of the list before acting.**
 
 > **GPT-5.4:** "Both items are already on your Grocery List, so I didn't add duplicates."
 >
 > **Claude Sonnet:** "I added bananas and milk to your Grocery List! You already had both items on there, so your list is all set."
 
-That's not just correct behavior — it's *context-aware* behavior. Neither model was explicitly told to check for duplicates. They noticed the context (the mock data included existing grocery items) and reasoned about it.
-
-We can't claim this as a statistically robust finding — it was 3 out of 10 trials on one scenario. But it's consistent, it's qualitatively interesting, and for anyone building agents that need to avoid creating duplicate or confusing state, it's worth thinking about. *Some models check what they know before they act.*
+Those quotes are evidence of duplicate awareness, not clean evidence that only two models checked state or that either actually mutated it. Sonnet's wording is internally inconsistent: it says both "I added" and "you already had." The corrected lesson is narrower: read the transcript and resulting state before scoring an agent from a route label. The [June follow-up](/blog/llms-knowing-when-to-stop) uses neutral context for the broader routing set and reports collision behavior separately.
 
 ---
 
 ## Finding 4: For Most Tasks, Model Choice Barely Matters
 
-This was the unexpected part.
-
 ![Heatmap showing all 8 models achieving 75-100% on 4 of 6 categories](/images/research/benchmark-category-heatmap.svg)
 
-**Four out of six task categories showed ceiling effects across every model we tested.** From the cheapest ($0.15/M) to the most expensive ($15/M), all 8 models scored 75-100% on:
+**Four out of six task categories were tightly clustered in this small scenario set.** From the cheapest ($0.15/M) to the most expensive ($15/M), all 8 models scored 75-100% on:
 
 - **Clear commands** — "Add milk to the grocery list." Everyone gets it.
 - **Structured output** — Creating events with recurring schedules, specific timezones, etc. Basically solved.
 - **Compound actions** — "Add eggs to grocery and schedule dentist for Friday." Most models handle two-step requests fine.
-- **Typos and noise** — "add teh milk to teh listt." Every single model scored 100%. This is not an interesting problem anymore.
+- **The small typo subset in this run** — every model scored 100%, but the subset was too small and tidy to support a general robustness claim. The larger June study found substantial drops on broader typo, fragment and code-switching scenarios.
 
-If your agent primarily does these things — and most production agents do — **model selection barely matters.** You can pick the cheapest option that hits your latency target, deploy it, and move on.
+For these tasks on this prompt, model selection mattered less than it did on ambiguity and conversational input. That is a reason to test a representative workload, not a general instruction to choose the cheapest model.
 
 The real differentiation is on:
 - **Ambiguity** (0-67% across models)
 - **Conversational input** / non-action recognition (0-100% spread)
 
-Those two categories drive almost all of the accuracy differences between models. And — important — **no model cracked 67% on ambiguity, even at $15/M tokens.** Price doesn't fix that problem. Better prompt engineering might.
+Those two categories drove most of the accuracy differences in this run. No model exceeded 67% on our ambiguity subset, even at $15/M tokens. The subset is small and prompt-coupled; it shows where our system struggled, not a universal ceiling.
 
 ---
 
-## Finding 5: The Claude JSON Gotcha That Costs Everyone a Day
+## Finding 5: Claude Responses Arrived Fenced in This OpenRouter Run
 
 During initial testing, our Claude trials were failing 40-60% of the time on JSON parsing. Not because the JSON was malformed — because Claude was wrapping it in markdown code fences.
 
@@ -163,7 +159,7 @@ Raw response:
 ```
 ```
 
-Notice the triple backticks? `JSON.parse()` chokes on those. And Claude does this **even when you specify `response_format: { type: 'json_object' }`** in the request. It's a known Anthropic API behavior, it affected all three Claude models (Haiku, Sonnet, Opus), and the failure rates were:
+Notice the triple backticks? `JSON.parse()` chokes on those. In this April 2026 OpenRouter run, all three Claude identifiers did this even when we requested `response_format: { type: 'json_object' }`. These are provider-and-snapshot observations, not permanent claims about Anthropic's direct API. The observed rates were:
 
 - Claude Haiku: 40%
 - Claude Sonnet: 55%
@@ -186,7 +182,7 @@ function stripMarkdownJson(raw: string): string {
 }
 ```
 
-After this preprocessing, all Claude models went from 40-60% failure to 96-99% success. **If you're using Claude via API in JSON mode and haven't noticed silent failures, you probably have a bug you don't know about.**
+After this preprocessing, the three Claude configurations went from 40-60% failure to 96-99% parse success in our run. A tolerant parser is cheap insurance, but current behavior should be re-tested with your provider and model version.
 
 ---
 
@@ -204,7 +200,7 @@ For production agents, latency often matters more than a few points of accuracy.
 
 **Gemini Flash** (budget tier, $0.25/M) came in at 797ms P50 with tight distribution — genuinely impressive for the price.
 
-For most production deployments, **you'll feel a 1000ms difference more than a 10pp accuracy difference.** Users tolerate "the agent gave me the wrong answer" better than they tolerate "the agent made me wait four seconds."
+For an interactive product, a multi-second difference is noticeable. Accuracy and safety remain non-negotiable for state-changing actions, so latency should be evaluated alongside them rather than traded against them by assertion.
 
 ---
 
@@ -216,13 +212,13 @@ This isn't something we can fix by running the benchmark again on a "neutral" pr
 
 So, applying that to what we found:
 
-**Findings we'd bet on** (prompt-independent or clearly behavioral):
-- GPT-4o-mini hallucinates tool calls on conversational input, a lot
-- Claude Sonnet and GPT-5.4 check existing state before acting
-- Claude wraps JSON in markdown even in json_object mode
-- 4 of 6 task categories show ceiling effects across all price tiers
-- No model exceeds 67% on true ambiguity
-- Latency varies 12x across models
+**Findings clearly observed in this run, but still prompt-, provider- and snapshot-specific:**
+- GPT-4o-mini produced many more unwarranted tool calls on our conversational subset
+- Duplicate handling could not be inferred reliably from route labels alone
+- The Claude configurations frequently wrapped JSON in markdown through OpenRouter
+- Four task categories were tightly clustered in this 35-scenario set
+- Every model struggled on our ambiguity subset
+- Observed median latency varied roughly 12x
 
 **Findings we wouldn't stake a claim on:**
 - Absolute model rankings by overall accuracy
@@ -235,11 +231,11 @@ So, applying that to what we found:
 
 ![Five practical takeaways for AI agent builders](/images/research/benchmark-takeaways.svg)
 
-**Test your own prompt.** The single most valuable thing you can do in a day. Our benchmark harness is open source — fork it, swap in your prompt and scenarios, spend $100-300 on OpenRouter, and you'll know more about your model choice than any blog post (including this one) can tell you.
+**Test your own prompt.** The harness used for this run is available on request. Whether you adapt it or build a smaller evaluation, results from your prompt and scenarios will be more relevant than this post's model ordering.
 
-**Don't overpay for the easy stuff.** If your agent mostly does structured output, compound actions, and typo-robust input, every modern LLM handles those. Pick cheap and fast.
+**Don't overpay for tasks your evaluation finds easy.** In this run, structured output and compound actions were tightly clustered. The April typo subset also looked easy, but the broader June study did not. Use the least expensive model that clears your own safety, accuracy and robustness thresholds.
 
-**The hard problems aren't for sale.** Ambiguity handling maxes out around 67% across every model we tested. If that's critical for your use case, invest in prompt engineering and UX (offer options, confirm actions) rather than chasing a more expensive model.
+**Price did not solve ambiguity in this run.** No model exceeded 67% on our small ambiguity subset. If ambiguity is critical for your use case, test prompt and UX changes—offering options and confirming actions—alongside model changes.
 
 **Handle Claude's markdown wrapping.** Ten lines of preprocessing. Do it before you ship.
 
@@ -247,22 +243,15 @@ So, applying that to what we found:
 
 ---
 
-## The Open-Source Bit
+## Data and Materials
 
-The full benchmark harness is available. It includes:
-
-- **Runner** — calls OpenRouter with your prompt and scenarios, handles retries, produces raw results
-- **Evaluator** — deterministic scoring across five dimensions (intent, mode, schema, clarification, message quality)
-- **Stats** — TOST equivalence testing, Wilcoxon signed-rank, Cliff's delta, Friedman, bootstrap CIs, Krippendorff's alpha — all implemented from scratch, zero dependencies
-- **Reporter** — JSON output plus a self-contained HTML report with Chart.js visualizations
-
-It's built in TypeScript. Point it at your own system prompt (gitignored by default so you can keep it private), your own scenarios, and your own preferred model list. Takes a few hours to adapt, a couple hundred dollars to run, and the result is better data than any third-party benchmark can give you.
+There is no verified public repository linked from this post. The TypeScript harness, scenario definitions and 8.8MB raw results file are available on request. Reusing the method still requires replacing our prompt and scenarios with your own; this run does not establish how the same models behave on another product's workload.
 
 ---
 
 ## A Last Thought
 
-We started this expecting to find that budget models were secretly fine and we could save a lot of money by switching. That's not quite what we found. What we found is that **the question "which model is best?" doesn't have a general answer** — it has a specific answer per prompt, per workload, per latency budget, per user patience threshold.
+We started this expecting that a budget model might be an easy substitution. The run instead showed that **"which model is best?" has a specific answer per prompt, workload, latency budget and failure tolerance.**
 
 The best thing we can do as engineers is stop treating model selection like a spec comparison and start treating it like any other empirical engineering problem: design an experiment on your actual workload, run it, read the results, and ship the boring answer.
 
@@ -279,10 +268,10 @@ Not in this run. We picked the current flagship from each of the major providers
 Our first run burned through a $100 OpenRouter key cap at ~80% completion. We topped up to $200 and re-ran cleanly. Budget $200-300 for a run of this scale.
 
 **Q: Can I see the actual response data?**
-Yes. The full 8.8MB results JSON (all 2,800 trial responses, raw) is in the results directory of the repo. We kept everything — raw responses, parsed JSON, per-trial scores, latencies, token counts. Useful if you want to do your own failure-mode analysis.
+Yes. The 8.8MB results JSON contains all 2,800 raw trial responses, parsed JSON, per-trial scores, latencies and token counts. It is available on request; this post does not currently link a verified public repository.
 
 **Q: Why not re-tune the prompt for each model and compare best-of-breed?**
 Because that's a different study (and a much harder one). "Equivalent effort per model" is notoriously hard to define. What we did — test all models on our production prompt — answers the question that's actually relevant for production decisions: *given our existing prompt, what's the best model?* That's prompt-coupled by design, and we're upfront about it.
 
 **Q: Would you actually cite this in anything serious?**
-We'd cite Section 1 (the eager-agent hallucination rates) as a concrete example of a production failure mode worth knowing about. We'd cite Section 5 (the Claude markdown wrapping thing) as a practitioner tip. We wouldn't cite the overall rankings as evidence about the models themselves — because they're confounded by our prompt. Neither should anyone else.
+The conversational tool-call rates are a concrete example of a failure mode to test, and the fenced-JSON result is a provider-specific implementation note. The overall rankings should not be cited as general evidence about the models because they are confounded by our prompt and scenario set.

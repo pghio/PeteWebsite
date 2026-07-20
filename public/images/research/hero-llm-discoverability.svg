@@ -36,12 +36,12 @@
   <rect width="1200" height="630" fill="url(#grid)"/>
 
   <!-- Left side: Title and metadata -->
-  <text x="70" y="80" font-size="13" font-weight="600" fill="#3b82f6" letter-spacing="3" text-transform="uppercase">ORIGINAL RESEARCH</text>
+  <text x="70" y="80" font-size="13" font-weight="600" fill="#3b82f6" letter-spacing="3">90-DAY FIELD NOTE</text>
 
   <text x="70" y="140" font-size="42" font-weight="800" fill="#f1f5f9" letter-spacing="-1">Do LLMs Actually</text>
   <text x="70" y="195" font-size="42" font-weight="800" fill="#f1f5f9" letter-spacing="-1">Cite Your Startup?</text>
 
-  <text x="70" y="250" font-size="20" fill="#94a3b8" font-weight="400">We built the infrastructure. Then we measured.</text>
+  <text x="70" y="250" font-size="20" fill="#94a3b8" font-weight="400">Small counts. Clear limits. One useful negative result.</text>
 
   <!-- Divider line -->
   <line x1="70" y1="280" x2="220" y2="280" stroke="#3b82f6" stroke-width="3" opacity="0.6"/>
@@ -50,59 +50,46 @@
   <!-- Card 1 -->
   <rect x="70" y="310" width="175" height="90" fill="#1e293b" stroke="#334155" rx="10"/>
   <text x="157" y="348" font-size="36" font-weight="800" fill="#f1f5f9" text-anchor="middle">13</text>
-  <text x="157" y="378" font-size="11" fill="#64748b" text-anchor="middle">verified LLM sessions</text>
-  <text x="157" y="393" font-size="10" fill="#475569" text-anchor="middle">GA4 confirmed, 90 days</text>
+  <text x="157" y="378" font-size="11" fill="#64748b" text-anchor="middle">GA4-attributed sessions</text>
+  <text x="157" y="393" font-size="10" fill="#475569" text-anchor="middle">12 users, 90 days</text>
 
   <!-- Card 2 -->
   <rect x="260" y="310" width="175" height="90" fill="#1e293b" stroke="#334155" rx="10"/>
-  <text x="347" y="348" font-size="36" font-weight="800" fill="#d4a574" text-anchor="middle">4.4x</text>
-  <text x="347" y="378" font-size="11" fill="#64748b" text-anchor="middle">Claude vs ChatGPT</text>
-  <text x="347" y="393" font-size="10" fill="#475569" text-anchor="middle">engagement duration</text>
+  <text x="347" y="348" font-size="36" font-weight="800" fill="#d4a574" text-anchor="middle">29</text>
+  <text x="347" y="378" font-size="11" fill="#64748b" text-anchor="middle">custom referrer events</text>
+  <text x="347" y="393" font-size="10" fill="#475569" text-anchor="middle">a different unit, not a multiplier</text>
 
   <!-- Card 3 -->
   <rect x="450" y="310" width="175" height="90" fill="#1e293b" stroke="#334155" rx="10"/>
-  <text x="537" y="348" font-size="36" font-weight="800" fill="#f87171" text-anchor="middle">10%</text>
-  <text x="537" y="378" font-size="11" fill="#64748b" text-anchor="middle">vs 60% for incumbents</text>
-  <text x="537" y="393" font-size="10" fill="#475569" text-anchor="middle">Perplexity citation rate</text>
+  <text x="537" y="348" font-size="36" font-weight="800" fill="#f87171" text-anchor="middle">1 / 10</text>
+  <text x="537" y="378" font-size="11" fill="#64748b" text-anchor="middle">Perplexity appearances</text>
+  <text x="537" y="393" font-size="10" fill="#475569" text-anchor="middle">branded query only</text>
 
-  <!-- Right side: Mini bar chart visualization -->
+  <!-- Right side: observation summary -->
   <rect x="720" y="100" width="420" height="400" fill="#1e293b" stroke="#334155" rx="14" opacity="0.7"/>
 
-  <text x="750" y="140" font-size="13" font-weight="700" fill="#94a3b8">LLM CITATION RATE BY COMPETITOR</text>
-  <text x="750" y="158" font-size="10" fill="#475569">n=20 queries across Perplexity + web search</text>
+  <text x="750" y="140" font-size="13" font-weight="700" fill="#94a3b8">OBSERVATIONS KEPT SEPARATE</text>
+  <text x="750" y="158" font-size="10" fill="#475569">Different instruments and units cannot be combined</text>
 
   <!-- Bars -->
-  <text x="810" y="198" font-size="12" fill="#94a3b8" text-anchor="end">Cozi</text>
-  <rect x="820" y="185" width="252" height="18" fill="#6366f1" rx="3" opacity="0.8"/>
-  <text x="1080" y="199" font-size="11" fill="#a5b4fc" font-weight="600">60%</text>
+  <text x="850" y="198" font-size="12" fill="#94a3b8" text-anchor="end">GA4 sessions</text>
+  <rect x="860" y="185" width="117" height="18" fill="#6366f1" rx="3" opacity="0.8"/>
+  <text x="988" y="199" font-size="11" fill="#a5b4fc" font-weight="600">13</text>
 
-  <text x="810" y="232" font-size="12" fill="#94a3b8" text-anchor="end">Sense</text>
-  <rect x="820" y="219" width="252" height="18" fill="#6366f1" rx="3" opacity="0.7"/>
-  <text x="1080" y="233" font-size="11" fill="#a5b4fc" font-weight="600">60%</text>
+  <text x="850" y="248" font-size="12" fill="#94a3b8" text-anchor="end">Referrer events</text>
+  <rect x="860" y="235" width="261" height="18" fill="#d4a574" rx="3" opacity="0.8"/>
+  <text x="1092" y="249" font-size="11" fill="#f3c98b" font-weight="600">29</text>
 
-  <text x="810" y="266" font-size="12" fill="#94a3b8" text-anchor="end">Nori</text>
-  <rect x="820" y="253" width="210" height="18" fill="#818cf8" rx="3" opacity="0.6"/>
-  <text x="1038" y="267" font-size="11" fill="#a5b4fc" font-weight="600">50%</text>
+  <text x="850" y="318" font-size="12" fill="#94a3b8" text-anchor="end">Perplexity</text>
+  <rect x="860" y="305" width="26" height="18" fill="#f97316" rx="3" opacity="0.8"/>
+  <text x="896" y="319" font-size="11" fill="#fb923c" font-weight="600">1 / 10</text>
 
-  <text x="810" y="300" font-size="12" fill="#94a3b8" text-anchor="end">familymind</text>
-  <rect x="820" y="287" width="168" height="18" fill="#a78bfa" rx="3" opacity="0.5"/>
-  <text x="996" y="301" font-size="11" fill="#c4b5fd" font-weight="600">40%</text>
+  <text x="850" y="368" font-size="12" fill="#94a3b8" text-anchor="end">Web search</text>
+  <rect x="860" y="355" width="78" height="18" fill="#3b82f6" rx="3" opacity="0.7"/>
+  <text x="948" y="369" font-size="11" fill="#93c5fd" font-weight="600">3 / 10</text>
 
-  <text x="810" y="334" font-size="12" fill="#94a3b8" text-anchor="end">Gether</text>
-  <rect x="820" y="321" width="126" height="18" fill="#c4b5fd" rx="3" opacity="0.4"/>
-  <text x="954" y="335" font-size="11" fill="#c4b5fd" font-weight="600">30%</text>
-
-  <text x="810" y="368" font-size="12" fill="#94a3b8" text-anchor="end">Ohai</text>
-  <rect x="820" y="355" width="84" height="18" fill="#ddd6fe" rx="3" opacity="0.35"/>
-  <text x="912" y="369" font-size="11" fill="#ddd6fe" font-weight="600">20%</text>
-
-  <text x="810" y="402" font-size="12" fill="#f97316" font-weight="700" text-anchor="end">Honeydew</text>
-  <rect x="820" y="389" width="42" height="18" fill="#f97316" rx="3" filter="url(#glow)"/>
-  <text x="870" y="403" font-size="11" fill="#fb923c" font-weight="700">10%</text>
-
-  <!-- Annotation arrow -->
-  <line x1="862" y1="420" x2="862" y2="440" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
-  <text x="862" y="458" font-size="10" fill="#f97316" text-anchor="middle" font-style="italic">We are here</text>
+  <text x="750" y="430" font-size="11" fill="#64748b">Neither analytics measure observes typed URLs,</text>
+  <text x="750" y="448" font-size="11" fill="#64748b">later searches, or cross-device discovery.</text>
 
   <!-- Author line -->
   <text x="70" y="450" font-size="13" fill="#64748b">Pete Ghiorse</text>
@@ -110,7 +97,7 @@
 
   <!-- Bottom tag line -->
   <rect x="70" y="510" width="560" height="50" fill="#0f172a" stroke="#334155" rx="8" opacity="0.8"/>
-  <text x="90" y="540" font-size="12" fill="#64748b">3 LLM platforms measured  |  10-query citation audit  |  7 competitors benchmarked  |  Full methodology + replication guide</text>
+  <text x="90" y="540" font-size="12" fill="#64748b">13 GA4 sessions  |  29 custom events  |  10 Perplexity queries  |  10 web-search checks</text>
 
   <!-- peterghiorse.com -->
   <text x="70" y="600" font-size="12" fill="#475569">peterghiorse.com/blog/llm-discoverability-research</text>

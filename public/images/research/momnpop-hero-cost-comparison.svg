@@ -58,5 +58,5 @@
 
   <!-- Bottom rule and kicker -->
   <line x1="100" y1="560" x2="1100" y2="560" stroke="rgba(255,255,255,0.35)" stroke-width="0.75"/>
-  <text x="600" y="588" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="13" letter-spacing="3" font-weight="500">A 200&#215; COST COLLAPSE, FROM INSIDE TWO PRODUCTS</text>
+  <text x="600" y="588" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="13" letter-spacing="2.5" font-weight="500">A 200&#215; RECORDED-CASH GAP, FROM INSIDE TWO PRODUCTS</text>
 </svg>

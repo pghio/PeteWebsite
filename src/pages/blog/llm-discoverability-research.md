@@ -1,318 +1,156 @@
 ---
 layout: ../../layouts/BlogLayout.astro
-title: "Do LLMs Actually Cite Your Startup? An Empirical Analysis of LLM Discoverability Infrastructure"
-description: "We deployed a 4-layer LLM discoverability stack and measured 90 days of outcomes. 10% citation rate vs 60% for incumbents, a 2.2x analytics attribution gap, and 4.4x engagement differential across LLM sources. Full methodology and replication guide."
+title: "Do LLMs Actually Cite Your Startup? A 90-Day Field Note"
+description: "What 13 GA4-attributed sessions, 29 custom referrer events, one citation in ten Perplexity queries, and three web-search appearances can—and cannot—tell an early-stage startup about LLM discovery."
 publishDate: "2026-04-14"
 category: "Research"
 ogImage: "/images/research/hero-llm-discoverability.png"
 faq:
   - q: "Do LLMs cite startups in their recommendations?"
-    a: "Rarely. In our 90-day study, our early-stage product (Honeydew) achieved a 10% citation rate in Perplexity AI queries compared to 60% for category incumbents like Cozi — a 6x gap driven primarily by domain authority and third-party coverage, not content quality."
-  - q: "How much traffic do LLMs actually send to websites?"
-    a: "In our study, LLM-attributed traffic accounted for approximately 0.5% of total sessions via standard GA4 attribution, rising to 1.1% when measured with custom referral event tracking — a 2.2x attribution gap suggesting most analytics significantly undercount LLM-driven traffic."
-  - q: "Does a .llms.txt file help with LLM discoverability?"
-    a: "We found zero evidence that .llms.txt files, structured citation catalogs, or machine-readable context files were directly consumed by any LLM. Domain authority, third-party coverage, and comprehensive evaluative content appear to be the dominant factors in LLM citation."
-  - q: "What content gets cited most by LLMs?"
-    a: "Approximately 62% of our LLM referral traffic landed on comparison and 'best of' articles. LLMs preferentially cite comprehensive evaluative content over product pages, feature announcements, or marketing copy."
-  - q: "Which LLM platform sends the most referral traffic?"
-    a: "ChatGPT drove 77% of LLM referral volume in our study, followed by Perplexity (15%) and Claude (8%), roughly tracking platform market share. However, Claude-referred sessions showed 4.4x longer session duration and 2.1x more pages per session than ChatGPT referrals."
-  - q: "How do you track LLM referral traffic in Google Analytics?"
-    a: "Deploy custom GA4 events that detect known LLM hostnames (ChatGPT, Claude, Perplexity, Gemini, Copilot, etc.) in document.referrer. Standard GA4 attribution captures only about 45% of actual LLM-driven traffic because users often copy/paste URLs rather than clicking referral links."
+    a: "In one ten-query Perplexity audit, Honeydew appeared only for the branded positive-control query and for none of the nine generic queries. That is a useful negative result for this product at this moment, not an estimate of how often LLMs cite startups generally."
+  - q: "How much traffic do LLMs send to websites?"
+    a: "Over 90 days, GA4 attributed 13 Honeydew sessions to LLM sources. A separate referrer detector recorded 29 events from 27 users. Events and sessions are different units and cannot be divided into a reliable capture-rate estimate. Neither method can see someone who reads a recommendation and later types the URL or searches for the brand."
+  - q: "Does a .llms.txt file improve LLM discoverability?"
+    a: "This field note found no direct evidence that an LLM consumed Honeydew's machine-readable context files. Because the files, content, and measurement changes launched together without a baseline, the effect of any one layer cannot be isolated."
+  - q: "How should a startup track LLM referrals?"
+    a: "Keep standard analytics and a referrer-based event as separate measures, preserve source-level counts, use tagged links where possible, and repeat a fixed citation-query audit over time. Referrer tracking observes clicks from known hosts; it does not reveal typed URLs, later searches, or other indirect discovery."
 ---
 
 ![Do LLMs Actually Cite Your Startup?](/images/research/hero-llm-discoverability.svg)
 
-## TL;DR — What You Should Do Based on This Data
+For 90 days, I watched a small consumer startup try to become visible to systems like ChatGPT, Claude and Perplexity. We added machine-readable context files, generated them from product data, published comparison content, and instrumented referrals. Then I checked what actually arrived.
 
-If you're a startup founder and you read nothing else:
+The result was modest. GA4 attributed 13 sessions to LLM sources. A separate browser-referrer event recorded 29 events from 27 users. Perplexity mentioned Honeydew in one of ten queries, and that one was the branded control. Ordinary web search surfaced the site in three of the same ten queries.
 
-1. **You're probably invisible to LLMs.** We achieved a 10% citation rate vs. 60% for incumbents. Unless you have years of domain authority, assume LLMs aren't recommending you.
+Those numbers do not prove that the infrastructure created traffic, that analytics missed a fixed share of it, or that long comparison articles cause citations. They are a baseline from one product, one quarter, and a very small sample.
 
-2. **Your analytics are lying to you about LLM traffic.** Standard GA4 attribution captured only ~45% of our actual LLM-driven visits. Deploy custom `llm_referral` event tracking (we explain how in Section 5) or you're flying blind on this channel.
+## The observations, without a growth story layered on top
 
-3. **Write comprehensive comparison articles, not product pages.** ~62% of our LLM referral traffic landed on "best of" and "vs" articles. LLMs cite evaluative content, not marketing copy.
+| Observation | Result | What it supports |
+|---|---:|---|
+| GA4 sessions attributed to LLM sources | 13 sessions, 12 users | Some clicked LLM referrals reached the site |
+| Custom `llm_referral` measurement | 29 events, 27 users | A separate referrer detector observed more event records than GA4 labeled sessions |
+| Perplexity audit | Honeydew in 1/10 queries | The product was absent from all nine generic queries in this snapshot |
+| Web-search check using the same queries | Honeydew in 3/10 result sets | Search could retrieve the site more often than Perplexity chose it |
+| LLM-referral landing pages | 8 comparison pages, 3 homepage, 2 other posts | Comparison content was common among these 13 attributed sessions |
 
-4. **Don't bother with `.llms.txt` files yet — unless you also have the content.** Machine-readable context files are cheap to produce, but in our data the content itself and domain authority did the work. We found no evidence any LLM consumed those files directly.
+The first two rows are deliberately not combined into a ratio. A custom event and a GA4 session are different units with different processing rules. Without a joined event-level audit, 29 divided by 13 is not an “attribution gap,” and 13 divided by 29 is not a GA4 capture rate.
 
-5. **Claude users may be worth more than ChatGPT users.** We observed a 4.4x session duration differential and 2.1x page depth differential favoring Claude referrals over ChatGPT. Sample is small, but if it holds, optimizing for Claude's retrieval patterns could be higher-ROI than chasing ChatGPT volume.
+The custom event also depends on `document.referrer`. It can observe a click whose browser preserves a known LLM hostname. It cannot identify someone who reads a recommendation, closes the assistant, and later types the URL or searches for Honeydew. Those indirect journeys remain unobservable in this dataset.
 
-6. **Treat this as a 12-month compounding bet, not a quick win.** The 6x citation gap against incumbents is structural (domain authority, press coverage, training data). No infrastructure hack closes it fast. Build the product, build the content, measure monthly.
+## What we changed
 
----
-
-## Abstract
-
-Large language models (LLMs) increasingly function as product recommendation engines. When users query ChatGPT, Claude, or Perplexity for software recommendations, the response operates as a curated endorsement with no transparent ranking mechanism. Despite growing practitioner interest in "LLM SEO," there is little published empirical data on whether dedicated discoverability infrastructure produces measurable outcomes for early-stage products.
-
-This study reports 90 days of data from deploying a 4-layer LLM discoverability stack (machine-readable context files, automated generation pipeline, search grounding optimization, and attribution tracking) for an early-stage consumer app with limited domain authority (Honeydew, ~52 App Store ratings). We present three complementary data sources: GA4-verified referral traffic, a structured 10-query citation audit against Perplexity AI, and a search grounding analysis benchmarked against 7 competitors.
-
-**Principal findings:**
-
-1. LLM-attributed traffic accounted for **~0.5% of total sessions** via GA4 source attribution, rising to **~1.1%** when measured by custom referral events — a **2.2x attribution gap** that suggests standard analytics significantly undercount LLM-driven traffic.
-2. **ChatGPT drove 77% of LLM referral volume**, followed by Perplexity (15%) and Claude (8%), roughly tracking platform market share.
-3. In a structured Perplexity citation audit, Honeydew achieved a **10% citation rate** compared to **60% for Cozi** (category incumbent) — a **6x gap** attributable primarily to domain authority and third-party coverage.
-4. Exploratory engagement data suggests meaningful quality variation: Claude-referred sessions averaged **6.0 pages/session and 9m 35s duration** vs. ChatGPT's **2.8 pages/session and 2m 12s** — a **2.1x depth and 4.4x duration differential** (sample sizes limit confidence; see Limitations).
-
-**Interpretation:** The infrastructure is necessary for measurement but insufficient alone for competitive citation rates. Domain authority and third-party coverage remain the dominant factors. We release our methodology and tools to enable replication and comparison across other product categories.
-
----
-
-## 1. Introduction
-
-### 1.1 Motivation
-
-A measurable shift in product discovery began in 2024-2025: consumers increasingly query AI assistants for product recommendations rather than using traditional search engines. This matters because LLM recommendations carry implicit endorsement and lack the transparency of search engine results pages (SERPs), where ranking factors, paid placements, and organic results are distinguishable.
-
-For startups, this creates an asymmetric information problem. Established products with extensive web presence benefit from LLM training data and search grounding. New entrants — regardless of product quality — may be invisible to the very systems consumers use to discover solutions. No established playbook exists for addressing this gap.
-
-### 1.2 Research Questions
-
-We investigate four questions:
-
-- **RQ1:** Does dedicated LLM infrastructure (structured context files, citation catalogs) produce measurable referral traffic for an early-stage product?
-- **RQ2:** How does referral volume and engagement quality vary across LLM platforms?
-- **RQ3:** What citation rate can an early-stage product achieve in LLM responses relative to established competitors?
-- **RQ4:** What content characteristics correlate with LLM citation?
-
-### 1.3 Study Context and Conflict of Interest Disclosure
-
-Honeydew is an AI-powered family coordination app (iOS, launched 2024) competing against established players (Cozi, FamilyWall, TimeTree) and newer entrants (Sense, Nori, familymind, Ohai). At the time of this study, Honeydew had approximately 52 App Store ratings and limited domain authority — representative of a typical early-stage startup.
-
-**Conflict disclosure:** The author is the founder and CEO of Honeydew. This study was conducted to inform product strategy, not as independent research. All data sources are specified so readers can assess potential bias. We report unfavorable findings (10% citation rate vs. 60% for incumbents) alongside favorable ones.
-
----
-
-## 2. Methods
-
-### 2.1 Intervention: The LLM Discoverability Stack
-
-Between January and April 2026, we deployed four infrastructure layers:
+Between January and April 2026, Honeydew deployed four layers:
 
 ![LLM Discoverability Stack Architecture](/images/research/llm-discoverability-stack.svg)
 
-**Layer 1 — Machine-Readable Context Files.** Structured plain-text and JSON files served at the domain root, designed for LLM consumption. At a high level: a concise product-context file, a fuller context document with FAQ and capability descriptions, and a structured catalog mapping topics to citable sources. Specific file layouts and sizes are omitted.
+1. **Machine-readable context.** Plain-text and JSON files at the domain root described the product, capabilities, FAQs and source pages.
+2. **Automated generation.** Those assets were generated from shared product data on deploy so they would not drift independently.
+3. **Search-grounded content.** The site published comparison articles, structured tables, canonical URLs and FAQ schema.
+4. **Measurement.** GA4 source attribution was supplemented with a session-scoped event when `document.referrer` matched a known LLM hostname.
 
-**Layer 2 — Automated Generation.** All LLM-facing assets are auto-generated from a single source of truth on every deploy, so references never go stale relative to the live product or content.
+Everything launched in the same broad period. There was no pre-intervention baseline and no control group. The study therefore cannot assign an effect to the context files, content, instrumentation, organic growth, or any other individual change.
 
-**Layer 3 — Search Grounding Optimization.** Content optimized for LLMs that use web search to ground responses:
-- A large corpus of blog articles with FAQ schema (JSON-LD)
-- Structured comparison tables
-- Canonical URL guidance in article headers
+## How the field note was assembled
 
-**Layer 4 — Attribution and Measurement.** Custom GA4 event tracking:
-- A custom `llm_referral` event fired when the referrer matches known LLM platform hostnames
-- Session-level attribution to avoid double-counting within sessions
-- Funnel tracking from LLM referral through blog engagement to App Store click
+### Referral observation
 
-### 2.2 Data Sources
+The observation window ran from January 14 through April 13, 2026. GA4 sessions were grouped by source when the recorded source matched a known LLM hostname. The custom event separately checked `document.referrer` and recorded one session-scoped event for matching hosts.
 
-**Source 1: GA4 Referral Traffic (quantitative).** Google Analytics 4. 90-day window: January 14 - April 13, 2026. LLM sessions identified by `sessionSource` dimension matching known LLM hostnames, supplemented by custom `llm_referral` events. Engagement metrics (session duration, pages/session) extracted per source.
+### Perplexity citation check
 
-**Source 2: Citation Audit (structured observational).** 10 queries tested against Perplexity AI on April 14, 2026. Query selection criteria:
-- 2 category queries ("best AI family organization app 2026," "best app for family coordination AI assistant")
-- 3 competitor alternative queries ("alternatives to Cozi," "skylight calendar alternative," "best shared family to-do list app AI")
-- 3 feature-specific queries ("best family calendar app with AI voice," "best family list app voice input AI," "AI powered family planning app")
-- 1 pain-point query ("best app for default parent mental load")
-- 1 branded query ("honeydew family app review") as a positive control
+On April 14, 2026, I ran ten queries once each in fresh Perplexity sessions:
 
-Each query was run once in a fresh Perplexity session. Results were recorded as: whether Honeydew appeared, which competitors appeared, and what source URLs were cited. We do not claim these results are representative of all possible queries or sessions — LLM responses vary by model version, region, and session context.
+- 2 category queries: “best AI family organization app 2026” and “best app for family coordination AI assistant”
+- 3 alternative queries: “alternatives to Cozi,” “skylight calendar alternative,” and “best shared family to-do list app AI”
+- 3 feature queries: “best family calendar app with AI voice,” “best family list app voice input AI,” and “AI powered family planning app”
+- 1 pain-point query: “best app for default parent mental load”
+- 1 branded positive control: “honeydew family app review”
 
-**Source 3: Search Grounding Analysis (observational).** The same 10 queries run through web search to assess what URLs an LLM with search grounding (e.g., ChatGPT Browse, Perplexity) would discover. gethoneydew.app ranking position recorded where present.
+For each result I recorded whether Honeydew appeared and which source URL Perplexity cited. One run per query is a snapshot, not a stable citation rate: responses can vary by model version, location, session and time.
 
-### 2.3 Limitations and Threats to Validity
+### Web-search check
 
-This study has significant limitations that constrain interpretation:
+I ran the same ten queries through ordinary web search and recorded whether gethoneydew.app appeared and its approximate position. This is a retrieval comparison, not a second LLM citation test.
 
-- **No pre-intervention baseline.** The LLM stack and content were deployed concurrently. We cannot attribute observed traffic specifically to the stack vs. organic growth, SEO improvements, or other confounds. This is an observational study, not a controlled experiment.
-- **Small sample sizes.** 13 LLM sessions preclude inferential statistics. All engagement comparisons (e.g., ChatGPT vs. Claude session duration) are descriptive only. The Claude engagement data (n=1) is anecdotal and should be treated as hypothesis-generating, not evidence.
-- **Point-in-time citation tests.** LLM responses are non-deterministic. Our 10-query Perplexity audit represents a single snapshot on a single day. Results may differ by session, region, model version, or time of day.
-- **Attribution gaps.** GA4 source attribution relies on `document.referrer`, which is absent when users copy/paste URLs from LLM responses. Our custom event system partially closes this gap but likely still undercounts. The 2.2x ratio between custom events and GA4 sessions suggests significant dark traffic.
-- **Potential selection bias in query design.** Queries were selected to represent the product category, but query selection inherently reflects the researcher's understanding of user behavior.
-- **Single product, single category.** Results may not generalize to other product categories, price points, or competitive landscapes.
+## Referral traffic: measurable, but small
 
----
-
-## 3. Results
-
-### 3.1 RQ1: LLM Referral Traffic
-
-Over the 90-day observation window, LLM-attributed sessions represented **~0.5% of total site traffic** via GA4 source attribution, distributed across three platforms:
+GA4 attributed 13 sessions from 12 users to three LLM sources during the 90-day window:
 
 ![LLM Referral Sessions by Source](/images/research/llm-sessions-by-source.svg)
 
-| Source | Share of LLM Traffic | Share of All Traffic |
-|--------|---------------------|---------------------|
-| ChatGPT | 76.9% | ~0.42% |
-| Perplexity | 15.4% | ~0.08% |
-| Claude | 7.7% | ~0.04% |
-| **All LLM** | **100%** | **~0.54%** |
+| Source | Sessions | Share of the 13 LLM-attributed sessions | Share of ~2,400 total sessions |
+|---|---:|---:|---:|
+| ChatGPT | 10 | 76.9% | ~0.42% |
+| Perplexity | 2 | 15.4% | ~0.08% |
+| Claude | 1 | 7.7% | ~0.04% |
+| **Total** | **13** | **100%** | **~0.54%** |
 
-*Raw counts: 13 GA4-attributed sessions from 12 unique users, against ~2,400 total sessions.*
+The custom referrer detector produced 29 events from 27 users. That is worth monitoring alongside GA4 because the two systems classify traffic differently. It is not evidence of 29 total LLM-driven sessions, and the difference cannot be attributed to typed or search journeys that `document.referrer` never sees.
 
-A custom `llm_referral` event system — which detects LLM hostnames in `document.referrer` independently of GA4's session attribution — captured **2.2x more LLM-associated visits** than GA4 alone (29 events from 27 unique users). By this measure, LLM traffic rises to approximately **1.1% of total sessions**.
+### Engagement is too sparse to rank sources
 
-This **2.2x attribution gap** is a key methodological finding. It likely reflects users who encounter Honeydew in an LLM response and then navigate to the site by typing the URL or searching for it, rather than clicking a referral link — traffic that GA4 attributes to "direct" or "organic."
+| Source | Sessions | Observed average duration | Observed pages/session |
+|---|---:|---:|---:|
+| ChatGPT | 10 | 2m 12s | 2.8 |
+| Perplexity | 2 | 3m 45s | 3.5 |
+| Claude | 1 | 9m 35s | 6.0 |
 
-**Answer to RQ1:** Yes, the infrastructure produces measurable referral traffic. However, we cannot attribute this traffic specifically to the LLM stack vs. other factors (see Limitations).
+The Claude row describes one visit and the Perplexity row two. They should not be used to claim that one platform sends higher-value readers. At most, they suggest metrics to revisit once each source has a meaningful sample.
 
-### 3.2 RQ2: Engagement Quality by Source
+Eight of the 13 attributed sessions landed on comparison or “best of” articles, three on the homepage and two on other blog posts. That makes comparison content a reasonable hypothesis for further testing. It does not establish that LLMs generally prefer long evaluative articles; one or two additional sessions would move these shares substantially.
 
-Engagement metrics varied substantially across LLM sources:
-
-![Engagement Quality by LLM Source](/images/research/llm-engagement-metrics.svg)
-
-| Source | Avg Duration | Pages/Session | Duration Index (vs. ChatGPT) | Depth Index (vs. ChatGPT) |
-|--------|-------------|---------------|------------------------------|--------------------------|
-| ChatGPT | 2m 12s | 2.8 | 1.0x (baseline) | 1.0x (baseline) |
-| Perplexity | 3m 45s | 3.5 | 1.7x | 1.25x |
-| Claude | 9m 35s | 6.0 | 4.4x | 2.1x |
-
-**Important caveat:** The Claude and Perplexity engagement figures are based on very small samples (1 and 2 sessions respectively) and should be treated as hypothesis-generating, not conclusive. The ChatGPT baseline (10 sessions) has marginally more interpretive value; its 2m 12s average and 2.8 pages/session compare favorably to site-wide averages, suggesting LLM-referred visitors may arrive with above-average intent.
-
-**Landing page distribution by content type:**
-
-| Content Type | Share of LLM Referrals |
-|-------------|----------------------|
-| Comparison / "best of" articles | 61.5% |
-| Homepage | 23.1% |
-| Other blog content | 15.4% |
-
-The concentration of LLM referrals on evaluative content (~62%) suggests LLMs preferentially cite comprehensive comparison articles over product pages or feature announcements.
-
-**Answer to RQ2:** ChatGPT dominates volume (~77%), consistent with market share. Engagement variation across sources is directionally interesting (up to 4.4x duration differential) but sample sizes preclude confident comparison. The pattern warrants investigation with larger samples.
-
-### 3.3 RQ3: Citation Rate vs. Competitors
-
-The 10-query Perplexity audit produced the following results:
+## Citation check: one branded mention, zero generic mentions
 
 ![Perplexity Citation Audit Results](/images/research/perplexity-citation-audit.svg)
 
-**Honeydew was cited in 1 of 10 Perplexity queries (10%).** The single citation was the branded positive control query ("honeydew family app review"), sourced from the Apple App Store listing — not from gethoneydew.app content.
+Honeydew appeared in one of the ten Perplexity responses. The appearance came from the branded positive-control query, “honeydew family app review,” and cited the Apple App Store listing rather than gethoneydew.app.
 
-For all 9 non-branded queries, Honeydew was absent. This is the critical finding: users discovering family apps through LLMs via generic queries will not encounter Honeydew.
+Honeydew appeared in none of the nine generic category, alternative, feature or pain-point queries. That is the clearest negative finding in the field note: in this snapshot, a person using those generic Perplexity queries would not have encountered the product.
 
-**Competitive benchmark** (combined Perplexity + search grounding results across 20 query-observations):
+The earlier version of this post combined Perplexity citations and ordinary search appearances into one competitor “citation rate.” That mixed two different observations and has been removed. The data here support a Perplexity result of 1/10 for Honeydew and a separate web-search result of 3/10; they do not support a combined citation percentage.
 
-![Competitor Citation Frequency](/images/research/competitor-citation-frequency.svg)
+## Search found the site more often than Perplexity selected it
 
-| Competitor | Citation Rate | Gap vs. Honeydew |
-|-----------|-------------|-----------------|
-| Cozi | 60% | 6.0x |
-| Sense | 60% | 6.0x |
-| Nori | 50% | 5.0x |
-| familymind | 40% | 4.0x |
-| Gether | 30% | 3.0x |
-| Ohai | 20% | 2.0x |
-| **Honeydew** | **10%** | **baseline** |
+| Observation | Honeydew appearances |
+|---|---:|
+| Web-search result sets | 3/10 |
+| Perplexity responses | 1/10 |
 
-**Answer to RQ3:** At 10%, Honeydew's citation rate is 6x below the category leaders (60%). The two instances where Honeydew appeared correspond to: (1) a branded query (expected baseline), and (2) a query matching a comprehensive 4,000+ word comparison article that ranks competitively in web search. The gap is consistent with a domain authority disadvantage rather than content quality.
+The site appeared around position 5 for a Skylight-alternatives query, around position 9 for an AI-family-planning query, and within the top results for the branded query. Perplexity cited only the App Store result for the branded query.
 
-### 3.4 RQ4: Content Characteristics Correlated with Citation
+That difference could reflect Perplexity's source-selection process, result variability, query execution, or other factors. Ten single-run queries cannot identify the cause.
 
-Two content patterns correlated with citation in our (limited) data:
+## What the data do not establish
 
-**Finding 1: Evaluative content dominates.** 61.5% of LLM referral landing pages were comparison or "best of" articles. The one non-branded Perplexity citation linked to a 4,000+ word comparison page. This is consistent with the hypothesis that LLMs preferentially cite comprehensive evaluative content over product pages.
+- **No causal lift from the four-layer stack.** Measurement, content and context files changed together, without a pre-period or control.
+- **No estimate of total LLM-driven traffic.** Both analytics methods rely on observable browser journeys. Typed URLs, later searches and cross-device discovery are outside the data.
+- **No platform-quality ranking.** Source-level engagement samples range from one to ten sessions.
+- **No general startup citation rate.** The citation check covered one product, one category, one provider and ten single-run queries.
+- **No demonstrated `.llms.txt` effect.** None of the observed citations referenced the machine-readable files directly.
+- **No measured domain-authority or content-quality effect.** Established products may benefit from older domains, third-party coverage, download volume or other signals, but this field note did not isolate or quantify them.
 
-**Finding 2: App Store presence as citation source.** Perplexity's branded-query citation sourced the Apple App Store listing, not website content. This suggests App Store presence (ratings, description quality, review volume) may function as an independent citation signal.
+## Hypotheses worth testing next
 
-**Non-finding: .llms.txt impact.** We cannot determine whether the `.llms.txt` files, `llm-citations.json`, or LLM note blocks contributed to any citations. No citation in our audit referenced these assets as sources.
+The observations suggest questions, not conclusions:
 
-### 3.5 Search Grounding Gap
+1. Do comparison pages receive more LLM-referred landings than product pages after controlling for their share of the site's search traffic?
+2. Does App Store review volume correlate with appearance in product-recommendation responses across a larger set of apps?
+3. How often do GA4 source labels and a referrer-based event disagree when joined at the event or session level?
+4. Does a fixed monthly query panel show citation changes after new third-party coverage or meaningful search-ranking movement?
+5. Do machine-readable context files ever appear in crawler logs or cited source lists?
 
-Comparing Perplexity citation results to raw web search rankings reveals a filtering gap:
+## A practical measurement loop
 
-| Metric | Web Search | Perplexity |
-|--------|-----------|------------|
-| Honeydew appearance rate | 3/10 (30%) | 1/10 (10%) |
-| Positions when appearing | #3, #5, #9 | App Store only |
+- Keep GA4 source-attributed sessions and custom referrer events as separate series.
+- Preserve raw source, timestamp and landing-page data long enough to audit classification differences without collecting email addresses or other unnecessary personal information.
+- Use tagged links in channels you control; do not infer invisible journeys from referrer data.
+- Repeat the same citation queries on a schedule, with multiple runs per query, and record provider and model version when available.
+- Compare LLM citations with web-search appearances, but do not merge them into one rate.
+- Treat comparison content, App Store presence, third-party coverage and context files as separate hypotheses.
 
-gethoneydew.app content ranked in web search results for 3 queries (Skylight alternatives at position ~5, AI family planning at ~9, branded at top 3), but Perplexity cited Honeydew in only 1. This suggests Perplexity applies additional selection criteria beyond raw search ranking when choosing which products to recommend.
+## Conflict, materials and scope
 
----
+I am the founder of Honeydew and conducted this analysis to inform its distribution strategy. The result is not independent research. The query list is published above; the underlying query-level audit and anonymized aggregate analytics are available on request. There is no verified public data repository linked from this post.
 
-## 4. Discussion
-
-### 4.1 Infrastructure Is Necessary for Measurement, Not Sufficient for Citation
-
-The most defensible claim from this study is not about discoverability — it's about measurement. Before the attribution layer, LLM referrals were invisible. After deployment, we can quantify a channel that represents 0.5-1.1% of traffic and growing.
-
-Whether the content and context layers (`.llms.txt`, structured citations) directly caused any of the observed LLM referral sessions is unknowable without a controlled experiment. The more parsimonious explanation is that existing blog content — specifically comprehensive comparison articles — drives search grounding, which in turn drives LLM citation. The LLM-specific infrastructure may contribute at the margins, but domain authority and content depth appear to be the dominant factors.
-
-### 4.2 The Attribution Problem Is Real and Unsolved
-
-The 2.2x gap between custom event counts and GA4 session attribution highlights a systemic measurement challenge. When a user reads a product recommendation in ChatGPT, then types the URL into their browser, that visit is attributed to "direct" traffic in GA4 — making the LLM channel invisible without custom instrumentation.
-
-This has practical implications: any startup measuring LLM impact through standard analytics is likely seeing only **~45% of actual LLM-driven traffic**. Custom event tracking based on referrer detection partially closes this gap but cannot capture fully indirect discovery (e.g., a user who sees a product name in an LLM response, then Googles it days later).
-
-### 4.3 Incumbent Advantage Is Structural
-
-The 6x citation gap between Honeydew (10%) and Cozi (60%) is likely structural, not tactical. Cozi has:
-- 15+ years of operation and content accumulation
-- Extensive third-party review coverage (New York Times, Wirecutter, etc.)
-- Millions of downloads creating a web presence footprint
-- Training data inclusion from years of crawlable content
-
-No amount of `.llms.txt` optimization can replicate these signals in the short term. The implication for early-stage startups: LLM discoverability infrastructure is a necessary foundation, but the primary lever is building the product and web presence that LLMs eventually learn to cite.
-
-### 4.4 Hypotheses for Further Testing
-
-Given the limitations of this study, we frame our observations as testable hypotheses rather than recommendations:
-
-- **H1:** Comprehensive comparison articles (>3,000 words with structured tables) produce higher LLM citation rates than short-form content, controlling for domain authority.
-- **H2:** App Store rating volume correlates with LLM citation frequency for product recommendation queries.
-- **H3:** Custom `llm_referral` events capture 2-3x more LLM-driven traffic than GA4 source attribution alone.
-- **H4:** LLM referrals from Claude produce higher engagement (session duration, pages/session) than ChatGPT referrals, controlling for landing page. (Requires n >> 1 to test.)
-
----
-
-## 5. Replication Guide
-
-All tools and methodology used in this study are available for replication:
-
-**Attribution tracking:** Deploy GA4 custom events that detect known LLM hostnames in `document.referrer` across the major AI platforms (ChatGPT, Claude, Perplexity, Gemini, Copilot, and a long tail of smaller AI search products).
-
-**Citation audit:** Run 10 representative queries against Perplexity (or any LLM with browsing). Record: (1) whether your product appeared, (2) which competitors appeared, (3) what source URLs were cited. Run monthly for longitudinal tracking.
-
-**Search grounding analysis:** Run the same queries through web search. Record ranking positions for your domain. Compare to LLM citation rates to identify the filtering gap.
-
-**LLM context files:** Serve `.llms.txt` at your domain root with structured product context. The format is a convention, not a standard — any structure that is machine-parseable and comprehensive is likely sufficient.
-
-We encourage other builders to publish their own results. The field needs comparative data across product categories, domain authority levels, and competitive landscapes.
-
----
-
-## 6. Conclusion
-
-This study provides early empirical evidence on LLM discoverability for early-stage startups. The core finding is sobering but useful: **dedicated LLM infrastructure produces measurable but modest referral traffic (~0.5-1.1% of sessions), and cannot close the structural 6x citation gap against established competitors in the short term.**
-
-The more actionable finding may be methodological: custom LLM referral tracking reveals approximately **2.2x more LLM-attributed traffic** than standard analytics — meaning most startups are seeing only ~45% of their actual LLM-driven visits. The channel is likely more significant than anyone realizes, because the measurement tools haven't caught up.
-
-For the practitioner: build the measurement layer first, invest in comprehensive evaluative content, and treat LLM discoverability as a long-term compounding investment rather than a tactical optimization.
-
----
-
----
-
-## Frequently Asked Questions
-
-**Do LLMs cite startups in their recommendations?**
-Rarely. In our 90-day study, our early-stage product achieved a 10% citation rate vs. 60% for category incumbents — a 6x gap driven primarily by domain authority and third-party coverage, not content quality.
-
-**How much traffic do LLMs actually send to websites?**
-LLM-attributed traffic accounted for ~0.5% of total sessions via standard GA4, rising to ~1.1% with custom referral tracking — a 2.2x attribution gap suggesting most analytics significantly undercount LLM-driven traffic.
-
-**Does a .llms.txt file help with LLM discoverability?**
-We found zero evidence that .llms.txt files or machine-readable context files were directly consumed by any LLM. Domain authority and comprehensive evaluative content appear to be the dominant factors.
-
-**What content gets cited most by LLMs?**
-~62% of our LLM referral traffic landed on comparison and "best of" articles. LLMs preferentially cite comprehensive evaluative content over product pages or marketing copy.
-
-**Which LLM sends the most referral traffic?**
-ChatGPT drove 77% of volume, followed by Perplexity (15%) and Claude (8%). However, Claude referrals showed 4.4x longer session duration and 2.1x more pages per session.
-
-**How do you track LLM referral traffic?**
-Deploy custom GA4 events detecting known LLM hostnames in `document.referrer`. Standard GA4 captures only ~45% of actual LLM-driven traffic because users often copy/paste URLs rather than clicking referral links.
-
----
-
-*Pete Ghiorse is the founder of Honeydew, an AI-powered family coordination app. This research was conducted in April 2026 using GA4 analytics and manual citation testing. All metrics are descriptive; sample sizes preclude inferential claims. The author has a financial interest in Honeydew. Raw data available on request.*
+The field note is useful as a dated baseline: LLM referrals were observable but small, Honeydew was absent from nine generic Perplexity queries, and ordinary search retrieved the site more often than Perplexity selected it. Anything stronger needs more data and a design capable of supporting the claim.

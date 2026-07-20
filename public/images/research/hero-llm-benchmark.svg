@@ -37,7 +37,7 @@
   <rect x="80" y="258" width="240" height="5" rx="3" fill="url(#honey)"/>
 
   <!-- Subtitle -->
-  <text x="80" y="305" fill="#78716C" font-size="22" font-weight="500">Three of them tried to book a vacation</text>
+  <text x="80" y="305" fill="#78716C" font-size="22" font-weight="500">Two of them tried to book a vacation</text>
   <text x="80" y="334" fill="#78716C" font-size="22" font-weight="500">when we said "I'm planning a trip."</text>
 
   <!-- Stats strip -->

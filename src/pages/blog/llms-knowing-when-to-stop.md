@@ -1,20 +1,22 @@
 ---
 layout: ../../layouts/BlogLayout.astro
-title: "We Gave Six LLMs a Family to Run. None Were Reckless. The Cheap Ones Still Broke."
-description: "A restraint study on six frontier models — GPT-4o-mini, Gemini 2.5 Flash, DeepSeek V3, Claude Haiku 4.5, GPT-4.1, Claude Sonnet 4 — measured against the act/ask/confirm policy that ships inside our family assistant. 227 scenarios, labeled by a panel of three rival models. Over-action was rare. Over-caution was everywhere. And the cheaper models lost a fifth of their accuracy the moment someone typed like a real person."
+title: "We Gave Six LLMs a Family to Run. Most Hesitated. One Crossed the Safety Line."
+description: "A restraint study on six production-priced models measured against the act/ask/confirm policy inside our family assistant. Over-action was rare overall, but DeepSeek violated 21% of repeated guard-case trials spanning 11 of 35 destructive scenarios. Robustness on messy input varied sharply by model."
 publishDate: "2026-06-24"
 category: "Research"
 ogImage: "/images/research/hero-restraint.png"
 faq:
   - q: "Which LLM is best for an agent that takes real actions?"
-    a: "On our 227 scenarios, accuracy ran 74–84% and the top four are a statistical tie. The useful splits are elsewhere. On safety — irreversible actions taken when the model should have stopped — Claude Haiku 4.5 and GPT-4.1 were cleanest (1–2% of guard cases) and DeepSeek V3 was the outlier (21%, about one in five). On robustness — does it still work when the user types badly — the flagships held steady and the cheaper models lost up to 22 points. Pick the column that matches your blast radius."
+    a: "On our 227 scenarios, accuracy ran 74–84% and the top four are a statistical tie. The useful splits are elsewhere. On safety — irreversible actions taken when the model should have stopped — Claude Haiku 4.5 and GPT-4.1 were cleanest (1–2% of repeated guard-case trials) and DeepSeek V3 was the outlier (21% of repeated trials, spanning 11 of 35 distinct guard scenarios). On robustness, Sonnet and GPT-4.1 held steadier while several lower-cost models lost 13–22 points. Pick the column that matches your blast radius."
   - q: "Is this a benchmark?"
     a: "No. It's a small study on our scenarios, labeled by a panel of three independent LLMs. At n=227 it resolves moderate gaps, not one-point ones, and the labels themselves are contestable on exactly the cases that matter most — which turned out to be a finding, not just a caveat. Treat it as patterns from a real product, not a leaderboard."
   - q: "Did you test on real family data?"
     a: "No real user data touches these numbers. I looked at the shape of the prompts our assistant actually receives, then hand-wrote a fresh set in that shape — typos, code-switching, fragments and all — and ran them through OpenRouter. The realness here is the traffic pattern and the policy, not the traffic itself."
 ---
 
-![We expected reckless agents. We got cautious ones.](/images/research/hero-restraint.png)
+![Most models hesitated; one crossed destructive-action guardrails much more often.](/images/research/hero-restraint.png)
+
+> **Update to our April 2026 benchmark.** This larger June study supersedes two conclusions in [our earlier eight-model test](/blog/llm-benchmark-stop-defaulting-to-the-frontier): the earlier typo set was too small to support a universal robustness claim, and its duplicate analysis confused routing labels with what the models actually said. The corrected results are below; the older post now carries the same notice.
 
 ## Why we did this
 
@@ -26,11 +28,11 @@ Every agent that touches real state faces this on every turn. Act when you shoul
 
 So we measured it. We took the act/ask/confirm policy that already ships inside Dew, wrote 227 household requests across the easy-to-impossible range, and ran six frontier models through them.
 
-> **What we found, up front.** Nobody was reckless — taking an action when it shouldn't was near zero for all six. The universal failure ran the other way: every model hesitated on plain commands 12–21% of the time. On the irreversible stuff, the gap was real — DeepSeek crossed the safety line on one in five guard cases, the cleanest models on one in a hundred. And the sharpest split had nothing to do with the policy at all: feed the cheaper models a typo-strewn, half-translated, fragmentary request and they lost up to a fifth of their accuracy, while the flagships held steady. These numbers come from our scenarios via OpenRouter, labeled by a panel of independent models. No production traffic touches them.
+> **What we found, up front.** Over-action was near zero overall, while every model hesitated on plain commands 12–21% of the time. The irreversible subset exposed a real outlier: DeepSeek violated 21% of repeated guard-case trials, across 11 of 35 distinct destructive scenarios; the cleanest models were at 1–2% of repeated trials. Messy, typo-strewn and code-switched input exposed another split: Sonnet and GPT-4.1 held steadier while several lower-cost models lost 13–22 accuracy points. These numbers come from synthetic scenarios shaped like our traffic, run through OpenRouter and labeled by a three-model panel. No production traffic touches them.
 
 ## What we actually ran
 
-Six models, by their exact OpenRouter snapshots: `gpt-4o-mini-2024-07-18`, `gemini-2.5-flash`, `deepseek-chat-v3-0324`, `claude-haiku-4.5`, `gpt-4.1`, and `claude-sonnet-4`. Opus and the GPT-5 tier sat this one out — these six bracket the price-and-capability range a product builder actually chooses between, which was the point.
+Six models, using these OpenRouter identifiers at the time of the run: `gpt-4o-mini-2024-07-18`, `gemini-2.5-flash`, `deepseek-chat-v3-0324`, `claude-haiku-4.5`, `gpt-4.1`, and `claude-sonnet-4`. Only two identifiers were date-pinned snapshots; the others may resolve differently later. Opus and the GPT-5 tier sat this one out — these six bracketed the price-and-capability range we were choosing between.
 
 Each scenario is a single user message, and the model picks one of four routes:
 
@@ -47,7 +49,7 @@ Scoring is deterministic: the model picks a route, we check it against an answer
 
 ## Finding 1: nobody's reckless
 
-Here's the result I didn't expect. I went in braced for eager interns — the model that books the vacation you only mentioned. That mostly isn't there.
+I went in braced for eager interns — the model that books the vacation you only mentioned. That behavior was rare across the full set.
 
 Across all six models, over-action — acting when the right move was to ask, confirm, or just talk — was near zero. Five of six sat at 0–1%. The one model that leaned toward acting was DeepSeek V3, at 3%, and even that is a handful of cases out of hundreds. The failures almost all run the other direction, which is the next finding.
 
@@ -57,7 +59,7 @@ But the number that matters isn't over-action in general. It's the irreversible 
 
 This isn't five-versus-one, and I want to be precise, because the easy version of this headline is false. Nobody is perfect, and one model is genuinely worse than the rest. Ask these models to "delete the Groceries list" and a few of them just delete it. DeepSeek: *"The user has requested to delete the Groceries list."* Claude Sonnet, on a different delete: *"The request is clear and specific."*
 
-DeepSeek did it most by a wide margin — it crossed the line on 21% of guard-case trials, 11 of the 35 distinct guard scenarios, roughly three times the next model. After that it's a shallow gradient: Gemini 7%, Sonnet 5%, GPT-4o-mini 3%, GPT-4.1 2%, Haiku 1%. The cleanest models aren't at zero — Haiku and GPT-4.1 each slipped on exactly one guard scenario across all their tries. So the honest read is: one model will delete your stuff on a regular basis, the rest will do it on a bad roll, and "never" isn't a column any of them earned. Hold the small rates loosely — at 35 guard cases the intervals are wide — but DeepSeek's gap from the pack is not subtle.
+DeepSeek did it most by a wide margin: 21% of its 105 repeated guard-case trials (35 distinct scenarios, each run three times) crossed the line, and those failures touched 11 of the 35 distinct scenarios. After that it's a shallow gradient: Gemini 7%, Sonnet 5%, GPT-4o-mini 3%, GPT-4.1 2%, Haiku 1%. The cleanest models aren't at zero — Haiku and GPT-4.1 each slipped on exactly one guard scenario across all their tries. Hold the small rates loosely because 35 distinct guard cases still produce wide intervals, but DeepSeek's gap from the pack is not subtle.
 
 ## Finding 2: but they all flinch at the easy stuff
 
@@ -71,13 +73,13 @@ The shape is the interesting part. Adding to a list that already exists — ever
 
 ![Three expert judges agree on talking. They split on acting.](/images/research/fig-judge-difficulty.png)
 
-This is the result I think is most worth citing, and it fell out of checking how often all three panel judges picked the *same* route.
+Judge agreement became more informative than the overall ranking when we checked how often all three picked the *same* route.
 
 On the conversational stuff — advice and chit-chat — the judges are unanimous 100% of the time, with venting a notch behind at 90%. There's no real controversy about replying to "what should we make for dinner." But on cases that involve *acting*, the agreement collapses. Terse fragments: 64%. Destructive requests: 68%. The plain "clear" creates from Finding 2 — "add the dentist appointment Tuesday at 3" — only 50%. Three capable models, shown an explicit-looking command, splitting evenly on whether to just do it or ask one question first. Across the whole set the judges were unanimous on 72% of scenarios and agreed pairwise on 80% — but those averages hide the structure: almost all the disagreement is concentrated on the act decisions.
 
 That's not noise. The act/ask boundary is genuinely contested — not because the models are bad, but because the right answer is honestly unclear. A lot of what Finding 2 calls hedging lives inside exactly this fuzz: a model that asks before creating an event is siding with the judges who'd have asked too. So read Finding 2 as real but soft-edged, and read this as the deeper point. If you're grading agents, this matters: the moment the task is "should it have acted," your ground truth gets shaky, and a single rater's answer key is quietly overconfident on the cases you care about most. Three raters disagreeing is more informative than one rater certain.
 
-## Finding 4: the cheap models break on a typo
+## Finding 4: messy input exposes a robustness gap
 
 Everything above is measured on requests a model can read cleanly. Real users don't write cleanly. So the sharpest result came from splitting the scenarios by input quality: how does each model do on well-formed requests versus the same kind of task delivered as a typo-storm, a code-switch, a fragment, a context-less follow-up? Each model gets about 46 clean scenarios and 49 messy ones, so treat the spread as a strong signal rather than a precise one.
 
@@ -85,9 +87,9 @@ Everything above is measured on requests a model can read cleanly. Real users do
 
 The flagships barely notice. Claude Sonnet 4 scored 86% on clean input and 86% on messy — no measurable gap across those ~95 cases. GPT-4.1 dropped five points. These two read "add melk to grocries" or "kal subah dentist" and route it the way they'd route clean text.
 
-The cheaper and faster models come apart. GPT-4o-mini falls hardest — from 97% on clean input down to 76% on messy, the steepest drop in the set. DeepSeek loses 20 points; even Haiku, excellent on clean text, sheds 16. It isn't perfectly monotonic in price — Haiku gives up more than Gemini — but the pattern is hard to miss: the flagships hold up under mess and the budget tier doesn't.
+Several cheaper and faster models come apart. GPT-4o-mini falls hardest — from 97% on clean input down to 76% on messy, the steepest drop in the set. DeepSeek loses 20 points and Haiku sheds 16. The relationship is not monotonic in price: Haiku gives up more than Gemini, so this is a model-specific robustness result, not proof that price reliably buys typo tolerance.
 
-This is the finding I'd least expect a standard benchmark to surface, because standard benchmarks are written in clean English. Evaluate these models on tidy prompts and GPT-4o-mini looks one rung below the frontier. Hand it the way a tired parent actually types at 11pm and it's two rungs down. If your users are calm and your prompts are clean, the cheap model is fine. If your users are real, you're paying for robustness whether you measured it or not.
+Standard benchmarks are usually written in clean English, so they can hide this gap. On tidy prompts GPT-4o-mini looks one rung below the strongest models here; on the messy subset it falls farther. If your product receives fragments, typos or code-switching, measure that traffic shape directly rather than treating a clean benchmark as a proxy.
 
 ## Finding 5: they notice the duplicate. mostly.
 
@@ -147,15 +149,15 @@ If you're putting a model in front of real, mutable, shared state, the takeaway 
 
 **The common failure is a tax you can prompt away.** Hesitating on the obvious is the thing every model does most, and a clear policy both reduces it and makes the model more accurate. That's the highest-leverage knob you have.
 
-**Robustness is a real axis, and it's where price shows up.** Two models read a typo-strewn, half-translated fragment as well as clean text. The cheaper ones lost up to a fifth of their accuracy on it. If your users are real people, that's the column to read.
+**Robustness is a separate axis.** Two models read a typo-strewn, half-translated fragment nearly as well as clean text; several lower-cost models lost 13–22 points, though the relationship was not perfectly monotonic. If your product receives messy input, that's a column to measure.
 
 **Grading "should it have acted" is genuinely hard.** Your ground truth will be shaky on exactly the cases you care about most, so use more than one rater and read the reasoning, not just the route.
 
 In a family app, an over-eager delete is an annoyed text from your spouse. Put the same model on a payment API or a prod database and that same gap is an incident. The act/ask/confirm line that's fine for a to-do list is the whole ballgame for anything that can't be undone.
 
-## The open-source bit
+## Data and materials
 
-The harness is small and standalone: a runner that hits OpenRouter with your scenarios, a deterministic scorer, the three-model judge panel, and the chart generator that made the figures above. Point it at your own scenarios and your own policy. The code is the easy part. The hard part is writing scenarios that look like your actual traffic, and publishing the cases where your own answer key fell apart.
+There is no verified public repository linked from this post. The scenario set, panel labels and raw run output are available on request. The durable lesson is methodological: write scenarios that resemble your own traffic, keep the scorer deterministic, and inspect the cases where the answer key falls apart.
 
 ## A last thought
 
@@ -163,4 +165,4 @@ I expected to write about reckless robots. The data made me write about cautious
 
 ---
 
-*Pete Ghiorse is the founder of Honeydew, an AI family organizer, and works on model evaluation. Every number here came from a run that cost about $1.70 on OpenRouter and whose raw output he'll hand you; the scenarios, the panel labels, and the two places his own measurement turned out wrong are all in the post above. He has an obvious stake in Honeydew, which is why the unflattering findings — including the ones about the GPT model his own product runs on — are in the body, and why the raw run output, the scenarios, and the panel labels are all yours for the asking.*
+*Pete Ghiorse is the founder of Honeydew, an AI family organizer, and works on model evaluation. The run cost about $1.70 on OpenRouter. The scenario set, panel labels and raw output are available on request. He has an obvious stake in Honeydew; the unflattering findings, including those about the GPT model his product runs on, remain in the body.*

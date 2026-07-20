@@ -15,8 +15,6 @@ For a few years the pitch has been a list of jobs the machine can do instead of 
 
 It isn't only arrogance. "It replaced a lawyer" is a claim you can measure. "It made a lawyer better at the part of the work that's actually hers" is not. So we make the first claim, because there's a number under it. The pitch gets shaped by what's easy to count, and what's easy to count is replacement.
 
-The deeper mistake is treating friction as one thing.
-
 We talk about technology as if its job is to remove effort, and about progress as if it's effort falling toward zero. But effort doesn't disappear when a tool arrives. It moves. The plow didn't end the work of eating; it pushed that work out into the field, then into an office, and lately onto a screen. Every tool lifts the difficulty off one place and sets it down in another. The only question that matters is where it set it down, and whether that was somewhere you wanted it gone.
 
 Some of it is just toil. The second pass on a form. Remembering the milk and the permission slip. The forty minutes of setup before ten minutes of real work. Take that off someone's plate and you've done them a plain good turn. That's most of what people mean when they say AI will help, and they're right.
@@ -31,10 +29,10 @@ I've used one rule for as long as I can remember, since long before any of this:
 
 Frictionless AI sells the opposite habit. It hands you the result now and tells you the inputs are the machine's job. That is the rule backward. The odd thing is that when I use these tools well, I do the reverse of what the pitch describes. I get more careful with the inputs, not less, because the tool took the busywork and gave me back the work that needs judgment.
 
-It isn't a line that climbs as effort falls. It's a hump. Too little friction and you go slack. Too much and you break. Whoever you're trying to become turns up somewhere in the middle. "Frictionless" is a sales word for the far left of that hump, and it's sold to you as freedom.
+Too little friction and you go slack. Too much and you break. Whoever you're trying to become turns up somewhere between them. "Frictionless" is a sales word for one extreme, sold to you as freedom.
 
-Almost none of what counts survives as a number. The result is what gets written down: the company that sold, the grade, the launch. But the result is rarely the thing that changed you. Ask anyone about the work that made them who they are, and they won't tell you how it came out. They'll tell you about the stretch when they weren't sure it would. That stretch is exactly what frictionless is offering to take off your hands, and it was the only part that was ever yours.
+I know this from GiveTide. "Acquired in 2022" is the line that fits on a résumé. It leaves out the five years of building the company before there was any result worth writing down—the long part the acquisition later compressed into one line. Honeydew now lets me build faster, but speed is useful only when it clears away setup and repetition. I still need the part where I decide what is worth building and live with being wrong.
 
-So I'm not against AI. I use it every day. I'd change one thing: the pitch. Stop promising people the machine will take the hard part off their hands. It can't, really. It can only move the hard somewhere that gives nothing back. Leave them the hard part. It was the part that made them.
+I'd change one thing about the pitch. Stop promising people the machine will take the hard part off their hands. It can't, really. It can only move the hard somewhere that gives nothing back. Leave them the hard part. It was the part that made them.
 
 *—Pete*
