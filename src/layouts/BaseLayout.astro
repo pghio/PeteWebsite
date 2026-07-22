@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import Analytics from '../components/Analytics.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import { GA_MEASUREMENT_ID } from '../config/analytics';
+import { PROFILE } from '../data/profile';
 
 interface Props {
   title: string;
@@ -16,14 +17,14 @@ interface Props {
 
 const {
   title,
-  description = 'Pete Ghiorse is a Group PM, founder of Honeydew, and writer on AI, product judgment, and the work technology leaves to people.',
+  description = `${PROFILE.name} is an AI/ML product leader, founder, and hands-on builder focused on AI agents, model evaluation, production ML, and trustworthy consumer AI.`,
   ogImage = '/images/posts/monsters-of-the-mind.png',
   ogImageAlt = 'Monsters of the Mind, an essay by Pete Ghiorse',
   noindex = false,
 } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, 'https://peterghiorse.com');
 const socialTitle = title === 'Home'
-  ? 'Pete Ghiorse — Group PM, Founder & Writer'
+  ? 'Pete Ghiorse | AI/ML Product Leader, Founder & Hands-on Builder'
   : `${title} | Pete Ghiorse`;
 const socialImageURL = new URL(ogImage, 'https://peterghiorse.com');
 const analyticsEnabled = Boolean(GA_MEASUREMENT_ID);
@@ -31,9 +32,9 @@ const analyticsEnabled = Boolean(GA_MEASUREMENT_ID);
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Pete Ghiorse",
-  "url": "https://peterghiorse.com",
-  "jobTitle": "Group PM",
+  "name": PROFILE.name,
+  "url": PROFILE.links.website,
+  "jobTitle": PROFILE.role,
   "worksFor": {
     "@type": "Organization",
     "name": "Capital One"
@@ -42,12 +43,12 @@ const personSchema = {
     "@type": "CollegeOrUniversity",
     "name": "University of Richmond"
   },
-  "knowsAbout": ["AI Product Management", "Machine Learning", "Agentic Systems", "LLM Discoverability", "Startup Founding"],
+  "knowsAbout": ["AI Product Strategy", "AI Agents", "LLM Evaluation", "Model Governance", "Production Machine Learning", "Multimodal AI", "0-to-1 Product Development", "Technical Writing"],
   "sameAs": [
-    "https://linkedin.com/in/peteghiorse",
-    "https://github.com/pghio",
-    "https://peterghiorse.substack.com",
-    "https://gethoneydew.app"
+    PROFILE.links.linkedin,
+    PROFILE.links.github,
+    PROFILE.links.substack,
+    PROFILE.links.honeydew
   ]
 };
 

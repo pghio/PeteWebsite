@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import { PROFILE } from '../data/profile';
 ---
 
 <BaseLayout title="Projects" description="Projects and products built by Pete Ghiorse.">
@@ -16,12 +17,19 @@ import ProjectCard from '../components/ProjectCard.astro';
     <div class="grid md:grid-cols-2 gap-5">
       <ProjectCard title="Honeydew" description="An AI assistant for the calendars, groceries, appointments, and loose ends of family life. Voice, text, and photo requests route through a catalog of 60+ tools." tags={["React", "TypeScript", "Node.js", "OpenAI", "Whisper", "WebSockets", "Vite", "Vercel"]} link="https://gethoneydew.app" status="Active" />
       <ProjectCard title="GiveTide" description="The charitable-giving platform I co-founded, built, and ran for five years before its acquisition in 2022." tags={["Fintech", "Startup", "Co-Founder", "Full Stack"]} status="Acquired 2022" />
-      <ProjectCard title="AI/ML Spend Controls" description="ML-powered fraud detection and spend management at Capital One, where I lead product direction as a Group PM." tags={["AI/ML", "Fraud Detection", "Enterprise", "Product Management"]} status="Current Role" />
+      <ProjectCard title="AI/ML Spend Controls" description="ML-powered fraud detection and spend management at Capital One, where I lead product direction as a Group Product Manager." tags={["AI/ML", "Fraud Detection", "Enterprise", "Product Management"]} status="Current Role" />
       <ProjectCard title="Production AI Research" description="Benchmarks built from Honeydew's real prompt and tool schema: where models over-act, where they freeze, and why the expensive ones still fail on ambiguity." tags={["LLM Evaluation", "Agent Safety", "Published Methods"]} link="https://peterghiorse.com/blog" status="Ongoing" />
+      <ProjectCard title="PeteWebsite" description="A consent-aware research and writing system with structured metadata, full-content RSS, corrections, related-reading loops, and synchronized distribution to Substack." tags={["Astro", "Editorial Systems", "Analytics", "Technical Writing"]} link="https://github.com/pghio/PeteWebsite" status="Open Source" />
+      <ProjectCard title="Evidence-Backed Publishing" description="A repeatable editorial practice: define the question, retain methods and negative results, red-team the claims, disclose limitations, and keep corrections visible." tags={["Research Design", "Fact Checking", "Data Visualization"]} link="https://peterghiorse.com/about#practice" status="Ongoing Practice" />
     </div>
 
-    <div class="mt-12 text-center">
-      <a href="https://peterghiorse.substack.com/subscribe?utm_source=peterghiorse.com&utm_medium=website&utm_campaign=newsletter_growth&utm_content=projects" target="_blank" rel="noopener" data-newsletter-cta data-newsletter-impression data-analytics-placement="projects" class="text-(--color-primary) font-semibold hover:underline">Get new build notes and research on Substack &rarr;</a>
+    <div class="mt-12 p-7 rounded-2xl bg-slate-50 dark:bg-[#141b2d] border border-slate-200 dark:border-slate-800 text-center">
+      <p class="font-bold mb-2">Looking for the product-leadership through-line?</p>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">{PROFILE.recruiterFocus}</p>
+      <div class="flex flex-wrap justify-center gap-5">
+        <a href="/resume" data-profile-cta="recruiter_snapshot" data-analytics-placement="projects" class="text-(--color-primary) font-semibold hover:underline">Recruiter snapshot &rarr;</a>
+        <a href="https://peterghiorse.substack.com/subscribe?utm_source=peterghiorse.com&utm_medium=website&utm_campaign=newsletter_growth&utm_content=projects" target="_blank" rel="noopener" data-newsletter-cta data-newsletter-impression data-analytics-placement="projects" class="text-(--color-primary) font-semibold hover:underline">Get new field notes &rarr;</a>
+      </div>
     </div>
   </section>
 </BaseLayout>

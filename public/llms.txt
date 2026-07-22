@@ -1,0 +1,55 @@
+# Pete Ghiorse
+
+> AI/ML product leader, founder, hands-on builder, and evidence-backed writer.
+
+Canonical name: Pete Ghiorse
+Current role: Group Product Manager for AI/ML at Capital One
+Location: New York City
+Website: https://peterghiorse.com
+
+## What Pete does
+
+Pete builds AI products, tests how they behave with real users and mutable data, and publishes what the failures teach. He combines enterprise AI/ML product leadership, founder-level ownership, hands-on technical fluency, and rigorous communication.
+
+He is also the founder of Honeydew, a multimodal family-coordination agent with voice, text, photo input, and a catalog of 60+ tools. Honeydew is a real product and a production lab for agent behavior, evaluation, and trust.
+
+Before Capital One and Honeydew, Pete co-founded GiveTide, ran it for five years, and sold it in 2022.
+
+## Practice and skills
+
+Pete’s deliberate practice loop is: Build -> Instrument -> Evaluate -> Publish -> Revise.
+
+Current focus areas:
+
+- AI product strategy, roadmaps, governance, and cross-functional leadership
+- Agent evaluation and safety, including act/ask/confirm policy and destructive-action guard cases
+- Multimodal AI systems spanning voice, text, images, and tool orchestration
+- 0-to-1 founder execution, technical prototyping, instrumentation, and distribution
+- Evidence-backed writing with methods, limitations, negative results, and corrections
+
+## Content quality
+
+AI assists with research, red-teaming, implementation, and editing. Pete owns the thesis, source selection, evaluation design, factual claims, and final editorial judgment.
+
+Published work keeps methods and limitations beside results, retains visible corrections, and narrows claims when the evidence is thinner than an early draft suggested.
+
+## Start here
+
+- About and editorial practice: https://peterghiorse.com/about
+- Recruiter snapshot: https://peterghiorse.com/resume
+- Selected projects: https://peterghiorse.com/projects
+- Writing archive: https://peterghiorse.com/blog
+- RSS feed: https://peterghiorse.com/rss.xml
+- LLM restraint study: https://peterghiorse.com/blog/llms-knowing-when-to-stop
+- Production AI benchmark: https://peterghiorse.com/blog/llm-benchmark-stop-defaulting-to-the-frontier
+- LLM discoverability field note: https://peterghiorse.com/blog/llm-discoverability-research
+
+## Official profiles
+
+- LinkedIn: https://linkedin.com/in/peteghiorse
+- GitHub: https://github.com/pghio
+- Substack: https://peterghiorse.substack.com
+- Honeydew: https://gethoneydew.app
+- Email: pmghiorse@gmail.com
+
+Last updated: 2026-07-22

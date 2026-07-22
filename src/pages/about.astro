@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { PROFILE } from '../data/profile';
 ---
 
 <BaseLayout title="About" description="Pete Ghiorse builds AI products, runs production experiments, and writes about what the evidence changes.">
@@ -15,7 +16,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
 
       <p>
-        I split my time between two roles: <strong class="text-slate-900 dark:text-white font-semibold">Group PM</strong> for AI/ML at Capital One,
+        I split my time between two roles: <strong class="text-slate-900 dark:text-white font-semibold">Group Product Manager</strong> for AI/ML at Capital One,
         where I lead work on ML-powered fraud and spend management, and founder of
         <strong class="text-slate-900 dark:text-white font-semibold">Honeydew</strong>, an AI-powered family coordination app that uses voice, text,
         and photos to turn the day's loose ends into shared plans.
@@ -48,6 +49,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         ))}
       </div>
 
+      <h2 id="practice" class="text-2xl font-bold text-slate-900 dark:text-white pt-4 scroll-mt-24">How I Sharpen the Craft</h2>
+
+      <p>
+        My practice loop is <strong class="text-slate-900 dark:text-white font-semibold">{PROFILE.practiceLoop.join(' → ')}</strong>.
+        I start with a real operating problem, instrument the behavior, turn failures into evaluation cases, and revise the product before I write the conclusion.
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        {PROFILE.focusAreas.map(item => (
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-[#141b2d] border border-slate-200 dark:border-slate-800">
+            <p class="font-semibold text-slate-900 dark:text-white mb-1">{item.title}</p>
+            <p class="text-sm">{item.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="border-l-2 border-(--color-primary) pl-6 py-2 my-8">
+        <p class="text-slate-900 dark:text-white font-medium">
+          AI assists with research, red-teaming, implementation, and editing. I own the thesis, source selection, evaluation design, factual claims, and final editorial judgment.
+        </p>
+      </div>
+
+      <p>
+        That quality bar is visible in the work: methods and limitations sit beside results; corrections stay public; and a claim is narrowed when the evidence is thinner than the first draft suggested.
+      </p>
+
       <h2 class="text-2xl font-bold text-slate-900 dark:text-white pt-4">Background</h2>
 
       <p>
@@ -61,6 +88,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="font-bold text-slate-900 dark:text-white mb-2">I write the work down.</p>
         <p class="text-sm mb-4">The essays range from model benchmarks to the parts of judgment a model cannot supply.</p>
         <a href="https://peterghiorse.substack.com/subscribe?utm_source=peterghiorse.com&utm_medium=website&utm_campaign=newsletter_growth&utm_content=about" target="_blank" rel="noopener" data-newsletter-cta data-newsletter-impression data-analytics-placement="about" class="text-(--color-primary) font-semibold hover:underline">Follow on Substack &rarr;</a>
+      </div>
+
+      <div class="mt-6 p-6 rounded-2xl border border-blue-200 dark:border-blue-900 bg-blue-50/70 dark:bg-blue-950/20">
+        <p class="font-bold text-slate-900 dark:text-white mb-2">For recruiters and hiring leaders</p>
+        <p class="text-sm mb-4">{PROFILE.recruiterFocus}</p>
+        <a href="/resume" data-profile-cta="recruiter_snapshot" data-analytics-placement="about" class="text-(--color-primary) font-semibold hover:underline">View the recruiter snapshot &rarr;</a>
       </div>
     </div>
   </section>

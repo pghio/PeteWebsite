@@ -1,19 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ExperienceItem from '../components/ExperienceItem.astro';
+import { PROFILE } from '../data/profile';
 ---
 
-<BaseLayout title="Resume" description="Pete Ghiorse's professional experience and education.">
+<BaseLayout title="Resume" description="Pete Ghiorse is a Group Product Manager for AI/ML, founder, and hands-on builder focused on AI agents, model evaluation, production ML, and 0-to-1 products.">
   <section class="max-w-3xl mx-auto px-6 py-16 md:py-24">
     <p class="text-(--color-primary) font-semibold text-sm tracking-widest uppercase mb-4 animate-fade-up">Resume</p>
     <h1 class="text-4xl md:text-5xl font-extrabold mb-12 animate-fade-up stagger-1">
-      Experience & <span class="gradient-text">education</span>
+      Product leadership, founder execution &amp; <span class="gradient-text">technical depth</span>
     </h1>
+
+    <div class="mb-14 p-6 rounded-2xl border border-blue-200 dark:border-blue-900 bg-blue-50/70 dark:bg-blue-950/20 animate-fade-up stagger-2">
+      <p class="text-lg text-slate-700 dark:text-slate-200 leading-relaxed mb-4">{PROFILE.oneLine}</p>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mb-5">NYC-based. {PROFILE.recruiterFocus}</p>
+      <div class="flex flex-wrap gap-4 text-sm font-semibold">
+        <a href={PROFILE.links.email} data-profile-cta="email" data-analytics-placement="resume_intro" class="text-(--color-primary) hover:underline">pmghiorse@gmail.com</a>
+        <a href={PROFILE.links.linkedin} target="_blank" rel="noopener" data-profile-cta="linkedin" data-analytics-placement="resume_intro" class="text-(--color-primary) hover:underline">LinkedIn</a>
+        <a href={PROFILE.links.github} target="_blank" rel="noopener" data-profile-cta="github" data-analytics-placement="resume_intro" class="text-(--color-primary) hover:underline">GitHub</a>
+      </div>
+    </div>
 
     <h2 class="text-lg font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-8 animate-fade-up stagger-2">Experience</h2>
     <div class="mb-16 animate-fade-up stagger-3">
-      <ExperienceItem company="Capital One" role="Group PM" period="2022 - Present" description="Leading product direction for ML-powered spend controls and fraud detection." highlights={["ML-powered fraud and spend management", "AI/ML product strategy and roadmap ownership", "Cross-functional leadership across engineering, data science, and design"]} />
-      <ExperienceItem company="Honeydew" role="Founder" period="2024 - Present" description="Building an AI-powered family coordination app with multimodal input and a 60+ tool agent orchestration pipeline." highlights={["60+ tool agent orchestration processing requests in <2 seconds", "Voice input via Whisper AI with >95% accuracy", "Real-time WebSocket sync (<50ms) across family members", "Knowledge graph with 80% cache hit rate"]} />
+      <ExperienceItem company="Capital One" role="Group Product Manager" period="2022 - Present" description="Leading product direction for ML-powered spend controls and fraud detection." highlights={["ML-powered fraud and spend management", "AI/ML product strategy and roadmap ownership", "Cross-functional leadership across engineering, data science, and design"]} />
+      <ExperienceItem company="Honeydew" role="Founder" period="Current" description="Building a multimodal family-coordination agent and using it as a production lab for model behavior, evaluation, and trust." highlights={["Voice, text, and photo input routed through a catalog of 60+ tools", "Evaluation work on ambiguity, destructive actions, messy inputs, and act/ask/confirm policy", "Full-stack product ownership across discovery, prototyping, instrumentation, and distribution"]} />
       <ExperienceItem company="GiveTide" role="Co-Founder" period="2017 - 2022" description="Co-founded and scaled a fintech platform from zero to a successful acquisition over 5 years." highlights={["Built product from concept to acquisition", "Full-stack development and product leadership", "Successful exit via acquisition in 2022"]} />
     </div>
 
@@ -22,24 +33,18 @@ import ExperienceItem from '../components/ExperienceItem.astro';
       <ExperienceItem company="University of Richmond — Robins School of Business" role="B.S. Finance & Economics" period="Magna Cum Laude" description="" />
     </div>
 
-    <h2 class="text-lg font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-8">Skills</h2>
-    <div class="grid sm:grid-cols-2 gap-8">
-      <div>
-        <h3 class="font-bold mb-4 text-sm">Product & Strategy</h3>
-        <div class="flex flex-wrap gap-2">
-          {["AI/ML Product Management", "Agentic Systems", "0-to-1 Development", "Product Strategy", "User Research"].map(s => (
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 font-medium">{s}</span>
-          ))}
+    <h2 class="text-lg font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-8">Capabilities with evidence</h2>
+    <div class="grid sm:grid-cols-2 gap-5">
+      {PROFILE.focusAreas.map(area => (
+        <div class="p-5 rounded-xl bg-slate-50 dark:bg-[#141b2d] border border-slate-200 dark:border-slate-800">
+          <h3 class="font-bold mb-2">{area.title}</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{area.description}</p>
         </div>
-      </div>
-      <div>
-        <h3 class="font-bold mb-4 text-sm">Technical</h3>
-        <div class="flex flex-wrap gap-2">
-          {["React", "TypeScript", "Node.js", "Python", "OpenAI APIs", "Whisper", "WebSockets", "Vite", "Vercel"].map(s => (
-            <span class="text-xs px-3 py-1.5 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 font-medium">{s}</span>
-          ))}
-        </div>
-      </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="/projects" data-profile-cta="selected_work" data-analytics-placement="resume_footer" class="font-semibold text-(--color-primary) hover:underline">See selected work and published evidence &rarr;</a>
     </div>
   </section>
 </BaseLayout>

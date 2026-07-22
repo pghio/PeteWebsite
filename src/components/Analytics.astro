@@ -18,6 +18,7 @@ const gaMeasurementId = GA_MEASUREMENT_ID;
           'related_post_click',
           'outbound_click',
           'share_click',
+          'profile_cta_click',
         ]);
         const allowedParameters = new Set([
           'active_seconds',
@@ -29,6 +30,7 @@ const gaMeasurementId = GA_MEASUREMENT_ID;
           'related_path',
           'scroll_depth',
           'share_method',
+          'cta_type',
         ]);
 
         let analyticsLoaded = false;
@@ -148,6 +150,14 @@ const gaMeasurementId = GA_MEASUREMENT_ID;
               content_path: contentPath,
               share_method: target.dataset.shareMethod || 'unknown',
               placement,
+            });
+          }
+
+          if (target.matches('[data-profile-cta]')) {
+            window.pgTrack('profile_cta_click', {
+              content_path: contentPath,
+              placement,
+              cta_type: target.dataset.profileCta || 'unknown',
             });
           }
 

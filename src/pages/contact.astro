@@ -14,10 +14,10 @@ const links = [
   <section class="max-w-3xl mx-auto px-6 py-16 md:py-24">
     <p class="text-(--color-primary) font-semibold text-sm tracking-widest uppercase mb-4 animate-fade-up">Contact</p>
     <h1 class="text-4xl md:text-5xl font-extrabold mb-4 animate-fade-up stagger-1">
-      Send the <span class="gradient-text">interesting question</span>
+      Let’s talk about <span class="gradient-text">the work</span>
     </h1>
     <p class="text-slate-500 dark:text-slate-400 mb-12 max-w-xl text-lg animate-fade-up stagger-2">
-      Email me about AI product work, family software, research I've published, or something you think I got wrong.
+      I’m open to conversations about Group or senior product roles in AI agents, model behavior and evaluation, production ML platforms, and consumer AI. I also welcome thoughtful questions about the products and research I publish.
     </p>
 
     <div class="grid sm:grid-cols-2 gap-5 animate-fade-up stagger-3">
@@ -28,7 +28,8 @@ const links = [
           rel={link.href.startsWith('mailto') ? undefined : 'noopener'}
           data-newsletter-cta={link.newsletter ? true : undefined}
           data-newsletter-impression={link.newsletter ? true : undefined}
-          data-analytics-placement={link.newsletter ? 'contact' : undefined}
+          data-analytics-placement="contact"
+          data-profile-cta={link.name.toLowerCase()}
           class="card-hover flex items-center gap-4 p-6 border border-slate-200 dark:border-slate-800 rounded-2xl group bg-white dark:bg-[#141b2d]"
         >
           <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-(--color-primary) group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors shrink-0">

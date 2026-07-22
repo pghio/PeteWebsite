@@ -7,6 +7,7 @@ import CookieConsent from '../components/CookieConsent.astro';
 import NewsletterCTA from '../components/NewsletterCTA.astro';
 import RelatedReading from '../components/RelatedReading.astro';
 import { GA_MEASUREMENT_ID } from '../config/analytics';
+import { PROFILE } from '../data/profile';
 
 interface PostFrontmatter {
   title: string;
@@ -78,10 +79,10 @@ const articleSchema = {
   "datePublished": publishDate,
   "author": {
     "@type": "Person",
-    "name": "Pete Ghiorse",
-    "url": "https://peterghiorse.com",
-    "jobTitle": "Group PM",
-    "sameAs": ["https://linkedin.com/in/peteghiorse", "https://github.com/pghio"]
+    "name": PROFILE.name,
+    "url": PROFILE.links.website,
+    "jobTitle": PROFILE.role,
+    "sameAs": [PROFILE.links.linkedin, PROFILE.links.github, PROFILE.links.substack]
   },
   "publisher": {
     "@type": "Person",
@@ -174,8 +175,8 @@ const breadcrumbSchema = {
           <div class="flex items-center gap-3 mt-6 pt-6 border-t border-(--color-border)">
             <div class="w-10 h-10 rounded-full bg-(--color-primary)/10 flex items-center justify-center text-(--color-primary) font-bold text-sm">PG</div>
             <div>
-              <p class="font-semibold text-sm">Pete Ghiorse</p>
-              <p class="text-xs text-(--color-text-muted)">Founder, Honeydew Family AI</p>
+              <p class="font-semibold text-sm">{PROFILE.name}</p>
+              <p class="text-xs text-(--color-text-muted)">Group Product Manager, AI/ML · Founder, Honeydew</p>
             </div>
           </div>
         </div>
