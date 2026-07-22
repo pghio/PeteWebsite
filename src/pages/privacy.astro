@@ -19,10 +19,18 @@ const analyticsAvailable = Boolean(GA_MEASUREMENT_ID);
     <div class="prose mt-12">
       <h2>Website analytics</h2>
       <p>
-        If you choose “Allow analytics,” this site loads Google Analytics 4. It can record page views and anonymous reading signals such as reaching 50% or 90% of an article, spending 60 active seconds with an article, clicking a newsletter prompt, opening a related post, following an external link, or using a share link.
+        If you choose “Allow analytics,” this site loads Google Analytics 4. It can record page views, the aggregate channel or campaign that referred a visit, and actions such as opening a résumé, repository, research item, newsletter prompt, or contact link.
       </p>
       <p>
         Analytics is off until you opt in. Advertising storage, ad personalization, and Google Signals are disabled. I do not send your name, email address, article form input, or other directly identifying information to Google Analytics. Google may still process device, browser, approximate-location, and network information under its own terms. Read <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's privacy policy</a> for details.
+      </p>
+
+      <h2>Referral measurement</h2>
+      <p>
+        Links from LinkedIn, ChatGPeTe, GitHub, research repositories, social posts, or outreach may include standard campaign parameters. The site keeps only an allow-listed source, medium, campaign, link placement, landing path, and referring hostname in session storage so the original referral is not lost as you move between pages. It never stores the full referring URL or its query string.
+      </p>
+      <p>
+        When analytics loads, the page location sent to Google is rebuilt with only those aggregate campaign parameters, and the referrer is reduced to its hostname. Unrecognized query parameters and full referrer paths are removed. Ordinary public links identify a channel or campaign, not a person. The site does not fingerprint, enrich, or try to deanonymize visitors.
       </p>
 
       <h2>Newsletter subscriptions</h2>
@@ -32,7 +40,7 @@ const analyticsAvailable = Boolean(GA_MEASUREMENT_ID);
 
       <h2>Browser storage</h2>
       <p>
-        The site stores two preferences in your browser: your light/dark theme and your analytics choice. If you allow analytics, Google Analytics may also set cookies beginning with <code>_ga</code>. Choosing “Disable analytics” below stops further analytics events from this site and removes accessible <code>_ga</code> cookies for this domain.
+        The site stores two lasting preferences in your browser: your light/dark theme and your analytics choice. It keeps the allow-listed aggregate referral context above in session storage, which normally disappears when the browser tab or session ends. If you allow analytics, Google Analytics may also set cookies beginning with <code>_ga</code>. Choosing “Disable analytics” below stops further analytics events from this site and removes accessible <code>_ga</code> cookies for this domain.
       </p>
 
       <h2>Your choice</h2>
@@ -55,7 +63,7 @@ const analyticsAvailable = Boolean(GA_MEASUREMENT_ID);
 
       <h2>Questions</h2>
       <p>
-        If you have a privacy question, use the <a href="/contact">contact page</a>. This notice was last updated July 20, 2026.
+        If you have a privacy question, use the <a href="/contact">contact page</a>. This notice was last updated July 22, 2026.
       </p>
     </div>
   </article>
