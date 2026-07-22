@@ -1,0 +1,156 @@
+---
+interface Props {
+  title: string;
+  url: string;
+}
+
+const { title, url } = Astro.props;
+const encodedTitle = encodeURIComponent(title);
+const encodedURL = encodeURIComponent(url);
+const encodedShareText = encodeURIComponent(`${title} — ${url}`);
+
+const socialLinks = [
+  {
+    name: 'LinkedIn',
+    href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedURL}`,
+    method: 'linkedin',
+  },
+  {
+    name: 'X',
+    href: `https://x.com/intent/tweet?text=${encodedTitle}&url=${encodedURL}`,
+    method: 'x',
+  },
+  {
+    name: 'Bluesky',
+    href: `https://bsky.app/intent/compose?text=${encodedShareText}`,
+    method: 'bluesky',
+  },
+  {
+    name: 'Threads',
+    href: `https://www.threads.com/intent/post?text=${encodedShareText}`,
+    method: 'threads',
+  },
+  {
+    name: 'Facebook',
+    href: `https://www.facebook.com/sharer/sharer.php?u=${encodedURL}`,
+    method: 'facebook',
+  },
+  {
+    name: 'Reddit',
+    href: `https://www.reddit.com/submit?url=${encodedURL}&title=${encodedTitle}`,
+    method: 'reddit',
+  },
+  {
+    name: 'WhatsApp',
+    href: `https://api.whatsapp.com/send?text=${encodedShareText}`,
+    method: 'whatsapp',
+  },
+];
+
+const emailShareURL = `mailto:?subject=${encodedTitle}&body=${encodeURIComponent(`${title}\n\n${url}`)}`;
+const buttonClass = 'rounded-full border border-(--color-border) px-4 py-2 text-sm font-semibold text-(--color-text) transition-colors hover:border-(--color-primary) hover:text-(--color-primary) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-primary)';
+---
+
+<section
+  class="mt-10 border-t border-(--color-border) pt-7"
+  aria-labelledby="share-article-heading"
+  data-share-block
+  data-share-title={title}
+  data-share-url={url}
+>
+  <h2 id="share-article-heading" class="mb-3 text-sm font-semibold text-(--color-text-muted)">
+    Share this article
+  </h2>
+  <div class="flex flex-wrap items-center gap-2.5">
+    {socialLinks.map((link) => (
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Share on ${link.name}`}
+        data-share-method={link.method}
+        data-analytics-placement="article_end"
+        class={buttonClass}
+      >{link.name}</a>
+    ))}
+    <a
+      href={emailShareURL}
+      aria-label="Share by email"
+      data-share-method="email"
+      data-analytics-placement="article_end"
+      class={buttonClass}
+    >Email</a>
+    <button
+      type="button"
+      data-copy-share-link
+      data-share-method="copy_link"
+      data-analytics-placement="article_end"
+      class={buttonClass}
+    >Copy link</button>
+    <button
+      type="button"
+      data-native-share
+      data-share-method="native_share"
+      data-analytics-placement="article_end"
+      class={buttonClass}
+      hidden
+    >More…</button>
+  </div>
+  <p class="mt-2 min-h-5 text-xs text-(--color-text-muted)" aria-live="polite" data-share-status></p>
+</section>
+
+<script is:inline>
+  (() => {
+    const copyText = async (value) => {
+      try {
+        await navigator.clipboard.writeText(value);
+      } catch {
+        const textArea = document.createElement('textarea');
+        textArea.value = value;
+        textArea.setAttribute('readonly', '');
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.select();
+        const copied = document.execCommand('copy');
+        textArea.remove();
+        if (!copied) throw new Error('Copy failed');
+      }
+    };
+
+    document.querySelectorAll('[data-share-block]').forEach((shareBlock) => {
+      const title = shareBlock.dataset.shareTitle || document.title;
+      const url = shareBlock.dataset.shareUrl || window.location.href;
+      const copyButton = shareBlock.querySelector('[data-copy-share-link]');
+      const nativeButton = shareBlock.querySelector('[data-native-share]');
+      const status = shareBlock.querySelector('[data-share-status]');
+
+      copyButton?.addEventListener('click', async () => {
+        try {
+          await copyText(url);
+          copyButton.textContent = 'Copied';
+          if (status) status.textContent = 'Article link copied.';
+          window.setTimeout(() => {
+            copyButton.textContent = 'Copy link';
+            if (status) status.textContent = '';
+          }, 2200);
+        } catch {
+          if (status) status.textContent = 'Could not copy the link. Please copy it from the address bar.';
+        }
+      });
+
+      if (nativeButton && typeof navigator.share === 'function') {
+        nativeButton.hidden = false;
+        nativeButton.addEventListener('click', async () => {
+          try {
+            await navigator.share({ title, text: title, url });
+          } catch (error) {
+            if (error?.name !== 'AbortError' && status) {
+              status.textContent = 'The share menu could not be opened.';
+            }
+          }
+        });
+      }
+    });
+  })();
+</script>

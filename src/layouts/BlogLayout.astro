@@ -6,6 +6,7 @@ import Analytics from '../components/Analytics.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import NewsletterCTA from '../components/NewsletterCTA.astro';
 import RelatedReading from '../components/RelatedReading.astro';
+import ShareArticle from '../components/ShareArticle.astro';
 import { GA_MEASUREMENT_ID } from '../config/analytics';
 
 interface PostFrontmatter {
@@ -66,9 +67,6 @@ const formatPublishDate = (value: string) => {
     timeZone: 'UTC',
   });
 };
-
-const linkedInShareURL = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalURL.href)}`;
-const blueskyShareURL = `https://bsky.app/intent/compose?text=${encodeURIComponent(`${title} — ${canonicalURL.href}`)}`;
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -184,25 +182,7 @@ const breadcrumbSchema = {
           <slot />
         </div>
 
-        <div class="mt-10 flex flex-wrap items-center gap-3 border-t border-(--color-border) pt-7" aria-label="Share this article">
-          <span class="mr-1 text-sm font-semibold text-(--color-text-muted)">Share this article</span>
-          <a
-            href={linkedInShareURL}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-share-method="linkedin"
-            data-analytics-placement="article_end"
-            class="rounded-full border border-(--color-border) px-4 py-2 text-sm font-semibold text-(--color-text) hover:border-(--color-primary) hover:text-(--color-primary)"
-          >LinkedIn</a>
-          <a
-            href={blueskyShareURL}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-share-method="bluesky"
-            data-analytics-placement="article_end"
-            class="rounded-full border border-(--color-border) px-4 py-2 text-sm font-semibold text-(--color-text) hover:border-(--color-primary) hover:text-(--color-primary)"
-          >Bluesky</a>
-        </div>
+        <ShareArticle title={title} url={canonicalURL.href} />
 
         <NewsletterCTA placement="article_end" />
         <RelatedReading posts={relatedPosts} />
