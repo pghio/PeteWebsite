@@ -9,16 +9,26 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "npm run check:data && npm run check:claims && npm run check:attribution && npm run test:profile && npm run test:attribution && npm run test:recruiter-audit",
+    "resume:generate": "python3 scripts/generate-resume-pdf.py",
+    "audit:recruiter": "node scripts/recruiter-audit/cli.mjs --site-dir dist",
+    "test:recruiter-audit": "node --test tests/recruiter-audit/*.test.mjs",
+    "check:data": "node scripts/check-public-data.mjs",
+    "check:claims": "node scripts/check-claims.mjs",
+    "check:claims:data": "node scripts/check-claims.mjs --data-only",
+    "check:attribution": "node scripts/check-attribution.mjs",
+    "test:profile": "node --test tests/profile-data.test.mjs",
+    "test:attribution": "node --test tests/attribution.test.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/vite": "^4.2.2",
-    "astro": "^6.1.6",
+    "astro": "^7.1.3",
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
-    "sharp": "^0.34.5"
+    "sharp": "^0.35.3"
   }
 }

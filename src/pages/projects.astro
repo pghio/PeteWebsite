@@ -1,27 +1,106 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import ProfileCaseStudy from '../components/ProfileCaseStudy.astro';
+import { PROFILE, RESEARCH } from '../data/profile';
+
+const restraint = RESEARCH.find((study) => study.id === 'restraint-study-2026-06-24');
+const benchmark = RESEARCH.find((study) => study.id === 'production-benchmark-2026-04-15');
+const discoverability = RESEARCH.find((study) => study.id === 'llm-discoverability-field-note-2026-04-14');
+if (!restraint || !benchmark || !discoverability) throw new Error('Required research records are missing');
 ---
 
-<BaseLayout title="Projects" description="Projects and products built by Pete Ghiorse.">
+<BaseLayout
+  title="Selected Work"
+  description="Selected AI product leadership, production-agent, and model-evaluation work by Pete Ghiorse."
+  ogImage="/images/profile/pete-ghiorse-profile-card.png"
+  ogImageAlt="Selected AI product and evaluation work by Pete Ghiorse"
+>
   <section class="max-w-5xl mx-auto px-6 py-16 md:py-24">
-    <p class="text-(--color-primary) font-semibold text-sm tracking-widest uppercase mb-4 animate-fade-up">Projects</p>
+    <p class="text-(--color-primary) font-semibold text-sm tracking-widest uppercase mb-4 animate-fade-up">Selected work</p>
     <h1 class="text-4xl md:text-5xl font-extrabold mb-4 animate-fade-up stagger-1">
-      Systems with real users and <span class="gradient-text">real constraints</span>
+      Product judgment backed by <span class="gradient-text">inspectable evidence</span>
     </h1>
-    <p class="text-slate-500 dark:text-slate-400 mb-12 max-w-2xl text-lg animate-fade-up stagger-2">
-      The work I keep returning to: software that has to earn trust, survive ambiguity, and still be useful on an ordinary Tuesday.
+    <p class="text-slate-500 dark:text-slate-400 mb-12 max-w-3xl text-lg animate-fade-up stagger-2">
+      These are not feature inventories. Each case states what I owned, how I reduced uncertainty, what changed, and where confidentiality or study design limits the claim.
     </p>
 
-    <div class="grid md:grid-cols-2 gap-5">
-      <ProjectCard title="Honeydew" description="An AI assistant for the calendars, groceries, appointments, and loose ends of family life. Voice, text, and photo requests route through a catalog of 60+ tools." tags={["React", "TypeScript", "Node.js", "OpenAI", "Whisper", "WebSockets", "Vite", "Vercel"]} link="https://gethoneydew.app" status="Active" />
-      <ProjectCard title="GiveTide" description="The charitable-giving platform I co-founded, built, and ran for five years before its acquisition in 2022." tags={["Fintech", "Startup", "Co-Founder", "Full Stack"]} status="Acquired 2022" />
-      <ProjectCard title="AI/ML Spend Controls" description="ML-powered fraud detection and spend management at Capital One, where I lead product direction as a Group PM." tags={["AI/ML", "Fraud Detection", "Enterprise", "Product Management"]} status="Current Role" />
-      <ProjectCard title="Production AI Research" description="Benchmarks built from Honeydew's real prompt and tool schema: where models over-act, where they freeze, and why the expensive ones still fail on ambiguity." tags={["LLM Evaluation", "Agent Safety", "Published Methods"]} link="https://peterghiorse.com/blog" status="Ongoing" />
+    <div class="grid lg:grid-cols-2 gap-6">
+      <ProfileCaseStudy
+        eyebrow="Enterprise AI/ML"
+        title="ML-powered spend controls"
+        summary="Product direction for fraud and spend-management systems at Capital One."
+        role="Group Product Manager responsible for product strategy, roadmap decisions, and cross-functional alignment across engineering, data science, design, and risk partners."
+        method="Translate uncertain model behavior and policy constraints into product boundaries, operating decisions, and measurable launch criteria."
+        outcome="The public evidence is intentionally qualitative: product area, decision ownership, and cross-functional scope are disclosed; confidential customer, risk, and business metrics are not."
+        evidenceHref="/resume"
+        evidenceLabel="See experience summary"
+        status="2022–present"
+      />
+      <ProfileCaseStudy
+        eyebrow="0-to-1 production agent"
+        title="Honeydew"
+        summary="A family coordination product that turns voice, text, and photo input into calendars, lists, and shared plans."
+        role="Founder and accountable product owner across research, strategy, implementation, instrumentation, evaluation, and distribution."
+        method="Use real operating constraints to define when the agent should act, ask, confirm, or simply answer. Convert recurring failures into synthetic evaluation scenarios before changing behavior."
+        outcome="A production product that doubles as a feedback system for safer agent decisions. Private prompts, user data, and proprietary workflows remain private."
+        evidenceHref="https://gethoneydew.app"
+        evidenceLabel="Visit Honeydew"
+        status="Founded 2025"
+      />
+      <ProfileCaseStudy
+        eyebrow="Agent restraint"
+        title="Six models, 227 scenarios"
+        summary={`${restraint.numbers.calls.toLocaleString()} calls tested how often models act, ask, confirm, or chat when household requests are ambiguous or irreversible.`}
+        role="Defined the product policy, wrote the synthetic scenario set, designed the run and scoring approach, analyzed the results, and published the limitations."
+        method="Three shuffled trials per model-scenario pair at temperature 0.2, deterministic routing scores, a three-model label panel, and explicit parse-failure accounting."
+        outcome="Shifted the model decision from a single accuracy ranking to safety, messy-input robustness, steerability, and disagreement on the answer key."
+        evidenceHref="/blog/llms-knowing-when-to-stop"
+        repoHref={restraint.repository}
+        status="June 24, 2026 snapshot"
+      />
+      <ProfileCaseStudy
+        eyebrow="Model selection"
+        title="Eight models, 2,800 calls"
+        summary="A bounded production case study comparing model behavior across one prompt and 35 synthetic scenarios."
+        role="Framed the selection question, created the benchmark and reporting, and separated reusable evaluation lessons from model-ranking claims the data could not support."
+        method="Ten trials for every model-scenario pair, with tool-use, parsing, latency, cost, and non-action behavior analyzed separately."
+        outcome="Found that price and frontier status did not predict fit for this workload, while also documenting prompt coupling and dated provider behavior."
+        evidenceHref="/blog/llm-benchmark-stop-defaulting-to-the-frontier"
+        repoHref={benchmark.repository}
+        status="April 15, 2026 snapshot"
+      />
+      <ProfileCaseStudy
+        eyebrow="Distribution measurement"
+        title="What LLM referrals actually showed"
+        summary="A 90-day descriptive field note that kept 13 GA4 sessions and 29 custom events as different units rather than manufacturing a capture rate."
+        role="Designed the query audit, instrumented the observable referral path, re-audited the methodology, and narrowed the public conclusion."
+        method="Separate one ten-query Perplexity panel from ordinary web-search visibility and aggregate referral analytics; publish only descriptive observations."
+        outcome="Corrected an initially overconfident interpretation and turned the failure into a reusable measurement rule and public correction record."
+        evidenceHref="/blog/llm-discoverability-research"
+        repoHref={discoverability.repository}
+        status="January–April 2026 window"
+      />
+      <ProfileCaseStudy
+        eyebrow="Publishing system"
+        title="PeteWebsite"
+        summary="The canonical portfolio and research archive, built as a small evidence and distribution system rather than a static brochure."
+        role="Product owner, writer, maintainer, and accountable editor. AI assists with implementation and review under a public disclosure policy."
+        method="Typed profile and research registries, automated claim checks, structured data, consent-aware attribution, full-content RSS, and visible correction practices."
+        outcome="One source of truth now drives recruiter copy, machine-readable summaries, research links, and cross-surface consistency."
+        evidenceHref="https://github.com/pghio/PeteWebsite"
+        evidenceLabel="Inspect the website repository"
+        status="Open source"
+      />
     </div>
 
-    <div class="mt-12 text-center">
-      <a href="https://peterghiorse.substack.com/subscribe?utm_source=peterghiorse.com&utm_medium=website&utm_campaign=newsletter_growth&utm_content=projects" target="_blank" rel="noopener" data-newsletter-cta data-newsletter-impression data-analytics-placement="projects" class="text-(--color-primary) font-semibold hover:underline">Get new build notes and research on Substack &rarr;</a>
+    <div class="mt-12 p-8 rounded-2xl bg-blue-50/70 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-900 text-center">
+      <h2 class="text-2xl font-bold mb-3">The through-line</h2>
+      <p class="text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-2">{PROFILE.oneLine}</p>
+      <p class="text-sm text-slate-500 dark:text-slate-400 max-w-3xl mx-auto mb-6">New York City–based and open to regular Bay Area travel for the right role.</p>
+      <div class="flex flex-wrap justify-center gap-5">
+        <a href="/resume.pdf" data-profile-cta="resume_download" data-analytics-placement="projects" class="text-(--color-primary) font-semibold hover:underline">Download résumé &rarr;</a>
+        <a href="/contact" data-profile-cta="recruiter_contact" data-analytics-placement="projects" class="text-(--color-primary) font-semibold hover:underline">Contact Pete &rarr;</a>
+      </div>
     </div>
   </section>
 </BaseLayout>

@@ -1,0 +1,58 @@
+# Pete Ghiorse
+
+> AI/ML product leader, founder, hands-on builder, and evidence-backed writer.
+
+Canonical name: Pete Ghiorse
+Current role: Group Product Manager, AI/ML at Capital One
+Location: New York City
+Website: https://peterghiorse.com
+
+## What Pete does
+
+Pete leads AI/ML products, builds production agents, and publishes rigorous evaluations of how they behave. He combines enterprise AI/ML product leadership, founder-level ownership, hands-on technical fluency, and rigorous communication.
+
+He founded Honeydew in 2025. Honeydew is a multimodal family-coordination agent with voice, text, photo input, and a catalog of 60+ tools. It is both a real product and a production lab for agent behavior, evaluation, and trust.
+
+Before Capital One and Honeydew, Pete co-founded GiveTide, ran it for five years, and sold it in 2022.
+
+## Roles and location
+
+Pete is based in New York City. Target roles: Group Product Manager, Director of Product Management, Principal Product Manager, and Head of AI Product. His target domains include AI agents, model behavior and evaluation, production ML platforms, and consumer AI.
+
+## Practice and content quality
+
+Pete’s deliberate practice loop is: Build -> Instrument -> Evaluate -> Publish -> Revise.
+
+AI assists with research, red-teaming, implementation, and editing. Pete owns the thesis, source selection, evaluation design, factual claims, and final editorial judgment. Published work keeps methods and limitations beside results, retains visible corrections, and narrows claims when the evidence changes.
+
+## Publication
+
+ChatGPeTe: I lead AI/ML products, build production agents, and publish rigorous evaluations of how they behave—plus essays when I have something worth saying.
+
+Subscribe: https://peterghiorse.substack.com
+
+## Dated research snapshots
+
+- Restraint study, June 24, 2026: 227 synthetic scenarios, six models, three trials per scenario, 4,086 calls, and 14 parse failures dropped. No real user data was used. Article: https://peterghiorse.com/blog/llms-knowing-when-to-stop Repository: https://github.com/pghio/agent-restraint-evals
+- Production benchmark, April 15, 2026: eight models, 35 scenarios, ten trials per model-scenario pair, 2,800 calls, and $145.83 in model cost. The later restraint study supersedes two conclusions. Article: https://peterghiorse.com/blog/llm-benchmark-stop-defaulting-to-the-frontier Repository: https://github.com/pghio/llm-agent-benchmark
+- LLM discoverability field note, April 14, 2026: a 90-day descriptive snapshot with 13 GA4-attributed LLM sessions, eight of those 13 landing on comparison pages, 29 separate custom referrer events, one appearance in ten Perplexity queries, and three appearances in ten ordinary web-search result sets. These units must not be combined into a capture rate. Article: https://peterghiorse.com/blog/llm-discoverability-research Repository: https://github.com/pghio/llm-discoverability-field-note
+
+## Start here
+
+- Public profile data: https://peterghiorse.com/profile.json
+- Research data: https://peterghiorse.com/research.json
+- About and editorial practice: https://peterghiorse.com/about
+- Recruiter snapshot: https://peterghiorse.com/resume
+- Selected projects: https://peterghiorse.com/projects
+- Writing archive: https://peterghiorse.com/blog
+- RSS feed: https://peterghiorse.com/rss.xml
+
+## Official profiles
+
+- LinkedIn: https://linkedin.com/in/peteghiorse
+- GitHub: https://github.com/pghio
+- Substack: https://peterghiorse.substack.com
+- Honeydew: https://gethoneydew.app
+- Email: pmghiorse@gmail.com
+
+Last updated: 2026-07-22

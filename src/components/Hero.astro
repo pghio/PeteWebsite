@@ -1,34 +1,42 @@
-<section class="hero-gradient max-w-5xl mx-auto px-6 py-24 md:py-36 relative">
+---
+import { PROFILE } from '../data/profile';
+---
+
+<section class="hero-gradient max-w-5xl mx-auto px-6 py-20 md:py-32 relative">
   <div class="relative z-10">
-    <p class="text-(--color-primary) font-semibold mb-4 animate-fade-up text-sm tracking-widest uppercase">Product leader, founder &amp; writer</p>
+    <p class="text-(--color-primary) font-semibold mb-4 animate-fade-up text-sm tracking-widest uppercase">{PROFILE.role} · Founder · Hands-on builder</p>
     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 animate-fade-up stagger-1">
       <span class="gradient-text">Pete Ghiorse</span>
     </h1>
-    <p class="text-xl md:text-2xl text-slate-500 dark:text-slate-400 max-w-2xl mb-4 leading-relaxed animate-fade-up stagger-2">
-      I build AI products, test what they actually do, and write down the parts the demos leave out.
+    <p class="text-2xl md:text-3xl text-slate-700 dark:text-slate-200 max-w-4xl mb-6 leading-tight animate-fade-up stagger-2">
+      {PROFILE.oneLine}
     </p>
-    <p class="text-lg text-slate-500 dark:text-slate-400 max-w-xl mb-10 leading-relaxed animate-fade-up stagger-3">
-      I'm a <strong class="text-slate-900 dark:text-white font-medium">Group PM</strong> for AI/ML at Capital One and the founder of
-      <strong class="text-slate-900 dark:text-white font-medium">Honeydew</strong>, an AI assistant for the calendars, groceries, and loose ends of family life.
+    <p class="text-lg text-slate-500 dark:text-slate-400 max-w-3xl mb-5 leading-relaxed animate-fade-up stagger-3">
+      At Capital One, I lead AI/ML product work. Through Honeydew, I build a production family agent and use its failures to sharpen product decisions, evaluation methods, and safeguards.
+    </p>
+    <p class="text-sm text-slate-500 dark:text-slate-400 mb-10 animate-fade-up stagger-3">
+      {PROFILE.location.display} · Open to regular Bay Area travel for the right role
     </p>
     <div class="flex flex-wrap gap-4 animate-fade-up stagger-4">
       <a
-        href="/blog"
-        class="group px-7 py-3.5 bg-(--color-primary) text-white rounded-xl font-medium hover:bg-(--color-primary-dark) transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5"
+        href="/projects"
+        data-profile-cta="selected_work"
+        data-analytics-placement="homepage_hero"
+        class="group px-7 py-3.5 bg-(--color-primary) text-white rounded-xl font-medium hover:bg-(--color-primary-dark) transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 hover:-translate-y-0.5"
       >
-        Read the Writing
+        See selected work
         <span class="inline-block ml-1 transition-transform group-hover:translate-x-0.5">&rarr;</span>
       </a>
       <a
-        href="https://peterghiorse.substack.com/subscribe?utm_source=peterghiorse.com&utm_medium=website&utm_campaign=newsletter_growth&utm_content=homepage_hero"
-        target="_blank"
-        rel="noopener"
-        data-newsletter-cta
-        data-newsletter-impression
+        href="/resume.pdf"
+        data-profile-cta="resume_download"
         data-analytics-placement="homepage_hero"
         class="px-7 py-3.5 border border-slate-200 dark:border-slate-700 rounded-xl font-medium hover:bg-slate-50 dark:hover:bg-slate-800 hover:border-(--color-primary)/30 transition-all hover:-translate-y-0.5"
       >
-        Follow on Substack
+        Download résumé
+      </a>
+      <a href="/contact" data-profile-cta="recruiter_contact" data-analytics-placement="homepage_hero" class="px-3 py-3.5 text-(--color-primary) font-semibold hover:underline">
+        Start a conversation &rarr;
       </a>
     </div>
   </div>

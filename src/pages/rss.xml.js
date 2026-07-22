@@ -26,8 +26,8 @@ export async function GET(context) {
   posts.sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
 
   return rss({
-    title: 'Pete Ghiorse — Writing',
-    description: 'Essays and field reports on what AI actually changes—at work, at home, and inside the products we trust.',
+    title: 'ChatGPeTe — Research and Essays by Pete Ghiorse',
+    description: 'I lead AI/ML products, build production agents, and publish rigorous evaluations of how they behave—plus essays when I have something worth saying.',
     site,
     items: posts,
     customData: '<language>en-us</language>',

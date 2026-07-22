@@ -15,7 +15,7 @@ faq:
   - q: "Why does Claude keep wrapping JSON in markdown code blocks?"
     a: "In this April 2026 OpenRouter run, the three Claude model identifiers we tested wrapped 40-60% of their JSON responses in triple-backtick code fences even when we requested json_object output. Provider routing and model behavior can change, so treat those rates as a snapshot and make your parser tolerant of fenced JSON."
   - q: "Is this peer-reviewed research?"
-    a: "No. This is a production case study. We tested 8 models on one system prompt and one scenario set. The findings are patterns from one team's experiment, not universal model rankings. The raw results and harness are available on request; this post does not currently link a verified public repository."
+    a: "No. This is a production case study. We tested 8 models on one system prompt and one scenario set. The findings are patterns from one team's experiment, not universal model rankings. A public repository contains the sanitized harness, scenario taxonomy, methods and aggregate results; the proprietary prompt and raw provider responses remain private."
 ---
 
 ![We asked 8 LLMs to run our family's life](/images/research/hero-llm-benchmark.svg)
@@ -32,7 +32,7 @@ We pitted 8 LLMs against Dew's job — from the cheapest ($0.15/M tokens) to the
 
 The useful results were failure modes, not an overall winner.
 
-> **Scope.** This is not peer-reviewed science. It is a production case study on a prompt built around GPT-family models, which gives GPT models an advantage we cannot separate from model capability. Treat the findings as patterns from this prompt and scenario set, not universal rankings. The raw results and harness are available on request; there is no verified public repository linked from this post.
+> **Scope.** This is not peer-reviewed science. It is a production case study on a prompt built around GPT-family models, which gives GPT models an advantage we cannot separate from model capability. Treat the findings as patterns from this prompt and scenario set, not universal rankings. The [public methods repository](https://github.com/pghio/llm-agent-benchmark) contains a sanitized harness, scenario taxonomy, schemas, and aggregate results; the proprietary production prompt and raw provider responses remain private.
 
 ---
 
@@ -231,7 +231,7 @@ So, applying that to what we found:
 
 ![Five practical takeaways for AI agent builders](/images/research/benchmark-takeaways.svg)
 
-**Test your own prompt.** The harness used for this run is available on request. Whether you adapt it or build a smaller evaluation, results from your prompt and scenarios will be more relevant than this post's model ordering.
+**Test your own prompt.** The sanitized [benchmark repository](https://github.com/pghio/llm-agent-benchmark) documents the run and reusable evaluation structure. Whether you adapt it or build a smaller evaluation, results from your prompt and scenarios will be more relevant than this post's model ordering.
 
 **Don't overpay for tasks your evaluation finds easy.** In this run, structured output and compound actions were tightly clustered. The April typo subset also looked easy, but the broader June study did not. Use the least expensive model that clears your own safety, accuracy and robustness thresholds.
 
@@ -245,7 +245,7 @@ So, applying that to what we found:
 
 ## Data and Materials
 
-There is no verified public repository linked from this post. The TypeScript harness, scenario definitions and 8.8MB raw results file are available on request. Reusing the method still requires replacing our prompt and scenarios with your own; this run does not establish how the same models behave on another product's workload.
+The public [`llm-agent-benchmark` repository](https://github.com/pghio/llm-agent-benchmark) contains the sanitized runner, schemas, scenario taxonomy, hypotheses, April 2026 methodology snapshot, normalized aggregates, statistics, and report. It deliberately excludes Honeydew's proprietary frozen prompt and the unaudited 8.8MB raw provider-response file. Reusing the method still requires supplying your own prompt and scenarios; this run does not establish how the same models behave on another product's workload.
 
 ---
 
@@ -268,7 +268,7 @@ Not in this run. We picked the current flagship from each of the major providers
 Our first run burned through a $100 OpenRouter key cap at ~80% completion. We topped up to $200 and re-ran cleanly. Budget $200-300 for a run of this scale.
 
 **Q: Can I see the actual response data?**
-Yes. The 8.8MB results JSON contains all 2,800 raw trial responses, parsed JSON, per-trial scores, latencies and token counts. It is available on request; this post does not currently link a verified public repository.
+Not in the public repository. The 8.8MB source file contains all 2,800 provider responses plus production-shaped prompt context, so it remains private. The repository publishes the normalized aggregate results, statistics, schemas, methodology, and report needed to audit the conclusions without exposing proprietary material.
 
 **Q: Why not re-tune the prompt for each model and compare best-of-breed?**
 Because that's a different study (and a much harder one). "Equivalent effort per model" is notoriously hard to define. What we did — test all models on our production prompt — answers the question that's actually relevant for production decisions: *given our existing prompt, what's the best model?* That's prompt-coupled by design, and we're upfront about it.

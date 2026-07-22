@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Pete Ghiorse - AI/ML product leader</title>
+  <desc id="desc">Social card for Pete Ghiorse, focused on production AI agents, evaluation, and zero-to-one product leadership.</desc>
+  <rect width="1200" height="630" fill="#f5f1e6"/>
+  <circle cx="1080" cy="82" r="245" fill="#e7e0ce"/>
+  <circle cx="1100" cy="70" r="155" fill="#ded7c5"/>
+  <path d="M0 535 C230 455 430 650 700 555 C930 475 1030 515 1200 475 L1200 630 L0 630 Z" fill="#2b4a87"/>
+  <text x="82" y="115" fill="#2b4a87" font-family="Palatino, Georgia, serif" font-size="27" font-weight="700" letter-spacing="5">PETERGHIORSE.COM</text>
+  <text x="82" y="245" fill="#1e2a48" font-family="Palatino, Georgia, serif" font-size="82" font-weight="700">Pete Ghiorse</text>
+  <text x="82" y="322" fill="#2b4a87" font-family="Palatino, Georgia, serif" font-size="40" font-weight="700">AI/ML product leader</text>
+  <text x="82" y="385" fill="#586185" font-family="Palatino, Georgia, serif" font-size="31">Production agents · rigorous evaluation · 0-to-1 products</text>
+  <text x="82" y="570" fill="#f5f1e6" font-family="Palatino, Georgia, serif" font-size="28">Group Product Manager · Founder · Hands-on builder</text>
+</svg>

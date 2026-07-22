@@ -157,7 +157,7 @@ In a family app, an over-eager delete is an annoyed text from your spouse. Put t
 
 ## Data and materials
 
-There is no verified public repository linked from this post. The scenario set, panel labels and raw run output are available on request. The durable lesson is methodological: write scenarios that resemble your own traffic, keep the scorer deterministic, and inspect the cases where the answer key falls apart.
+The public [`agent-restraint-evals` repository](https://github.com/pghio/agent-restraint-evals) contains the 227 synthetic scenarios, scoring and analysis code, panel-validation material, aggregate results, reproduction notes, and correction history. It excludes every real-derived prompt, conversation, and private Honeydew artifact. The durable lesson is methodological: write scenarios that resemble your own traffic, keep the scorer deterministic, and inspect the cases where the answer key falls apart.
 
 ## A last thought
 
@@ -165,4 +165,4 @@ I expected to write about reckless robots. The data made me write about cautious
 
 ---
 
-*Pete Ghiorse is the founder of Honeydew, an AI family organizer, and works on model evaluation. The run cost about $1.70 on OpenRouter. The scenario set, panel labels and raw output are available on request. He has an obvious stake in Honeydew; the unflattering findings, including those about the GPT model his product runs on, remain in the body.*
+*Pete Ghiorse is a Group Product Manager for AI/ML and the founder of Honeydew, an AI family organizer. The run cost about $1.70 on OpenRouter. Public methods and synthetic data are linked above. He has an obvious stake in Honeydew; the unflattering findings, including those about the GPT model his product runs on, remain in the body.*

@@ -151,6 +151,6 @@ The observations suggest questions, not conclusions:
 
 ## Conflict, materials and scope
 
-I am the founder of Honeydew and conducted this analysis to inform its distribution strategy. The result is not independent research. The query list is published above; the underlying query-level audit and anonymized aggregate analytics are available on request. There is no verified public data repository linked from this post.
+I am the founder of Honeydew and conducted this analysis to inform its distribution strategy. The result is not independent research. The public [`llm-discoverability-field-note` repository](https://github.com/pghio/llm-discoverability-field-note) contains the ten-query panel, aggregate observations, corrected analysis, and a denominator check that prevents sessions and events from being turned into a false capture rate. It contains no visitor-level data.
 
 The field note is useful as a dated baseline: LLM referrals were observable but small, Honeydew was absent from nine generic Perplexity queries, and ordinary search retrieved the site more often than Perplexity selected it. Anything stronger needs more data and a design capable of supporting the claim.
