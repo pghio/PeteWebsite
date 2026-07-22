@@ -59,7 +59,16 @@ Substack description:
 ## Maintenance checklist
 
 1. Run `npm run check:profile`.
-2. Update the website, LinkedIn, Substack, GitHub, and `public/llms.txt` together.
+2. Update the website, LinkedIn, Substack, GitHub, and `public/llms.txt` together. Use the canonical tracked website links in `docs/referral-measurement.md` for every inbound profile placement.
 3. Preserve historical metrics as dated snapshots; add a correction when a later audit changes the conclusion.
 4. Do not promise a public repository until the sanitized artifact and reproduction instructions are live.
 5. Re-check every public URL and recruiter CTA after deployment.
+
+## Referral links
+
+- LinkedIn profile: `https://peterghiorse.com/?utm_source=linkedin&utm_medium=social&utm_campaign=recruiter_visibility&utm_content=profile_website`
+- LinkedIn Featured resume: `https://peterghiorse.com/resume?utm_source=linkedin&utm_medium=social&utm_campaign=recruiter_visibility&utm_content=featured_resume`
+- Substack profile: `https://peterghiorse.com/?utm_source=substack&utm_medium=referral&utm_campaign=recruiter_visibility&utm_content=profile_website`
+- GitHub README: `https://peterghiorse.com/?utm_source=github&utm_medium=referral&utm_campaign=recruiter_visibility&utm_content=readme_badge`
+
+Never put a person’s name, email, company, handle, hashed identifier, or person-specific code in a UTM or GA4 event. Named attribution begins only when someone intentionally identifies themselves, such as by sending an email.

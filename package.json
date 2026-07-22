@@ -7,7 +7,8 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run check:profile && astro build",
+    "build": "npm run check:profile && npm run check:attribution && astro build",
+    "check:attribution": "node scripts/check-attribution.mjs",
     "check:profile": "node scripts/check-profile-sync.mjs",
     "preview": "astro preview",
     "astro": "astro"

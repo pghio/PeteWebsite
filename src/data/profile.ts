@@ -32,4 +32,10 @@ export const PROFILE = {
     honeydew: 'https://gethoneydew.app',
     email: 'mailto:pmghiorse@gmail.com',
   },
+  inboundWebsiteLinks: {
+    linkedinProfile: 'https://peterghiorse.com/?utm_source=linkedin&utm_medium=social&utm_campaign=recruiter_visibility&utm_content=profile_website',
+    linkedinFeaturedResume: 'https://peterghiorse.com/resume?utm_source=linkedin&utm_medium=social&utm_campaign=recruiter_visibility&utm_content=featured_resume',
+    substackProfile: 'https://peterghiorse.com/?utm_source=substack&utm_medium=referral&utm_campaign=recruiter_visibility&utm_content=profile_website',
+    githubReadme: 'https://peterghiorse.com/?utm_source=github&utm_medium=referral&utm_campaign=recruiter_visibility&utm_content=readme_badge',
+  },
 } as const;

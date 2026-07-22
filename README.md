@@ -38,6 +38,8 @@ npm run preview
 
 - The full-content website feed is available at `/rss.xml` and is the source for Substack archive imports.
 - Consent-gated analytics defaults to the PeteWebsite GA4 stream (`G-0JQ5NNRQM2`).
+- Inbound attribution preserves consented source, medium, campaign, placement, and landing-page context; `contact_intent` is the recruiter-funnel conversion.
+- Canonical profile URLs and GA4 reporting setup live in `docs/referral-measurement.md`.
 - Set `PUBLIC_GA_MEASUREMENT_ID` to override that public measurement ID for a preview or alternate environment.
 - Reader email addresses remain in Substack; website analytics accepts only the anonymous events and parameters allow-listed in `src/components/Analytics.astro`.
 

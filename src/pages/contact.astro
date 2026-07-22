@@ -30,6 +30,7 @@ const links = [
           data-newsletter-impression={link.newsletter ? true : undefined}
           data-analytics-placement="contact"
           data-profile-cta={link.name.toLowerCase()}
+          data-contact-method={link.name === "Email" ? "email" : undefined}
           class="card-hover flex items-center gap-4 p-6 border border-slate-200 dark:border-slate-800 rounded-2xl group bg-white dark:bg-[#141b2d]"
         >
           <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-(--color-primary) group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors shrink-0">

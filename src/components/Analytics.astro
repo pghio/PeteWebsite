@@ -9,10 +9,14 @@ const gaMeasurementId = GA_MEASUREMENT_ID;
     <script is:inline define:vars={{ gaMeasurementId }}>
       (() => {
         const consentKey = 'pg_analytics_consent';
+        const attributionKey = 'pg_session_attribution_v1';
+        const attributionSentKey = 'pg_session_attribution_sent_v1';
         const allowedEvents = new Set([
           'article_view',
           'article_engaged',
           'article_complete',
+          'session_attribution',
+          'contact_intent',
           'newsletter_cta_view',
           'newsletter_cta_click',
           'related_post_click',
@@ -22,14 +26,23 @@ const gaMeasurementId = GA_MEASUREMENT_ID;
         ]);
         const allowedParameters = new Set([
           'active_seconds',
+          'campaign_name',
           'category',
+          'contact_method',
           'content_path',
           'content_type',
           'destination_host',
+          'destination_type',
+          'landing_path',
+          'link_placement',
           'placement',
+          'referrer_host',
           'related_path',
           'scroll_depth',
           'share_method',
+          'source_channel',
+          'source_medium',
+          'source_name',
           'cta_type',
         ]);
 
@@ -44,6 +57,109 @@ const gaMeasurementId = GA_MEASUREMENT_ID;
           }
         };
 
+        const getSessionItem = (key) => {
+          try {
+            return sessionStorage.getItem(key);
+          } catch {
+            return null;
+          }
+        };
+
+        const setSessionItem = (key, value) => {
+          try {
+            sessionStorage.setItem(key, value);
+          } catch {
+            // Attribution still works for the current page when storage is blocked.
+          }
+        };
+
+        const safeToken = (value, fallback) => {
+          const token = String(value || '')
+            .trim()
+            .toLowerCase()
+            .replace(/[^a-z0-9._-]+/g, '_')
+            .replace(/^_+|_+$/g, '')
+            .slice(0, 80);
+          return token || fallback;
+        };
+
+        const getExternalReferrerHost = () => {
+          if (!document.referrer) return '';
+          try {
+            const referrer = new URL(document.referrer);
+            return referrer.origin === window.location.origin ? '' : referrer.hostname.toLowerCase();
+          } catch {
+            return '';
+          }
+        };
+
+        const classifySource = (source, medium, referrerHost) => {
+          const haystack = `${source} ${medium} ${referrerHost}`;
+          if (source === '(direct)') return 'direct';
+          if (haystack.includes('linkedin')) return 'linkedin';
+          if (haystack.includes('substack')) return 'substack';
+          if (haystack.includes('github')) return 'github';
+          if (/chatgpt|openai|perplexity|claude|anthropic|gemini|copilot/.test(haystack)) return 'ai_assistant';
+          if (/google|bing|duckduckgo|yahoo|baidu/.test(haystack) && medium === 'referral') return 'organic_search';
+          if (/email|newsletter|direct_message/.test(medium)) return 'direct_outreach';
+          if (medium === 'social') return 'social';
+          if (medium === 'referral' || referrerHost) return 'referral';
+          return 'campaign';
+        };
+
+        const captureAttribution = () => {
+          const stored = getSessionItem(attributionKey);
+          if (stored) {
+            try {
+              const parsed = JSON.parse(stored);
+              if (parsed && typeof parsed === 'object') return parsed;
+            } catch {
+              // Replace malformed storage with a fresh, allow-listed record.
+            }
+          }
+
+          const query = new URLSearchParams(window.location.search);
+          const referrerHost = getExternalReferrerHost();
+          const source = safeToken(query.get('utm_source'), referrerHost || '(direct)');
+          const medium = safeToken(query.get('utm_medium'), referrerHost ? 'referral' : '(none)');
+          const attribution = {
+            source_channel: classifySource(source, medium, referrerHost),
+            source_name: source,
+            source_medium: medium,
+            campaign_name: safeToken(query.get('utm_campaign'), '(not_set)'),
+            link_placement: safeToken(query.get('utm_content'), '(not_set)'),
+            landing_path: window.location.pathname.slice(0, 120),
+            referrer_host: safeToken(referrerHost, '(none)'),
+          };
+
+          setSessionItem(attributionKey, JSON.stringify(attribution));
+          return attribution;
+        };
+
+        const attribution = captureAttribution();
+
+        const getAnalyticsPageLocation = () => {
+          const page = new URL(window.location.pathname, window.location.origin);
+          const campaignParameters = {
+            utm_source: attribution.source_name,
+            utm_medium: attribution.source_medium,
+            utm_campaign: attribution.campaign_name,
+            utm_content: attribution.link_placement,
+          };
+
+          Object.entries(campaignParameters).forEach(([key, value]) => {
+            if (!value || value.startsWith('(')) return;
+            page.searchParams.set(key, value);
+          });
+          return page.href;
+        };
+
+        const getAnalyticsReferrer = () => (
+          attribution.referrer_host === '(none)'
+            ? ''
+            : `https://${attribution.referrer_host}/`
+        );
+
         const sanitize = (parameters = {}) => {
           const safe = {};
           Object.entries(parameters).forEach(([key, value]) => {
@@ -53,6 +169,8 @@ const gaMeasurementId = GA_MEASUREMENT_ID;
           });
           return safe;
         };
+
+        const withAttribution = (parameters = {}) => sanitize({ ...attribution, ...parameters });
 
         const send = (name, parameters) => {
           if (!analyticsLoaded || getConsent() !== 'accepted' || typeof window.gtag !== 'function') return;
@@ -64,7 +182,7 @@ const gaMeasurementId = GA_MEASUREMENT_ID;
           const consent = getConsent();
           if (consent === 'declined') return;
 
-          const safeParameters = sanitize(parameters);
+          const safeParameters = withAttribution(parameters);
           if (consent === 'accepted' && analyticsLoaded) {
             send(name, safeParameters);
             return;
@@ -92,12 +210,19 @@ const gaMeasurementId = GA_MEASUREMENT_ID;
             allow_google_signals: false,
             allow_ad_personalization_signals: false,
             cookie_flags: 'SameSite=Lax;Secure',
+            page_location: getAnalyticsPageLocation(),
+            page_referrer: getAnalyticsReferrer(),
           });
 
           const script = document.createElement('script');
           script.async = true;
           script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`;
           document.head.appendChild(script);
+
+          if (getSessionItem(attributionSentKey) !== 'true') {
+            send('session_attribution', withAttribution());
+            setSessionItem(attributionSentKey, 'true');
+          }
 
           const queued = eventQueue;
           eventQueue = [];
@@ -161,6 +286,32 @@ const gaMeasurementId = GA_MEASUREMENT_ID;
             });
           }
 
+          if (target.matches('[data-contact-method]')) {
+            const contactMethod = target.dataset.contactMethod || 'unknown';
+            window.pgTrack('contact_intent', {
+              content_path: contentPath,
+              placement,
+              contact_method: contactMethod,
+              destination_type: contactMethod,
+            });
+
+            // When a visitor chooses email, carry only the aggregate referral
+            // context into the visible draft. Their identity is learned only if
+            // they intentionally send the message; it is never sent to GA4.
+            if (target instanceof HTMLAnchorElement && target.protocol === 'mailto:') {
+              const mailto = new URL(target.href);
+              const referralContext = [
+                attribution.source_name,
+                attribution.source_medium,
+                attribution.campaign_name,
+                attribution.link_placement,
+              ].join(' / ');
+              mailto.searchParams.set('subject', 'Website introduction');
+              mailto.searchParams.set('body', `Hi Pete,\n\n\n\n—\nHow I found you: ${referralContext}`);
+              target.href = mailto.toString();
+            }
+          }
+
           if (target instanceof HTMLAnchorElement && target.protocol.startsWith('http')) {
             const destination = new URL(target.href, window.location.href);
             if (destination.origin !== window.location.origin) {
@@ -193,7 +344,11 @@ const gaMeasurementId = GA_MEASUREMENT_ID;
         };
 
         if (getConsent() === 'accepted') loadAnalytics();
-        observeNewsletterPrompts();
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', observeNewsletterPrompts, { once: true });
+        } else {
+          observeNewsletterPrompts();
+        }
       })();
     </script>
   )
