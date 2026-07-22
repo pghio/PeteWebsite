@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "lastReviewed": "2026-07-22",
+  "studies": [
+    {
+      "id": "restraint-study-2026-06-24",
+      "title": "We Gave Six LLMs a Family to Run. Most Hesitated. One Crossed the Safety Line.",
+      "url": "https://peterghiorse.com/blog/llms-knowing-when-to-stop",
+      "repository": "https://github.com/pghio/agent-restraint-evals",
+      "published": "2026-06-24",
+      "state": "study_snapshot",
+      "scope": "A production-shaped restraint study on synthetic household scenarios; no real user data was used.",
+      "method": "Six OpenRouter model identifiers each routed 227 scenarios three times at temperature 0.2 through a forced do/ask/confirm/chat choice. Routing was scored deterministically against an answer key built from a three-model panel.",
+      "numbers": {
+        "scenarios": 227,
+        "models": 6,
+        "trialsPerScenario": 3,
+        "calls": 4086,
+        "parseFailuresDropped": 14,
+        "guardScenarios": 35,
+        "guardTrialsPerModel": 105,
+        "deepSeekGuardViolationPercent": 21,
+        "deepSeekDistinctGuardFailures": 11,
+        "accuracyRangePercent": [74, 84],
+        "hedgingRangePercent": [12, 21],
+        "lowerCostMessyInputDropPoints": [13, 22]
+      },
+      "limitations": [
+        "The scenario set is small and hand-written by the product founder.",
+        "The forced-choice format likely inflates asking relative to open conversation.",
+        "Two panel judges were also models under test, and Gemini’s apparent rank depended materially on its own-family judge.",
+        "Only two tested identifiers were date-pinned snapshots; provider routing and model behavior can change."
+      ]
+    },
+    {
+      "id": "production-benchmark-2026-04-15",
+      "title": "We Asked 8 LLMs to Run Our Family’s Life. Two Tried to Book a Vacation.",
+      "url": "https://peterghiorse.com/blog/llm-benchmark-stop-defaulting-to-the-frontier",
+      "repository": "https://github.com/pghio/llm-agent-benchmark",
+      "published": "2026-04-15",
+      "state": "study_snapshot",
+      "scope": "An April 2026 production case study using Honeydew’s prompt and a small synthetic scenario set.",
+      "method": "Eight models were tested on 35 scenarios across six categories, ten trials per model-scenario pair.",
+      "numbers": {
+        "models": 8,
+        "scenarios": 35,
+        "categories": 6,
+        "trialsPerScenario": 10,
+        "calls": 2800,
+        "costUsd": 145.83,
+        "nonActionTrialsPerModel": 42,
+        "gpt4oMiniHallucinatedToolCalls": 19,
+        "gpt4oMiniHallucinationPercent": 45,
+        "geminiFlashHallucinatedToolCalls": 2
+      },
+      "limitations": [
+        "The prompt was built around GPT-family models, creating prompt-coupling the study cannot separate from capability.",
+        "The June 24 restraint study supersedes the original noisy-input and duplicate-handling conclusions.",
+        "This is a production case study, not peer-reviewed research or a universal model ranking.",
+        "The repository documents a dated production case study; it does not turn the result into a universal model ranking."
+      ]
+    },
+    {
+      "id": "llm-discoverability-field-note-2026-04-14",
+      "title": "Do LLMs Actually Cite Your Startup? A 90-Day Field Note",
+      "url": "https://peterghiorse.com/blog/llm-discoverability-research",
+      "repository": "https://github.com/pghio/llm-discoverability-field-note",
+      "published": "2026-04-14",
+      "state": "study_snapshot",
+      "scope": "A 90-day descriptive field note on one early-stage consumer product’s observable LLM referrals and one ten-query Perplexity citation snapshot.",
+      "method": "GA4 source-attributed sessions and a separate browser-referrer event were kept as different units. Ten queries were run once each in fresh Perplexity sessions and checked separately in ordinary web search.",
+      "numbers": {
+        "observationDays": 90,
+        "windowStart": "2026-01-14",
+        "windowEnd": "2026-04-13",
+        "ga4LlmSessions": 13,
+        "ga4LlmUsers": 12,
+        "comparisonLandings": 8,
+        "customReferrerEvents": 29,
+        "customReferrerUsers": 27,
+        "perplexityQueries": 10,
+        "perplexityAppearances": 1,
+        "genericPerplexityQueries": 9,
+        "genericPerplexityAppearances": 0,
+        "webSearchQueries": 10,
+        "webSearchAppearances": 3
+      },
+      "limitations": [
+        "There was no pre-intervention baseline or control group, so the field note cannot establish causal lift.",
+        "GA4 sessions and custom referrer events are different units and must not be divided into a capture-rate estimate.",
+        "The citation check used one provider, one product, ten queries, and one run per query.",
+        "Typed URLs, later searches, cross-device discovery, and other indirect journeys are outside the observed data."
+      ]
+    }
+  ]
+}

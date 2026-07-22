@@ -6,7 +6,7 @@ interface Props {
 
 const {
   placement = 'article_end',
-  campaign = 'newsletter_growth',
+  campaign = 'content_distribution',
 } = Astro.props;
 
 const parameters = new URLSearchParams({
@@ -25,16 +25,16 @@ const embedUrl = `https://peterghiorse.substack.com/embed?${parameters.toString(
   data-analytics-placement={placement}
   aria-labelledby={`newsletter-title-${placement}`}
 >
-  <p class="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-(--color-primary)">Keep reading with me</p>
-  <h2 id={`newsletter-title-${placement}`} class="text-2xl font-bold text-(--color-text)">One thoughtful essay, when I have something worth saying.</h2>
+  <p class="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-(--color-primary)">ChatGPeTe</p>
+  <h2 id={`newsletter-title-${placement}`} class="text-2xl font-bold text-(--color-text)">Production AI research, plus essays when they earn the space.</h2>
   <p class="mx-auto mt-3 max-w-xl text-base leading-relaxed text-(--color-text-muted)">
-    Essays and field reports on what AI actually changes—at work, at home, and inside the products we trust.
+    I lead AI/ML products, build production agents, and publish rigorous evaluations of how they behave—plus essays when I have something worth saying.
   </p>
 
   <div class="mx-auto mt-6 max-w-lg rounded-xl bg-white/70 p-2 dark:bg-(--color-dark-surface)/40">
     <iframe
       src={embedUrl}
-      title="Subscribe to Pete Ghiorse on Substack"
+      title="Subscribe to ChatGPeTe on Substack"
       loading="lazy"
       class="h-[150px] w-full border-0 bg-transparent"
     ></iframe>
@@ -50,7 +50,7 @@ const embedUrl = `https://peterghiorse.substack.com/embed?${parameters.toString(
       data-analytics-placement={placement}
       class="font-semibold text-(--color-primary) underline underline-offset-4"
     >
-      Open Substack <span aria-hidden="true">&rarr;</span>
+      Open ChatGPeTe <span aria-hidden="true">&rarr;</span>
     </a>
   </p>
 </section>

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "lastReviewed": "2026-07-22",
+  "name": "Pete Ghiorse",
+  "fullName": "Peter Ghiorse",
+  "headline": "AI/ML product leader, founder & hands-on builder",
+  "currentRole": {
+    "title": "Group Product Manager, AI/ML",
+    "employer": "Capital One",
+    "since": 2022,
+    "claimId": "identity.current-role"
+  },
+  "location": {
+    "city": "New York City",
+    "region": "NY",
+    "country": "US",
+    "display": "New York City"
+  },
+  "targetRoles": [
+    "Group Product Manager",
+    "Director of Product Management",
+    "Principal Product Manager",
+    "Head of AI Product"
+  ],
+  "targetDomains": [
+    "AI product strategy",
+    "AI agents",
+    "LLM evaluation",
+    "model behavior and governance",
+    "production machine learning",
+    "multimodal consumer AI",
+    "0-to-1 product development"
+  ],
+  "recruiterFocus": "I’m open to conversations about Group Product Manager, Director of Product Management, Principal Product Manager, or Head of AI Product roles focused on AI agents, model behavior and evaluation, production ML platforms, and consumer AI.",
+  "oneLine": "I lead AI/ML products, build production agents, and publish rigorous evaluations of how they behave.",
+  "practiceLoop": ["Build", "Instrument", "Evaluate", "Publish", "Revise"],
+  "qualityStatement": "AI assists with research, red-teaming, implementation, and editing. I own the thesis, source selection, evaluation design, factual claims, and final editorial judgment.",
+  "publication": {
+    "name": "ChatGPeTe",
+    "description": "I lead AI/ML products, build production agents, and publish rigorous evaluations of how they behave—plus essays when I have something worth saying.",
+    "url": "https://peterghiorse.substack.com"
+  },
+  "experience": [
+    {
+      "id": "capital-one",
+      "company": "Capital One",
+      "role": "Group Product Manager, AI/ML",
+      "startYear": 2022,
+      "endYear": null,
+      "status": "current",
+      "claimIds": ["identity.current-role"]
+    },
+    {
+      "id": "honeydew",
+      "company": "Honeydew",
+      "role": "Founder",
+      "startYear": 2025,
+      "endYear": null,
+      "status": "current",
+      "claimIds": ["honeydew.founded-2025", "honeydew.multimodal-60-tools"]
+    },
+    {
+      "id": "givetide",
+      "company": "GiveTide",
+      "role": "Co-Founder",
+      "startYear": 2017,
+      "endYear": 2022,
+      "status": "acquired",
+      "claimIds": ["givetide.acquired-2022"]
+    }
+  ],
+  "education": {
+    "institution": "University of Richmond",
+    "school": "Robins School of Business",
+    "degree": "B.S. Finance & Economics",
+    "honor": "Magna Cum Laude",
+    "claimIds": ["education.richmond"]
+  },
+  "links": {
+    "website": "https://peterghiorse.com",
+    "linkedin": "https://linkedin.com/in/peteghiorse",
+    "github": "https://github.com/pghio",
+    "substack": "https://peterghiorse.substack.com",
+    "honeydew": "https://gethoneydew.app",
+    "email": "mailto:pmghiorse@gmail.com"
+  },
+  "research": [
+    {
+      "id": "restraint-study-2026-06-24",
+      "url": "https://peterghiorse.com/blog/llms-knowing-when-to-stop",
+      "repository": "https://github.com/pghio/agent-restraint-evals",
+      "state": "study_snapshot"
+    },
+    {
+      "id": "production-benchmark-2026-04-15",
+      "url": "https://peterghiorse.com/blog/llm-benchmark-stop-defaulting-to-the-frontier",
+      "repository": "https://github.com/pghio/llm-agent-benchmark",
+      "state": "study_snapshot"
+    },
+    {
+      "id": "llm-discoverability-field-note-2026-04-14",
+      "url": "https://peterghiorse.com/blog/llm-discoverability-research",
+      "repository": "https://github.com/pghio/llm-discoverability-field-note",
+      "state": "study_snapshot"
+    }
+  ]
+}

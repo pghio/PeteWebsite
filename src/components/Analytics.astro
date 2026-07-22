@@ -4,187 +4,227 @@ import { GA_MEASUREMENT_ID } from '../config/analytics';
 const gaMeasurementId = GA_MEASUREMENT_ID;
 ---
 
+{gaMeasurementId && <meta name="pg-ga-measurement-id" content={gaMeasurementId} />}
+
 {
   gaMeasurementId && (
-    <script is:inline define:vars={{ gaMeasurementId }}>
-      (() => {
-        const consentKey = 'pg_analytics_consent';
-        const allowedEvents = new Set([
-          'article_view',
-          'article_engaged',
-          'article_complete',
-          'newsletter_cta_view',
-          'newsletter_cta_click',
-          'related_post_click',
-          'outbound_click',
-          'share_click',
-        ]);
-        const allowedParameters = new Set([
-          'active_seconds',
-          'category',
-          'content_path',
-          'content_type',
-          'destination_host',
-          'placement',
-          'related_path',
-          'scroll_depth',
-          'share_method',
-        ]);
+    <script>
+      import {
+        ATTRIBUTION_SENT_KEY,
+        ATTRIBUTION_STORAGE_KEY,
+        captureAttribution,
+        getAnalyticsPageLocation,
+        getAnalyticsReferrer,
+        sanitizeEvent,
+      } from '../lib/attribution.mjs';
 
-        let analyticsLoaded = false;
-        let eventQueue = [];
+      const measurementId = document.querySelector('meta[name="pg-ga-measurement-id"]')?.getAttribute('content') || '';
+      const consentKey = 'pg_analytics_consent';
+      let analyticsLoaded = false;
+      let eventQueue: Array<{ name: string; parameters: Record<string, string | number> }> = [];
 
-        const getConsent = () => {
-          try {
-            return localStorage.getItem(consentKey);
-          } catch {
-            return null;
-          }
-        };
+      const readSessionValue = (key: string) => {
+        try {
+          return sessionStorage.getItem(key);
+        } catch {
+          return null;
+        }
+      };
 
-        const sanitize = (parameters = {}) => {
-          const safe = {};
-          Object.entries(parameters).forEach(([key, value]) => {
-            if (!allowedParameters.has(key)) return;
-            if (!['string', 'number', 'boolean'].includes(typeof value)) return;
-            safe[key] = typeof value === 'string' ? value.slice(0, 120) : value;
-          });
-          return safe;
-        };
+      const writeSessionValue = (key: string, value: string) => {
+        try {
+          sessionStorage.setItem(key, value);
+        } catch {
+          // Storage can be unavailable in hardened browsers. Attribution then
+          // remains page-scoped rather than inventing a persistent identity.
+        }
+      };
 
-        const send = (name, parameters) => {
-          if (!analyticsLoaded || getConsent() !== 'accepted' || typeof window.gtag !== 'function') return;
-          window.gtag('event', name, parameters);
-        };
+      const getConsent = () => {
+        try {
+          return localStorage.getItem(consentKey);
+        } catch {
+          return null;
+        }
+      };
 
-        window.pgTrack = (name, parameters = {}) => {
-          if (!allowedEvents.has(name)) return;
-          const consent = getConsent();
-          if (consent === 'declined') return;
+      let storedAttribution = null;
+      try {
+        const value = readSessionValue(ATTRIBUTION_STORAGE_KEY);
+        storedAttribution = value ? JSON.parse(value) : null;
+      } catch {
+        storedAttribution = null;
+      }
 
-          const safeParameters = sanitize(parameters);
-          if (consent === 'accepted' && analyticsLoaded) {
-            send(name, safeParameters);
-            return;
-          }
+      const attribution = captureAttribution({
+        pageUrl: window.location.href,
+        referrer: document.referrer,
+        siteOrigin: window.location.origin,
+        stored: storedAttribution,
+      });
+      writeSessionValue(ATTRIBUTION_STORAGE_KEY, JSON.stringify(attribution));
 
-          // Hold only anonymous, allow-listed events in memory while the visitor
-          // decides. Nothing leaves the browser until they opt in.
-          eventQueue.push([name, safeParameters]);
-        };
+      const send = (payload: { name: string; parameters: Record<string, string | number> }) => {
+        const gtag = (window as any).gtag;
+        if (!analyticsLoaded || getConsent() !== 'accepted' || typeof gtag !== 'function') return;
+        gtag('event', payload.name, payload.parameters);
+      };
 
-        const loadAnalytics = () => {
-          if (analyticsLoaded || getConsent() !== 'accepted') return;
-          analyticsLoaded = true;
-          window[`ga-disable-${gaMeasurementId}`] = false;
-          window.dataLayer = window.dataLayer || [];
-          window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
-          window.gtag('consent', 'default', {
-            analytics_storage: 'granted',
-            ad_storage: 'denied',
-            ad_user_data: 'denied',
-            ad_personalization: 'denied',
-          });
-          window.gtag('js', new Date());
-          window.gtag('config', gaMeasurementId, {
-            allow_google_signals: false,
-            allow_ad_personalization_signals: false,
-            cookie_flags: 'SameSite=Lax;Secure',
-          });
+      (window as any).pgTrack = (name: string, parameters: Record<string, unknown> = {}) => {
+        const payload = sanitizeEvent(name, parameters, attribution);
+        if (!payload || getConsent() === 'declined') return;
 
-          const script = document.createElement('script');
-          script.async = true;
-          script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaMeasurementId)}`;
-          document.head.appendChild(script);
+        if (getConsent() === 'accepted' && analyticsLoaded) {
+          send(payload);
+          return;
+        }
 
-          const queued = eventQueue;
-          eventQueue = [];
-          queued.forEach(([name, parameters]) => send(name, parameters));
-        };
+        // Hold only anonymous, allow-listed values in memory while the visitor
+        // decides. Nothing leaves the browser until consent is accepted.
+        eventQueue.push(payload);
+      };
 
-        const disableAnalytics = () => {
-          eventQueue = [];
-          window[`ga-disable-${gaMeasurementId}`] = true;
-          if (typeof window.gtag === 'function') {
-            window.gtag('consent', 'update', { analytics_storage: 'denied' });
-          }
-          document.cookie.split(';').forEach((cookie) => {
-            const name = cookie.split('=')[0]?.trim();
-            if (name?.startsWith('_ga')) {
-              document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax; Secure`;
-            }
-          });
-        };
+      const sendSessionAttribution = () => {
+        if (readSessionValue(ATTRIBUTION_SENT_KEY) === 'true') return;
+        (window as any).pgTrack('session_attribution', {});
+        writeSessionValue(ATTRIBUTION_SENT_KEY, 'true');
+      };
 
-        window.addEventListener('pg:analytics-consent', (event) => {
-          if (event.detail === 'accepted') loadAnalytics();
-          if (event.detail === 'declined') disableAnalytics();
+      const loadAnalytics = () => {
+        if (analyticsLoaded || getConsent() !== 'accepted' || !measurementId) return;
+        analyticsLoaded = true;
+        (window as any)[`ga-disable-${measurementId}`] = false;
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).gtag = (window as any).gtag || function () { (window as any).dataLayer.push(arguments); };
+        const gtag = (window as any).gtag;
+
+        gtag('consent', 'default', {
+          analytics_storage: 'granted',
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+        });
+        gtag('js', new Date());
+        gtag('config', measurementId, {
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false,
+          cookie_flags: 'SameSite=Lax;Secure',
+          page_location: getAnalyticsPageLocation({
+            siteOrigin: window.location.origin,
+            path: window.location.pathname,
+            attribution,
+          }),
+          page_referrer: getAnalyticsReferrer(attribution),
         });
 
-        document.addEventListener('click', (event) => {
-          const target = event.target instanceof Element ? event.target.closest('a, button') : null;
-          if (!target) return;
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
+        document.head.appendChild(script);
 
-          const contentPath = window.location.pathname;
-          const placement = target.dataset.analyticsPlacement || 'unspecified';
+        const queued = eventQueue;
+        eventQueue = [];
+        queued.forEach(send);
+        sendSessionAttribution();
+      };
 
-          if (target.matches('[data-newsletter-cta]')) {
-            window.pgTrack('newsletter_cta_click', {
-              content_path: contentPath,
-              placement,
-            });
-          }
-
-          if (target.matches('[data-related-post]')) {
-            window.pgTrack('related_post_click', {
-              content_path: contentPath,
-              related_path: target.getAttribute('href') || '',
-              placement,
-            });
-          }
-
-          if (target.matches('[data-share-method]')) {
-            window.pgTrack('share_click', {
-              content_path: contentPath,
-              share_method: target.dataset.shareMethod || 'unknown',
-              placement,
-            });
-          }
-
-          if (target instanceof HTMLAnchorElement && target.protocol.startsWith('http')) {
-            const destination = new URL(target.href, window.location.href);
-            if (destination.origin !== window.location.origin) {
-              window.pgTrack('outbound_click', {
-                content_path: contentPath,
-                destination_host: destination.hostname,
-                placement,
-              });
-            }
+      const disableAnalytics = () => {
+        eventQueue = [];
+        (window as any)[`ga-disable-${measurementId}`] = true;
+        const gtag = (window as any).gtag;
+        if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: 'denied' });
+        document.cookie.split(';').forEach((cookie) => {
+          const name = cookie.split('=')[0]?.trim();
+          if (name?.startsWith('_ga')) {
+            document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax; Secure`;
           }
         });
+      };
 
-        const observeNewsletterPrompts = () => {
-          const elements = document.querySelectorAll('[data-newsletter-impression]');
-          if (!('IntersectionObserver' in window)) return;
+      window.addEventListener('pg:analytics-consent', (event) => {
+        if ((event as CustomEvent).detail === 'accepted') loadAnalytics();
+        if ((event as CustomEvent).detail === 'declined') disableAnalytics();
+      });
 
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              if (!entry.isIntersecting || entry.intersectionRatio < 0.5) return;
-              const placement = entry.target.getAttribute('data-analytics-placement') || 'unspecified';
-              window.pgTrack('newsletter_cta_view', {
-                content_path: window.location.pathname,
-                placement,
-              });
-              observer.unobserve(entry.target);
+      document.addEventListener('click', (event) => {
+        const target = event.target instanceof Element ? event.target.closest<HTMLElement>('a, button') : null;
+        if (!target) return;
+
+        const contentPath = window.location.pathname;
+        const placement = target.dataset.analyticsPlacement || 'unspecified';
+
+        if (target.matches('[data-profile-cta]')) {
+          (window as any).pgTrack('profile_cta_click', {
+            content_path: contentPath,
+            cta_type: target.dataset.profileCta || 'unknown',
+            placement,
+          });
+        }
+
+        if (target.matches('[data-contact-method]') || (target instanceof HTMLAnchorElement && target.protocol === 'mailto:')) {
+          (window as any).pgTrack('contact_intent', {
+            contact_method: target.dataset.contactMethod || 'email',
+            content_path: contentPath,
+            placement,
+          });
+        }
+
+        if (target.matches('[data-newsletter-cta]')) {
+          (window as any).pgTrack('newsletter_cta_click', {
+            content_path: contentPath,
+            placement,
+          });
+        }
+
+        if (target.matches('[data-related-post]')) {
+          (window as any).pgTrack('related_post_click', {
+            content_path: contentPath,
+            related_path: target.getAttribute('href') || '',
+            placement,
+          });
+        }
+
+        if (target.matches('[data-share-method]')) {
+          (window as any).pgTrack('share_click', {
+            content_path: contentPath,
+            share_method: target.dataset.shareMethod || 'unknown',
+            placement,
+          });
+        }
+
+        if (target instanceof HTMLAnchorElement && target.protocol.startsWith('http')) {
+          const destination = new URL(target.href, window.location.href);
+          if (destination.origin !== window.location.origin) {
+            (window as any).pgTrack('outbound_click', {
+              content_path: contentPath,
+              destination_host: destination.hostname,
+              destination_type: target.dataset.profileCta || 'external',
+              placement,
             });
-          }, { threshold: 0.5 });
+          }
+        }
+      });
 
-          elements.forEach((element) => observer.observe(element));
-        };
+      const observeNewsletterPrompts = () => {
+        const elements = document.querySelectorAll('[data-newsletter-impression]');
+        if (!('IntersectionObserver' in window)) return;
 
-        if (getConsent() === 'accepted') loadAnalytics();
-        observeNewsletterPrompts();
-      })();
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting || entry.intersectionRatio < 0.5) return;
+            (window as any).pgTrack('newsletter_cta_view', {
+              content_path: window.location.pathname,
+              placement: entry.target.getAttribute('data-analytics-placement') || 'unspecified',
+            });
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.5 });
+
+        elements.forEach((element) => observer.observe(element));
+      };
+
+      if (getConsent() === 'accepted') loadAnalytics();
+      observeNewsletterPrompts();
     </script>
   )
 }

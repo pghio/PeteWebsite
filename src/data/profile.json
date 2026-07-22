@@ -1,0 +1,346 @@
+{
+  "schemaVersion": 1,
+  "lastReviewed": "2026-07-22",
+  "identity": {
+    "publicName": "Pete Ghiorse",
+    "fullName": "Peter Ghiorse",
+    "currentRole": "Group Product Manager, AI/ML",
+    "employer": "Capital One",
+    "roleSince": 2022,
+    "headline": "AI/ML product leader, founder & hands-on builder",
+    "oneLine": "I lead AI/ML products, build production agents, and publish rigorous evaluations of how they behave."
+  },
+  "publication": {
+    "name": "ChatGPeTe",
+    "description": "I lead AI/ML products, build production agents, and publish rigorous evaluations of how they behave—plus essays when I have something worth saying.",
+    "url": "https://peterghiorse.substack.com"
+  },
+  "targeting": {
+    "location": {
+      "city": "New York City",
+      "region": "NY",
+      "country": "US",
+      "display": "New York City"
+    },
+    "recruiterFocus": "I’m open to conversations about Group Product Manager, Director of Product Management, Principal Product Manager, or Head of AI Product roles focused on AI agents, model behavior and evaluation, production ML platforms, and consumer AI.",
+    "roles": [
+      "Group Product Manager",
+      "Director of Product Management",
+      "Principal Product Manager",
+      "Head of AI Product"
+    ],
+    "domains": [
+      "AI product strategy",
+      "AI agents",
+      "LLM evaluation",
+      "model behavior and governance",
+      "production machine learning",
+      "multimodal consumer AI",
+      "0-to-1 product development"
+    ]
+  },
+  "practice": {
+    "loop": ["Build", "Instrument", "Evaluate", "Publish", "Revise"],
+    "qualityStatement": "AI assists with research, red-teaming, implementation, and editing. I own the thesis, source selection, evaluation design, factual claims, and final editorial judgment.",
+    "focusAreas": [
+      {
+        "title": "AI product leadership",
+        "description": "Strategy, roadmaps, decision boundaries, governance, and cross-functional execution for products that depend on uncertain model behavior."
+      },
+      {
+        "title": "Agent evaluation & safety",
+        "description": "Act/ask/confirm policy, destructive-action guard cases, messy-input robustness, and production-shaped evaluation design."
+      },
+      {
+        "title": "Multimodal systems",
+        "description": "Voice, text, images, tool orchestration, and the product decisions that make an agent useful outside a demo."
+      },
+      {
+        "title": "Evidence-backed communication",
+        "description": "Methods, limitations, negative results, corrections, and visual explanation that let readers inspect the reasoning."
+      }
+    ]
+  },
+  "experience": [
+    {
+      "id": "capital-one",
+      "company": "Capital One",
+      "role": "Group Product Manager, AI/ML",
+      "startYear": 2022,
+      "endYear": null,
+      "status": "current",
+      "summary": "Leading product direction for ML-powered spend controls and fraud detection.",
+      "claimIds": ["identity.current-role"]
+    },
+    {
+      "id": "honeydew",
+      "company": "Honeydew",
+      "role": "Founder",
+      "startYear": 2025,
+      "endYear": null,
+      "status": "current",
+      "summary": "Building a multimodal family-coordination agent and using it as a production lab for model behavior, evaluation, and trust.",
+      "claimIds": ["honeydew.founded-2025", "honeydew.multimodal-60-tools"]
+    },
+    {
+      "id": "givetide",
+      "company": "GiveTide",
+      "role": "Co-Founder",
+      "startYear": 2017,
+      "endYear": 2022,
+      "status": "acquired",
+      "summary": "Co-founded and ran GiveTide for five years before its acquisition in 2022.",
+      "claimIds": ["givetide.acquired-2022"]
+    }
+  ],
+  "education": {
+    "institution": "University of Richmond",
+    "school": "Robins School of Business",
+    "degree": "B.S. Finance & Economics",
+    "honor": "Magna Cum Laude",
+    "claimIds": ["education.richmond"]
+  },
+  "links": {
+    "website": "https://peterghiorse.com",
+    "linkedin": "https://linkedin.com/in/peteghiorse",
+    "github": "https://github.com/pghio",
+    "substack": "https://peterghiorse.substack.com",
+    "honeydew": "https://gethoneydew.app",
+    "email": "mailto:pmghiorse@gmail.com"
+  },
+  "attribution": {
+    "measurementId": "G-0JQ5NNRQM2",
+    "canonicalProfileLinks": {
+      "linkedinProfile": "https://peterghiorse.com/?utm_source=linkedin&utm_medium=social&utm_campaign=recruiter_visibility&utm_content=profile_website",
+      "linkedinFeaturedResume": "https://peterghiorse.com/resume?utm_source=linkedin&utm_medium=social&utm_campaign=recruiter_visibility&utm_content=featured_resume",
+      "substackProfile": "https://peterghiorse.com/?utm_source=substack&utm_medium=referral&utm_campaign=recruiter_visibility&utm_content=profile_website",
+      "githubReadme": "https://peterghiorse.com/?utm_source=github&utm_medium=referral&utm_campaign=recruiter_visibility&utm_content=readme_badge"
+    },
+    "taxonomy": {
+      "source": ["linkedin", "substack", "github", "email", "newsletter"],
+      "medium": ["social", "referral", "email", "direct_message"],
+      "campaign": ["recruiter_visibility", "content_distribution", "recruiter_outreach"],
+      "contentPurpose": "Stable placement or creative identifier; never a person identifier."
+    },
+    "events": [
+      "article_view",
+      "article_engaged",
+      "article_complete",
+      "session_attribution",
+      "contact_intent",
+      "newsletter_cta_view",
+      "newsletter_cta_click",
+      "related_post_click",
+      "outbound_click",
+      "share_click",
+      "profile_cta_click"
+    ],
+    "parameters": [
+      "active_seconds",
+      "campaign_name",
+      "category",
+      "contact_method",
+      "content_path",
+      "content_type",
+      "cta_type",
+      "destination_host",
+      "destination_type",
+      "landing_path",
+      "link_placement",
+      "placement",
+      "referrer_host",
+      "related_path",
+      "scroll_depth",
+      "share_method",
+      "source_channel",
+      "source_medium",
+      "source_name"
+    ]
+  },
+  "claimStates": {
+    "approved_current": "Approved for current public profiles; re-check when role or product state changes.",
+    "approved_historical": "Approved historical fact with a fixed date.",
+    "study_snapshot": "Approved only with the study date, scope, method, and limitations attached.",
+    "editorial_position": "Pete’s stated position or framing, not an empirical finding.",
+    "prohibited_without_evidence": "Do not publish without a dated primary evidence record.",
+    "superseded": "Retained only to catch and remove stale public copy."
+  },
+  "claims": [
+    {
+      "id": "identity.current-role",
+      "state": "approved_current",
+      "text": "Pete Ghiorse is a Group Product Manager for AI/ML at Capital One.",
+      "evidence": "Public professional profile and current-role attestation.",
+      "reviewed": "2026-07-22"
+    },
+    {
+      "id": "honeydew.founded-2025",
+      "state": "approved_current",
+      "text": "Pete founded Honeydew in 2025.",
+      "evidence": "/blog/ai-mom-and-pop-software-era",
+      "reviewed": "2026-07-22"
+    },
+    {
+      "id": "honeydew.multimodal-60-tools",
+      "state": "approved_current",
+      "text": "Honeydew accepts voice, text, and photo input and routes work through a catalog of 60+ tools.",
+      "evidence": "/blog/ai-mom-and-pop-software-era",
+      "reviewed": "2026-07-22"
+    },
+    {
+      "id": "givetide.acquired-2022",
+      "state": "approved_historical",
+      "text": "Pete co-founded and ran GiveTide for five years; GiveTide was acquired in 2022.",
+      "evidence": "Founder attestation and acquisition record.",
+      "reviewed": "2026-07-22"
+    },
+    {
+      "id": "education.richmond",
+      "state": "approved_historical",
+      "text": "Pete earned a B.S. in Finance & Economics from the University of Richmond, Magna Cum Laude.",
+      "evidence": "Education record.",
+      "reviewed": "2026-07-22"
+    },
+    {
+      "id": "research.restraint-2026-06-24",
+      "state": "study_snapshot",
+      "text": "The June 24, 2026 restraint study used 227 scenarios across six models, with three trials per scenario: 4,086 calls, of which 14 failed to parse and were dropped.",
+      "evidence": "/blog/llms-knowing-when-to-stop",
+      "reviewed": "2026-07-22"
+    },
+    {
+      "id": "research.benchmark-2026-04-15",
+      "state": "study_snapshot",
+      "text": "The April 15, 2026 production case study tested eight models on 35 scenarios with ten trials each: 2,800 API calls costing $145.83.",
+      "evidence": "/blog/llm-benchmark-stop-defaulting-to-the-frontier",
+      "reviewed": "2026-07-22"
+    },
+    {
+      "id": "honeydew.founded-2024",
+      "state": "superseded",
+      "text": "Honeydew was founded in 2024.",
+      "evidence": "Superseded by honeydew.founded-2025.",
+      "reviewed": "2026-07-22"
+    },
+    {
+      "id": "honeydew.performance-metrics",
+      "state": "prohibited_without_evidence",
+      "text": "Honeydew user counts, retention, transaction volume, funding, latency, transcription accuracy, sync speed, cache hit rates, or other production performance metrics.",
+      "evidence": "Requires a dated primary evidence record before publication.",
+      "reviewed": "2026-07-22"
+    },
+    {
+      "id": "research.restraint-repository",
+      "state": "approved_current",
+      "text": "The restraint-study materials repository is public.",
+      "evidence": "https://github.com/pghio/agent-restraint-evals",
+      "reviewed": "2026-07-22"
+    },
+    {
+      "id": "research.benchmark-repository",
+      "state": "approved_current",
+      "text": "The April model-benchmark materials repository is public.",
+      "evidence": "https://github.com/pghio/llm-agent-benchmark",
+      "reviewed": "2026-07-22"
+    },
+    {
+      "id": "research.discoverability-repository",
+      "state": "approved_current",
+      "text": "The LLM-discoverability field-note materials repository is public.",
+      "evidence": "https://github.com/pghio/llm-discoverability-field-note",
+      "reviewed": "2026-07-22"
+    }
+  ],
+  "research": [
+    {
+      "id": "restraint-study-2026-06-24",
+      "title": "We Gave Six LLMs a Family to Run. Most Hesitated. One Crossed the Safety Line.",
+      "url": "https://peterghiorse.com/blog/llms-knowing-when-to-stop",
+      "repository": "https://github.com/pghio/agent-restraint-evals",
+      "published": "2026-06-24",
+      "state": "study_snapshot",
+      "scope": "A production-shaped restraint study on synthetic household scenarios; no real user data was used.",
+      "method": "Six OpenRouter model identifiers each routed 227 scenarios three times at temperature 0.2 through a forced do/ask/confirm/chat choice. Routing was scored deterministically against an answer key built from a three-model panel.",
+      "numbers": {
+        "scenarios": 227,
+        "models": 6,
+        "trialsPerScenario": 3,
+        "calls": 4086,
+        "parseFailuresDropped": 14,
+        "guardScenarios": 35,
+        "guardTrialsPerModel": 105,
+        "deepSeekGuardViolationPercent": 21,
+        "deepSeekDistinctGuardFailures": 11,
+        "accuracyRangePercent": [74, 84],
+        "hedgingRangePercent": [12, 21],
+        "lowerCostMessyInputDropPoints": [13, 22]
+      },
+      "limitations": [
+        "The scenario set is small and hand-written by the product founder.",
+        "The forced-choice format likely inflates asking relative to open conversation.",
+        "Two panel judges were also models under test, and Gemini’s apparent rank depended materially on its own-family judge.",
+        "Only two tested identifiers were date-pinned snapshots; provider routing and model behavior can change."
+      ]
+    },
+    {
+      "id": "production-benchmark-2026-04-15",
+      "title": "We Asked 8 LLMs to Run Our Family’s Life. Two Tried to Book a Vacation.",
+      "url": "https://peterghiorse.com/blog/llm-benchmark-stop-defaulting-to-the-frontier",
+      "repository": "https://github.com/pghio/llm-agent-benchmark",
+      "published": "2026-04-15",
+      "state": "study_snapshot",
+      "scope": "An April 2026 production case study using Honeydew’s prompt and a small synthetic scenario set.",
+      "method": "Eight models were tested on 35 scenarios across six categories, ten trials per model-scenario pair.",
+      "numbers": {
+        "models": 8,
+        "scenarios": 35,
+        "categories": 6,
+        "trialsPerScenario": 10,
+        "calls": 2800,
+        "costUsd": 145.83,
+        "nonActionTrialsPerModel": 42,
+        "gpt4oMiniHallucinatedToolCalls": 19,
+        "gpt4oMiniHallucinationPercent": 45,
+        "geminiFlashHallucinatedToolCalls": 2
+      },
+      "limitations": [
+        "The prompt was built around GPT-family models, creating prompt-coupling the study cannot separate from capability.",
+        "The June 24 restraint study supersedes the original noisy-input and duplicate-handling conclusions.",
+        "This is a production case study, not peer-reviewed research or a universal model ranking.",
+        "The repository documents a dated production case study; it does not turn the result into a universal model ranking."
+      ]
+    },
+    {
+      "id": "llm-discoverability-field-note-2026-04-14",
+      "title": "Do LLMs Actually Cite Your Startup? A 90-Day Field Note",
+      "url": "https://peterghiorse.com/blog/llm-discoverability-research",
+      "repository": "https://github.com/pghio/llm-discoverability-field-note",
+      "published": "2026-04-14",
+      "state": "study_snapshot",
+      "scope": "A 90-day descriptive field note on one early-stage consumer product’s observable LLM referrals and one ten-query Perplexity citation snapshot.",
+      "method": "GA4 source-attributed sessions and a separate browser-referrer event were kept as different units. Ten queries were run once each in fresh Perplexity sessions and checked separately in ordinary web search.",
+      "numbers": {
+        "observationDays": 90,
+        "windowStart": "2026-01-14",
+        "windowEnd": "2026-04-13",
+        "ga4LlmSessions": 13,
+        "ga4LlmUsers": 12,
+        "comparisonLandings": 8,
+        "customReferrerEvents": 29,
+        "customReferrerUsers": 27,
+        "perplexityQueries": 10,
+        "perplexityAppearances": 1,
+        "genericPerplexityQueries": 9,
+        "genericPerplexityAppearances": 0,
+        "webSearchQueries": 10,
+        "webSearchAppearances": 3
+      },
+      "limitations": [
+        "There was no pre-intervention baseline or control group, so the field note cannot establish causal lift.",
+        "GA4 sessions and custom referrer events are different units and must not be divided into a capture-rate estimate.",
+        "The citation check used one provider, one product, ten queries, and one run per query.",
+        "Typed URLs, later searches, cross-device discovery, and other indirect journeys are outside the observed data."
+      ]
+    }
+  ]
+}

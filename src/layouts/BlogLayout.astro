@@ -7,7 +7,9 @@ import CookieConsent from '../components/CookieConsent.astro';
 import NewsletterCTA from '../components/NewsletterCTA.astro';
 import RelatedReading from '../components/RelatedReading.astro';
 import ShareArticle from '../components/ShareArticle.astro';
+import ArticleEvidenceFooter from '../components/ArticleEvidenceFooter.astro';
 import { GA_MEASUREMENT_ID } from '../config/analytics';
+import { PROFILE, RESEARCH } from '../data/profile';
 
 interface PostFrontmatter {
   title: string;
@@ -26,12 +28,13 @@ const category = frontmatter?.category;
 const ogImage = frontmatter?.ogImage;
 const faq = frontmatter?.faq;
 const canonicalURL = new URL(Astro.url.pathname, 'https://peterghiorse.com');
-const defaultOgImage = '/images/posts/monsters-of-the-mind.png';
+const defaultOgImage = '/images/profile/pete-ghiorse-profile-card.png';
 const socialImageURL = new URL(ogImage || defaultOgImage, 'https://peterghiorse.com');
 const analyticsEnabled = Boolean(GA_MEASUREMENT_ID);
 
 const normalizePath = (path: string) => path.length > 1 ? path.replace(/\/$/, '') : path;
 const currentPath = normalizePath(Astro.url.pathname);
+const researchRecord = RESEARCH.find((study) => new URL(study.url).pathname === currentPath);
 const postModules = import.meta.glob('../pages/blog/*.md', { eager: true }) as Record<string, {
   frontmatter: PostFrontmatter;
   url?: string;
@@ -76,10 +79,11 @@ const articleSchema = {
   "datePublished": publishDate,
   "author": {
     "@type": "Person",
-    "name": "Pete Ghiorse",
-    "url": "https://peterghiorse.com",
-    "jobTitle": "Group PM",
-    "sameAs": ["https://linkedin.com/in/peteghiorse", "https://github.com/pghio"]
+    "@id": `${PROFILE.links.website}/#person`,
+    "name": PROFILE.name,
+    "url": PROFILE.links.website,
+    "jobTitle": PROFILE.role,
+    "sameAs": [PROFILE.links.linkedin, PROFILE.links.github, PROFILE.links.substack]
   },
   "publisher": {
     "@type": "Person",
@@ -89,6 +93,10 @@ const articleSchema = {
   "mainEntityOfPage": canonicalURL.href,
   "image": socialImageURL.href,
   "isAccessibleForFree": true,
+  ...(researchRecord ? {
+    "isBasedOn": researchRecord.repository,
+    "about": ["AI agents", "LLM evaluation", "AI product management"],
+  } : {}),
   ...(category ? { "articleSection": category } : {})
 };
 
@@ -128,7 +136,7 @@ const breadcrumbSchema = {
     {publishDate && <meta property="article:published_time" content={publishDate} />}
     {category && <meta property="article:section" content={category} />}
     <link rel="canonical" href={canonicalURL.href} />
-    <link rel="alternate" type="application/rss+xml" title="Pete Ghiorse — Writing" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="ChatGPeTe — Research and Essays by Pete Ghiorse" href="/rss.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | Pete Ghiorse</title>
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
@@ -173,7 +181,7 @@ const breadcrumbSchema = {
             <div class="w-10 h-10 rounded-full bg-(--color-primary)/10 flex items-center justify-center text-(--color-primary) font-bold text-sm">PG</div>
             <div>
               <p class="font-semibold text-sm">Pete Ghiorse</p>
-              <p class="text-xs text-(--color-text-muted)">Founder, Honeydew Family AI</p>
+              <p class="text-xs text-(--color-text-muted)">Group Product Manager, AI/ML · Founder, Honeydew</p>
             </div>
           </div>
         </div>
@@ -181,6 +189,8 @@ const breadcrumbSchema = {
         <div class="prose animate-fade-up animate-delay-1">
           <slot />
         </div>
+
+        <ArticleEvidenceFooter currentPath={currentPath} />
 
         <ShareArticle title={title} url={canonicalURL.href} />
 

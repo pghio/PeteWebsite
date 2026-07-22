@@ -1,71 +1,124 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import ProfileCaseStudy from '../components/ProfileCaseStudy.astro';
+import { PROFILE, RESEARCH } from '../data/profile';
+
+const restraint = RESEARCH.find((study) => study.id === 'restraint-study-2026-06-24');
+const benchmark = RESEARCH.find((study) => study.id === 'production-benchmark-2026-04-15');
+if (!restraint || !benchmark) throw new Error('Required research records are missing');
 ---
 
-<BaseLayout title="Home">
+<BaseLayout
+  title="Home"
+  description="Pete Ghiorse leads AI/ML products, builds production agents, and publishes rigorous evaluations of how they behave."
+  ogImage="/images/profile/pete-ghiorse-profile-card.png"
+  ogImageAlt="Pete Ghiorse, AI/ML product leader focused on production agents and evaluation"
+>
   <Hero />
 
   <section class="max-w-5xl mx-auto px-6 pb-24">
-    <div class="grid md:grid-cols-3 gap-5 mb-20">
-      <div class="card-hover p-6 rounded-2xl bg-slate-50 dark:bg-[#141b2d] border border-slate-200 dark:border-slate-800 animate-fade-up stagger-3">
-        <p class="text-4xl font-extrabold gradient-text mb-2">4+</p>
-        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Years leading AI/ML product at Capital One</p>
+    <div class="mb-20">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+        <div>
+          <p class="text-(--color-primary) font-semibold text-sm tracking-widest uppercase mb-3">Selected evidence</p>
+          <h2 class="text-3xl font-bold">Products, decisions, and inspectable work</h2>
+        </div>
+        <a href="/projects" class="text-sm font-semibold text-(--color-primary) hover:underline shrink-0">See all selected work &rarr;</a>
       </div>
-      <div class="card-hover p-6 rounded-2xl bg-slate-50 dark:bg-[#141b2d] border border-slate-200 dark:border-slate-800 animate-fade-up stagger-4">
-        <p class="text-4xl font-extrabold gradient-text mb-2">1</p>
-        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Successful startup exit (GiveTide, acquired 2022)</p>
+      <div class="grid lg:grid-cols-3 gap-5">
+        <ProfileCaseStudy
+          eyebrow="Production product"
+          title="Honeydew"
+          summary="A multimodal family agent that turns voice, text, and photos into shared household plans."
+          role="Founder and product owner across discovery, product strategy, implementation, evaluation, and distribution."
+          method="Use production-shaped failures to define decision boundaries, evaluation cases, and safer act/ask/confirm behavior."
+          outcome="A working product and a repeatable operating loop for improving agent reliability without hiding uncertainty."
+          evidenceHref="/blog/ai-mom-and-pop-software-era"
+          evidenceLabel="Read the build case study"
+          status="Built since 2025"
+        />
+        <ProfileCaseStudy
+          eyebrow="Agent evaluation"
+          title="When should an agent stop?"
+          summary={`${restraint.numbers.scenarios} synthetic household scenarios across ${restraint.numbers.models} models and ${restraint.numbers.calls.toLocaleString()} calls.`}
+          role="Designed the product policy, scenario set, measurement approach, analysis, and public correction standard."
+          method="Repeat each scenario three times; score routing deterministically; retain parse failures, judge disagreement, and limitations."
+          outcome="Reframed model choice around safety, robustness, and steerability rather than one aggregate accuracy score."
+          evidenceHref="/blog/llms-knowing-when-to-stop"
+          repoHref={restraint.repository}
+          status="June 2026 snapshot"
+        />
+        <ProfileCaseStudy
+          eyebrow="Model selection"
+          title="The 2,800-call benchmark"
+          summary={`${benchmark.numbers.models} models × ${benchmark.numbers.scenarios} scenarios × ${benchmark.numbers.trialsPerScenario} trials, tested against one production-shaped workload.`}
+          role="Turned a model-selection question into a bounded benchmark with explicit tradeoffs and dated conclusions."
+          method="Compare tool use, restraint, parsing, latency, and cost while separating a dated case study from universal model rankings."
+          outcome="Exposed prompt coupling and failure modes that price and leaderboard position did not predict."
+          evidenceHref="/blog/llm-benchmark-stop-defaulting-to-the-frontier"
+          repoHref={benchmark.repository}
+          status="April 2026 snapshot"
+        />
       </div>
-      <div class="card-hover p-6 rounded-2xl bg-slate-50 dark:bg-[#141b2d] border border-slate-200 dark:border-slate-800 animate-fade-up stagger-5">
-        <p class="text-4xl font-extrabold gradient-text mb-2">60+</p>
-        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">AI tools orchestrated in Honeydew's agent pipeline</p>
+    </div>
+
+    <div class="mb-20">
+      <p class="text-(--color-primary) font-semibold text-sm tracking-widest uppercase mb-3">How I keep the work sharp</p>
+      <h2 class="text-3xl font-bold mb-3">{PROFILE.practiceLoop.join(' → ')}</h2>
+      <p class="text-slate-500 dark:text-slate-400 max-w-3xl leading-relaxed mb-8">
+        I use shipped systems to expose the next important question, turn failures into evaluation cases, and publish enough method and limitation detail for someone else to inspect the conclusion.
+      </p>
+      <div class="grid md:grid-cols-2 gap-5">
+        {PROFILE.focusAreas.map(area => (
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-[#141b2d] border border-slate-200 dark:border-slate-800">
+            <h3 class="font-bold mb-2">{area.title}</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{area.description}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mt-5">
+        <a href="/about#practice" class="font-semibold text-(--color-primary) hover:underline">How I use AI and own the final work &rarr;</a>
+      </p>
+    </div>
+
+    <div class="mb-20 p-8 rounded-2xl bg-blue-50/70 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-900">
+      <p class="text-xs font-semibold text-(--color-primary) tracking-widest uppercase mb-3">For recruiters and hiring leaders</p>
+      <h2 class="text-2xl font-bold mb-3">Senior AI product leadership with an operator’s feedback loop.</h2>
+      <p class="text-slate-600 dark:text-slate-300 max-w-3xl mb-3 leading-relaxed">{PROFILE.recruiterFocus}</p>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">New York City–based and open to regular Bay Area travel for the right role.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="/resume.pdf" data-profile-cta="resume_download" data-analytics-placement="homepage_recruiter" class="inline-flex px-5 py-2.5 rounded-xl bg-(--color-primary) text-white font-semibold hover:bg-(--color-primary-dark) transition-colors">Download recruiter résumé</a>
+        <a href="/contact" data-profile-cta="recruiter_contact" data-analytics-placement="homepage_recruiter" class="inline-flex px-5 py-2.5 rounded-xl border border-blue-200 dark:border-blue-800 font-semibold hover:bg-blue-100/70 dark:hover:bg-blue-900/30 transition-colors">Contact Pete</a>
       </div>
     </div>
 
     <div class="flex items-center justify-between mb-8">
-      <h2 class="text-2xl font-bold">Featured Projects</h2>
-      <a href="/projects" class="text-sm font-semibold text-(--color-primary) hover:underline inline-flex items-center gap-1">View all <span>&rarr;</span></a>
-    </div>
-    <div class="grid md:grid-cols-2 gap-5 mb-20">
-      <ProjectCard title="Honeydew" description="An AI assistant that turns voice notes, texts, and photos into shared calendars, lists, and plans for a family. Dew routes each request through a catalog of 60+ tools." tags={["React", "TypeScript", "Node.js", "OpenAI", "WebSockets"]} link="https://gethoneydew.app" status="Active" />
-      <ProjectCard title="GiveTide" description="The charitable-giving product I co-founded, ran for five years, and sold in 2022. It was also the expensive lesson behind my essay on how radically software economics changed." tags={["Fintech", "Startup", "Acquired"]} status="Acquired 2022" />
-    </div>
-
-    <div class="flex items-center justify-between mb-8">
-      <h2 class="text-2xl font-bold">Recent Writing</h2>
+      <h2 class="text-2xl font-bold">Recent writing</h2>
       <a href="/blog" class="text-sm font-semibold text-(--color-primary) hover:underline inline-flex items-center gap-1">View all <span>&rarr;</span></a>
     </div>
     <div class="space-y-4">
-      <a href="/blog/if-a-data-center-comes-to-town" class="card-hover flex items-center justify-between p-5 border border-slate-200 dark:border-slate-800 rounded-2xl group bg-white dark:bg-[#141b2d]">
-        <div>
-          <h3 class="font-semibold group-hover:text-(--color-primary) transition-colors">If a Data Center Comes to Town, Your Electric Bill Should Go Down</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">A proposal for building the factories of AI—and making host communities share in the upside</p>
-        </div>
-        <span class="text-slate-400 text-sm shrink-0 ml-4 transition-transform group-hover:translate-x-0.5 group-hover:text-(--color-primary)">&rarr;</span>
-      </a>
-      <a href="/blog/monsters-of-the-mind" class="card-hover flex items-center justify-between p-5 border border-slate-200 dark:border-slate-800 rounded-2xl group bg-white dark:bg-[#141b2d]">
-        <div>
-          <h3 class="font-semibold group-hover:text-(--color-primary) transition-colors">Monsters of the Mind</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">On AI job forecasts, status maps, and learning the next route</p>
-        </div>
-        <span class="text-slate-400 text-sm shrink-0 ml-4 transition-transform group-hover:translate-x-0.5 group-hover:text-(--color-primary)">&rarr;</span>
-      </a>
-      <a href="/blog/falls-the-shadow" class="card-hover flex items-center justify-between p-5 border border-slate-200 dark:border-slate-800 rounded-2xl group bg-white dark:bg-[#141b2d]">
-        <div>
-          <h3 class="font-semibold group-hover:text-(--color-primary) transition-colors">Falls the Shadow</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Why abundant intelligence makes intention more valuable</p>
-        </div>
-        <span class="text-slate-400 text-sm shrink-0 ml-4 transition-transform group-hover:translate-x-0.5 group-hover:text-(--color-primary)">&rarr;</span>
-      </a>
+      {[
+        { href: '/blog/if-a-data-center-comes-to-town', title: 'If a Data Center Comes to Town, Your Electric Bill Should Go Down', description: 'A financeable compact for making host communities share in the upside' },
+        { href: '/blog/monsters-of-the-mind', title: 'Monsters of the Mind', description: 'On AI job forecasts, status maps, and learning the next route' },
+        { href: '/blog/falls-the-shadow', title: 'Falls the Shadow', description: 'Why abundant intelligence makes intention more valuable' },
+      ].map(item => (
+        <a href={item.href} class="card-hover flex items-center justify-between p-5 border border-slate-200 dark:border-slate-800 rounded-2xl group bg-white dark:bg-[#141b2d]">
+          <div>
+            <h3 class="font-semibold group-hover:text-(--color-primary) transition-colors">{item.title}</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">{item.description}</p>
+          </div>
+          <span class="text-slate-400 text-sm shrink-0 ml-4 transition-transform group-hover:translate-x-0.5 group-hover:text-(--color-primary)">&rarr;</span>
+        </a>
+      ))}
     </div>
 
     <div class="mt-12 p-8 rounded-2xl bg-slate-50 dark:bg-[#141b2d] border border-slate-200 dark:border-slate-800 text-center">
-      <p class="text-xs font-semibold text-(--color-primary) tracking-widest uppercase mb-3">The next essay</p>
-      <h2 class="text-2xl font-bold mb-3">Get it when I publish it.</h2>
-      <p class="text-slate-500 dark:text-slate-400 max-w-xl mx-auto mb-5">Essays and field reports on AI, product judgment, and the work the machine cannot choose for us.</p>
-      <a href="https://peterghiorse.substack.com/subscribe?utm_source=peterghiorse.com&utm_medium=website&utm_campaign=newsletter_growth&utm_content=homepage_writing" target="_blank" rel="noopener" data-newsletter-cta data-newsletter-impression data-analytics-placement="homepage_writing" class="inline-flex px-6 py-3 rounded-xl bg-(--color-primary) text-white font-semibold hover:bg-(--color-primary-dark) transition-colors">
-        Subscribe on Substack
+      <p class="text-xs font-semibold text-(--color-primary) tracking-widest uppercase mb-3">{PROFILE.publication.name}</p>
+      <h2 class="text-2xl font-bold mb-3">Research editions and the occasional essay.</h2>
+      <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-5">{PROFILE.publication.description}</p>
+      <a href="https://peterghiorse.substack.com/subscribe?utm_source=peterghiorse.com&utm_medium=website&utm_campaign=content_distribution&utm_content=homepage_chatgpete" target="_blank" rel="noopener" data-newsletter-cta data-newsletter-impression data-analytics-placement="homepage_chatgpete" class="inline-flex px-6 py-3 rounded-xl bg-(--color-primary) text-white font-semibold hover:bg-(--color-primary-dark) transition-colors">
+        Subscribe to ChatGPeTe
       </a>
     </div>
   </section>
