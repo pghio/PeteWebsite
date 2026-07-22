@@ -14,8 +14,12 @@ pnpm-debug.log*
 
 
 # environment variables
-.env
-.env.production
+.env*
+!.env.example
+
+# private referral exports and local crosswalks
+referral-clicks.csv
+.private/
 
 # macOS-specific files
 .DS_Store
