@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc" font-family="'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-style="normal">
+  <title id="title">Roughly the same water, a lot more in return</title>
+  <desc id="desc">A comparison of national golf-facility benchmarks and a modeled 100-megawatt data-center benchmark. The data center consumes about the same annual onsite water in the defined scenario, while supporting about fifty times the annual economic output and twenty times the jobs.</desc>
+
+  <rect width="1200" height="720" fill="#F5F1E6"/>
+
+  <text x="72" y="55" fill="#586185" font-size="16" font-weight="600">A choice for small towns</text>
+  <text x="72" y="108" fill="#1E2A48" font-size="45" font-weight="700">Roughly the same water.</text>
+  <text x="72" y="158" fill="#1E2A48" font-size="45" font-weight="700">A lot more in return.</text>
+  <text x="72" y="194" fill="#586185" font-size="18">A golf course and a 100 MW data center, side by side</text>
+
+  <line x1="72" y1="225" x2="1128" y2="225" stroke="#D3CBB9" stroke-width="2"/>
+
+  <text x="72" y="261" fill="#586185" font-size="15" font-weight="600">What we're comparing</text>
+  <text x="405" y="261" fill="#B73720" font-size="17" font-weight="700" text-anchor="middle">Golf course</text>
+  <text x="752" y="261" fill="#2F5597" font-size="17" font-weight="700" text-anchor="middle">Data center</text>
+  <text x="1075" y="261" fill="#586185" font-size="15" font-weight="600" text-anchor="middle">Compared with golf</text>
+
+  <!-- Water -->
+  <text x="72" y="326" fill="#1E2A48" font-size="22" font-weight="700">Water each year</text>
+  <text x="72" y="351" fill="#586185" font-size="15">gallons</text>
+  <text x="405" y="331" fill="#1E2A48" font-size="36" font-weight="700" text-anchor="middle">27.3M</text>
+  <text x="405" y="357" fill="#586185" font-size="14" text-anchor="middle">median 18-hole course · applied</text>
+  <text x="752" y="331" fill="#1E2A48" font-size="36" font-weight="700" text-anchor="middle">26–33M</text>
+  <text x="752" y="357" fill="#586185" font-size="14" text-anchor="middle">modeled on-site use · consumed</text>
+  <text x="1075" y="339" fill="#1E2A48" font-size="45" font-weight="700" text-anchor="middle">≈1×</text>
+
+  <line x1="72" y1="390" x2="1128" y2="390" stroke="#D3CBB9" stroke-width="1.5"/>
+
+  <!-- Economic output -->
+  <text x="72" y="451" fill="#1E2A48" font-size="22" font-weight="700">Economic activity</text>
+  <text x="72" y="476" fill="#586185" font-size="15">each year · with ripple effects</text>
+  <text x="405" y="456" fill="#1E2A48" font-size="36" font-weight="700" text-anchor="middle">$6.5M</text>
+  <text x="405" y="482" fill="#586185" font-size="14" text-anchor="middle">average across U.S. courses</text>
+  <text x="752" y="456" fill="#1E2A48" font-size="36" font-weight="700" text-anchor="middle">$334M</text>
+  <text x="752" y="482" fill="#586185" font-size="14" text-anchor="middle">100 MW model · includes $187M in regional GDP</text>
+  <text x="1075" y="464" fill="#1E2A48" font-size="45" font-weight="700" text-anchor="middle">≈50×</text>
+
+  <line x1="72" y1="515" x2="1128" y2="515" stroke="#D3CBB9" stroke-width="1.5"/>
+
+  <!-- Jobs -->
+  <text x="72" y="576" fill="#1E2A48" font-size="22" font-weight="700">Jobs supported</text>
+  <text x="72" y="601" fill="#586185" font-size="15">including local ripple effects</text>
+  <text x="405" y="581" fill="#1E2A48" font-size="36" font-weight="700" text-anchor="middle">≈64</text>
+  <text x="405" y="607" fill="#586185" font-size="14" text-anchor="middle">average across U.S. courses</text>
+  <text x="752" y="581" fill="#1E2A48" font-size="36" font-weight="700" text-anchor="middle">≈1,300</text>
+  <text x="752" y="607" fill="#586185" font-size="14" text-anchor="middle">100 MW local-economy model</text>
+  <text x="1075" y="589" fill="#1E2A48" font-size="45" font-weight="700" text-anchor="middle">≈20×</text>
+
+  <text x="72" y="662" fill="#586185" font-size="13">Water is annual volume only: golf applied; data center consumed on site. Model: 100 MW max · 50% average draw · PUE 1.40.</text>
+  <text x="72" y="683" fill="#586185" font-size="13">Sources: GCSAA 2024 · LBNL 2023 · AGIC 2022 · Cushman &amp; Wakefield 2026.</text>
+  <text x="1128" y="683" fill="#586185" font-size="13" text-anchor="end">Benchmarks, not a forecast.</text>
+</svg>

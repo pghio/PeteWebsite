@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc" font-family="'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-style="normal">
+  <title id="title">My proposal: let the data center build if local power bills fall</title>
+  <desc id="desc">A proposed deal, not current policy. In a worked example, a 100-megawatt facility at 50 percent average draw uses 438 million kilowatt-hours per year. A sponsor charge of about 0.97 cents per facility kilowatt-hour funds 4.27 million dollars per year, enough to give 10,000 households 426.78 dollars per year, or 25 percent off the average household bill. The hyperscaler gains a predictable path to build but must add enough new power, pay grid costs, and fund the credit. Households gain lower bills and protection from cost shifting while hosting the construction, land, noise, and water impacts of a major industrial facility.</desc>
+
+  <rect width="1200" height="820" fill="#F5F1E6"/>
+
+  <circle cx="80" cy="49" r="6" fill="#B73720"/>
+  <text x="96" y="55" fill="#B73720" font-size="16" font-weight="700">My proposal — not current policy</text>
+  <text x="72" y="111" fill="#1E2A48" font-size="43" font-weight="700">Let the data center build—</text>
+  <text x="72" y="159" fill="#1E2A48" font-size="43" font-weight="700">if local power bills fall.</text>
+  <text x="72" y="194" fill="#586185" font-size="18">Worked example: 100 MW maximum · 50 MW average use · 10,000 eligible households</text>
+
+  <!-- The math -->
+  <rect x="72" y="228" width="1056" height="158" rx="8" fill="#1E2A48"/>
+  <text x="102" y="263" fill="#B9C5E0" font-size="15" font-weight="600">What the household credit costs</text>
+  <text x="102" y="312" fill="#FFF9EF" font-size="30" font-weight="700">438M kWh/year</text>
+  <text x="394" y="312" fill="#B9C5E0" font-size="28" font-weight="600">×</text>
+  <text x="438" y="312" fill="#FFF9EF" font-size="30" font-weight="700">0.97¢/kWh</text>
+  <text x="620" y="312" fill="#B9C5E0" font-size="28" font-weight="600">=</text>
+  <text x="666" y="312" fill="#FFF9EF" font-size="30" font-weight="700">$4.27M a year</text>
+  <text x="102" y="354" fill="#D8DFEF" font-size="17">Across 10,000 homes: $426.78 per year · $35.57 per month · 25% of the average bill</text>
+
+  <!-- Stakeholder tradeoffs -->
+  <text x="72" y="438" fill="#2F5597" font-size="20" font-weight="700">Hyperscaler</text>
+  <text x="648" y="438" fill="#B73720" font-size="20" font-weight="700">Local households</text>
+  <line x1="600" y1="418" x2="600" y2="696" stroke="#D3CBB9" stroke-width="1.5"/>
+
+  <text x="72" y="480" fill="#2F5597" font-size="15" font-weight="700">UPSIDE</text>
+  <text x="72" y="518" fill="#1E2A48" font-size="27" font-weight="700">A predictable path to build</text>
+  <text x="72" y="548" fill="#586185" font-size="16">Predictable rules, rates, and obligations</text>
+
+  <text x="72" y="603" fill="#B73720" font-size="15" font-weight="700">COST</text>
+  <text x="72" y="641" fill="#1E2A48" font-size="23" font-weight="700">New power + grid costs + credit</text>
+  <text x="72" y="670" fill="#586185" font-size="16">The household credit alone is $4.27M a year here</text>
+
+  <text x="648" y="480" fill="#2F5597" font-size="15" font-weight="700">UPSIDE</text>
+  <text x="648" y="518" fill="#1E2A48" font-size="27" font-weight="700">25% off the power bill</text>
+  <text x="648" y="548" fill="#586185" font-size="16">And no data-center grid costs shifted onto residents</text>
+
+  <text x="648" y="603" fill="#B73720" font-size="15" font-weight="700">TRADEOFF</text>
+  <text x="648" y="641" fill="#1E2A48" font-size="23" font-weight="700">A large, long-term industrial neighbor</text>
+  <text x="648" y="670" fill="#586185" font-size="16">Construction, land, noise, and water demand</text>
+
+  <line x1="72" y1="714" x2="1128" y2="714" stroke="#D3CBB9" stroke-width="1.5"/>
+  <text x="72" y="751" fill="#1E2A48" font-size="16" font-weight="700">The credit lasts as long as the facility operates.</text>
+  <text x="1128" y="751" fill="#586185" font-size="15" text-anchor="end">Environmental limits still apply.</text>
+  <text x="72" y="785" fill="#586185" font-size="13">EIA 2024 average bill. The 0.97¢ per facility kWh covers the credit only; new power and grid costs are additional.</text>
+  <text x="1128" y="785" fill="#586185" font-size="13" text-anchor="end">Proposal, not a project forecast.</text>
+</svg>
