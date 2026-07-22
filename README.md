@@ -40,6 +40,7 @@ npm run preview
 - Consent-gated analytics defaults to the PeteWebsite GA4 stream (`G-0JQ5NNRQM2`).
 - Inbound attribution preserves consented source, medium, campaign, placement, and landing-page context; `contact_intent` is the recruiter-funnel conversion.
 - Canonical profile URLs and GA4 reporting setup live in `docs/referral-measurement.md`.
+- Optional one-to-one outreach uses a no-GA `/r/<opaque-token>` disclosure route, a separate private crosswalk, deliberate Continue measurement, and 90-day raw-event retention. No identity enters GA4.
 - Set `PUBLIC_GA_MEASUREMENT_ID` to override that public measurement ID for a preview or alternate environment.
 - Reader email addresses remain in Substack; website analytics accepts only the anonymous events and parameters allow-listed in `src/components/Analytics.astro`.
 

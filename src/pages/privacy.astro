@@ -33,7 +33,10 @@ const analyticsAvailable = Boolean(GA_MEASUREMENT_ID);
         When analytics loads, the page location sent to Google is rebuilt with only those aggregate campaign parameters, and the referrer is reduced to its hostname. Unrecognized query parameters and full referrer paths are removed before the analytics configuration is sent.
       </p>
       <p>
-        These signals identify a channel or campaign, not a person. If you choose an email link, the site can add that aggregate referral context to the visible draft so I can connect the source to your message after you intentionally identify yourself by sending it. You can edit or remove that text before sending. Names, email addresses, companies, and person-specific codes are not sent to Google Analytics.
+        Ordinary public links identify a channel or campaign, not a person. If you choose an email link, the site can add that aggregate referral context to the visible draft so I can connect the source to your message after you intentionally identify yourself by sending it. You can edit or remove that text before sending. Names, email addresses, companies, and person-specific codes are not sent to Google Analytics.
+      </p>
+      <p>
+        For one-to-one outreach, I may send a private link containing a random token. Opening it first shows an untagged disclosure page. If you choose “Continue,” a private store controlled for this site records the token’s keyed digest, the time, and aggregate campaign fields. A separate private crosswalk can associate that digest with the person to whom the link was assigned. Pete’s referral report does not include an IP address, user agent, device fingerprint, precise location, or full referrer, and the raw event is retained for no more than 90 days. Hosting and storage providers may still process routine request metadata under their own terms for delivery, security, and reliability. The result means the assigned link was deliberately opened; forwarding or shared devices mean it is not proof that the intended recipient personally clicked it.
       </p>
 
       <h2>Newsletter subscriptions</h2>
@@ -66,7 +69,7 @@ const analyticsAvailable = Boolean(GA_MEASUREMENT_ID);
 
       <h2>Questions</h2>
       <p>
-        If you have a privacy question, use the <a href="/contact">contact page</a>. This notice was last updated July 22, 2026.
+        If you have a privacy question or want a private referral record deleted, use the <a href="/contact">contact page</a>. This notice was last updated July 22, 2026.
       </p>
     </div>
   </article>

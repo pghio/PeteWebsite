@@ -72,9 +72,38 @@ Create an Exploration with rows for Session source / medium, Session campaign, a
 
 ## Named-person boundary
 
-Anonymous traffic cannot be identified by name responsibly. A named person becomes attributable only when they self-identify, such as by sending the prefilled email draft.
+Anonymous traffic cannot be identified by name responsibly. A named person becomes attributable when they self-identify, such as by sending the prefilled email draft, or when a deliberately opened private link is joined to its intended recipient in the separate private crosswalk.
 
-If pre-conversion, one-to-one link measurement is ever necessary, build a first-party, tag-free redirect with a high-entropy opaque token and a private access-controlled crosswalk. The redirect must remove the token before the visitor reaches the GA-tagged site and add only aggregate UTMs. Do not use a per-person UTM or GA custom dimension. A clicked private link still proves that the link was used, not necessarily that the intended recipient clicked it, because links can be forwarded.
+For pre-conversion, one-to-one link measurement, use the first-party `/r/<opaque-token>` route and the private crosswalk. The GET request renders a tag-free disclosure page. Only the deliberate POST from its Continue button writes `personal_link_engaged`, after which the route returns a 303 to a clean destination containing only aggregate UTMs. The raw token is never stored server-side; the runtime uses an HMAC digest, has no access to the person/company crosswalk, and retains raw engagement events for 90 days. Do not use a per-person UTM, GA custom dimension, cookie, or fingerprint. A private-link engagement still proves that the assigned link was used, not necessarily that the intended recipient clicked it, because links can be forwarded.
+
+### Create, export, and revoke private links
+
+Set the server-only values from `.env.example` in a local ignored environment file and in Vercel. Then run:
+
+```text
+npm run referral:create -- --person="Private crosswalk only" --company="Private crosswalk only" --source=linkedin --medium=direct_message --campaign=recruiter_outreach_2026q3 --placement=message_a --target=/resume --expires-days=90
+```
+
+The command writes only aggregate route metadata to the server store and prints one row for the private crosswalk. The `person` and `company` arguments remain local and never reach the deployed store. Copy the output into the private Google Sheet.
+
+Export the 90-day click log for the Sheet’s `Clicks` tab:
+
+```text
+npm run referral:export -- --output=referral-clicks.csv
+```
+
+Revoke a route using its HMAC token ID, not the raw token:
+
+```text
+npm run referral:revoke -- --token-id=<private-token-id>
+```
+
+Use these confidence labels consistently:
+
+- `self_identified`: the person contacted Pete or otherwise identified themselves.
+- `personal_link_engaged`: the private link’s Continue button was deliberately used.
+- `personal_link_accessed`: reserved for a future, explicitly disclosed raw-access signal; the current implementation does not emit it because scanners and previews would create misleading records.
+- `channel_only`: ordinary aggregate referral traffic.
 
 ## Verification checklist
 

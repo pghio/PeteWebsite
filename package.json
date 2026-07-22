@@ -7,9 +7,13 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run check:profile && npm run check:attribution && astro build",
+    "build": "npm run check:profile && npm run check:attribution && npm run check:person-referrals && astro build",
     "check:attribution": "node scripts/check-attribution.mjs",
+    "check:person-referrals": "node scripts/check-person-referrals.mjs",
     "check:profile": "node scripts/check-profile-sync.mjs",
+    "referral:create": "node scripts/create-person-referral.mjs",
+    "referral:export": "node scripts/export-person-referrals.mjs",
+    "referral:revoke": "node scripts/revoke-person-referral.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
