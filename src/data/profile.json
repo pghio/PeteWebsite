@@ -22,13 +22,6 @@
       "country": "US",
       "display": "New York City"
     },
-    "recruiterFocus": "I’m open to conversations about Group Product Manager, Director of Product Management, Principal Product Manager, or Head of AI Product roles focused on AI agents, model behavior and evaluation, production ML platforms, and consumer AI.",
-    "roles": [
-      "Group Product Manager",
-      "Director of Product Management",
-      "Principal Product Manager",
-      "Head of AI Product"
-    ],
     "domains": [
       "AI product strategy",
       "AI agents",
@@ -111,15 +104,15 @@
   "attribution": {
     "measurementId": "G-0JQ5NNRQM2",
     "canonicalProfileLinks": {
-      "linkedinProfile": "https://peterghiorse.com/?utm_source=linkedin&utm_medium=social&utm_campaign=recruiter_visibility&utm_content=profile_website",
-      "linkedinFeaturedResume": "https://peterghiorse.com/resume?utm_source=linkedin&utm_medium=social&utm_campaign=recruiter_visibility&utm_content=featured_resume",
-      "substackProfile": "https://peterghiorse.com/?utm_source=substack&utm_medium=referral&utm_campaign=recruiter_visibility&utm_content=profile_website",
-      "githubReadme": "https://peterghiorse.com/?utm_source=github&utm_medium=referral&utm_campaign=recruiter_visibility&utm_content=readme_badge"
+      "linkedinProfile": "https://peterghiorse.com/?utm_source=linkedin&utm_medium=social&utm_campaign=profile_visibility&utm_content=profile_website",
+      "linkedinFeaturedResumePdf": "https://peterghiorse.com/resume.pdf?utm_source=linkedin&utm_medium=social&utm_campaign=profile_visibility&utm_content=featured_resume",
+      "substackProfile": "https://peterghiorse.com/?utm_source=substack&utm_medium=referral&utm_campaign=profile_visibility&utm_content=profile_website",
+      "githubReadme": "https://peterghiorse.com/?utm_source=github&utm_medium=referral&utm_campaign=profile_visibility&utm_content=readme_badge"
     },
     "taxonomy": {
       "source": ["linkedin", "substack", "github", "email", "newsletter"],
       "medium": ["social", "referral", "email", "direct_message"],
-      "campaign": ["recruiter_visibility", "content_distribution", "recruiter_outreach"],
+      "campaign": ["profile_visibility", "content_distribution", "direct_outreach"],
       "contentPurpose": "Stable placement or creative identifier; never a person identifier."
     },
     "events": [

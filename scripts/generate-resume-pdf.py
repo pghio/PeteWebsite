@@ -114,7 +114,7 @@ def header(styles):
         paragraph("PETE GHIORSE", styles["name"]),
         paragraph("AI/ML PRODUCT LEADER | GROUP PRODUCT MANAGER | FOUNDER", styles["position"]),
         paragraph(
-            'New York City | Open to regular Bay Area travel | '
+            'New York City | '
             '<link href="mailto:pmghiorse@gmail.com" color="#2b4a87">pmghiorse@gmail.com</link> | '
             '<link href="https://peterghiorse.com" color="#2b4a87">peterghiorse.com</link> | '
             '<link href="https://linkedin.com/in/peteghiorse" color="#2b4a87">LinkedIn</link> | '
@@ -149,7 +149,7 @@ def build():
         bottomMargin=0.58 * inch,
         title="Pete Ghiorse - AI/ML Product Leader Resume",
         author="Pete Ghiorse",
-        subject="Group Product Manager, Director of Product Management, Principal Product Manager, and Head of AI Product roles",
+        subject="AI/ML product leadership, production agents, and model evaluation",
     )
     frame = Frame(doc.leftMargin, doc.bottomMargin, doc.width, doc.height, id="resume")
     doc.addPageTemplates([PageTemplate(id="resume", frames=[frame], onPage=page_number)])
@@ -239,11 +239,6 @@ def build():
         paragraph("WORKING PRACTICE", styles["section"]),
         paragraph(
             "Build -> Instrument -> Evaluate -> Publish -> Revise. AI assists with research, red-teaming, implementation, and editing. I own the thesis, source selection, evaluation design, factual claims, accepted code, and final editorial judgment.",
-            styles["summary"],
-        ),
-        paragraph("TARGET ROLES", styles["section"]),
-        paragraph(
-            "Group Product Manager | Director of Product Management | Principal Product Manager | Head of AI Product",
             styles["summary"],
         ),
     ])

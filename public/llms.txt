@@ -15,9 +15,9 @@ He founded Honeydew in 2025. Honeydew is a multimodal family-coordination agent 
 
 Before Capital One and Honeydew, Pete co-founded GiveTide, ran it for five years, and sold it in 2022.
 
-## Roles and location
+## Location and focus
 
-Pete is based in New York City. Target roles: Group Product Manager, Director of Product Management, Principal Product Manager, and Head of AI Product. His target domains include AI agents, model behavior and evaluation, production ML platforms, and consumer AI.
+Pete is based in New York City. His work focuses on AI agents, model behavior and evaluation, production ML platforms, and consumer AI.
 
 ## Practice and content quality
 
@@ -42,7 +42,6 @@ Subscribe: https://peterghiorse.substack.com
 - Public profile data: https://peterghiorse.com/profile.json
 - Research data: https://peterghiorse.com/research.json
 - About and editorial practice: https://peterghiorse.com/about
-- Recruiter snapshot: https://peterghiorse.com/resume
 - Selected projects: https://peterghiorse.com/projects
 - Writing archive: https://peterghiorse.com/blog
 - RSS feed: https://peterghiorse.com/rss.xml
