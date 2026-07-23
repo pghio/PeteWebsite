@@ -16,13 +16,7 @@
     "country": "US",
     "display": "New York City"
   },
-  "targetRoles": [
-    "Group Product Manager",
-    "Director of Product Management",
-    "Principal Product Manager",
-    "Head of AI Product"
-  ],
-  "targetDomains": [
+  "focusDomains": [
     "AI product strategy",
     "AI agents",
     "LLM evaluation",
@@ -31,7 +25,6 @@
     "multimodal consumer AI",
     "0-to-1 product development"
   ],
-  "recruiterFocus": "I’m open to conversations about Group Product Manager, Director of Product Management, Principal Product Manager, or Head of AI Product roles focused on AI agents, model behavior and evaluation, production ML platforms, and consumer AI.",
   "oneLine": "I lead AI/ML products, build production agents, and publish rigorous evaluations of how they behave.",
   "practiceLoop": ["Build", "Instrument", "Evaluate", "Publish", "Revise"],
   "qualityStatement": "AI assists with research, red-teaming, implementation, and editing. I own the thesis, source selection, evaluation design, factual claims, and final editorial judgment.",

@@ -3,13 +3,13 @@ import test from 'node:test';
 import { buildTrackedUrl, captureAttribution, classifySource, getAnalyticsPageLocation, getAnalyticsReferrer, sanitizeEvent } from '../src/lib/attribution.mjs';
 
 test('captures canonical UTM values and strips unrelated query data', () => {
-  const attribution = captureAttribution({ pageUrl: 'https://peterghiorse.com/resume?utm_source=LinkedIn&utm_medium=Social&utm_campaign=Recruiter_Visibility&utm_content=Featured_Resume&email=person@example.com' });
-  assert.deepEqual(attribution, { source_channel: 'linkedin', source_name: 'linkedin', source_medium: 'social', campaign_name: 'recruiter_visibility', link_placement: 'featured_resume', landing_path: '/resume', referrer_host: '(none)' });
+  const attribution = captureAttribution({ pageUrl: 'https://peterghiorse.com/resume.pdf?utm_source=LinkedIn&utm_medium=Social&utm_campaign=Profile_Visibility&utm_content=Featured_Resume&email=person@example.com' });
+  assert.deepEqual(attribution, { source_channel: 'linkedin', source_name: 'linkedin', source_medium: 'social', campaign_name: 'profile_visibility', link_placement: 'featured_resume', landing_path: '/resume.pdf', referrer_host: '(none)' });
   assert.ok(!JSON.stringify(attribution).includes('person'));
 });
 
 test('preserves a valid first-touch record for the session', () => {
-  const stored = { source_channel: 'github', source_name: 'github', source_medium: 'referral', campaign_name: 'recruiter_visibility', link_placement: 'readme_badge', landing_path: '/', referrer_host: 'github.com' };
+  const stored = { source_channel: 'github', source_name: 'github', source_medium: 'referral', campaign_name: 'profile_visibility', link_placement: 'readme_badge', landing_path: '/', referrer_host: 'github.com' };
   assert.deepEqual(captureAttribution({ pageUrl: 'https://peterghiorse.com/blog?utm_source=substack&utm_medium=email&utm_campaign=content_distribution&utm_content=issue_1', stored }), stored);
 });
 
@@ -29,16 +29,16 @@ test('classifies controlled channel families', () => {
 });
 
 test('sanitizes allow-listed events and parameters only', () => {
-  const event = sanitizeEvent('contact_intent', { contact_method: 'Email', placement: 'Resume Intro', content_path: '/resume?person=someone', email: 'person@example.com', arbitrary: 'secret' }, { source_channel: 'linkedin', source_name: 'linkedin' });
-  assert.deepEqual(event, { name: 'contact_intent', parameters: { source_channel: 'linkedin', source_name: 'linkedin', contact_method: 'email', placement: 'resume_intro', content_path: '/resume' } });
+  const event = sanitizeEvent('contact_intent', { contact_method: 'Email', placement: 'Contact Page', content_path: '/contact?person=someone', email: 'person@example.com', arbitrary: 'secret' }, { source_channel: 'linkedin', source_name: 'linkedin' });
+  assert.deepEqual(event, { name: 'contact_intent', parameters: { source_channel: 'linkedin', source_name: 'linkedin', contact_method: 'email', placement: 'contact_page', content_path: '/contact' } });
   assert.equal(sanitizeEvent('identify_person', { email: 'person@example.com' }), null);
 });
 
 test('reconstructs a GA page location with aggregate UTMs only', () => {
-  const attribution = captureAttribution({ pageUrl: 'https://peterghiorse.com/resume?utm_source=linkedin&utm_medium=social&utm_campaign=recruiter_visibility&utm_content=featured_resume&person=pete' });
-  assert.equal(getAnalyticsPageLocation({ path: '/resume?person=pete', attribution }), 'https://peterghiorse.com/resume?utm_source=linkedin&utm_medium=social&utm_campaign=recruiter_visibility&utm_content=featured_resume');
+  const attribution = captureAttribution({ pageUrl: 'https://peterghiorse.com/resume.pdf?utm_source=linkedin&utm_medium=social&utm_campaign=profile_visibility&utm_content=featured_resume&person=pete' });
+  assert.equal(getAnalyticsPageLocation({ path: '/resume.pdf?person=pete', attribution }), 'https://peterghiorse.com/resume.pdf?utm_source=linkedin&utm_medium=social&utm_campaign=profile_visibility&utm_content=featured_resume');
 });
 
 test('builds controlled aggregate links', () => {
-  assert.equal(buildTrackedUrl({ path: '/resume', source: 'LinkedIn', medium: 'Social', campaign: 'Recruiter Visibility', content: 'Featured Resume' }), 'https://peterghiorse.com/resume?utm_source=linkedin&utm_medium=social&utm_campaign=recruiter_visibility&utm_content=featured_resume');
+  assert.equal(buildTrackedUrl({ path: '/resume.pdf', source: 'LinkedIn', medium: 'Social', campaign: 'Profile Visibility', content: 'Featured Resume' }), 'https://peterghiorse.com/resume.pdf?utm_source=linkedin&utm_medium=social&utm_campaign=profile_visibility&utm_content=featured_resume');
 });

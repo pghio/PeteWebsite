@@ -8,10 +8,10 @@ const profileDoc = await readFile(new URL('../docs/profile-source.md', import.me
 const utility = await readFile(new URL('../src/lib/attribution.mjs', import.meta.url), 'utf8');
 
 const expectedLinks = {
-  linkedinProfile: 'https://peterghiorse.com/?utm_source=linkedin&utm_medium=social&utm_campaign=recruiter_visibility&utm_content=profile_website',
-  linkedinFeaturedResume: 'https://peterghiorse.com/resume?utm_source=linkedin&utm_medium=social&utm_campaign=recruiter_visibility&utm_content=featured_resume',
-  substackProfile: 'https://peterghiorse.com/?utm_source=substack&utm_medium=referral&utm_campaign=recruiter_visibility&utm_content=profile_website',
-  githubReadme: 'https://peterghiorse.com/?utm_source=github&utm_medium=referral&utm_campaign=recruiter_visibility&utm_content=readme_badge',
+  linkedinProfile: 'https://peterghiorse.com/?utm_source=linkedin&utm_medium=social&utm_campaign=profile_visibility&utm_content=profile_website',
+  linkedinFeaturedResumePdf: 'https://peterghiorse.com/resume.pdf?utm_source=linkedin&utm_medium=social&utm_campaign=profile_visibility&utm_content=featured_resume',
+  substackProfile: 'https://peterghiorse.com/?utm_source=substack&utm_medium=referral&utm_campaign=profile_visibility&utm_content=profile_website',
+  githubReadme: 'https://peterghiorse.com/?utm_source=github&utm_medium=referral&utm_campaign=profile_visibility&utm_content=readme_badge',
 };
 
 assert.deepEqual(profileSource.attribution.canonicalProfileLinks, expectedLinks);
@@ -30,8 +30,8 @@ for (const [name, expected] of Object.entries(expectedLinks)) {
 }
 
 assert.equal(
-  buildTrackedUrl({ path: '/resume', source: 'linkedin', medium: 'social', campaign: 'recruiter_visibility', content: 'featured_resume' }),
-  expectedLinks.linkedinFeaturedResume,
+  buildTrackedUrl({ path: '/resume.pdf', source: 'linkedin', medium: 'social', campaign: 'profile_visibility', content: 'featured_resume' }),
+  expectedLinks.linkedinFeaturedResumePdf,
 );
 
 for (const forbidden of ['/r/', 'REFERRAL_TOKEN_PEPPER', 'UPSTASH_REDIS', 'createReferralToken', 'personal_link_engaged']) {
