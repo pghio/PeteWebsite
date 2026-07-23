@@ -13,14 +13,7 @@ The canonical machine-readable registry is `src/data/profile.json`. Website comp
 - Canonical one-line copy: **I lead AI/ML products, build production agents, and publish rigorous evaluations of how they behave.**
 - Practice loop: **Build -> Instrument -> Evaluate -> Publish -> Revise**
 
-Target roles, exactly:
-
-1. **Group Product Manager**
-2. **Director of Product Management**
-3. **Principal Product Manager**
-4. **Head of AI Product**
-
-Target domains are separate from titles: AI agents, LLM evaluation, model behavior and governance, production machine learning, multimodal consumer AI, and 0-to-1 product development.
+Public focus areas: AI agents, LLM evaluation, model behavior and governance, production machine learning, multimodal consumer AI, and 0-to-1 product development. Job-search preferences belong only in private recruiting settings and must not be emitted by the public registry.
 
 ## Publication
 

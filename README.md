@@ -1,6 +1,6 @@
 # PeteWebsite
 
-The canonical portfolio, research archive, and recruiter-facing profile for [Pete Ghiorse](https://peterghiorse.com/?utm_source=github&utm_medium=referral&utm_campaign=recruiter_visibility&utm_content=readme_badge), Group Product Manager for AI/ML, founder of Honeydew, and hands-on builder.
+The canonical portfolio and research archive for [Pete Ghiorse](https://peterghiorse.com/?utm_source=github&utm_medium=referral&utm_campaign=profile_visibility&utm_content=readme_badge), Group Product Manager for AI/ML, founder of Honeydew, and hands-on builder.
 
 > I lead AI/ML products, build production agents, and publish rigorous evaluations of how they behave.
 
@@ -30,7 +30,7 @@ flowchart LR
   Registry --> Checks["Claim and contradiction checks"]
   Site --> Channels["LinkedIn, ChatGPeTe, GitHub, RSS"]
   Channels --> Attribution["Consent-aware aggregate attribution"]
-  Attribution --> Decisions["Recruiter and content funnel decisions"]
+  Attribution --> Decisions["Profile and content funnel decisions"]
 ```
 
 The canonical identity, dates, approved claims, study snapshots, limitations, and inbound links live in [`src/data/profile.json`](src/data/profile.json). Generated public summaries expose only current profile facts and explicitly dated research snapshots.
@@ -43,17 +43,7 @@ npm run check
 npm run build
 ```
 
-The combined check covers registry synchronization, prohibited claims, research denominators, aggregate attribution, privacy behavior, and the deterministic recruiter-audit rules. CI runs the same check and production build on every pull request.
-
-To run the final signed-out recruiter gate after a build:
-
-```bash
-npm run audit:recruiter -- \
-  --snapshots /absolute/path/to/public-profile-snapshots.json \
-  --json /tmp/recruiter-audit.json \
-  --markdown /tmp/recruiter-audit.md \
-  --fail-on red
-```
+The combined check covers registry synchronization, prohibited claims, research denominators, aggregate attribution, and privacy behavior. CI runs the same check and production build on every pull request.
 
 ## Measurement and privacy
 

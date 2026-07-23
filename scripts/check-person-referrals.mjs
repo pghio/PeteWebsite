@@ -47,9 +47,9 @@ assert.match(token, /^[A-Za-z0-9_-]{43}$/);
 const route = normalizeReferralRoute({
   source: 'linkedin',
   medium: 'direct_message',
-  campaign: 'recruiter_outreach_2026q3',
+  campaign: 'direct_outreach_2026q3',
   placement: 'message_a',
-  target: '/resume',
+  target: '/projects',
   expires_at: new Date(Date.now() + 7 * 86_400_000).toISOString(),
 });
 const stored = await storeReferralRoute({ token, route, env, fetchImpl: fakeFetch });
@@ -61,7 +61,7 @@ assert.ok(!requests[0].body.includes('"company":'), 'Company identity must not r
 const resolved = await getReferralRoute({ token, env, fetchImpl: fakeFetch });
 assert.deepEqual(resolved.route, route);
 const destination = buildAggregateDestination(route, env.REFERRAL_SITE_URL);
-assert.equal(destination, 'https://peterghiorse.com/resume?utm_source=linkedin&utm_medium=direct_message&utm_campaign=recruiter_outreach_2026q3&utm_content=message_a');
+assert.equal(destination, 'https://peterghiorse.com/projects?utm_source=linkedin&utm_medium=direct_message&utm_campaign=direct_outreach_2026q3&utm_content=message_a');
 assert.ok(!destination.includes(token));
 
 const getResponse = await handleReferralRequest(new Request(`https://peterghiorse.com/api/referral?token=${token}`), env, fakeFetch);

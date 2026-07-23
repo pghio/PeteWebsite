@@ -14,10 +14,10 @@ Use these exact URLs:
 
 | Placement | URL |
 | --- | --- |
-| LinkedIn website | `https://peterghiorse.com/?utm_source=linkedin&utm_medium=social&utm_campaign=recruiter_visibility&utm_content=profile_website` |
-| LinkedIn Featured resume | `https://peterghiorse.com/resume?utm_source=linkedin&utm_medium=social&utm_campaign=recruiter_visibility&utm_content=featured_resume` |
-| Substack profile | `https://peterghiorse.com/?utm_source=substack&utm_medium=referral&utm_campaign=recruiter_visibility&utm_content=profile_website` |
-| GitHub README | `https://peterghiorse.com/?utm_source=github&utm_medium=referral&utm_campaign=recruiter_visibility&utm_content=readme_badge` |
+| LinkedIn website | `https://peterghiorse.com/?utm_source=linkedin&utm_medium=social&utm_campaign=profile_visibility&utm_content=profile_website` |
+| LinkedIn Featured résumé PDF | `https://peterghiorse.com/resume.pdf?utm_source=linkedin&utm_medium=social&utm_campaign=profile_visibility&utm_content=featured_resume` |
+| Substack profile | `https://peterghiorse.com/?utm_source=substack&utm_medium=referral&utm_campaign=profile_visibility&utm_content=profile_website` |
+| GitHub README | `https://peterghiorse.com/?utm_source=github&utm_medium=referral&utm_campaign=profile_visibility&utm_content=readme_badge` |
 
 Controlled content links:
 
@@ -47,7 +47,7 @@ Nothing is sent to GA4 before consent. Once consent is accepted:
 1. Configure GA with a clean page location containing only the allow-listed aggregate UTMs.
 2. Send one `session_attribution` event per browser session.
 3. Attach the same aggregate source context to allow-listed engagement events.
-4. Send `contact_intent` for an email CTA and treat it as the recruiter-funnel key event.
+4. Send `contact_intent` for an email CTA and treat it as the contact-funnel key event.
 5. Keep `newsletter_cta_click` separate as a distribution conversion.
 
 Declining consent clears the in-memory event queue, disables GA, and removes GA cookies. Reports therefore cover only consenting visitors. Referrer stripping, tracking prevention, later direct visits, and link forwarding reduce completeness; unknown traffic must remain visible rather than being treated as zero.
@@ -82,7 +82,7 @@ For pre-conversion, one-to-one link measurement, use the first-party `/r/<opaque
 Set the server-only values from `.env.example` in a local ignored environment file and in Vercel. Then run:
 
 ```text
-npm run referral:create -- --person="Private crosswalk only" --company="Private crosswalk only" --source=linkedin --medium=direct_message --campaign=recruiter_outreach_2026q3 --placement=message_a --target=/resume --expires-days=90
+npm run referral:create -- --person="Private crosswalk only" --company="Private crosswalk only" --source=linkedin --medium=direct_message --campaign=direct_outreach_2026q3 --placement=message_a --target=/projects --expires-days=90
 ```
 
 The command writes only aggregate route metadata to the server store and prints one row for the private crosswalk. The `person` and `company` arguments remain local and never reach the deployed store. Copy the output into the private Google Sheet.

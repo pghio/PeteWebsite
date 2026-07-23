@@ -2,14 +2,13 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import profileSource from '../src/data/profile.json' with { type: 'json' };
 
-test('canonical positioning, publication, target roles, and Honeydew date stay locked', () => {
+test('canonical positioning, publication, location, and Honeydew date stay locked', () => {
   assert.equal(profileSource.identity.oneLine, 'I lead AI/ML products, build production agents, and publish rigorous evaluations of how they behave.');
   assert.deepEqual(profileSource.publication, {
     name: 'ChatGPeTe',
     description: 'I lead AI/ML products, build production agents, and publish rigorous evaluations of how they behave—plus essays when I have something worth saying.',
     url: 'https://peterghiorse.substack.com',
   });
-  assert.deepEqual(profileSource.targeting.roles, ['Group Product Manager', 'Director of Product Management', 'Principal Product Manager', 'Head of AI Product']);
   assert.equal(profileSource.targeting.location.display, 'New York City');
   assert.equal(profileSource.experience.find((item) => item.id === 'honeydew')?.startYear, 2025);
 });

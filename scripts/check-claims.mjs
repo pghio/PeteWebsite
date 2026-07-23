@@ -20,12 +20,6 @@ for (const experience of profileSource.experience) {
 const honeydew = profileSource.experience.find((item) => item.id === 'honeydew');
 assert.equal(honeydew?.startYear, 2025, 'Honeydew start year must remain 2025');
 assert.equal(profileSource.identity.oneLine, 'I lead AI/ML products, build production agents, and publish rigorous evaluations of how they behave.');
-assert.deepEqual(profileSource.targeting.roles, [
-  'Group Product Manager',
-  'Director of Product Management',
-  'Principal Product Manager',
-  'Head of AI Product',
-]);
 assert.equal(profileSource.targeting.location.display, 'New York City');
 
 const researchById = new Map(profileSource.research.map((study) => [study.id, study]));
@@ -74,6 +68,9 @@ const forbidden = [
   { pattern: /\bAI product engineer\b/gi, label: 'stale positioning' },
   { pattern: /\b2K MAU\b|\b98% retention\b|\b33B\+ monthly transactions\b/gi, label: 'unsupported scale claim' },
   { pattern: /(?:there is|does not currently link) no verified public (?:data |raw-results )?repository/gi, label: 'superseded repository availability' },
+  { pattern: /\brecruiter snapshot\b|\bfor recruiters\b|\btarget roles\b/gi, label: 'public job-search framing' },
+  { pattern: /open to regular Bay Area travel/gi, label: 'public travel availability' },
+  { pattern: /recruiter_visibility|recruiter_outreach/gi, label: 'public recruiting attribution label' },
 ];
 
 for (const { file, text } of surfaces) {
