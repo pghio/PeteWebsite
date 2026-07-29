@@ -75,6 +75,18 @@ const websiteSchema = {
   "author": { "@id": `${PROFILE.links.website}/#person` },
 };
 
+const publicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWorkSeries",
+  "@id": `${PROFILE.links.substack}/#publication`,
+  "name": `${PROFILE.publication.name} by ${PROFILE.name}`,
+  "alternateName": PROFILE.publication.name,
+  "url": PROFILE.links.substack,
+  "description": PROFILE.publication.description,
+  "inLanguage": "en-US",
+  "author": { "@id": `${PROFILE.links.website}/#person` },
+};
+
 const profilePageSchema = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
@@ -117,6 +129,7 @@ const profilePageSchema = {
     <title>{socialTitle}</title>
     <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(publicationSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(profilePageSchema)} />
     <Analytics />
     <script is:inline>
