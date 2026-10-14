@@ -29,8 +29,8 @@ for (const [name, expected] of Object.entries(expectedLinks)) {
 }
 
 assert.equal(
-  buildTrackedUrl({ path: '/resume.pdf', source: 'linkedin', medium: 'social', campaign: 'profile_visibility', content: 'featured_resume' }),
-  expectedLinks.linkedinFeaturedResumePdf,
+  buildTrackedUrl({ path: '/', source: 'linkedin', medium: 'social', campaign: 'profile_visibility', content: 'profile_website' }),
+  expectedLinks.linkedinProfile,
 );
 
 for (const forbidden of ['/r/', 'REFERRAL_TOKEN_PEPPER', 'UPSTASH_REDIS', 'createReferralToken', 'personal_link_engaged']) {
