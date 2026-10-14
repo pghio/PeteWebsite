@@ -15,7 +15,6 @@ Use these exact URLs:
 | Placement | URL |
 | --- | --- |
 | LinkedIn website | `https://peterghiorse.com/?utm_source=linkedin&utm_medium=social&utm_campaign=profile_visibility&utm_content=profile_website` |
-| LinkedIn Featured résumé PDF | `https://peterghiorse.com/resume.pdf?utm_source=linkedin&utm_medium=social&utm_campaign=profile_visibility&utm_content=featured_resume` |
 | Substack profile | `https://peterghiorse.com/?utm_source=substack&utm_medium=referral&utm_campaign=profile_visibility&utm_content=profile_website` |
 | GitHub README | `https://peterghiorse.com/?utm_source=github&utm_medium=referral&utm_campaign=profile_visibility&utm_content=readme_badge` |
 

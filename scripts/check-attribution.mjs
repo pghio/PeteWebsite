@@ -9,7 +9,6 @@ const utility = await readFile(new URL('../src/lib/attribution.mjs', import.meta
 
 const expectedLinks = {
   linkedinProfile: 'https://peterghiorse.com/?utm_source=linkedin&utm_medium=social&utm_campaign=profile_visibility&utm_content=profile_website',
-  linkedinFeaturedResumePdf: 'https://peterghiorse.com/resume.pdf?utm_source=linkedin&utm_medium=social&utm_campaign=profile_visibility&utm_content=featured_resume',
   substackProfile: 'https://peterghiorse.com/?utm_source=substack&utm_medium=referral&utm_campaign=profile_visibility&utm_content=profile_website',
   githubReadme: 'https://peterghiorse.com/?utm_source=github&utm_medium=referral&utm_campaign=profile_visibility&utm_content=readme_badge',
 };
