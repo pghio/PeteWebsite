@@ -25,6 +25,8 @@ Other data makes the picture less apocalyptic. [Yale's Budget Lab](https://budge
 
 Both things can be true: a concentrated effect in exposed entry-level work inside a broader slowdown with more than one cause. New York Fed researchers estimate that [remote work can explain 64 percent of the recent rise in unemployment among young college graduates](https://libertystreeteconomics.newyorkfed.org/2026/06/remote-work-leaves-younger-workers-sidelined/), partly because distributed teams are harder places to train beginners. The timing predates generative AI. The evidence is more complicated than the speeches. The speeches are still winning.
 
+![Five findings on young workers and AI, and which way each one cuts: Stanford's payroll records support the alarm, while Yale, the Federal Reserve, and the New York Fed point to a slowdown with more than one cause](/images/posts/monsters-evidence-ledger.svg)
+
 A forecast can become a planning assumption. In the worst version, the assumption becomes a hiring freeze and the freeze is offered as proof of the forecast. Call it *AI-washing* when a company attributes a workforce decision to AI without measuring what AI changed. The technology may still matter; the forecast does not prove the decision was inevitable.
 
 The doomerism of the young is not a failure to listen to us. It is evidence that they did.
@@ -40,6 +42,8 @@ The ground is still there.
 The Bureau of Labor Statistics projects about [649,300 openings a year in construction and extraction](https://www.bls.gov/ooh/Construction-and-Extraction/) through 2034. The median wage for the group is $58,360, above the $49,500 median across all occupations. [Installation, maintenance, and repair](https://www.bls.gov/ooh/installation-maintenance-and-repair/) adds another 608,100 projected openings a year at a similar median wage. Electricians: 81,000 openings a year. Plumbers and pipefitters: 44,000. Electrical lineworkers: 10,700, at a median wage above $92,000.
 
 Those are projected openings from growth and replacement, not live vacancies. Not every trade pays six figures, and the work can be dangerous, seasonal, union-dependent, or far from home. It may require licensing, tools, childcare, or years in an apprenticeship before the attractive wage arrives. Availability without a credible route is not opportunity.
+
+![Projected annual openings 2024 to 2034: construction and extraction at 649,300 and installation, maintenance and repair at 608,100, both above the all-occupation median wage, with electricians, plumbers, and power-line installers inside those totals](/images/posts/monsters-where-the-work-is.svg)
 
 And "go become a plumber" is not an answer to every frightened graduate. Some bodies cannot do physical work. Some people have gifts that belong in laboratories, classrooms, studios, hospitals, and offices. White-collar work still matters. The answer to one status hierarchy is not to build its inverse.
 
@@ -57,9 +61,13 @@ The loom could not explain itself to the weaver. The tractor could not help the 
 
 Customer support is not occupational retraining, but one study reveals the mechanism. Among 5,172 support agents, AI assistance increased issues resolved per hour by 15 percent on average and by 30 percent among less-skilled and less-experienced workers. The tool appeared to move patterns used by the strongest workers down the experience curve. [The advantage accrued first to the people with the least experience](https://academic.oup.com/qje/article/140/2/889/7990658).
 
+![AI assistance raised issues resolved per hour by 15 percent across all support agents and by 30 percent among the least-skilled and least-experienced, twice the average gain](/images/posts/monsters-gain-lands-lowest.svg)
+
 Structured AI tutors are beginning to show the same possibility. In a randomized crossover trial covering two lessons in one Harvard physics course, a carefully designed tutor produced [more than twice the median short-term learning gain](https://www.nature.com/articles/s41598-025-97652-6) of the active-learning classroom condition. The qualifications are the whole point: carefully designed, grounded in expert material, built to teach rather than answer.
 
 An unrestricted model can do the opposite. In a high-school mathematics experiment, students given ordinary GPT-4 performed better while they had it and worse when it was taken away. A guarded tutor designed by teachers largely mitigated that damage. [Assisted performance was not the same thing as learning](https://doi.org/10.1073/pnas.2422633122).
+
+![With the tool in hand, students using ordinary GPT-4 improved 48 percent and those using a guarded tutor 127 percent; on a later unassisted exam the ordinary GPT-4 group scored 17 percent worse than students who never had access, while the guarded-tutor group merely matched the control group](/images/posts/monsters-assisted-not-learned.svg)
 
 An adaptation system must separate three things. Assisted capability is what a worker can do with the tool. Internalized competence is what they understand without it. Professional judgment is knowing when the tool is wrong, when the situation is unsafe, and when the problem belongs to someone more qualified. It also carries accountability: somebody still has to answer for the outcome. AI can help with the first two. Only supervised practice confers the third.
 

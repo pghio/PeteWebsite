@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc" font-family="'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <title id="title">Assisted is not the same as learned</title>
+  <desc id="desc">Results from a high school mathematics experiment with nearly 1,000 students. While using the tool during practice sessions, students with ordinary GPT-4 improved grades by 48 percent and students with a teacher-designed guarded tutor improved by 127 percent. On a later unassisted exam with the tool removed, the ordinary GPT-4 group performed 17 percent worse than students who never had access, while the guarded-tutor group was statistically indistinguishable from the control group: the harm was prevented, but no learning gain appeared.</desc>
+
+  <rect width="1200" height="720" fill="#F5F1E6"/>
+
+  <text x="72" y="55" fill="#586185" font-size="16" font-weight="600">The caution</text>
+  <text x="72" y="108" fill="#1E2A48" font-size="45" font-weight="700">Assisted is not the same as learned.</text>
+  <text x="72" y="146" fill="#586185" font-size="18">Nearly 1,000 high-school mathematics students, measured twice: with the tool, then without it.</text>
+
+  <line x1="72" y1="180" x2="1128" y2="180" stroke="#D3CBB9" stroke-width="2"/>
+
+  <text x="72" y="216" fill="#2F5597" font-size="15" font-weight="600">WHILE USING THE TOOL · PRACTICE SESSIONS</text>
+  <text x="648" y="216" fill="#B73720" font-size="15" font-weight="600">AFTER IT WAS TAKEN AWAY · UNASSISTED EXAM</text>
+
+  <line x1="612" y1="196" x2="612" y2="580" stroke="#D3CBB9" stroke-width="1.5"/>
+
+  <!-- Row A: ordinary GPT-4 -->
+  <text x="72" y="258" fill="#1E2A48" font-size="18" font-weight="700">Ordinary GPT-4</text>
+  <text x="72" y="336" fill="#2F5597" font-size="64" font-weight="700">+48%</text>
+  <text x="72" y="366" fill="#586185" font-size="15">Better grades while the tool was in hand.</text>
+
+  <text x="648" y="258" fill="#1E2A48" font-size="18" font-weight="700">Ordinary GPT-4</text>
+  <text x="648" y="336" fill="#B73720" font-size="64" font-weight="700">&#8722;17%</text>
+  <text x="648" y="366" fill="#586185" font-size="15">Worse than the students who never</text>
+  <text x="648" y="386" fill="#586185" font-size="15">had access at all.</text>
+
+  <line x1="72" y1="410" x2="576" y2="410" stroke="#D3CBB9" stroke-width="1"/>
+  <line x1="648" y1="410" x2="1128" y2="410" stroke="#D3CBB9" stroke-width="1"/>
+
+  <!-- Row B: guarded tutor -->
+  <text x="72" y="450" fill="#1E2A48" font-size="18" font-weight="700">Teacher-designed guarded tutor</text>
+  <text x="72" y="528" fill="#2F5597" font-size="64" font-weight="700">+127%</text>
+  <text x="72" y="558" fill="#586185" font-size="15">An even larger gain during practice.</text>
+
+  <text x="648" y="450" fill="#1E2A48" font-size="18" font-weight="700">Teacher-designed guarded tutor</text>
+  <text x="648" y="506" fill="#586185" font-size="29" font-weight="700">Indistinguishable from</text>
+  <text x="648" y="540" fill="#586185" font-size="29" font-weight="700">the control group.</text>
+  <text x="648" y="570" fill="#586185" font-size="15">The harm was prevented. No learning gain appeared.</text>
+
+  <line x1="72" y1="612" x2="1128" y2="612" stroke="#D3CBB9" stroke-width="1"/>
+
+  <text x="72" y="642" fill="#1E2A48" font-size="17" font-weight="700">Assisted performance was not the same thing as learning.</text>
+  <text x="72" y="670" fill="#586185" font-size="13">Guardrails designed by teachers prevented the damage; they did not by themselves create understanding. Source: Bastani et al.,</text>
+  <text x="72" y="690" fill="#586185" font-size="13">“Generative AI without guardrails can harm learning: Evidence from high school mathematics,” PNAS, 2025.</text>
+</svg>

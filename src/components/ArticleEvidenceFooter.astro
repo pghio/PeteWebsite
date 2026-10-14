@@ -7,6 +7,23 @@ interface Props {
 
 const { currentPath } = Astro.props;
 const study = RESEARCH.find((item) => new URL(item.url).pathname === currentPath);
+
+const citationKey = study ? `ghiorse${study.published.slice(0, 4)}${study.id.split('-')[0]}` : '';
+const bibtex = study
+  ? [
+      `@misc{${citationKey},`,
+      `  author = {Ghiorse, Pete},`,
+      `  title = {${study.title.replace(/[{}]/g, '')}},`,
+      `  year = {${study.published.slice(0, 4)}},`,
+      `  month = {${study.published.slice(5, 7)}},`,
+      `  howpublished = {\\url{${study.url}}},`,
+      `  note = {Methods and aggregate data: ${study.repository}. Dated study snapshot; see the published limitations before citing a number.}`,
+      `}`,
+    ].join('\n')
+  : '';
+const apa = study
+  ? `Ghiorse, P. (${study.published.slice(0, 4)}). ${study.title} ${study.url}`
+  : '';
 ---
 
 <aside class="mt-12 space-y-6" aria-label="Evidence and author information">
@@ -22,6 +39,11 @@ const study = RESEARCH.find((item) => new URL(item.url).pathname === currentPath
         </ul>
       </details>
       <a href={study.repository} target="_blank" rel="noopener" data-profile-cta="research_repo" data-analytics-placement="article_evidence" class="font-semibold text-(--color-primary) hover:underline">View the public methods repository &rarr;</a>
+      <details class="text-sm text-slate-500 dark:text-slate-400 mt-5">
+        <summary class="font-semibold text-slate-900 dark:text-white cursor-pointer">Cite this study</summary>
+        <p class="mt-3">{apa}</p>
+        <pre class="mt-3 p-3 rounded-lg bg-white dark:bg-[#0f1424] border border-slate-200 dark:border-slate-800 text-xs overflow-x-auto"><code>{bibtex}</code></pre>
+      </details>
     </div>
   )}
 

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc" font-family="'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <title id="title">The gain lands where the experience isn't</title>
+  <desc id="desc">In a study of 5,172 customer support agents, AI assistance increased issues resolved per hour by 15 percent on average, and by 30 percent among less-skilled and less-experienced workers. The advantage accrued first to the people with the least experience, appearing to move the patterns used by the strongest workers down the experience curve.</desc>
+
+  <rect width="1200" height="640" fill="#F5F1E6"/>
+
+  <text x="72" y="55" fill="#586185" font-size="16" font-weight="600">What the tool does to a beginner</text>
+  <text x="72" y="108" fill="#1E2A48" font-size="45" font-weight="700">The gain lands where the</text>
+  <text x="72" y="156" fill="#1E2A48" font-size="45" font-weight="700">experience isn't.</text>
+  <text x="72" y="194" fill="#586185" font-size="18">Issues resolved per hour with AI assistance, among 5,172 customer-support agents.</text>
+
+  <line x1="72" y1="228" x2="1128" y2="228" stroke="#D3CBB9" stroke-width="2"/>
+
+  <!-- Left panel: average -->
+  <text x="72" y="272" fill="#586185" font-size="15" font-weight="600">ALL AGENTS, ON AVERAGE</text>
+  <text x="72" y="368" fill="#2F5597" font-size="88" font-weight="700">+15%</text>
+  <rect x="72" y="400" width="240" height="34" fill="#2F5597"/>
+  <text x="72" y="466" fill="#1E2A48" font-size="17">More issues resolved per hour</text>
+  <text x="72" y="490" fill="#1E2A48" font-size="17">across the whole workforce.</text>
+
+  <!-- divider -->
+  <line x1="600" y1="252" x2="600" y2="510" stroke="#D3CBB9" stroke-width="1.5"/>
+
+  <!-- Right panel: least experienced -->
+  <text x="648" y="272" fill="#B73720" font-size="15" font-weight="600">LEAST-SKILLED, LEAST-EXPERIENCED</text>
+  <text x="648" y="368" fill="#B73720" font-size="88" font-weight="700">+30%</text>
+  <rect x="648" y="400" width="480" height="34" fill="#B73720"/>
+  <text x="648" y="466" fill="#1E2A48" font-size="17">Twice the average gain. The tool appeared to move the</text>
+  <text x="648" y="490" fill="#1E2A48" font-size="17">strongest workers' patterns down the experience curve.</text>
+
+  <line x1="72" y1="548" x2="1128" y2="548" stroke="#D3CBB9" stroke-width="1"/>
+
+  <text x="72" y="576" fill="#1E2A48" font-size="17" font-weight="700">The advantage accrued first to the people with the least experience.</text>
+  <text x="72" y="604" fill="#586185" font-size="13">Customer support is not occupational retraining — but it reveals the mechanism. Source: Brynjolfsson, Li &amp; Raymond,</text>
+  <text x="72" y="624" fill="#586185" font-size="13">“Generative AI at Work,” Quarterly Journal of Economics, 2025.</text>
+</svg>

@@ -39,6 +39,7 @@ Subscribe: https://peterghiorse.substack.com
 
 ## Start here
 
+- Research line (Field Notes on Agents That Act): https://peterghiorse.com/research
 - Public profile data: https://peterghiorse.com/profile.json
 - Research data: https://peterghiorse.com/research.json
 - About and editorial practice: https://peterghiorse.com/about
@@ -54,4 +55,4 @@ Subscribe: https://peterghiorse.substack.com
 - Honeydew: https://gethoneydew.app
 - Email: pmghiorse@gmail.com
 
-Last updated: 2026-07-22
+Last updated: 2026-10-14

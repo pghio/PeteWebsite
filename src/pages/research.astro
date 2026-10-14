@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PROFILE, RESEARCH } from '../data/profile';
+
+const studies = [...RESEARCH].sort((a, b) => b.published.localeCompare(a.published));
+
+const upNext = [
+  {
+    title: 'Swapping the model under a live agent',
+    status: 'Writing now',
+    summary:
+      'What a release-floor harness and a capability tier caught, and missed, when the model under a shipped family agent changed. Exact builds, dated receipts, synthetic scenarios, no user data.',
+  },
+  {
+    title: 'Grading the graders',
+    status: 'Gated on a hand re-grade',
+    summary:
+      'Two production LLM judges audited against human labels: agreement, direction of disagreement, and where the ground truth itself is soft.',
+  },
+  {
+    title: 'Five ways agents break, re-cut on 227 scenarios',
+    status: 'Gated on a re-analysis',
+    summary:
+      'A behavior taxonomy rebuilt on the June data and its reasoning transcripts, replacing an earlier cut that rested on corrected claims.',
+  },
+  {
+    title: 'The mental load, measured',
+    status: 'Gated on data volume',
+    summary:
+      'A ranked map of what families hand an agent, from aggregate intent counts only. Publishes when a 30-day pull clears 300 classified requests across eight or more intents.',
+  },
+];
+
+const formatDate = (value: string) =>
+  new Date(`${value}T00:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+
+<BaseLayout
+  title="Field Notes on Agents That Act"
+  description="Pete Ghiorse's research line on how AI agents behave when they can change real, shared state: when to act, ask, or stop; how far a production prompt moves them; and how to grade them honestly."
+>
+  <section class="max-w-3xl mx-auto px-6 py-16 md:py-24">
+    <p class="text-(--color-primary) font-semibold text-sm tracking-widest uppercase mb-4 animate-fade-up">Research line</p>
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-6 animate-fade-up stagger-1">
+      Field Notes on <span class="gradient-text">Agents That Act</span>
+    </h1>
+    <p class="text-lg text-slate-700 dark:text-slate-200 leading-relaxed mb-5 animate-fade-up stagger-2">
+      I study how AI agents behave when they can change real, shared state: when they should act, ask, or stop, how far a production prompt can move them, and how to grade them honestly. The experiments run on an agent I ship, against scenarios shaped like its traffic, with the scoring code and aggregate results published beside every conclusion.
+    </p>
+    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-12 animate-fade-up stagger-3">
+      Three rules hold across the series. No real user data touches a published number. Every study is a dated snapshot with its limitations attached, and corrections stay visible beside the claim they changed. The practice loop is {PROFILE.practiceLoop.join(' → ')}.
+    </p>
+
+    <h2 class="text-2xl font-bold mb-6">Published studies</h2>
+    <div class="space-y-6 mb-16">
+      {studies.map((study) => (
+        <article class="p-6 rounded-2xl bg-slate-50 dark:bg-[#141b2d] border border-slate-200 dark:border-slate-800">
+          <p class="text-xs font-semibold text-(--color-primary) tracking-widest uppercase mb-2">{formatDate(study.published)} snapshot</p>
+          <h3 class="text-xl font-bold mb-3">
+            <a href={study.url} class="hover:text-(--color-primary) transition-colors">{study.title}</a>
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-3">{study.scope}</p>
+          <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">{study.method}</p>
+          <details class="text-sm text-slate-500 dark:text-slate-400 mb-4">
+            <summary class="font-semibold text-slate-900 dark:text-white cursor-pointer">Limitations ({study.limitations.length})</summary>
+            <ul class="list-disc pl-5 mt-3 space-y-2">
+              {study.limitations.map((item) => <li>{item}</li>)}
+            </ul>
+          </details>
+          <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+            <a href={study.url} class="text-(--color-primary) hover:underline">Read the study &rarr;</a>
+            <a href={study.repository} target="_blank" rel="noopener" data-profile-cta="research_repo" data-analytics-placement="research_index" class="text-(--color-primary) hover:underline">Methods repository &rarr;</a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <h2 class="text-2xl font-bold mb-2">Publishing next</h2>
+    <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">
+      Stated in advance so the gates are visible. A piece ships when its gate clears, not before.
+    </p>
+    <div class="space-y-4 mb-16">
+      {upNext.map((item) => (
+        <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <h3 class="font-bold">{item.title}</h3>
+            <span class="text-xs font-semibold text-(--color-primary) bg-(--color-primary)/10 px-2.5 py-1 rounded-full">{item.status}</span>
+          </div>
+          <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{item.summary}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2 class="text-2xl font-bold mb-3">Citing and reusing</h2>
+    <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
+      Each study page carries a citation block, and each repository ships a <code>CITATION.cff</code>. Code is Apache-2.0; data and figures are CC BY 4.0. The scenario fixtures are synthetic and demonstrate the method; they do not reproduce the original rankings, and the repositories say so.
+    </p>
+    <div class="p-6 rounded-2xl bg-slate-50 dark:bg-[#141b2d] border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+      <div>
+        <p class="font-bold text-slate-900 dark:text-white">{PROFILE.publication.name}</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">New studies arrive by email first.</p>
+      </div>
+      <a href="https://peterghiorse.substack.com/subscribe?utm_source=peterghiorse.com&utm_medium=website&utm_campaign=content_distribution&utm_content=research_index_chatgpete" target="_blank" rel="noopener" data-newsletter-cta data-newsletter-impression data-analytics-placement="research_index_chatgpete" class="shrink-0 inline-flex justify-center px-5 py-2.5 rounded-xl bg-(--color-primary) text-white font-semibold hover:bg-(--color-primary-dark) transition-colors">
+        Subscribe
+      </a>
+    </div>
+  </section>
+</BaseLayout>
