@@ -3,7 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { PROFILE } from '../data/profile';
 
 const links = [
-  { name: 'Email', mark: '@', desc: 'Best for a substantive question or collaboration', href: PROFILE.links.email },
+  { name: 'Email', mark: '@', desc: `${PROFILE.links.email.replace('mailto:', '')} · best for a substantive question or collaboration`, href: PROFILE.links.email },
+  { name: 'Book 30 minutes', mark: '30', desc: 'Pick a time that works; video call', href: 'https://calendly.com/pmghiorse/30min' },
   { name: 'LinkedIn', mark: 'in', desc: 'Professional profile and current posts', href: PROFILE.links.linkedin },
   { name: 'GitHub', mark: '</>', desc: 'Repositories, methods, and code', href: PROFILE.links.github },
   { name: 'Honeydew', mark: 'H', desc: 'The production agent I am building', href: PROFILE.links.honeydew },
